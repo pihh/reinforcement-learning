@@ -1,0 +1,5 @@
+gym
+numpy
+shutup
+tensorflow
+tensorflow-probability
