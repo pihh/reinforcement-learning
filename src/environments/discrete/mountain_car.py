@@ -1,20 +1,22 @@
 import gym 
 
 ENV_NAME = 'MountainCar-v0'
+SUCCESS_THRESHOLD = -150
 
 def environment():
 
     print('''
 | ---------------------------------
 | {}
-| Action space:
-|   * Discrete with low state-space
+| 
+| Action space: Discrete with low state-space
+| Environment beated threshold: {}
 | Dev notes:
 |   * Switched _max_episode_steps from 200 to 1000 so 
 |     the agent can explore better.
 | ----------------------------------------------------------   
 
-'''.format(ENV_NAME))
+'''.format(ENV_NAME,SUCCESS_THRESHOLD))
     
     # Will add a bit more of exploration so the agent can learn better
     env = gym.make(ENV_NAME)
@@ -22,3 +24,4 @@ def environment():
     env.success_threshold = -150
     
     return env
+

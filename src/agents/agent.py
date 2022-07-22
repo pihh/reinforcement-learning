@@ -28,8 +28,10 @@ class Agent:
         env = GymEnvironment(environment)
         self.env = env.env
         self.n_actions = env.n_actions
+        self.n_inputs = env.n_inputs
         self.actions = env.actions
         self.observation_shape = env.observation_shape
+        self.action_space_mode = env.action_space_mode
 
     def __init_reward_tracker(self):
         self.running_reward = RunningReward()
@@ -50,7 +52,14 @@ class Agent:
             return True
         else: 
             return timesteps > timestep
-    
+
+    def did_finnish_learning(self,success_threshold,episode):
+        # Break loop if average reward is greater than success threshold
+        if self.running_reward.moving_average > success_threshold and episode > 10:
+            print('Agent solved environment at the episode {}'.format(episode))
+            return True
+        return False
+
     # Tests
     def test(self, episodes=10, render=True):
 

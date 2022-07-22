@@ -11,6 +11,8 @@ from gym import spaces, logger
 from gym.utils import seeding
 import numpy as np
 
+SUCCESS_THRESHOLD = 200
+
 
 class ContinuousCartPoleEnv(gym.Env):
     metadata = {
@@ -162,20 +164,21 @@ Any further steps are undefined behavior.
 
 
 ENV_NAME = 'CartpoleContinuous-v1'
+SUCCESS_THRESHOLD = 200
 
 def environment():
 
     print('''
 | ---------------------------------
 | {}
-| Action space:
-|   * Discrete with high state-space
+| Action space: Discrete with high state-space
+| Environment beated threshold: {}
 | Dev notes:
 |   * Agents that track State/Action combinations like 
 |     Q learning will fail due to high state space
 | ----------------------------------------------------------   
 
-'''.format(ENV_NAME))
+'''.format(ENV_NAME,SUCCESS_THRESHOLD))
     
     # Will add a bit more of exploration so the agent can learn better
     env = ContinuousCartPoleEnv()

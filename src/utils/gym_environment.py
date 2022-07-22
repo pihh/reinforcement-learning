@@ -19,12 +19,17 @@ class GymEnvironment:
         # Gets num_actions 
         # Type of action space, and so on
         if type(self.env.action_space) == gym.spaces.Discrete:
-            self.action_space_mode = "Discrete"
+            self.action_space_mode = "discrete"
             self.n_actions = self.env.action_space.n
-            self.actions = range(self.env.action_space.n)
+            self.actions = list(range(self.n_actions))
         else:
-            self.action_space_mode = 'Continuous'
+            self.action_space_mode = 'continuous'
             self.n_actions = self.env.action_space.shape[0]
-            self.actions = range(self.n_actions)
+            self.actions = list(range(self.n_actions))
+
+        if (len(self.env.observation_space.shape) == 1):
+            self.n_inputs = self.env.observation_space.shape[0]
+        else:
+            self.n_inputs = self.env.observation_space.shape[0] * self.env.observation_space.shape[1] 
         
         self.observation_shape = self.env.observation_space.shape

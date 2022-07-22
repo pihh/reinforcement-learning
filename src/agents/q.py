@@ -1,6 +1,5 @@
 import itertools
 import numpy as np
-import matplotlib.pyplot as plt
 
 from src.agents.agent import Agent
 
@@ -80,7 +79,8 @@ class QAgent(Agent):
     def learn(self, timesteps=-1, plot_results=True, reset=False, log_each_n_episodes=100, success_threshold=False):
         
         self.validate_learn(timesteps,success_threshold,reset)
-            
+        success_threshold = success_threshold if success_threshold else self.env.success_threshold    
+
         obs = self.env.reset()
         state = self.get_state(obs)
 
@@ -111,15 +111,14 @@ class QAgent(Agent):
 
                 # Loop episode state
                 if episode % log_each_n_episodes == 0 and episode > 0:
-                    print('episode',episode,'score',score,'epsilon %:.3f',self.epsilon)
+                    print('episode {}, running average: {:.2f}, epsilon: {:.3f}'.format(episode,self.running_reward.moving_average,self.epsilon))
                 
                 # Update pointers
                 self.decrement_epsilon()
                 self.running_reward.step(score)
                 
                 # Break loop if average reward is greater than success threshold
-                if self.running_reward.moving_average > success_threshold:
-                    print('Agent solved environment at the episode {}'.format(episode))
+                if self.did_finnish_learning(self,success_threshold,episode):
                     break
                 
                 # Reset environment
