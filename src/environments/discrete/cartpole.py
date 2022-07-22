@@ -18,5 +18,6 @@ def environment():
     
     # Will add a bit more of exploration so the agent can learn better
     env = gym.make(ENV_NAME)
+    env.success_threshold = 200
     
     return env

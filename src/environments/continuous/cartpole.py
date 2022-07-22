@@ -179,5 +179,6 @@ def environment():
     
     # Will add a bit more of exploration so the agent can learn better
     env = ContinuousCartPoleEnv()
+    env.success_threshold = 200
     
     return env
