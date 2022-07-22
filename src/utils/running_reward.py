@@ -5,7 +5,7 @@ class RunningReward:
             self, 
             new_reward_weight=0.05, 
             old_reward_weight=0.95,
-            moving_average_window=100):
+            moving_average_window=50):
         """
         Tracks the moving reward of the agent on given episode
         

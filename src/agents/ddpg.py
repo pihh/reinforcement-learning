@@ -72,6 +72,9 @@ class DdpgAgent(Agent):
         # Used to update target networks
         self.tau = tau
 
+        if self.action_space_mode != "continuous":
+            raise Exception('DDPG only accepts continuous action spaces')
+
         self.__init_networks()
         self.__init_buffers()
         
