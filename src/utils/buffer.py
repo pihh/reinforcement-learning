@@ -18,3 +18,5 @@ class Buffer:
 
     def get(self,key):
         return self.memory[key]
+
+

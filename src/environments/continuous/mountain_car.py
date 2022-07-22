@@ -9,7 +9,7 @@ def environment():
 | ---------------------------------
 | {}
 | 
-| Action space: Discrete with low state-space
+| Action space: Continuous with low state-space
 | Environment beated threshold: {}
 | Dev notes:
 |   * Switched _max_episode_steps from 200 to 1000 so 

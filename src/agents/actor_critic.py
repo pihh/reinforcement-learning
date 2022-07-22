@@ -45,9 +45,13 @@ class ActorCriticAgent(Agent):
         if self.action_space_mode == "discrete":
             action = Dense(self.n_actions, activation="softmax")(common_layer)
         elif self.action_space_mode == "continuous":
-            sigma = Dense(self.n_actions, activation="softplus", name="sigma")(common_layer)
-            mu = Dense(self.n_actions, activation="tanh" , name='mu')(common_layer)
-            action = Concatenate(axis=-1, name="actor_output")([mu,sigma])
+            mu_init = tf.random_uniform_initializer(minval=-0.003, maxval=0.003)
+            mu = Dense(self.n_actions, activation="tanh" , name='mu',kernel_initializer=mu_init)(common_layer)
+            
+            sigma_init = tf.random_uniform_initializer(minval=self.eps, maxval=0.2)
+            sigma = Dense(self.n_actions, activation="softplus", name="sigma", kernel_initializer=sigma_init)(common_layer)
+            
+            action = Concatenate(axis=-1, name="actor_output")([mu,sigma]) * self.action_upper_bounds
 
         critic = Dense(1)(common_layer)
 
@@ -140,7 +144,6 @@ class ActorCriticAgent(Agent):
 
                     self.buffer.store('critic_values',critic_value[0, 0])
 
-
                     # Sample action from action probability distribution
                     self.buffer.store('action_log_probs',action_log_prob)
 
@@ -197,11 +200,10 @@ class ActorCriticAgent(Agent):
             # Log details
             episode += 1
             if episode % log_each_n_episodes == 0 and episode > 0:
-                print('episode {}, running reward: {:.2f}'.format(episode,self.running_reward.reward))
+                print('episode {}, running reward: {:.2f}, last reward: {:.2f}'.format(episode,self.running_reward.reward, score))
 
-            # Break loop if average reward is greater than success threshold
-            if self.did_finnish_learning(self,success_threshold,episode):
-                break
+            if self.did_finnish_learning(success_threshold,episode):
+                    break
 
         if plot_results:
             self.plot_learning_results()

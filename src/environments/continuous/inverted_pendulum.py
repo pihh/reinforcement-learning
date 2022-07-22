@@ -1,7 +1,7 @@
 import gym 
 
 ENV_NAME = 'Pendulum-v1'
-SUCCESS_THRESHOLD = -150
+SUCCESS_THRESHOLD = -200
 
 def environment():
 
@@ -9,7 +9,7 @@ def environment():
 | ---------------------------------
 | {}
 | 
-| Action space: Discrete with low state-space
+| Action space: Continuous with low state-space
 | Environment beated threshold: {}
 | ----------------------------------------------------------   
 

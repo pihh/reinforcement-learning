@@ -171,7 +171,7 @@ def environment():
     print('''
 | ---------------------------------
 | {}
-| Action space: Discrete with high state-space
+| Action space: Continuous with high state-space
 | Environment beated threshold: {}
 | Dev notes:
 |   * Agents that track State/Action combinations like 

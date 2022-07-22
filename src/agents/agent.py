@@ -32,6 +32,8 @@ class Agent:
         self.actions = env.actions
         self.observation_shape = env.observation_shape
         self.action_space_mode = env.action_space_mode
+        self.action_upper_bounds = env.action_upper_bounds
+        self.action_lower_bounds = env.action_lower_bounds
 
     def __init_reward_tracker(self):
         self.running_reward = RunningReward()

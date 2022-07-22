@@ -118,7 +118,7 @@ class QAgent(Agent):
                 self.running_reward.step(score)
                 
                 # Break loop if average reward is greater than success threshold
-                if self.did_finnish_learning(self,success_threshold,episode):
+                if self.did_finnish_learning(success_threshold,episode):
                     break
                 
                 # Reset environment

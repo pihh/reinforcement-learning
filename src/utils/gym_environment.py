@@ -22,14 +22,21 @@ class GymEnvironment:
             self.action_space_mode = "discrete"
             self.n_actions = self.env.action_space.n
             self.actions = list(range(self.n_actions))
+            self.action_upper_bounds = False
+            self.action_lower_bounds = False
         else:
             self.action_space_mode = 'continuous'
             self.n_actions = self.env.action_space.shape[0]
             self.actions = list(range(self.n_actions))
+            # Refactor this. I might have other bounds
+            self.action_upper_bounds = self.env.action_space.high
+            self.action_lower_bounds = self.env.action_space.low
 
         if (len(self.env.observation_space.shape) == 1):
             self.n_inputs = self.env.observation_space.shape[0]
         else:
             self.n_inputs = self.env.observation_space.shape[0] * self.env.observation_space.shape[1] 
+
+
         
         self.observation_shape = self.env.observation_space.shape
