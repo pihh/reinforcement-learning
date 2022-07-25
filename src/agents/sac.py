@@ -1,5 +1,16 @@
 import numpy as np
 
+from src.agents.agent import Agent
+from src.utils.logger import LearningLogger
+
+import tensorflow as tf
+import tensorflow.keras as keras
+import tensorflow_probability as tfp
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.layers import Input, Dense, Concatenate
+from utils.networks import MultiLayerPerceptron
+
+
 class ReplayBuffer:
     def __init__(self, buffer_size, input_shape, n_actions):
         self.buffer_size = buffer_size
@@ -34,6 +45,95 @@ class ReplayBuffer:
 
         return states, actions, rewards, states_, dones
 
+        
+class CriticNetwork(keras.Model):
+    def __init__(self,
+                policy="mlp",
+                name='critic'
+        ):
+        super(CriticNetwork, self).__init__()
+        
+        
+        self.model_name = name
+        self.fc = MultiLayerPerceptron(policy=policy)
+        self.q = Dense(1, activation=None)
+
+    def call(self, state, action):
+        X = tf.concat([state, action], axis=1)
+        for layer in self.fc:
+            X = layer(X)
+            
+        q = self.q(X)
+        return q
+
+class ValueNetwork(keras.Model):
+    def __init__(self,
+                 policy="mlp",
+                 name='value',  
+        ):
+        super(ValueNetwork, self).__init__()
+        
+
+        self.model_name = name
+
+        self.fc = MultiLayerPerceptron(policy=policy)
+        self.v = Dense(1, activation=None)
+
+    def call(self, state):
+        X = state
+        for layer in self.fc:
+            X = layer(X)
+
+        v = self.v(X)
+
+        return v
+
+class ActorNetwork(keras.Model):
+    def __init__(self, 
+            policy="mlp",
+            n_actions=2,
+            max_action=1, 
+            name='actor', 
+    ):
+        super(ActorNetwork, self).__init__()
+
+        self.model_name = name
+        self.max_action = max_action
+        self.noise = 1e-6
+
+        self.fc = MultiLayerPerceptron(policy=policy)
+        
+        self.mu = Dense(n_actions, activation=None)
+        self.sigma = Dense(n_actions, activation=None)
+
+    def call(self, state):
+        X = state
+        for layer in self.fc:
+            X = layer(X)
+
+        mu = self.mu(X)
+        sigma = self.sigma(X)
+        sigma = tf.clip_by_value(sigma, self.noise, 1)
+
+        return mu, sigma
+
+    def sample_normal(self, state, reparameterize=True):
+        mu, sigma = self.call(state)
+        probabilities = tfp.distributions.Normal(mu, sigma)
+
+        if reparameterize:
+            actions = probabilities.sample() # + something else if you want to implement
+        else:
+            actions = probabilities.sample()
+
+        action = tf.math.tanh(actions)*self.max_action
+        log_probs = probabilities.log_prob(actions)
+        log_probs -= tf.math.log(1-tf.math.pow(action,2)+self.noise)
+        log_probs = tf.math.reduce_sum(log_probs, axis=1, keepdims=True)
+
+        return action, log_probs
+
+
 from src.agents.agent import Agent
 
 
@@ -50,9 +150,8 @@ class SoftActorCriticAgent(Agent):
             reward_scale=2, 
             loss_function = keras.losses.MSE, #keras.losses.Huber()
     ):
-        super(SoftActorCriticAgent, self).__init__(environment)
-        
-        print(self.env,self.n_actions)
+        super(SoftActorCriticAgent, self).__init__(environment,loss_keys=["actor","value","critic_1","critic_2"])
+
         self.alpha = alpha
         self.beta = beta
         self.gamma = gamma
@@ -91,7 +190,7 @@ class SoftActorCriticAgent(Agent):
         return actions[0]
 
     def remember(self, state, action, reward, new_state, done):
-        self.memory.remember(state, action, reward, new_state, done)      
+        self.buffer.remember(state, action, reward, new_state, done)      
 
     def update_network_parameters(self, tau=None):
         if tau is None:
@@ -112,8 +211,8 @@ class SoftActorCriticAgent(Agent):
         
         states = tf.convert_to_tensor(state, dtype=tf.float32)
         states_ = tf.convert_to_tensor(state_, dtype=tf.float32)
-        rewards = tf.convert_to_tensor(rewards, dtype=tf.float32)
-        actions = tf.convert_to_tensor(actions, dtype=tf.float32)
+        rewards = tf.convert_to_tensor(reward, dtype=tf.float32)
+        actions = tf.convert_to_tensor(action, dtype=tf.float32)
         
         # Value network update
         with tf.GradientTape() as tape:
@@ -130,13 +229,13 @@ class SoftActorCriticAgent(Agent):
             value_target = critic_value - log_probs
             value_loss = 0.5 *self.loss_function(value,value_target)
             
+            
         value_network_gradient = tape.gradient(value_loss,self.value.trainable_variables)
-        self.value.optimizar.apply_gradients(zip(value_network_gradient, self.value.trainable_variables))
+        self.value.optimizer.apply_gradients(zip(value_network_gradient, self.value.trainable_variables))
         
         # Actor network update
         with tf.GradientTape() as tape:
-            # in the original paper, they reparameterize here. We don't implement
-            # this so it's just the usual action.
+            # in the original paper, they reparameterize here. 
             new_policy_actions, log_probs = self.actor.sample_normal(states,reparameterize=True)
             
             log_probs = tf.squeeze(log_probs, 1)
@@ -148,8 +247,7 @@ class SoftActorCriticAgent(Agent):
             actor_loss = log_probs - critic_value
             actor_loss = tf.math.reduce_mean(actor_loss)
 
-        actor_network_gradient = tape.gradient(actor_loss, 
-                                            self.actor.trainable_variables)
+        actor_network_gradient = tape.gradient(actor_loss, self.actor.trainable_variables)
         self.actor.optimizer.apply_gradients(zip(actor_network_gradient, self.actor.trainable_variables))
 
         # Critic network update
@@ -167,4 +265,78 @@ class SoftActorCriticAgent(Agent):
         self.critic_1.optimizer.apply_gradients(zip(critic_1_network_gradient, self.critic_1.trainable_variables))
         self.critic_2.optimizer.apply_gradients(zip(critic_2_network_gradient, self.critic_2.trainable_variables))
 
+        self.learning_log.step_loss({
+            "actor":actor_loss.numpy(),
+            "value":value_loss.numpy(),
+            "critic_1":critic_1_loss.numpy(),
+            "critic_2":critic_2_loss.numpy()
+        })
+        
         self.update_network_parameters()
+        
+    def test(self, episodes=10, render=True, init_environment=False):
+        for episode in range(episodes):
+            try:
+                state = self.env.reset()
+            except:
+                self._Agent__init_environment()
+                state = self.env.reset()
+                
+            done = False
+            score = 0
+            
+            while not done:
+                if render:
+                    self.env.render()
+                
+                # Sample action, probs and critic
+                action = self.choose_action(state)
+
+                # Step
+                state,reward,done, info = self.env.step(action)
+
+                # Get next state
+                score += reward
+            
+            if render:
+                self.env.close()
+
+            self.learning_log.episode_test_log(score,episode)
+            
+    def learn(self, timesteps=-1, plot_results=True, reset=False, success_threshold=False, log_level=1, log_each_n_episodes=50,):
+        self.validate_learn(timesteps,success_threshold,reset)
+        success_threshold = success_threshold if success_threshold else self.env.success_threshold
+ 
+        score = 0
+        timestep = 0
+        episode = 0
+        
+        while self.learning_condition(timesteps,timestep):  # Run until solved
+            state = self.env.reset()
+            score = 0
+            done = False
+            
+            while not done:
+                action = self.choose_action(state)
+                state_, reward, done, info = self.env.step(action)
+                score += reward
+                self.remember(state, action, reward, state_, done)
+                self.replay()
+                state = state_
+            
+            self.running_reward.step(score)
+             # Log details
+            episode += 1
+            
+            self.learning_log.episode(
+                log_each_n_episodes,
+                score,
+                self.running_reward.reward, 
+                log_level=log_level
+            )
+           
+            if self.did_finnish_learning(success_threshold,episode):
+                break
+
+        if plot_results:
+            self.plot_learning_results()z

@@ -94,7 +94,12 @@ class ActorCriticAgent(Agent):
     def test(self, episodes=10, render=True):
 
         for episode in range(episodes):
-            state = self.env.reset()
+            try:
+                state = self.env.reset()
+            except:
+                self._Agent__init_environment()
+                state = self.env.reset()
+
             done = False
             score = 0
             while not done:

@@ -3,29 +3,37 @@ import matplotlib.pyplot as plt
 
 from src.utils.running_reward import RunningReward
 from src.utils.gym_environment import GymEnvironment
+from src.utils.logger import LearningLogger
 
 class Agent:
     def __init__(self,
         environment,
+        loss_keys=[],
         epsilon=1.0,
         epsilon_min=0.01,
         epsilon_decay=0.00001,
     ):
         # Args
+        self._environment = environment
         self.epsilon = epsilon
         self.epsilon_min = epsilon_min
         self.epsilon_decay = epsilon_decay
-        
+        self.learning_log_loss_keys = loss_keys
+
         self.epsilon_ = epsilon
         self.epsilon_decay_ = epsilon_decay
         
         # Boot
-        self.__init_environment(environment)
+        self.__init_environment()
         self.__init_reward_tracker()
-        
+        self.__init_loggers()
 
-    def __init_environment(self,environment):
-        env = GymEnvironment(environment)
+    def __init_loggers(self):
+        self.learning_log = LearningLogger(self.learning_log_loss_keys)
+                
+
+    def __init_environment(self):
+        env = GymEnvironment(self._environment)
         self.env = env.env
         self.n_actions = env.n_actions
         self.n_inputs = env.n_inputs
@@ -62,17 +70,25 @@ class Agent:
             return True
         return False
 
-    def log_learning(self):
-        # Episode
-        # Avg episode duration
-        # Learning steps 
-        # Runinning reward
-        # Avg reward 
-        # Last reward
-        # Running losses
-        # Avg Losses
-        # Last losses
+    # lifecycle hooks 
+    def after_learn_cycle(self):
+        pass 
+
+    def after_learn_episode(self):
+        pass 
+
+    def after_test_episode(self):
         pass
+
+    def before_learn_cycle(self):
+        pass 
+
+    def before_learn_episode(self):
+        pass
+
+    def before_test_episode(self):
+        pass
+
 
     # Tests
     def test(self, episodes=10, render=True):
@@ -105,8 +121,10 @@ class Agent:
         self.epsilon = self.epsilon - self.epsilon_decay if self.epsilon > self.epsilon_min else self.epsilon_min
 
     def plot_learning_results(self):
+        plt.figure(figsize=(16,4))
         plt.plot(self.running_reward.reward_history)
-
+        plt.show()
+        
     def choose_action(self, state):
         raise NotImplementedError
 
