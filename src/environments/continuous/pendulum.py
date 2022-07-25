@@ -1,8 +1,8 @@
-import gym
-import pybullet_envs
+import gym 
 
-ENV_NAME = 'InvertedPendulumBulletEnv-v0'
-SUCCESS_THRESHOLD = 200
+
+ENV_NAME = 'Pendulum-v1'
+SUCCESS_THRESHOLD = -200
 
 def environment():
 
@@ -10,7 +10,7 @@ def environment():
 | ---------------------------------
 | {}
 | 
-| Action space: Continuous with high action-space
+| Action space: Continuous with low state-space
 | Environment beated threshold: {}
 | ----------------------------------------------------------   
 

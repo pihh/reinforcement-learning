@@ -1,6 +1,8 @@
 gym
 numpy
+dotwiz
 shutup
+pybullet
 matplotlib
 tensorflow
 tensorflow-probability

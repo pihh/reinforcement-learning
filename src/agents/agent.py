@@ -62,6 +62,18 @@ class Agent:
             return True
         return False
 
+    def log_learning(self):
+        # Episode
+        # Avg episode duration
+        # Learning steps 
+        # Runinning reward
+        # Avg reward 
+        # Last reward
+        # Running losses
+        # Avg Losses
+        # Last losses
+        pass
+
     # Tests
     def test(self, episodes=10, render=True):
 
@@ -85,6 +97,8 @@ class Agent:
                 self.env.close()
 
             print("Test episode: {}, score: {:.2f}".format(episode,score))
+
+
 
     def decrement_epsilon(self):
         #self.epsilon = self.epsilon * self.epsilon_decay if self.epsilon > 0.01 else 0.01
