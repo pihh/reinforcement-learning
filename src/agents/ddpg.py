@@ -54,7 +54,7 @@ class DdpgAgent(Agent):
                  critic_optimizer = tf.keras.optimizers.Adam,
                  actor_optimizer = tf.keras.optimizers.Adam,
         ):
-        super(DdpgAgent,self).__init__(environment)
+        super(DdpgAgent,self).__init__(environment,args=locals())
         
         self.std_dev = std_dev
         self.buffer_size = buffer_size
@@ -77,6 +77,9 @@ class DdpgAgent(Agent):
 
         self.__init_networks()
         self.__init_buffers()
+
+        self._add_models_to_config([self.actor,self.target_actor,self.critic,self.target_critic])
+        self._init_tensorboard()
         
     def __init_buffers(self):
         self.buffer = Buffer(self.n_actions, self.n_inputs, self.buffer_size, self.batch_size)
@@ -219,7 +222,7 @@ class DdpgAgent(Agent):
 
             print("Test episode: {}, score: {:.2f}".format(episode,score)) 
     
-    def learn(self, timesteps=-1, plot_results=True, reset=False, log_each_n_episodes=100, success_threshold=False):
+    def learn(self, timesteps=-1, plot_results=True, reset=False,  success_threshold=False,log_level=1, log_each_n_episodes=50,):
         self.validate_learn(timesteps,success_threshold,reset)
         success_threshold = success_threshold if success_threshold else self.env.success_threshold
 
@@ -246,8 +249,12 @@ class DdpgAgent(Agent):
             self.running_reward.step(score)
             # Log details
             episode += 1
-            if episode % log_each_n_episodes == 0 and episode > 0:
-                print('episode {}, running reward: {:.2f}, last reward: {:.2f}'.format(episode,self.running_reward.reward, score))
+            self.learning_log.episode(
+                log_each_n_episodes,
+                score,
+                self.running_reward.reward, 
+                log_level=log_level
+            )
 
             if self.did_finnish_learning(success_threshold,episode):
                 break

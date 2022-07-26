@@ -2,13 +2,14 @@ import numpy as np
 
 from src.agents.agent import Agent
 from src.utils.logger import LearningLogger
+from utils.networks import MultiLayerPerceptron
 
 import tensorflow as tf
 import tensorflow.keras as keras
 import tensorflow_probability as tfp
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.layers import Input, Dense, Concatenate
-from utils.networks import MultiLayerPerceptron
+
 
 
 class ReplayBuffer:
@@ -150,7 +151,7 @@ class SoftActorCriticAgent(Agent):
             reward_scale=2, 
             loss_function = keras.losses.MSE, #keras.losses.Huber()
     ):
-        super(SoftActorCriticAgent, self).__init__(environment,loss_keys=["actor","value","critic_1","critic_2"])
+        super(SoftActorCriticAgent, self).__init__(environment,loss_keys=["actor","value","critic_1","critic_2"],args=locals())
 
         self.alpha = alpha
         self.beta = beta
@@ -164,6 +165,8 @@ class SoftActorCriticAgent(Agent):
         
         self.__init_networks()
         self.__init_buffers()
+        self._add_models_to_config([self.actor,self.critic_1,self.critic_2,self.value,self.target_value])
+        self._init_tensorboard()
         
     def __init_buffers(self):
         self.buffer = ReplayBuffer(self.buffer_size, self.observation_shape, self.n_actions)
@@ -303,7 +306,7 @@ class SoftActorCriticAgent(Agent):
 
             self.learning_log.episode_test_log(score,episode)
             
-    def learn(self, timesteps=-1, plot_results=True, reset=False, success_threshold=False, log_level=1, log_each_n_episodes=50,):
+    def learn(self, timesteps=-1, plot_results=True, reset=False, success_threshold=False, log_level=1, log_each_n_episodes=50):
         self.validate_learn(timesteps,success_threshold,reset)
         success_threshold = success_threshold if success_threshold else self.env.success_threshold
  
@@ -339,4 +342,4 @@ class SoftActorCriticAgent(Agent):
                 break
 
         if plot_results:
-            self.plot_learning_results()z
+            self.plot_learning_results()

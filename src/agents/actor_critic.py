@@ -1,4 +1,3 @@
-import itertools
 import numpy as np
 
 from src.agents.agent import Agent
@@ -19,7 +18,7 @@ class ActorCriticAgent(Agent):
                 optimizer = tf.keras.optimizers.Adam(learning_rate=0.01),
                 critic_loss= tf.keras.losses.Huber()):
         
-        super(ActorCriticAgent, self).__init__(environment)
+        super(ActorCriticAgent, self).__init__(environment,args=locals())
         
         # Args
         self.alpha = alpha
@@ -31,6 +30,9 @@ class ActorCriticAgent(Agent):
 
         self.__init_networks()
         self.__init_buffers()
+
+        self._add_models_to_config([self.model])
+        self._init_tensorboard()
         
     def __init_buffers(self):
         self.buffer = Buffer(['action_log_probs','critic_values','rewards'])

@@ -38,5 +38,5 @@ class GymEnvironment:
             self.n_inputs = self.env.observation_space.shape[0] * self.env.observation_space.shape[1] 
 
 
-        
+        self.env_name = self.env.spec.name
         self.observation_shape = self.env.observation_space.shape
