@@ -1,7 +1,7 @@
-from datetime import datetime
-import re
-from tabulate import tabulate
+import numbers
 import numpy as np 
+from datetime import datetime
+from tabulate import tabulate
 
 class LearningLogger:
     def __init__(self,loss_keys=[]):
@@ -38,9 +38,15 @@ class LearningLogger:
         self.learning_steps +=1
 
     def step_loss(self, losses):
+        valid = True
         for key in losses.keys():
-            self.losses[key].append(losses[key])
-        self.step_learning_steps()
+            if not isinstance(losses[key],numbers.Number):
+                valid = False
+
+        if valid:
+            for key in losses.keys():
+                self.losses[key].append(losses[key])
+            self.step_learning_steps()
         
     def step_episode(self, reward, running_reward):
         self.episodes += 1

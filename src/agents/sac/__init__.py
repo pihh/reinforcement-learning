@@ -22,7 +22,7 @@ class ReplayBuffer:
         self.reward_memory = np.zeros(self.buffer_size)
         self.done_memory = np.zeros(self.buffer_size, dtype=np.bool)
 
-    def store_transition(self, state, action, reward, state_, done):
+    def remember(self, state, action, reward, state_, done):
         index = self.buffer_counter % self.buffer_size
 
         self.state_memory[index] = state
@@ -33,7 +33,7 @@ class ReplayBuffer:
 
         self.buffer_counter += 1
 
-    def sample_buffer(self, batch_size):
+    def sample(self, batch_size):
         max_mem = min(self.buffer_counter, self.buffer_size)
 
         batch = np.random.choice(max_mem, batch_size)
@@ -58,6 +58,8 @@ class CriticNetwork(keras.Model):
         self.model_name = name
         self.fc = MultiLayerPerceptron(policy=policy)
         self.q = Dense(1, activation=None)
+        self._name = name
+
 
     def call(self, state, action):
         X = tf.concat([state, action], axis=1)
@@ -79,6 +81,7 @@ class ValueNetwork(keras.Model):
 
         self.fc = MultiLayerPerceptron(policy=policy)
         self.v = Dense(1, activation=None)
+        self._name = name
 
     def call(self, state):
         X = state
@@ -106,6 +109,7 @@ class ActorNetwork(keras.Model):
         
         self.mu = Dense(n_actions, activation=None)
         self.sigma = Dense(n_actions, activation=None)
+        self._name = name
 
     def call(self, state):
         X = state
@@ -274,6 +278,12 @@ class SoftActorCriticAgent(Agent):
             "critic_1":critic_1_loss.numpy(),
             "critic_2":critic_2_loss.numpy()
         })
+
+        # log evolution on tensorboard
+        self.write_tensorboard_scaler('actor_loss',tf.get_static_value(actor_loss),self.learning_log.learning_steps)
+        self.write_tensorboard_scaler('value_loss',tf.get_static_value(value_loss),self.learning_log.learning_steps)
+        self.write_tensorboard_scaler('critic_1_loss',tf.get_static_value(critic_1_loss),self.learning_log.learning_steps)
+        self.write_tensorboard_scaler('critic_2_loss',tf.get_static_value(critic_2_loss),self.learning_log.learning_steps)
         
         self.update_network_parameters()
         
@@ -337,6 +347,8 @@ class SoftActorCriticAgent(Agent):
                 self.running_reward.reward, 
                 log_level=log_level
             )
+
+            self.write_tensorboard_scaler('score',score,self.learning_log.episodes)
            
             if self.did_finnish_learning(success_threshold,episode):
                 break

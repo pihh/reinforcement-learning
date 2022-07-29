@@ -18,7 +18,7 @@ class ActorCriticAgent(Agent):
                 optimizer = tf.keras.optimizers.Adam(learning_rate=0.01),
                 critic_loss= tf.keras.losses.Huber()):
         
-        super(ActorCriticAgent, self).__init__(environment,args=locals())
+        super(ActorCriticAgent, self).__init__(environment,loss_keys=['actor_loss','critic_loss','total_loss'],args=locals())
         
         # Args
         self.alpha = alpha
@@ -125,7 +125,7 @@ class ActorCriticAgent(Agent):
 
             print("Test episode: {}, score: {:.2f}".format(episode,score))
     
-    def learn(self, timesteps=-1, plot_results=True, reset=False, log_each_n_episodes=100, success_threshold=False):
+    def learn(self, timesteps=-1, plot_results=True, reset=False, log_each_n_episodes=100, success_threshold=False,log_level=1):
         
         self.validate_learn(timesteps,success_threshold,reset)
         success_threshold = success_threshold if success_threshold else self.env.success_threshold
@@ -204,10 +204,21 @@ class ActorCriticAgent(Agent):
                 # Clear the loss and reward history
                 self.buffer.reset()
 
+                self.write_tensorboard_scaler('actor_loss',tf.get_static_value(actor_losses),self.learning_log.learning_steps)
+                self.write_tensorboard_scaler('critic_loss',tf.get_static_value(critic_losses),self.learning_log.learning_steps)
+                self.write_tensorboard_scaler('total_loss',tf.get_static_value(loss_value),self.learning_log.learning_steps)
+    
+
             # Log details
             episode += 1
-            if episode % log_each_n_episodes == 0 and episode > 0:
-                print('episode {}, running reward: {:.2f}, last reward: {:.2f}'.format(episode,self.running_reward.reward, score))
+
+            self.learning_log.episode(
+                log_each_n_episodes,
+                score,
+                self.running_reward.reward, 
+                log_level=log_level
+            )
+            self.write_tensorboard_scaler('score',score,self.learning_log.episodes)
 
             if self.did_finnish_learning(success_threshold,episode):
                     break

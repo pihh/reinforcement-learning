@@ -87,6 +87,7 @@ class ActorCriticAgent(Agent):
             # stops rendering and logs results
             self.on_test_episode_end(episode,score,render)
             
+
     
     def learn(self, timesteps=-1, plot_results=True, reset=False, success_threshold=False, log_level=1, log_each_n_episodes=50):
         

@@ -1,7 +1,9 @@
 gym
+rich
 numpy
 dotwiz
 shutup
+sqlite3
 pybullet
 matplotlib
 tensorflow

@@ -54,7 +54,7 @@ class DdpgAgent(Agent):
                  critic_optimizer = tf.keras.optimizers.Adam,
                  actor_optimizer = tf.keras.optimizers.Adam,
         ):
-        super(DdpgAgent,self).__init__(environment,args=locals())
+        super(DdpgAgent,self).__init__(environment,loss_keys=["actor_loss","critic_loss"],args=locals())
         
         self.std_dev = std_dev
         self.buffer_size = buffer_size
@@ -177,6 +177,15 @@ class DdpgAgent(Agent):
         self.actor_optimizer.apply_gradients(
             zip(actor_grad, self.actor.trainable_variables)
         )
+
+        self.learning_log.step_loss({
+            "actor_loss":tf.get_static_value(actor_loss),
+            "critic_loss":tf.get_static_value(critic_loss)
+        })
+
+        self.write_tensorboard_scaler('actor_loss',tf.get_static_value(actor_loss),self.learning_log.learning_steps)
+        self.write_tensorboard_scaler('critic_loss',tf.get_static_value(critic_loss),self.learning_log.learning_steps)
+
             
     def replay(self):
 

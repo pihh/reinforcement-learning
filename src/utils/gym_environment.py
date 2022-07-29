@@ -24,6 +24,7 @@ class GymEnvironment:
             self.actions = list(range(self.n_actions))
             self.action_upper_bounds = False
             self.action_lower_bounds = False
+            self.action_bound = False
         else:
             self.action_space_mode = 'continuous'
             self.n_actions = self.env.action_space.shape[0]
@@ -31,6 +32,7 @@ class GymEnvironment:
             # Refactor this. I might have other bounds
             self.action_upper_bounds = self.env.action_space.high
             self.action_lower_bounds = self.env.action_space.low
+            self.action_bound = self.env.action_space.high[0]
 
         if (len(self.env.observation_space.shape) == 1):
             self.n_inputs = self.env.observation_space.shape[0]

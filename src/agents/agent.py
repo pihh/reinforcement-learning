@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from src.utils.running_reward import RunningReward
 from src.utils.gym_environment import GymEnvironment
 from src.utils.logger import LearningLogger
-from src.utils.tensorboard_writer import create_writer
+from src.utils.tensorboard_writer import create_writer, graph, histogram, scalar
 
 class Agent:
     def __init__(self,
@@ -98,10 +98,11 @@ class Agent:
 
 
     def _init_tensorboard(self):
-        self.hash = hashlib.md5(json.dumps(self.config).encode('utf-8')).hexdigest()
+        self.hash = hashlib.md5(json.dumps(self.config,sort_keys=True, indent=2).encode('utf-8')).hexdigest()
         self.tensorboard_writer, self.tensorboard_writer_log_directory = create_writer(self.config['env_name'],self.config['agent'],self.hash)   
         with open(self.tensorboard_writer_log_directory+'/config.json', 'w') as f:
             json.dump(self.config, f, indent=2)
+
 
     def __init_loggers(self):
         self.learning_log = LearningLogger(self.learning_log_loss_keys)
@@ -117,6 +118,7 @@ class Agent:
         self.action_space_mode = env.action_space_mode
         self.action_upper_bounds = env.action_upper_bounds
         self.action_lower_bounds = env.action_lower_bounds
+        self.action_bound = env.action_bound
 
     def __init_reward_tracker(self):
         self.running_reward = RunningReward()
@@ -221,6 +223,11 @@ class Agent:
             print("Test episode: {}, score: {:.2f}".format(episode,score))
 
 
+    def write_tensorboard_scaler(self, scalar_name,score, steps):
+        scalar(self, scalar_name,score, steps)
+
+    def write_tensorboard_histogram(self, name, model):
+        histogram(self, name, model)
 
     def decrement_epsilon(self):
         #self.epsilon = self.epsilon * self.epsilon_decay if self.epsilon > 0.01 else 0.01
