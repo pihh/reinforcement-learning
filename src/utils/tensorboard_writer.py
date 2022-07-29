@@ -11,12 +11,12 @@ def create_writer(env_name,agent_name,hash):
     return writer , logdir
 
 def scalar(instance, scalar_name,score, steps):
-    if instance.tensorboard_writer and isinstance(score,numbers.Number) and isinstance(steps,numbers.Number):
+    if hasattr(instance,'tensorboard_writer') and isinstance(score,numbers.Number) and isinstance(steps,numbers.Number):
         with instance.tensorboard_writer.as_default():
             summary.scalar('Data/'+scalar_name,score, steps)
 
 def histogram(instance, name, model):
-    if instance.tensorboard_writer:
+    if hasattr(instance,'tensorboard_writer'):
         with instance.tensorboard_writer.as_default():
             for layer in model.layers:
                 summary.histogram(
@@ -28,7 +28,7 @@ def histogram(instance, name, model):
                 
 
 def graph(instance):
-    if instance.tensorboard_writer and hasattr(instance,'models'):
+    if hasattr(instance,'tensorboard_writer') and hasattr(instance,'models'):
         all_valid = True
         invalid_models = []
         for model in instance.models:
