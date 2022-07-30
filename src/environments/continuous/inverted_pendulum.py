@@ -4,17 +4,17 @@ import pybullet_envs
 ENV_NAME = 'InvertedPendulumBulletEnv-v0'
 SUCCESS_THRESHOLD = 200
 
-def environment():
+def environment(describe=True):
+    if describe:
+        print('''
+    | ---------------------------------
+    | {}
+    | 
+    | Action space: Continuous with high action-space
+    | Environment beated threshold: {}
+    | ----------------------------------------------------------   
 
-#     print('''
-# | ---------------------------------
-# | {}
-# | 
-# | Action space: Continuous with high action-space
-# | Environment beated threshold: {}
-# | ----------------------------------------------------------   
-
-# '''.format(ENV_NAME,SUCCESS_THRESHOLD))
+    '''.format(ENV_NAME,SUCCESS_THRESHOLD))
     
     # Will add a bit more of exploration so the agent can learn better
     env = gym.make(ENV_NAME)

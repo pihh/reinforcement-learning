@@ -1,53 +1,26 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import shutup
-
 shutup.please()
 
-
-# In[2]:
-
-
 import os
-import numpy as np
-import random
-from datetime import datetime
-from multiprocessing import cpu_count
-from threading import Thread
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
-from src.agents.agent import Agent
-from src.utils.buffer import Buffer
-from src.utils.running_reward import RunningReward
-from src.utils.logger import LearningLogger
+import time 
+import numpy as np
+
 
 import tensorflow as tf
-import tensorflow.keras as keras
-import tensorflow.keras.backend as K
-import tensorflow_probability as tfp
+
 from tensorflow.keras.layers import Input, Dense, Concatenate, Lambda
 from tensorflow.keras.optimizers import Adam, RMSprop
 from tensorflow.keras import Model
-
-# from tensorflow.python.framework.ops import disable_eager_execution
-
-# disable_eager_execution()
-#tf.compat.v1.disable_eager_execution()
-
-
-# In[ ]:
+from tensorflow.python.framework.ops import disable_eager_execution
 
 
 
-
-
-# In[3]:
-
-
+from src.agents.agent import Agent
 from src.utils.networks import CommonLayer
+
+disable_eager_execution()
 
 class ActorNetwork():
     def __init__(self,
@@ -174,84 +147,42 @@ class ReplayBuffer:
         self.actions.append(action_onehot)
         self.rewards.append(reward)
 
-#     def sample(self, batch_size=64):
-#         max_mem = min(self.buffer_counter, self.buffer_size)
 
-#         batch = np.random.choice(max_mem, batch_size)
-
-#         states = self.state_memory[batch]
-#         states_ = self.new_state_memory[batch]
-#         actions = self.action_memory[batch]
-#         rewards = self.reward_memory[batch]
-#         dones = self.done_memory[batch]
-
-#         return states, actions, rewards, states_, dones
+# In[5]:
 
 
-# In[9]:
+from src.agents.agent import Agent
+from src.utils.networks import CommonLayer
+    
 
-
-GLOBAL_EPISODE_NUM = 0
-
-class A3CWorker(Thread):
-    def __init__(self, 
-                worker_id,
-                env, 
-                global_actor, 
-                global_critic, 
-                action_space_mode,
-                observation_shape,
-                policy,
-                n_actions,
+class A2CAgent(Agent):
+    def __init__(self,
+                environment,
+                gamma = 0.99,
+                policy="mlp",
                 actor_optimizer=RMSprop,
                 critic_optimizer=RMSprop,
                 actor_learning_rate=0.001,
                 critic_learning_rate=0.001,
                 std_bound = [1e-2, 1.0],
-                action_bound=False,
-                batch_size=64):
-        Thread.__init__(self)
+                batch_size=64
+                ):
+        super(A2CAgent, self).__init__(environment,args=locals())
         
-        self.worker_id = worker_id
-        self.env = env
-        self.action_space_mode = action_space_mode
-        self.observation_shape = observation_shape
-        self.policy = policy
-        self.n_actions = n_actions
-        self.actor_optimizer = actor_optimizer
-        self.critic_optimizer = critic_optimizer
+        # Args
+        self.gamma = gamma
+        self.std_bound = std_bound
+        self.batch_size = batch_size
+        self.policy = policy 
+        self.actor_optimizer=actor_optimizer
+        self.critic_optimizer=critic_optimizer
         self.actor_learning_rate= actor_learning_rate
         self.critic_learning_rate=critic_learning_rate
-        self.std_bound = std_bound
-        self.action_bound = action_bound
-        self.batch_size = batch_size
-        self.gamma=0.99 # @TODO
 
-        self.global_actor = global_actor
-        self.global_critic = global_critic
-        print('Before init networks')
+        # Bootstrap
         self.__init_networks()
         self.__init_buffers()
-        self.__init_reward_tracker()
-        self.__init_loggers()
-
-        print('After init networks')
-        print(global_actor.model)
-        print(self.actor.model)
-        
-#         print('Before make predict')
-#         self.actor.model._make_predict_function()
-#         self.critic.model._make_predict_function()
-#         print('After make predict')
-        
-        print('Before set weights')
-        self.actor.model.set_weights(self.global_actor.model.get_weights())
-        self.critic.model.set_weights(self.global_critic.model.get_weights())
-        print('After set weights')
-        
-    def __init_loggers(self):
-        self.learning_log_loss_keys = []
-        self.learning_log = LearningLogger(self.learning_log_loss_keys)
+        self._add_models_to_config([self.actor.model,self.critic.model])
         
     def __init_networks(self):
         self.actor = ActorNetwork(
@@ -277,18 +208,14 @@ class A3CWorker(Thread):
     
     def __init_buffers(self):
         self.buffer = ReplayBuffer()
-
-    def __init_reward_tracker(self):
-        self.running_reward = RunningReward()
         
-    
+
     def act(self,state):
         action, action_onehot, prediction = self.actor.act(state)
         return action, action_onehot, prediction
     
     def discount_rewards(self, reward):
         # Compute the gamma-discounted rewards over an episode
-        gamma = 0.99    # discount rate
         running_add = 0
         discounted_r = np.zeros_like(reward)
         for i in reversed(range(0,len(reward))):
@@ -311,38 +238,35 @@ class A3CWorker(Thread):
             discounted_r = self.discount_rewards(self.buffer.rewards)
 
             # Get Critic network predictions
-            values = self.global_critic.model.predict(states)[:, 0]
+            values = self.critic.model.predict(states)[:, 0]
             # Compute advantages
             advantages = discounted_r - values
             # training Actor and Critic networks
 
 
             if self.action_space_mode == "discrete":
-                self.global_actor.model.fit(states, actions, sample_weight=advantages, epochs=1, verbose=0)
+                self.actor.model.fit(states, actions, sample_weight=advantages, epochs=1, verbose=0)
             else:
-                self.global_actor.model.fit(states,np.concatenate([actions,np.reshape(advantages,newshape=(len(advantages),1))],axis=1), epochs=1,verbose=0)
+                self.actor.model.fit(states,np.concatenate([actions,np.reshape(advantages,newshape=(len(advantages),1))],axis=1), epochs=1,verbose=0)
 
-            self.global_critic.model.fit(states, discounted_r, epochs=1, verbose=0)
-            
-            # Reset weights
-            self.actor.model.set_weights(self.global_actor.model.get_weights())
-            self.critic.model.set_weights(
-                self.global_critic.model.get_weights()
-            )
+            self.critic.model.fit(states, discounted_r, epochs=1, verbose=0)
             # reset training memory
             self.buffer.reset()
         
-
-    def learn(self, timesteps=-1, plot_results=True, reset=False, success_threshold=False, log_level=1, log_each_n_episodes=50,max_episodes=100000):
-        global GLOBAL_EPISODE_NUM
-        timestep=0
-        while max_episodes >= GLOBAL_EPISODE_NUM:
+    def learn(self, timesteps=-1, plot_results=True, reset=False, success_threshold=False, log_level=1, log_each_n_episodes=50):
+        self.validate_learn(timesteps,success_threshold,reset)
+        success_threshold = success_threshold if success_threshold else self.env.success_threshold
+ 
+        timestep = 0
+        episode = 0
+        
+        while self.learning_condition(timesteps,timestep):  # Run until solved
             state = self.env.reset()
             score = 0
             done = False
-
+            
             while not done:
-                # self.env.render()
+                
                 #state = np.expand_dims(state, axis=0)
                 action, action_onehot, prediction = self.act(state)
                 # Retrieve new state, reward, and whether the state is terminal
@@ -354,24 +278,22 @@ class A3CWorker(Thread):
                 score += reward
                 timestep +=1
                 
-                #if self.buffer.size >= self.batch_size:
-                #    self.replay()
-                
-
+                if self.buffer.size >= self.batch_size:
+                    self.replay()
+            
             # Episode ended
             self.running_reward.step(score)
-            GLOBAL_EPISODE_NUM += 1 
+            episode += 1
             
-            print('Worker {}, episode: {}, score: {:.2f}'.format(self.worker_id,GLOBAL_EPISODE_NUM,  score))
-            # self.learning_log.episode(
-            #     log_each_n_episodes,
-            #     score,
-            #     self.running_reward.reward, 
-            #     log_level=log_level
-            # )
+            self.learning_log.episode(
+                log_each_n_episodes,
+                score,
+                self.running_reward.reward, 
+                log_level=log_level
+            )
             # If done stop
-            #if self.did_finnish_learning(success_threshold,GLOBAL_EPISODE_NUM):
-            #    break
+            if self.did_finnish_learning(success_threshold,episode):
+                break
                 
             # Else learn more
             self.replay()
@@ -382,129 +304,22 @@ class A3CWorker(Thread):
         if plot_results:
             self.plot_learning_results()
 
-#             print(f"Episode#{GLOBAL_EPISODE_NUM}, Worker#{self.worker_id}, Reward:{episode_reward}")
-#             tf.summary.scalar("episode_reward", episode_reward, step=GLOBAL_EPISODE_NUM)
-#             GLOBAL_EPISODE_NUM += 1
 
-    def run(self):
-        self.learn()
+# In[6]:
 
-
-# In[10]:
-
-
-from src.agents.agent import Agent
-from src.utils.networks import CommonLayer
-    
-
-class A3CAgent(Agent):
-    def __init__(self,
-        environment,
-        gamma = 0.99,
-        policy="mlp",
-        actor_optimizer=RMSprop,
-        critic_optimizer=RMSprop,
-        actor_learning_rate=0.001,
-        critic_learning_rate=0.001,
-        std_bound = [1e-2, 1.0],
-        batch_size=64,
-        n_workers=cpu_count()
-    ):
-        
-        super(A3CAgent, self).__init__(environment,args=locals())
-        
-        
-        # Args
-        self.environment = environment
-        self.gamma = gamma
-        self.std_bound = std_bound
-        self.batch_size = batch_size
-        self.policy = policy 
-        self.actor_optimizer=actor_optimizer
-        self.critic_optimizer=critic_optimizer
-        self.actor_learning_rate=actor_learning_rate
-        self.critic_learning_rate=critic_learning_rate
-        self.n_workers = n_workers
-
-        # Bootstrap
-        self.__init_networks()
-        self._add_models_to_config([self.global_actor.model,self.global_critic.model])
-        
-    def __init_networks(self):
-        self.global_actor = ActorNetwork(
-            observation_shape=self.observation_shape,
-            action_space_mode=self.action_space_mode,
-            policy=self.policy,
-            n_actions=self.n_actions, 
-            optimizer=self.actor_optimizer,
-            learning_rate=self.actor_learning_rate,
-            std_bound = self.std_bound,
-            action_bound = self.action_bound
-        )
-        
-        self.global_critic = CriticNetwork(
-            observation_shape=self.observation_shape,
-            action_space_mode=self.action_space_mode,
-            policy=self.policy,
-            n_actions=self.n_actions, 
-            optimizer=self.critic_optimizer,
-            learning_rate=self.critic_learning_rate,
-            std_bound = self.std_bound
-        )
-        
-#         print('Before make predict')
-#         self.global_actor.model._make_predict_function()
-#         self.global_critic.model._make_predict_function()
-#         print('After make predict')
-    
-    
-        
-
-    def learn(self, timesteps=-1, plot_results=True, reset=False, success_threshold=False, log_level=1, log_each_n_episodes=50,max_episodes=10000):
-        workers = []
-
-        for i in range(self.n_workers):
-            env = self.environment()
-            workers.append(
-                A3CWorker(
-                    i,
-                    env, 
-                    self.global_actor, 
-                    self.global_critic, 
-                    self.action_space_mode,
-                    self.observation_shape,
-                    self.policy,
-                    self.n_actions,
-                    self.actor_optimizer,
-                    self.critic_optimizer,
-                    self.std_bound,
-                    self.action_bound,
-                    self.batch_size,
-                    max_episodes
-                )
-            )
-
-        for worker in workers:
-            worker.start()
-
-        for worker in workers:
-            worker.join()
-
-
-# In[11]:
-
+start_time = time.time()
 
 from src.environments.discrete.cartpole import environment
-agent = A3CAgent(environment)
+agent = A2CAgent(environment)
 agent.learn()
+print("--- %s seconds ---" % (time.time() - start_time))
+
+# In[8]:
 
 
-# In[12]:
-
-
-#from src.environments.continuous.inverted_pendulum import environment
-#agent = A2CAgent(environment)
-#agent.learn()
+# from src.environments.continuous.inverted_pendulum import environment
+# agent = A2CAgent(environment)
+# agent.learn()
 
 
 
