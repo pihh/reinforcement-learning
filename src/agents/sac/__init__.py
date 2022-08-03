@@ -1,146 +1,14 @@
 import numpy as np
-
-from src.agents.agent import Agent
-from src.utils.logger import LearningLogger
-from utils.networks import MultiLayerPerceptron
-
 import tensorflow as tf
 import tensorflow.keras as keras
 import tensorflow_probability as tfp
+
 from tensorflow.keras.optimizers import Adam
-from tensorflow.keras.layers import Input, Dense, Concatenate
-
-
-
-class ReplayBuffer:
-    def __init__(self, buffer_size, input_shape, n_actions):
-        self.buffer_size = buffer_size
-        self.buffer_counter = 0
-        self.state_memory = np.zeros((self.buffer_size, *input_shape))
-        self.new_state_memory = np.zeros((self.buffer_size, *input_shape))
-        self.action_memory = np.zeros((self.buffer_size, n_actions))
-        self.reward_memory = np.zeros(self.buffer_size)
-        self.done_memory = np.zeros(self.buffer_size, dtype=np.bool)
-
-    def remember(self, state, action, reward, state_, done):
-        index = self.buffer_counter % self.buffer_size
-
-        self.state_memory[index] = state
-        self.new_state_memory[index] = state_
-        self.action_memory[index] = action
-        self.reward_memory[index] = reward
-        self.done_memory[index] = done
-
-        self.buffer_counter += 1
-
-    def sample(self, batch_size):
-        max_mem = min(self.buffer_counter, self.buffer_size)
-
-        batch = np.random.choice(max_mem, batch_size)
-
-        states = self.state_memory[batch]
-        states_ = self.new_state_memory[batch]
-        actions = self.action_memory[batch]
-        rewards = self.reward_memory[batch]
-        dones = self.done_memory[batch]
-
-        return states, actions, rewards, states_, dones
-
-        
-class CriticNetwork(keras.Model):
-    def __init__(self,
-                policy="mlp",
-                name='critic'
-        ):
-        super(CriticNetwork, self).__init__()
-        
-        
-        self.model_name = name
-        self.fc = MultiLayerPerceptron(policy=policy)
-        self.q = Dense(1, activation=None)
-        self._name = name
-
-
-    def call(self, state, action):
-        X = tf.concat([state, action], axis=1)
-        for layer in self.fc:
-            X = layer(X)
-            
-        q = self.q(X)
-        return q
-
-class ValueNetwork(keras.Model):
-    def __init__(self,
-                 policy="mlp",
-                 name='value',  
-        ):
-        super(ValueNetwork, self).__init__()
-        
-
-        self.model_name = name
-
-        self.fc = MultiLayerPerceptron(policy=policy)
-        self.v = Dense(1, activation=None)
-        self._name = name
-
-    def call(self, state):
-        X = state
-        for layer in self.fc:
-            X = layer(X)
-
-        v = self.v(X)
-
-        return v
-
-class ActorNetwork(keras.Model):
-    def __init__(self, 
-            policy="mlp",
-            n_actions=2,
-            max_action=1, 
-            name='actor', 
-    ):
-        super(ActorNetwork, self).__init__()
-
-        self.model_name = name
-        self.max_action = max_action
-        self.noise = 1e-6
-
-        self.fc = MultiLayerPerceptron(policy=policy)
-        
-        self.mu = Dense(n_actions, activation=None)
-        self.sigma = Dense(n_actions, activation=None)
-        self._name = name
-
-    def call(self, state):
-        X = state
-        for layer in self.fc:
-            X = layer(X)
-
-        mu = self.mu(X)
-        sigma = self.sigma(X)
-        sigma = tf.clip_by_value(sigma, self.noise, 1)
-
-        return mu, sigma
-
-    def sample_normal(self, state, reparameterize=True):
-        mu, sigma = self.call(state)
-        probabilities = tfp.distributions.Normal(mu, sigma)
-
-        if reparameterize:
-            actions = probabilities.sample() # + something else if you want to implement
-        else:
-            actions = probabilities.sample()
-
-        action = tf.math.tanh(actions)*self.max_action
-        log_probs = probabilities.log_prob(actions)
-        log_probs -= tf.math.log(1-tf.math.pow(action,2)+self.noise)
-        log_probs = tf.math.reduce_sum(log_probs, axis=1, keepdims=True)
-
-        return action, log_probs
-
+from tensorflow.keras.layers import Dense
 
 from src.agents.agent import Agent
-
+from src.agents.sac.buffer import ReplayBuffer
+from src.agents.sac.networks import CriticNetwork, ActorNetwork, ValueNetwork
 
 class SoftActorCriticAgent(Agent):
     def __init__(self, 
@@ -148,11 +16,15 @@ class SoftActorCriticAgent(Agent):
             alpha=0.0003, 
             beta=0.0003, 
             gamma=0.99, 
+            delta=0.0003,
             tau=0.005,
             buffer_size=1000000, 
             policy="mlp", 
             batch_size=256, 
             reward_scale=2, 
+            actor_optimizer= Adam,
+            critic_optimizer=Adam,
+            value_optimizer= Adam,
             loss_function = keras.losses.MSE, #keras.losses.Huber()
     ):
         super(SoftActorCriticAgent, self).__init__(environment,loss_keys=["actor","value","critic_1","critic_2"],args=locals())
@@ -160,12 +32,17 @@ class SoftActorCriticAgent(Agent):
         self.alpha = alpha
         self.beta = beta
         self.gamma = gamma
+        self.delta = delta
         self.tau = tau
         self.policy = policy
         self.reward_scale = reward_scale
         self.buffer_size = buffer_size
         self.batch_size = batch_size
         self.loss_function = loss_function
+
+        self.actor_optimizer= actor_optimizer(learning_rate=self.alpha)
+        self.critic_optimizer= critic_optimizer(learning_rate=self.beta)
+        self.value_optimizer= value_optimizer(learning_rate=self.delta)
         
         self.__init_networks()
         self.__init_buffers()
@@ -182,11 +59,11 @@ class SoftActorCriticAgent(Agent):
         self.value = ValueNetwork(name='value',policy=self.policy)
         self.target_value = ValueNetwork(name='target_value',policy=self.policy)
 
-        self.actor.compile(optimizer=Adam(learning_rate=self.alpha))
-        self.critic_1.compile(optimizer=Adam(learning_rate=self.beta))
-        self.critic_2.compile(optimizer=Adam(learning_rate=self.beta))
-        self.value.compile(optimizer=Adam(learning_rate=self.beta))
-        self.target_value.compile(optimizer=Adam(learning_rate=self.beta))
+        self.actor.compile(optimizer=self.actor_optimizer)
+        self.critic_1.compile(optimizer=self.critic_optimizer)
+        self.critic_2.compile(optimizer=self.critic_optimizer)
+        self.value.compile(optimizer=self.value_optimizer)
+        self.target_value.compile(optimizer=self.value_optimizer)
 
         self.update_network_parameters(tau=1)
     
@@ -337,18 +214,10 @@ class SoftActorCriticAgent(Agent):
                 self.replay()
                 state = state_
             
-            self.running_reward.step(score)
              # Log details
             episode += 1
             
-            self.learning_log.episode(
-                log_each_n_episodes,
-                score,
-                self.running_reward.reward, 
-                log_level=log_level
-            )
-
-            self.write_tensorboard_scaler('score',score,self.learning_log.episodes)
+            self.on_learn_episode_end(score,log_each_n_episodes,log_level,success_threshold)
            
             if self.did_finnish_learning(success_threshold,episode):
                 break

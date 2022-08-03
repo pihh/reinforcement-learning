@@ -1,4 +1,28 @@
+import numpy as np
+import tensorflow.keras.backend as K
 from tensorflow.keras.layers import Input, Dense,Concatenate, Flatten
+
+def gaussian_likelihood(n_actions, lib='keras'): # for keras custom loss
+    if lib == 'keras':
+        _exp = K.exp
+        _log = K.log
+        _sum = K.sum
+    else:
+        _exp = np.exp
+        _log = np.log
+        _sum = np.sum
+
+    def fn(actions,pred, log_std=False):
+        if log_std == False:
+            log_std = -0.5 * np.ones(n_actions, dtype=np.float32)
+
+        pre_sum = -0.5 * (((actions-pred)/(_exp(log_std)+1e-8))**2 + 2*log_std + _log(2*np.pi))
+
+        return _sum(pre_sum, axis=1)
+
+    return fn
+
+
 
 def discrete_actor_output(self,common_layer,n_actions):
     return Dense(n_actions, activation="softmax")(common_layer)

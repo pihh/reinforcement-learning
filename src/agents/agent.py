@@ -42,18 +42,19 @@ class Agent:
             del args['__class__']
             for arg in args:
                 t = type(args[arg])
+
                 if t not in [int,float,str,bool]:
-                    config[arg] = t.__name__
+                    try:
+                        config[arg] = args[arg].__name__
+                    except:
+                        config[arg] = t.__name__
                 else:
-                    config[arg] = args[arg]
+                    config[arg] = str(args[arg])
                 if isinstance(config[arg], np.ndarray):
                     config[arg] = config[arg].tolist()
 
 
-        #     print()
-        #     print('config before',config)
-        #     print()
-        # print('init_loggers')
+
  
         keys = self.__dict__.copy()
         del keys['_environment']
@@ -63,6 +64,9 @@ class Agent:
             config[key] = keys[key]
             if isinstance(config[key], np.ndarray):
                 config[key] = config[key].tolist()
+
+            config[key] = str(config[key])
+            
 
         config['env_name'] = self.env.spec.name
         config['agent'] = type(self).__name__
@@ -96,10 +100,12 @@ class Agent:
                 })
 
 
-
     def _init_tensorboard(self):
-        self.hash = hashlib.md5(json.dumps(self.config,sort_keys=True, indent=2).encode('utf-8')).hexdigest()
-        self.tensorboard_writer, self.tensorboard_writer_log_directory = create_writer(self.config['env_name'],self.config['agent'],self.hash)   
+
+        config = self.config.copy()
+        self.hash = hashlib.md5(json.dumps(config,sort_keys=True, indent=2).encode('utf-8')).hexdigest()
+        self.tensorboard_writer, self.tensorboard_writer_log_directory = create_writer(self.config['env_name'],self.hash)   
+
         with open(self.tensorboard_writer_log_directory+'/config.json', 'w') as f:
             json.dump(self.config, f, indent=2)
 
@@ -169,6 +175,8 @@ class Agent:
             self.running_reward.reward, 
             log_level=log_level
         )
+
+        self.write_tensorboard_scaler('score',score,self.learning_log.episodes)
             
         return self.did_finnish_learning(success_threshold,self.running_reward.episodes)
             

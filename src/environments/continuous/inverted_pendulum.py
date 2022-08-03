@@ -12,6 +12,8 @@ def environment(describe=True):
     | 
     | Action space: Continuous with high action-space
     | Environment beated threshold: {}
+    | Dev notes:
+    |   * Doesn't work with multiprocessing
     | ----------------------------------------------------------   
 
     '''.format(ENV_NAME,SUCCESS_THRESHOLD))
@@ -19,5 +21,4 @@ def environment(describe=True):
     # Will add a bit more of exploration so the agent can learn better
     env = gym.make(ENV_NAME)
     env.success_threshold = SUCCESS_THRESHOLD
-    
     return env
