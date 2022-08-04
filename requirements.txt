@@ -5,6 +5,8 @@ dotwiz
 shutup
 sqlite3
 pybullet
+yfinance
 matplotlib
+stockstats
 tensorflow
 tensorflow-probability
