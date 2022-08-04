@@ -12,6 +12,18 @@ class Downloader:
         self.end_date = end_date
         self.ticker_list = tickers
 
+    def read_csv(self,file_path):
+        df = pd.read_csv(file_path)
+        try:
+            key = 'Date'
+            df[key] =  pd.to_datetime(df[key])
+            df.set_index([key],inplace=True)
+        except:
+            key = 'date'
+            df[key] =  pd.to_datetime(df[key])
+            df.set_index([key],inplace=True)
+        return df
+
     def fetch_single_ticker(self, ticker, start_date=None, end_date=None):
         if start_date is None:
             start_date = self.start_date
@@ -19,20 +31,17 @@ class Downloader:
         if end_date is None:
             end_date = self.end_date
 
-        file_path = 'storage/datasets/ohlc__'+ticker+'__'+str(start_date)+'__'+str(end_date)+'.csv'
+        file_path = 'storage/datasets/ohlc__'+ticker.lower()+'__'+str(start_date)+'__'+str(end_date)+'.csv'
         if not os.path.exists(file_path):
             df = yf.download(
                 ticker, start=start_date, end=end_date
             )
-            df["ticker"] = ticker
+            df["ticker"] = ticker.lower()
             pd.DataFrame(df).to_csv(file_path)
         else:
-            df = pd.read_csv(file_path)
-            df['Date'] =  pd.to_datetime(df['Date'])
-            df.set_index(['Date'],inplace=True)
+            df = self.read_csv(file_path)
 
         return df
-
 
     def fetch_data(self, tickers=None, start_date=None, end_date=None):
         if tickers is None:
@@ -51,13 +60,8 @@ class Downloader:
         data_df = pd.DataFrame()
         for tic in ticker_list:
             temp_df = self.fetch_single_ticker(tic,start_date,end_date)
-            temp_df['ticker'] = tic
-            # temp_df = yf.download(
-            #     tic, start=start_date, end=end_date
-            # )
-            # temp_df["ticker"] = tic
+            temp_df['ticker'] = tic.lower()
             data_df = data_df.append(temp_df)
-            print(temp_df.columns)
         # reset the index, we want to use numbers as index instead of dates
         data_df = data_df.reset_index()
         try:
@@ -98,15 +102,30 @@ class Downloader:
         df_check = pd.DataFrame(df_check).reset_index()
         df_check.columns = ["ticker", "counts"]
         mean_df = df_check.counts.mean()
-        equal_list = list(df.tic.value_counts() >= mean_df)
-        names = df.tic.value_counts().index
+        equal_list = list(df.ticker.value_counts() >= mean_df)
+        names = df.ticker.value_counts().index
         select_stocks_list = list(names[equal_list])
-        df = df[df.tic.isin(select_stocks_list)]
+        df = df[df.ticker.isin(select_stocks_list)]
         return df
 
 class FeatureEngeneer:
     def __init__(self,df):
         self.df = df
+
+    def _parse_df_dates(self,df):
+        start_date = df.date.min()
+        end_date = df.date.max()
+        end_date = datetime.strptime(end_date, "%Y-%m-%d")
+        end_date = end_date + timedelta(days=1)
+        end_date = datetime.strftime(end_date, "%Y-%m-%d")
+
+        return start_date, end_date
+
+    def _get_indicator_file_name(self, ticker, indicator, start_date, end_date):
+        return 'storage/datasets/indicators__'+ticker.lower()+'__'+indicator+'__'+str(start_date)+'__'+str(end_date)+'.csv'
+
+    def cleanup(self,df):
+        return df.dropna().reset_index(drop=True)
 
     def technical_indicators(self,df=None, technical_indicators=[
         "macd",
@@ -126,19 +145,33 @@ class FeatureEngeneer:
         stock = Sdf.retype(df.copy())
         unique_ticker = stock.ticker.unique()
 
+        start_date,end_date = self._parse_df_dates(df)
+
         for indicator in technical_indicators:
             indicator_df = pd.DataFrame()
             for i in range(len(unique_ticker)):
                 try:
-                    temp_indicator = stock[stock.ticker == unique_ticker[i]][indicator]
-                    temp_indicator = pd.DataFrame(temp_indicator)
-                    temp_indicator["ticker"] = unique_ticker[i]
-                    temp_indicator["date"] = df[df.ticker == unique_ticker[i]][
-                        "date"
-                    ].to_list()
+                    indicator_file_path = self._get_indicator_file_name(unique_ticker[i],indicator,start_date,end_date)
+                    if not os.path.exists(indicator_file_path):
+                        temp_indicator = stock[stock.ticker == unique_ticker[i]][indicator]
+                        temp_indicator = pd.DataFrame(temp_indicator)
+                        temp_indicator["ticker"] = unique_ticker[i]
+                        temp_indicator["date"] = df[df.ticker == unique_ticker[i]][
+                            "date"
+                        ].to_list()
+
+                        temp_indicator.to_csv(indicator_file_path)
+
+                    else:
+                        temp_indicator = Downloader().read_csv(indicator_file_path)
+                        #temp_indicator.reset_index(inplace=True)
+
+                        temp_indicator.rename(columns={'date.1':'date'},inplace=True)
+
                     indicator_df = indicator_df.append(
                         temp_indicator, ignore_index=True
                     )
+
                 except Exception as e:
                     print(e)
             df = df.merge(
@@ -151,13 +184,8 @@ class FeatureEngeneer:
         if df is None:
             df = self.df
 
-        start_date = df.date.min()
-        end_date = df.date.max()
-        end_date = datetime.strptime(end_date, "%Y-%m-%d")
-        end_date = end_date + timedelta(days=1)
-        end_date = datetime.strftime(end_date, "%Y-%m-%d")
+        start_date, end_date = self._parse_df_dates(df)
 
-        print(df.date.max(),end_date)
         df = df.copy()
         df_vix = Downloader().fetch_data(start_date=start_date, end_date=end_date, tickers=["^VIX"])
         vix = df_vix[["date", "close"]]
@@ -236,6 +264,7 @@ class FeatureEngeneer:
             turbulence_index = pd.DataFrame(
                 {"date": df_price_pivot.index, "turbulence": turbulence_index}
             )
+            turbulence_index[turbulence_index['turbulence'] == 0] = np.nan
         except ValueError:
             raise Exception("Turbulence information could not be added.")
         return turbulence_index
