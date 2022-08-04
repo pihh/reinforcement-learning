@@ -1,5 +1,6 @@
 gym
 rich
+nltk
 numpy
 dotwiz
 shutup

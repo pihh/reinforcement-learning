@@ -1,6 +1,14 @@
 from __future__ import annotations
 
-SINGLE_TICKER = ["AAPL"]
+
+ALLOWED_NEWS_TICKERS = [
+    "AAPL",
+    "MSFT",
+    "BAC",
+    "NWSA",
+    "GOOGL",
+    "TSLA"
+]
 
 # Dow 30 constituents in 2021/10
 # check https://wrds-www.wharton.upenn.edu/ for U.S. index constituents

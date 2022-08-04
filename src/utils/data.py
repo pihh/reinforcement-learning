@@ -1,12 +1,17 @@
 import os
+import nltk
 import numpy as np
 import pandas as pd
 import yfinance as yf
+
 from datetime import datetime, timedelta
 from stockstats import StockDataFrame as Sdf
 
+from src.constants import ALLOWED_NEWS_TICKERS
+
+
 class Downloader:
-    def __init__(self, start_date="2018-01-01", end_date= "2022-01-01", tickers=[]):
+    def __init__(self, start_date="2017-01-01", end_date= "2020-01-01", tickers=[]):
 
         self.start_date = start_date
         self.end_date = end_date
@@ -84,6 +89,7 @@ class Downloader:
             print("the features are not supported currently")
 
         # create day of the week column (monday = 0)
+        data_df['date'] = pd.to_datetime(data_df['date'])
         data_df["day"] = data_df["date"].dt.dayofweek
         # convert date to standard string format, easy to filter
         data_df["date"] = data_df.date.apply(lambda x: x.strftime("%Y-%m-%d"))
@@ -126,6 +132,32 @@ class FeatureEngeneer:
 
     def cleanup(self,df):
         return df.dropna().reset_index(drop=True)
+
+    def sentiment_analysis(self,df,ticker, key="title", tool="vader"):
+        #assert ticker.upper() in ALLOWED_NEWS_TICKERS
+
+        df = df.copy()
+        df = df[df['ticker']== ticker]
+        df['date'] = pd.to_datetime(df.date).dt.date
+
+        if key == "title":
+            news_df = pd.read_csv('storage/datasets/news_header_sentiment_analysis__'+ticker.lower()+'__'+tool+'.csv')
+        else:
+            news_df = pd.read_csv('storage/datasets/news_body_sentiment_analysis__'+ticker.lower()+'__'+tool+'.csv')
+
+        if 'Unnamed: 0' in news_df.columns:
+            news_df.drop(columns=['Unnamed: 0'],inplace=True)
+
+        grouped_news = news_df.groupby(by="date").mean()
+        grouped_news.reset_index(inplace=True)
+        grouped_news['date'] = pd.to_datetime(grouped_news.date).dt.date
+
+        grouped_news.rename(columns={"neg":"neg_"+key,"pos":"pos_"+key,"neu":"neu_"+key,"compound":"compound_"+key},inplace=True)
+
+        return df.merge(grouped_news,on="date")
+
+        #return df
+
 
     def technical_indicators(self,df=None, technical_indicators=[
         "macd",
@@ -180,6 +212,18 @@ class FeatureEngeneer:
         df = df.sort_values(by=["date", "ticker"])
         return df
 
+    def dji(self, df):
+        if df is None:
+            df = self.df
+
+        start_date, end_date = self._parse_df_dates(df)
+
+        df = df.copy()
+        df_dji = Downloader().fetch_data(start_date=start_date, end_date=end_date, tickers=["^DJI"])
+
+        return df_dji
+
+
     def vix(self,df=None):
         if df is None:
             df = self.df
@@ -207,6 +251,15 @@ class FeatureEngeneer:
         return df
 
     def calculate_turbulence(self, df=None, asset="stock"):
+
+        # Global finance turbulence index should be done with this:
+        # U.S. Stocks
+        # Non-U.S. Stocks
+        # U.S. Bonds
+        # Non-U.S. Bonds
+        # U.S. Real Estate
+        # Non-U.S. Real Estate
+        # Commodities
         if df is None:
             df = self.df
 
@@ -234,7 +287,7 @@ class FeatureEngeneer:
             # use one year rolling window to calcualte covariance
             hist_price = df_price_pivot[
                 (df_price_pivot.index < unique_date[i])
-                & (df_price_pivot.index >= unique_date[i - 252])
+                & (df_price_pivot.index >= unique_date[i - start])
             ]
             # Drop tickers which has number missing values more than the "oldest" ticker
             filtered_hist_price = hist_price.iloc[
@@ -268,3 +321,32 @@ class FeatureEngeneer:
         except ValueError:
             raise Exception("Turbulence information could not be added.")
         return turbulence_index
+
+class SentimentAnalysis:
+    def __init__(self):
+        nltk.downloader.download('vader_lexicon')
+        from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
+        self.vader = SentimentIntensityAnalyzer()
+
+    def evaluate(self, news_df, key="title", tool="vader"):
+
+        columns = ['ticker', 'date', key, 'provider']
+        parsed_and_scored_news = pd.DataFrame(news_df, columns=columns)
+
+        if tool=="vader":
+            scores = parsed_and_scored_news[key].apply(self.vader.polarity_scores).tolist()
+
+        scores_df = pd.DataFrame(scores)
+        parsed_and_scored_news = parsed_and_scored_news.join(scores_df, rsuffix='_right')
+        parsed_and_scored_news['date'] = pd.to_datetime(parsed_and_scored_news.date).dt.date
+        parsed_and_scored_news.sort_values(by="date",inplace=True)
+        parsed_and_scored_news.reset_index(drop=True, inplace=True)
+
+        return parsed_and_scored_news
+
+    def evaluate_title(self,news_df,tool="vader"):
+        return self.evaluate(news_df,key="title",tool=tool)
+
+    def evaluate_content(self,news_df,tool="vader"):
+        return self.evaluate(news_df,key="content",tool=tool)
