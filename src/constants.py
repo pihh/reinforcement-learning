@@ -3,18 +3,18 @@ from __future__ import annotations
 
 ALLOWED_NEWS_TICKERS = [
     "AAPL",
-    "MSFT",
-    "BAC",
-    "NWSA",
-    "GOOGL",
-    "TSLA"
+    # "MSFT",
+    # "BAC",
+    # "NWSA",
+    # "GOOGL",
+    # "TSLA"
 ]
 
 # Dow 30 constituents in 2021/10
 # check https://wrds-www.wharton.upenn.edu/ for U.S. index constituents
 #marketwatch.com/story/here-are-the-best-and-worst-dow-and-sp-500-stocks-of-2019-2019-12-30
 DOW_30_2019 = ['AAPL', 'MSFT', 'JPM', 'V', 'UTX', 'PG', 'GS', 'NKE', 'DIS', 'AXP', 'HD', 'INTC', 'WMT', 'IBM', 'MRK', 'UNH', 'KO', 'CAT', 'TRV', 'JNJ', 'CVX', 'MCD', 'VZ', 'CSCO', 'XOM', 'BA', 'MMM', 'PFE', 'WBA', 'DOW']
-DOW_30_TICKER = [
+DOW_30_2021 = [
     "AXP",
     "AMGN",
     "AAPL",
@@ -48,7 +48,7 @@ DOW_30_TICKER = [
 ]
 
 # Nasdaq 100 constituents at 2019/01
-NAS_100_TICKER = [
+NAS_100_2019 = [
     "AMGN",
     "AAPL",
     "AMAT",
@@ -152,7 +152,7 @@ NAS_100_TICKER = [
 ]
 
 # SP 500 constituents at 2019
-SP_500_TICKER = [
+SP_500_2019 = [
     "A",
     "AAL",
     "AAP",
@@ -657,7 +657,7 @@ SP_500_TICKER = [
 ]
 
 # Hang Seng Index constituents at 2019/01
-HSI_50_TICKER = [
+HSI_50_2019 = [
     "0011.HK",
     "0005.HK",
     "0012.HK",
@@ -712,7 +712,7 @@ HSI_50_TICKER = [
 
 # SSE 50 Index constituents at 2019
 # www.csindex.com.cn, for SSE and CSI adjustments
-SSE_50_TICKER = [
+SSE_50_2019 = [
     "600000.XSHG",
     "600036.XSHG",
     "600104.XSHG",
@@ -778,7 +778,7 @@ SSE_50_TICKER = [
 ]
 
 # CSI 300 Index constituents at 2019
-CSI_300_TICKER = [
+CSI_300_2019 = [
     "600000.XSHG",
     "600004.XSHG",
     "600009.XSHG",
@@ -1083,7 +1083,7 @@ CSI_300_TICKER = [
 
 # CAC 40 constituents at 2019/01
 # Check https://www.bnains.org/archives/histocac/compocac.php for CAC 40 constituents
-CAC_40_TICKER = [
+CAC_40_2019 = [
     "AC.PA",
     "AI.PA",
     "AIR.PA",
@@ -1127,7 +1127,7 @@ CAC_40_TICKER = [
 ]
 
 # DAX 30 constituents at 2021/02
-DAX_30_TICKER = [
+DAX_30_201 = [
     "DHER.DE",
     "RWE.DE",
     "FRE.DE",
@@ -1161,7 +1161,7 @@ DAX_30_TICKER = [
 ]
 
 # TecDAX constituents at 2021/02
-TECDAX_TICKER = [
+TECDAX_2021 = [
     "ADV.DE",
     "AFX.DE",
     "AM3D.DE",
@@ -1192,7 +1192,7 @@ TECDAX_TICKER = [
 ]
 
 # MDAX 50 constituents at 2021/02
-MDAX_50_TICKER = [
+MDAX_50_2021 = [
     "1COV.DE",
     "AIR.DE",
     "AOX.DE",
@@ -1242,7 +1242,7 @@ MDAX_50_TICKER = [
 ]
 
 # SDAX 50 constituents at 2021/02
-SDAX_50_TICKER = [
+SDAX_50_2021 = [
     "AAD.DE",
     "ACX.DE",
     "ADJ.DE",
@@ -1287,7 +1287,7 @@ SDAX_50_TICKER = [
 ]
 
 # LQ45 constituents at 2021/10
-LQ45_TICKER = [
+LQ45_2021 = [
     "ACES.JK",
     "ADRO.JK",
     "AKRA.JK",
@@ -1336,7 +1336,7 @@ LQ45_TICKER = [
 ]
 
 # SRI-KEHATI.JK - Sustainable Responsible Investm
-SRI_KEHATI_TICKER = [
+SRI_KEHATI = [
     "AALI.JK",
     "ADHI.JK",
     "ASII.JK",
@@ -1365,7 +1365,7 @@ SRI_KEHATI_TICKER = [
 ]
 
 # FX Ticker
-FX_TICKER = [
+FX = [
     "AUDCAD=X",
     "AUDCHF=X",
     "AUDJPY=X",

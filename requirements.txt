@@ -5,6 +5,7 @@ numpy
 dotwiz
 shutup
 sqlite3
+pytrends
 pybullet
 yfinance
 matplotlib
