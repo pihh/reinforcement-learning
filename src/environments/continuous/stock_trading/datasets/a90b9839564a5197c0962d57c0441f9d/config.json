@@ -1,0 +1,13 @@
+{
+  "ticker": "AAPL",
+  "lookback": "10",
+  "window_size": "66",
+  "start_date": "False",
+  "end_date": "False",
+  "use_technical_indicators": "macd boll_ub boll_lb rsi_30 cci_30 dx_30 close_30_sma close_60_sma",
+  "use_sentiment_analysis": "True",
+  "use_cboe_vix": "True",
+  "use_trends": "True",
+  "use_fear_and_greed": "True",
+  "use_market_volatility": "DOW_30"
+}

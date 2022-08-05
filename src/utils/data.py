@@ -7,11 +7,11 @@ import yfinance as yf
 from datetime import datetime, timedelta
 from stockstats import StockDataFrame as Sdf
 
-from src.constants import ALLOWED_NEWS_TICKERS
+from src.constants import ALLOWED_NEWS_TICKERS,DOW_30_2021
 
 
 class Downloader:
-    def __init__(self, start_date="2017-01-01", end_date= "2020-01-01", tickers=[]):
+    def __init__(self, start_date="2017-01-01", end_date= "2020-01-01", tickers=DOW_30_2021):
 
         self.start_date = start_date
         self.end_date = end_date
@@ -137,7 +137,6 @@ class FeatureEngeneer:
         df = df.copy()
         df['date'] = pd.to_datetime(df.date).dt.date
         fg_df = pd.read_csv('storage/datasets/fear_greed.csv')
-        fg_df.drop(columns=["open","high","low"],inplace=True)
         #fg_df.rename(columns={"Date":"date"},inplace=True)
         fg_df['date'] = pd.to_datetime(fg_df.date).dt.date
         if 'Unnamed: 0' in fg_df.columns:
@@ -163,6 +162,7 @@ class FeatureEngeneer:
 
     def sentiment_analysis(self,df,ticker, key="title", tool="vader"):
         #assert ticker.upper() in ALLOWED_NEWS_TICKERS
+        ticker = ticker.lower()
 
         df = df.copy()
         df = df[df['ticker']== ticker]
@@ -199,6 +199,7 @@ class FeatureEngeneer:
     ]):
         if df is None:
             df = self.df
+
 
         df = df.copy()
         df = df.sort_values(by=["ticker", "date"])
@@ -262,6 +263,7 @@ class FeatureEngeneer:
         df_vix = Downloader().fetch_data(start_date=start_date, end_date=end_date, tickers=["^VIX"])
         vix = df_vix[["date", "close"]]
         vix.columns = ["date", "vix"]
+        vix['vix'] = vix['vix']/100
 
         df = df.merge(vix, on="date")
         df = df.sort_values(["date", "ticker"]).reset_index(drop=True)
@@ -274,6 +276,7 @@ class FeatureEngeneer:
 
         df = df.copy()
         turbulence_index = self.calculate_turbulence(df=df, asset=asset)
+        turbulence_index['turbulence'] = turbulence_index['turbulence'] / 500
         df = df.merge(turbulence_index, on="date")
         df = df.sort_values(["date", "ticker"]).reset_index(drop=True)
         return df

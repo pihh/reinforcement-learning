@@ -1,4 +1,20 @@
-from __future__ import annotations
+import numpy as np
+from dotwiz import DotWiz
+
+DATASETS_DIR = "storage/datasets/"
+ENVIRONMENT_RUNS_DIR = "storage/environments/"
+DB_PATH = "storage/storage.db"
+
+FEES = DotWiz()
+FEES.BUY = 0.001
+FEES.SELL = 0.001
+
+ACTIONS = DotWiz()
+ACTIONS.SELL = -1
+ACTIONS.HOLD = 0
+ACTIONS.BUY = 1
+
+ZERO = np.finfo(np.float32).eps.item()
 
 
 ALLOWED_NEWS_TICKERS = [
