@@ -8,6 +8,7 @@ register(
     kwargs={
         "lookback":10,
         "window_size":66,
+        "continuous":False,
         "use_technical_indicators": [],
         "use_sentiment_analysis":True,
         "use_cboe_vix": True,
@@ -16,8 +17,11 @@ register(
         "use_market_volatility": "DOW_30",
         "ticker":"AAPL",
         "initial_investment":100000,
-        "inertness_punishment":0.001,
+        "inertness_punishment_method": None, # step , hold
+        "inertness_punishment_value": 0,#0.001,
+        "maximum_stocks_held":10,
         "fees":FEES,
         "seed":314,
+        "mode":"train"
     }
 )

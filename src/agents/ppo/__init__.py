@@ -56,17 +56,11 @@ class Environment(Process):
         state = self.env.reset()
 
         state = np.reshape(state, [1, self.state_size])
-        # print('state.shape',state.shape)
+
         self.agent_connection.send(state)
         while True:
 
             action = self.agent_connection.recv()
-            # action = np.array([0.80637634, 0.94653237], dtype=np.float32)
-            # #print('action recv', action,  type(action))
-            # print()
-            # print('env step ',_action, _action.shape, action, action.shape)
-            #
-            # print()
 
             state, reward, done, info = self.env.step(action)
             state = np.reshape(state, [1, self.state_size])
@@ -387,7 +381,7 @@ class PpoAgent:
         if self.average_[-1] >= self.max_average:
             self.max_average = self.average_[-1]
             self.save()
-            # decreaate learning rate every saved model
+            # decrease learning rate every saved model
             self.lr *= 0.95
             K.set_value(self.Actor.Actor.optimizer.learning_rate, self.lr)
             K.set_value(self.Critic.Critic.optimizer.learning_rate, self.lr)
@@ -455,8 +449,6 @@ class PpoAgent:
         if epochs == False:
             epochs = self.epochs
 
-        epochs = int(epochs/n_workers)
-
         workers, environment_connections, agent_connections = [], [], []
         for idx in range(n_workers):
 
@@ -467,12 +459,6 @@ class PpoAgent:
             environment_connections.append(environment_connection)
             agent_connections.append(agent_connection)
 
-        # states =        [[] for _ in range(n_workers)]
-        # next_states =   [[] for _ in range(n_workers)]
-        # actions =       [[] for _ in range(n_workers)]
-        # rewards =       [[] for _ in range(n_workers)]
-        # dones =         [[] for _ in range(n_workers)]
-        # predictions =   [[] for _ in range(n_workers)]
         buffers =       [PpoBuffer() for _ in range(n_workers)]
         score =         [0 for _ in range(n_workers)]
         state =         [0 for _ in range(n_workers)]
@@ -482,9 +468,6 @@ class PpoAgent:
             print(worker_id)
 
         while self.episode < self.EPISODES:
-            #action, logp_pi = self.act(np.reshape(state, [num_worker, self.state_size[0]]))            #C
-            #predictions_list = self.Actor.predict(np.reshape(state, [n_workers, self.state_size[0]]))  #D
-            #actions_list = [np.random.choice(self.action_size, p=i) for i in predictions_list]         #D
             action_list, action_data_list, prediction_list = self.act_batch(self.reshape_state(state,n_workers=n_workers))
 
             for worker_id, environment_connection in enumerate(environment_connections):
@@ -492,12 +475,6 @@ class PpoAgent:
                 environment_connection.send(action_list[worker_id])
                 buffers[worker_id].actions.append(action_data_list[worker_id])
                 buffers[worker_id].predictions.append(prediction_list[worker_id])
-                # action_onehot = np.zeros([self.action_size])                  #D
-                # action_onehot[actions_list[worker_id]] = 1                    #D
-                # actions[worker_id].append(action_onehot)                      #D
-                # predictions[worker_id].append(predictions_list[worker_id])    #D
-                # actions[worker_id].append(action[worker_id])  #C
-                # logp_ts[worker_id].append(logp_pi[worker_id]) #C
 
             for worker_id, environment_connection in enumerate(environment_connections):
                 next_state, reward, done, _ = environment_connection.recv()

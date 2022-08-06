@@ -10,5 +10,7 @@ pybullet
 yfinance
 matplotlib
 stockstats
+mplfinance
 tensorflow
 tensorflow-probability
+opencv-python
