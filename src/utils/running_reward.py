@@ -5,7 +5,7 @@ class RunningReward:
             self, 
             new_reward_weight=0.05, 
             old_reward_weight=0.95,
-            moving_average_window=50):
+            success_threshold_lookback=50):
         """
         Tracks the moving reward of the agent on given episode
         
@@ -13,7 +13,7 @@ class RunningReward:
         -------
         new_reward_weight: Weight given to new rewards ( the lower, the slower the moving reward evolves)
         old_reward_weight: Weight given to previous rewards
-        moving_average_window: How long to wait until we start using moving averages
+        success_threshold_lookback: How long to wait until we start using moving averages
 
         Methods
         -------
@@ -24,13 +24,13 @@ class RunningReward:
             * Steps up one episode ( tracks how many eps has runned )
             * Updates running reward
             * Updates history ( running_reward and reward )
-            * Updates moving average if at least n "moving_average_window" steps have been made
+            * Updates moving average if at least n "success_threshold_lookback" steps have been made
         """
         assert new_reward_weight + old_reward_weight == 1 , "The sum of the old and new weights must be 1"
 
         self.new_reward_weight= new_reward_weight
         self.old_reward_weight= old_reward_weight
-        self.moving_average_window = moving_average_window
+        self.success_threshold_lookback = success_threshold_lookback
 
         self.reset()
 
@@ -48,6 +48,6 @@ class RunningReward:
         self.reward_history.append(reward)
         self.running_reward_history.append(self.reward)
 
-        if len(self.reward_history) >= self.moving_average_window:
+        if len(self.reward_history) >= self.success_threshold_lookback:
             # np.mean(history[-100:])
-            self.moving_average = np.mean(self.reward_history[-self.moving_average_window:])
+            self.moving_average = np.mean(self.reward_history[-self.success_threshold_lookback:])

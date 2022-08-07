@@ -15,6 +15,7 @@ class Agent:
         epsilon=1.0,
         epsilon_min=0.01,
         epsilon_decay=0.00001,
+        success_threshold_lookback=100,
         **kwargs
     ):
         # Args
@@ -23,6 +24,7 @@ class Agent:
         self.epsilon_min = epsilon_min
         self.epsilon_decay = epsilon_decay
         self.learning_log_loss_keys = loss_keys
+        self.success_threshold_lookback=success_threshold_lookback
 
         self.epsilon_ = epsilon
         self.epsilon_decay_ = epsilon_decay
@@ -99,7 +101,6 @@ class Agent:
                     "kernel_initializer":kernel_initializer
                 })
 
-
     def _init_tensorboard(self):
 
         config = self.config.copy()
@@ -109,11 +110,9 @@ class Agent:
         with open(self.tensorboard_writer_log_directory+'/config.json', 'w') as f:
             json.dump(self.config, f, indent=2)
 
-
     def __init_loggers(self):
         self.learning_log = LearningLogger(self.learning_log_loss_keys)
-
-            
+   
     def __init_environment(self):
         env = GymEnvironment(self._environment)
         self.env = env.env
@@ -127,7 +126,7 @@ class Agent:
         self.action_bound = env.action_bound
 
     def __init_reward_tracker(self):
-        self.running_reward = RunningReward()
+        self.running_reward = RunningReward(success_threshold_lookback=self.success_threshold_lookback)
         
     def validate_learn(self,timesteps, success_threshold, reset):
         if reset:
@@ -148,14 +147,17 @@ class Agent:
 
     def did_finnish_learning(self,success_threshold,episode):
         # Break loop if average reward is greater than success threshold
-        if self.running_reward.moving_average > success_threshold and episode > 10:
+        if self.running_reward.moving_average > success_threshold and episode > self.success_threshold_lookback:
             print('Agent solved environment at the episode {}'.format(episode))
             return True
         return False
 
     # lifecycle hooks 
-    def on_learn_start(self,timesteps,success_threshold,reset):
+    def on_learn_start(self,timesteps,success_threshold,reset,success_threshold_lookback=100):
+        self.learning_max_score = 0
         self.validate_learn(timesteps,success_threshold,reset)
+
+        self.running_reward.success_threshold_lookback = success_threshold_lookback
 
         return success_threshold if success_threshold else self.env.success_threshold
 
@@ -166,21 +168,32 @@ class Agent:
     def after_learn_cycle(self):
         pass 
 
-    def on_learn_episode_end(self,score,log_each_n_episodes,log_level,success_threshold,):
+    def on_learn_episode_end(self,score,log_every,log_level,success_threshold):
         self.running_reward.step(score)
     
         self.learning_log.episode(
-            log_each_n_episodes,
+            log_every,
             score,
             self.running_reward.reward, 
             log_level=log_level
         )
 
+        if self.running_reward.episodes > self.success_threshold_lookback:
+            if self.running_reward.moving_average > self.learning_max_score:
+                self.learning_max_score = self.running_reward.moving_average
+                try:
+                    self.save()
+                    print()
+                    print('New historical moving average record:', self.learning_max_score)
+                    print('Saving models')
+                    print()
+                except:
+                    print('Failed to save')
+
         self.write_tensorboard_scaler('score',score,self.learning_log.episodes)
             
         return self.did_finnish_learning(success_threshold,self.running_reward.episodes)
             
-
     def on_test_episode_start(self):
         try:
             state = self.env.reset()

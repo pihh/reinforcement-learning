@@ -76,7 +76,7 @@ class QAgent(Agent):
         
         return action
     
-    def learn(self, timesteps=-1, plot_results=True, reset=False, log_each_n_episodes=100, success_threshold=False):
+    def learn(self, timesteps=-1, plot_results=True, reset=True, log_every=100, success_threshold=False, success_threshold_lookback=100):
         
         self.validate_learn(timesteps,success_threshold,reset)
         success_threshold = success_threshold if success_threshold else self.env.success_threshold    
@@ -110,7 +110,7 @@ class QAgent(Agent):
             if done:
 
                 # Loop episode state
-                if episode % log_each_n_episodes == 0 and episode > 0:
+                if episode % log_every == 0 and episode > 0:
                     print('episode {}, running average: {:.2f}, epsilon: {:.3f}'.format(episode,self.running_reward.moving_average,self.epsilon))
                 
                 # Update pointers

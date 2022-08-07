@@ -85,6 +85,7 @@ class StockTradingEnvironment(Env):
 
         self.__init_seed(seed)
         self.__init_dataset()
+        self.__init_targets()
         self.__init_spaces()
         self.__init_buffers()
         self.__init_punishment(inertness_punishment_method,inertness_punishment_value)
@@ -254,8 +255,33 @@ class StockTradingEnvironment(Env):
         self.train_dataframe_id_range = [0,int(self.train_percentage * n_dataframes)-1]
         self.test_dataframe_id_range = [int(self.train_percentage * n_dataframes),n_dataframes]
 
+        # self.episode_targets = []
+        # self.initial_investments = []
+        # for i in range(self.train_dataframe_id_range[1]+1):
+        #     if self.auto_investment:
+        #         initial_investment = episode_targets.high.iloc[i] * self.maximum_stocks_held 
+        #     else: 
+        #         initial_investment = self.initial_investment #self._initial_investment_calculation(i)
+
+        #     target = episode_targets.targets.iloc[i]
+        #     self.episode_targets.append(initial_investment+target)
+        #     self.initial_investments.append(initial_investment)
+
+        # # Calculate the success threshold
+        # success_threshold_targets = np.mean(self.episode_targets) #+ np.std(self.episode_targets)
+        # success_threshold_investments = np.mean(self.initial_investments) #+ np.std(self.initial_investments)
+        
+        # self.success_threshold = (success_threshold_targets -success_threshold_investments)/ success_threshold_investments
+
+        print()
+
+    def __init_targets(self):
+
+        episode_targets = pd.read_csv(self.df_path+'/targets.csv')
+
         self.episode_targets = []
         self.initial_investments = []
+
         for i in range(self.train_dataframe_id_range[1]+1):
             if self.auto_investment:
                 initial_investment = episode_targets.high.iloc[i] * self.maximum_stocks_held 
@@ -267,7 +293,7 @@ class StockTradingEnvironment(Env):
             self.initial_investments.append(initial_investment)
 
         # Calculate the success threshold
-        success_threshold_targets = np.mean(self.episode_targets) + 2* np.std(self.episode_targets)
+        success_threshold_targets = np.mean(self.episode_targets) #+ np.std(self.episode_targets)
         success_threshold_investments = np.mean(self.initial_investments) #+ np.std(self.initial_investments)
         
         self.success_threshold = (success_threshold_targets -success_threshold_investments)/ success_threshold_investments

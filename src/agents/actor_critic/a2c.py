@@ -129,7 +129,6 @@ class CriticNetwork():
         self.model = Model(inputs = X_input, outputs = value)
         self.model.compile(loss='mse', optimizer=optimizer)
 
-
 class A2CAgent(Agent):
     def __init__(self,
                 environment,
@@ -160,6 +159,7 @@ class A2CAgent(Agent):
         self.__init_networks()
         self.__init_buffers()
         self._add_models_to_config([self.actor.model,self.critic.model])
+        self._init_tensorboard()
         
     def __init_networks(self):
         self.actor = ActorNetwork(
@@ -186,7 +186,6 @@ class A2CAgent(Agent):
     def __init_buffers(self):
         self.buffer = ReplayBuffer()
         
-
     def act(self,state):
         action, action_onehot, prediction = self.actor.act(state)
         return action, action_onehot, prediction
@@ -229,11 +228,19 @@ class A2CAgent(Agent):
             self.critic.model.fit(states, discounted_r, epochs=self.epochs, verbose=0)
             # reset training memory
             self.buffer.reset()
+
+    def save(self):
+        self.actor.model.save_weights('a2c-actor_'+self.hash)
+        self.critic.model.save_weights('a2c-critic_'+self.hash)
         
-    def learn(self, timesteps=-1, plot_results=True, reset=False, success_threshold=False, log_level=1, log_each_n_episodes=50):
-        self.validate_learn(timesteps,success_threshold,reset)
-        success_threshold = success_threshold if success_threshold else self.env.success_threshold
- 
+    def learn(self, timesteps=-1, plot_results=True, reset=False, success_threshold=False, log_level=1, log_every=50 , success_threshold_lookback=100):
+        
+
+        #self.validate_learn(timesteps,success_threshold,reset)
+        #success_threshold = success_threshold if success_threshold else self.env.success_threshold
+
+        success_threshold = self.on_learn_start(timesteps,success_threshold,reset,success_threshold_lookback)
+
         timestep = 0
         episode = 0
         
@@ -262,7 +269,7 @@ class A2CAgent(Agent):
             episode += 1
 
             # Step reward, tensorboard log score, print progress
-            self.on_learn_episode_end(score,log_each_n_episodes,log_level,success_threshold)
+            self.on_learn_episode_end(score,log_every,log_level,success_threshold)
             
             # If done stop
             if self.did_finnish_learning(success_threshold,episode):

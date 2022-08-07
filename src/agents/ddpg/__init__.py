@@ -152,7 +152,6 @@ class DdpgAgent(Agent):
         self.write_tensorboard_scaler('actor_loss',tf.get_static_value(actor_loss),self.learning_log.learning_steps)
         self.write_tensorboard_scaler('critic_loss',tf.get_static_value(critic_loss),self.learning_log.learning_steps)
 
-            
     def replay(self):
 
         record_range = min(self.buffer.buffer_counter, self.buffer.buffer_capacity)
@@ -197,9 +196,8 @@ class DdpgAgent(Agent):
 
             print("Test episode: {}, score: {:.2f}".format(episode,score)) 
     
-    def learn(self, timesteps=-1, plot_results=True, reset=False,  success_threshold=False,log_level=1, log_each_n_episodes=50,):
-        self.validate_learn(timesteps,success_threshold,reset)
-        success_threshold = success_threshold if success_threshold else self.env.success_threshold
+    def learn(self, timesteps=-1, plot_results=True, reset=True,  success_threshold=False,log_level=1, log_every=50 , success_threshold_lookback=100):
+        success_threshold = self.on_learn_start(timesteps,success_threshold,reset,success_threshold_lookback)
 
         score = 0
         timestep = 0
@@ -223,7 +221,7 @@ class DdpgAgent(Agent):
             # Episode done
 
             # track rewards, log , write to tensorboard
-            self.on_learn_episode_end(score,log_each_n_episodes,log_level,success_threshold)
+            self.on_learn_episode_end(score,log_every,log_level,success_threshold)
             
             # Log details
             episode += 1

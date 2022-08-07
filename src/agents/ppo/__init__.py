@@ -507,6 +507,9 @@ class PpoAgent:
             print('TERMINATED:', worker)
             worker.join()
 
+    def learn(self, timesteps=-1, plot_results=True, reset=True, success_threshold=False, log_level=1, log_every=50 , success_threshold_lookback=100):
+        success_threshold = self.on_learn_start(timesteps,success_threshold,reset,success_threshold_lookback)
+        pass
 if __name__ == '__main__':
     # discrete_agent = PpoAgent('CartPole-v1', training_batch=4000,epochs=20,lr=3e-4,episodes=2000, continuous_action_space=False)
     # discrete_agent.run_multiprocesses(n_workers=2)

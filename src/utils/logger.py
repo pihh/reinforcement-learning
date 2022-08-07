@@ -92,12 +92,12 @@ class LearningLogger:
         else:
             print('Episode done * Score ==> {:.3f}'.format(score))
 
-    def episode(self,log_each_n_episodes, reward,running_reward, log_level = 1,worker=False):
+    def episode(self,log_every, reward,running_reward, log_level = 1,worker=False):
         # step it
         self.step_episode(reward,running_reward)
 
         # Log it 
-        if self.episodes % log_each_n_episodes == 0 and self.episodes > 1:
+        if self.episodes % log_every == 0 and self.episodes > 1:
             if log_level == 2:
                 self.episode_log_full(reward, running_reward,worker)
             elif log_level == 1:

@@ -89,7 +89,7 @@ class ActorCriticAgent(Agent):
             
 
     
-    def learn(self, timesteps=-1, plot_results=True, reset=False, success_threshold=False, log_level=1, log_each_n_episodes=50):
+    def learn(self, timesteps=-1, plot_results=True, reset=False, success_threshold=False, log_level=1, log_every=50):
         
         success_threshold = self.on_learn_start(timesteps,success_threshold,reset)
  
@@ -118,7 +118,7 @@ class ActorCriticAgent(Agent):
 
             # End of episode    
             # Updates rewards, checks if success condition is met, logs results
-            if self.on_learn_episode_end(score,log_each_n_episodes,log_level,success_threshold):
+            if self.on_learn_episode_end(score,log_every,log_level,success_threshold):
                 break
 
         self.on_learn_end(plot_results)

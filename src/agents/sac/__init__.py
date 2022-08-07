@@ -193,9 +193,9 @@ class SoftActorCriticAgent(Agent):
 
             self.learning_log.episode_test_log(score,episode)
             
-    def learn(self, timesteps=-1, plot_results=True, reset=False, success_threshold=False, log_level=1, log_each_n_episodes=50):
-        self.validate_learn(timesteps,success_threshold,reset)
-        success_threshold = success_threshold if success_threshold else self.env.success_threshold
+    def learn(self, timesteps=-1, plot_results=True, reset=True, success_threshold=False, log_level=1, log_every=50, success_threshold_lookback=100):
+        
+        success_threshold = self.on_learn_start(timesteps,success_threshold,reset,success_threshold_lookback)
  
         score = 0
         timestep = 0
@@ -217,7 +217,7 @@ class SoftActorCriticAgent(Agent):
              # Log details
             episode += 1
             
-            self.on_learn_episode_end(score,log_each_n_episodes,log_level,success_threshold)
+            self.on_learn_episode_end(score,log_every,log_level,success_threshold)
            
             if self.did_finnish_learning(success_threshold,episode):
                 break

@@ -125,10 +125,9 @@ class ActorCriticAgent(Agent):
 
             print("Test episode: {}, score: {:.2f}".format(episode,score))
     
-    def learn(self, timesteps=-1, plot_results=True, reset=False, log_each_n_episodes=100, success_threshold=False,log_level=1):
+    def learn(self, timesteps=-1, plot_results=True, reset=True, log_every=100, success_threshold=False,log_level=1 ,success_threshold_lookback=100):
         
-        self.validate_learn(timesteps,success_threshold,reset)
-        success_threshold = success_threshold if success_threshold else self.env.success_threshold
+        success_threshold = self.on_learn_start(timesteps,success_threshold,reset,success_threshold_lookback)
  
         self.buffer.reset()
         score = 0
@@ -213,7 +212,7 @@ class ActorCriticAgent(Agent):
             episode += 1
 
             self.learning_log.episode(
-                log_each_n_episodes,
+                log_every,
                 score,
                 self.running_reward.reward, 
                 log_level=log_level
