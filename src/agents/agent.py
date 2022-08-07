@@ -147,17 +147,26 @@ class Agent:
 
     def did_finnish_learning(self,success_threshold,episode):
         # Break loop if average reward is greater than success threshold
-        if self.running_reward.moving_average > success_threshold and episode > self.success_threshold_lookback:
-            print('Agent solved environment at the episode {}'.format(episode))
-            return True
+        if episode > self.success_threshold_lookback:
+            if self.running_reward.moving_average > success_threshold:
+                print('Agent solved environment at the episode {}'.format(episode))
+                return True
+            elif self.success_strict != False:
+                if np.all(np.array(self.running_reward.reward_history[-self.running_reward.success_threshold_lookback:])>0):
+                    print('All episodes are returning positive profits.Agent solved environment at the episode {}'.format(episode))
+                    return True
+            return False
         return False
 
     # lifecycle hooks 
-    def on_learn_start(self,timesteps,success_threshold,reset,success_threshold_lookback=100):
+    def on_learn_start(self,timesteps,success_threshold,reset,success_threshold_lookback=100, success_strict=False):
         self.learning_max_score = 0
+        self.success_strict = success_strict
+
         self.validate_learn(timesteps,success_threshold,reset)
 
         self.running_reward.success_threshold_lookback = success_threshold_lookback
+        self.learning_log.success_threshold_lookback = success_threshold_lookback
 
         return success_threshold if success_threshold else self.env.success_threshold
 
@@ -174,7 +183,7 @@ class Agent:
         self.learning_log.episode(
             log_every,
             score,
-            self.running_reward.reward, 
+            self.running_reward.moving_average, 
             log_level=log_level
         )
 
@@ -184,7 +193,7 @@ class Agent:
                 try:
                     self.save()
                     print()
-                    print('New historical moving average record:', self.learning_max_score)
+                    print('New historical moving average record: {:.5f}'.format(self.learning_max_score))
                     print('Saving models')
                     print()
                 except:

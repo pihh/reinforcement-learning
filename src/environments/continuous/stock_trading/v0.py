@@ -293,10 +293,10 @@ class StockTradingEnvironment(Env):
             self.initial_investments.append(initial_investment)
 
         # Calculate the success threshold
-        success_threshold_targets = np.mean(self.episode_targets) #+ np.std(self.episode_targets)
+        success_threshold_targets = np.mean(self.episode_targets) + 0.1 * np.std(self.episode_targets)
         success_threshold_investments = np.mean(self.initial_investments) #+ np.std(self.initial_investments)
         
-        self.success_threshold = (success_threshold_targets -success_threshold_investments)/ success_threshold_investments
+        self.success_threshold = (success_threshold_targets - success_threshold_investments)/ success_threshold_investments
 
     def __init_spaces(self):
         # Quanto já investiu, quanto retorno tem de momento, retorno total
@@ -565,7 +565,7 @@ class StockTradingEnvironment(Env):
         return self.episode_step == self.window_size -1
 
     def _beated_environment(self,action):
-        if action == self.ACTIONS.SELL and self.portfolio_value >= self.episode_target:
+        if action == self.ACTIONS.SELL and self.portfolio_value >= self.episode_target :
             self.environment_beaten = True
             return True 
         else:
@@ -593,8 +593,8 @@ class StockTradingEnvironment(Env):
     def get_episode_target(self,df):
         # For now the target is the maximum profit in a single trade - fees 
         prices = df.close.values
-        prices_sell = prices * (1-self.fees.SELL)
-        prices_buy = prices * (1+self.fees.BUY)
+        prices_sell = prices #* (1-self.fees.SELL)
+        prices_buy = prices #* (1+self.fees.BUY)
 
         mins = [] 
         maxs = [] 

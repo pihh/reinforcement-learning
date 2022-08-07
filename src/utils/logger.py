@@ -4,9 +4,10 @@ from datetime import datetime
 from tabulate import tabulate
 
 class LearningLogger:
-    def __init__(self,loss_keys=[]):
+    def __init__(self,loss_keys=[],success_threshold_lookback=100):
 
         self.loss_keys=loss_keys
+        self.success_threshold_lookback=success_threshold_lookback
         self.reset()
        
 
@@ -64,12 +65,12 @@ class LearningLogger:
             data.append(['Worker',worker])
         data.append(['',''])
         data.append(['Last reward',round(reward,3)])
-        data.append(['Avg reward',round(np.mean(self.rewards[-50:]),3)])
+        data.append(['Avg reward',round(np.mean(self.rewards[-self.success_threshold_lookback:]),3)])
         data.append(['Running reward',round(np.mean(running_reward),3)])
         data.append(['',''])
         for loss in self.loss_keys:
             #data.append(['Last {} loss'.format(loss),round(self.losses[loss][-1],5)])
-            data.append(['Avg {} loss'.format(loss),round(np.mean(self.losses[loss][-50:]),5)])
+            data.append(['Avg {} loss'.format(loss),round(np.mean(self.losses[loss][-self.success_threshold_lookback:]),5)])
 
         print (tabulate(data, headers=["", ""]))
         print('')
@@ -78,7 +79,7 @@ class LearningLogger:
         
         worker_str=""
         episode_str = "Episode * {} * ".format(self.episodes)
-        moving_avg_str = "Moving Avg Reward is ==> {:.5f} * ".format(np.mean(self.rewards[-50:]))
+        moving_avg_str = "Moving Avg Reward is ==> {:.5f} * ".format(np.mean(self.rewards[-self.success_threshold_lookback:]))
         last_reward_str = "Last Reward was ==> {:.5f}".format(reward)
         if worker != False or worker== 0:
             worker_str ="Worker * {} * ".format(worker)
