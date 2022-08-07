@@ -78,8 +78,8 @@ class LearningLogger:
         
         worker_str=""
         episode_str = "Episode * {} * ".format(self.episodes)
-        moving_avg_str = "Moving Avg Reward is ==> {:.3f} * ".format(np.mean(self.rewards[-50:]))
-        last_reward_str = "Last Reward was ==> {:.3f}".format(reward)
+        moving_avg_str = "Moving Avg Reward is ==> {:.5f} * ".format(np.mean(self.rewards[-50:]))
+        last_reward_str = "Last Reward was ==> {:.5f}".format(reward)
         if worker != False or worker== 0:
             worker_str ="Worker * {} * ".format(worker)
 

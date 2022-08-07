@@ -140,7 +140,8 @@ class A2CAgent(Agent):
                 actor_learning_rate=0.001,
                 critic_learning_rate=0.001,
                 std_bound = [1e-2, 1.0],
-                batch_size=64
+                batch_size=64,
+                epochs=1
                 ):
         super(A2CAgent, self).__init__(environment,args=locals())
         
@@ -153,6 +154,7 @@ class A2CAgent(Agent):
         self.critic_optimizer=critic_optimizer
         self.actor_learning_rate= actor_learning_rate
         self.critic_learning_rate=critic_learning_rate
+        self.epochs=epochs
 
         # Bootstrap
         self.__init_networks()
@@ -203,7 +205,7 @@ class A2CAgent(Agent):
         return discounted_r
     
     def replay(self):
-
+  
         if self.buffer.size > 1:
             # reshape memory to appropriate shape for training
             states = np.vstack(self.buffer.states)
@@ -220,11 +222,11 @@ class A2CAgent(Agent):
 
 
             if self.action_space_mode == "discrete":
-                self.actor.model.fit(states, actions, sample_weight=advantages, epochs=1, verbose=0)
+                self.actor.model.fit(states, actions, sample_weight=advantages, epochs=self.epochs, verbose=0)
             else:
-                self.actor.model.fit(states,np.concatenate([actions,np.reshape(advantages,newshape=(len(advantages),1))],axis=1), epochs=1,verbose=0)
+                self.actor.model.fit(states,np.concatenate([actions,np.reshape(advantages,newshape=(len(advantages),1))],axis=1), epochs=self.epochs,verbose=0)
 
-            self.critic.model.fit(states, discounted_r, epochs=1, verbose=0)
+            self.critic.model.fit(states, discounted_r, epochs=self.epochs, verbose=0)
             # reset training memory
             self.buffer.reset()
         

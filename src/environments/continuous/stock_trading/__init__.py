@@ -16,7 +16,7 @@ register(
         "use_fear_and_greed":True,
         "use_market_volatility": "DOW_30",
         "ticker":"AAPL",
-        "initial_investment":100000,
+        "initial_investment":False,
         "inertness_punishment_method": None, # step , hold
         "inertness_punishment_value": 0,#0.001,
         "maximum_stocks_held":10,
