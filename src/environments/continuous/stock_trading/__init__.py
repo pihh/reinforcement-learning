@@ -6,8 +6,8 @@ register(
     id='StockTradingEnvironment-v0',
     entry_point='src.environments.continuous.stock_trading.v0:StockTradingEnvironment',
     kwargs={
-        "lookback":10,
-        "window_size":66,
+        "lookback":21, # 1 month
+        "window_size":126, # 6 month
         "continuous":False,
         "use_technical_indicators": [],
         "use_sentiment_analysis":True,

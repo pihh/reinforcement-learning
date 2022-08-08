@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from src.utils.running_reward import RunningReward
 from src.utils.gym_environment import GymEnvironment
 from src.utils.logger import LearningLogger
-from src.utils.tensorboard_writer import create_writer, graph, histogram, scalar
+from src.utils.writer import ResultsWriter, create_writer, graph, histogram, log_environment_results_file, scalar
 
 class Agent:
     def __init__(self,
@@ -79,31 +79,35 @@ class Agent:
         self.config = config
 
     def _save_weights(self,model_list):
+        success = True
         for model in model_list:
             try:
                 model_name = model['name']
                 model_instance = model['model']
-                model_instance.save_weights(self.tensorboard_writer_log_directory+'/'+model_name+'.h5')
-                print()
-                print('* ',model_name ,' saved')
-                print()
+                model_instance.save_weights(self.writer_log_directory+'/models/'+model_name+'.h5')
+                
             except Exception as e:
+                success = False
                 print(e)
-                print()
-
+        
+        if success == True:
+            print('* Models saved *')
 
     def _load_weights(self,model_list):
+        success = True
         for model in model_list:
             try:
                 model_name = model['name']
                 model_instance = model['model']
-                model_instance.load_weights(self.tensorboard_writer_log_directory+'/'+model_name+'.h5')
-                print()
-                print('* ',model_name ,' loaded')
-                print()
+                model_instance.load_weights(self.writer_log_directory+'/models/'+model_name+'.h5')
+       
             except Exception as e:
+                success = False
                 print(e)
                 print()
+        
+        if success == True:
+            print('* Models successfully loaded *')
 
     def _add_models_to_config(self,models):
         self.config['models'] = {}
@@ -135,10 +139,12 @@ class Agent:
 
         config = self.config.copy()
         self.hash = hashlib.md5(json.dumps(config,sort_keys=True, indent=2).encode('utf-8')).hexdigest()
-        self.tensorboard_writer, self.tensorboard_writer_log_directory = create_writer(self.config['env_name'],self.hash)   
+        self.writer, self.writer_log_directory = create_writer(self.config['env_name'],self.hash)   
 
-        with open(self.tensorboard_writer_log_directory+'/config.json', 'w') as f:
+        with open(self.writer_log_directory+'/config.json', 'w') as f:
             json.dump(self.config, f, indent=2)
+
+        self.results_writer = ResultsWriter(self.config['env_name'],self.hash)
 
     def __init_loggers(self):
         self.learning_log = LearningLogger(self.learning_log_loss_keys)
@@ -224,10 +230,14 @@ class Agent:
                     self.save()
                     print()
                     print('New historical moving average record: {:.5f}'.format(self.learning_max_score))
-                    print('Saving models')
                     print()
                 except:
                     print('Failed to save')
+
+                try:
+                    self.results_writer.log(self.learning_max_score)
+                except:
+                    print('Failed to write results log')
 
         self.write_tensorboard_scaler('score',score,self.learning_log.episodes)
             

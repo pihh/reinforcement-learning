@@ -8,6 +8,7 @@ sqlite3
 pytrends
 pybullet
 yfinance
+schedule
 matplotlib
 stockstats
 mplfinance

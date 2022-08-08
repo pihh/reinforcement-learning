@@ -139,7 +139,7 @@ class A2CAgent(Agent):
                 actor_learning_rate=0.001,
                 critic_learning_rate=0.001,
                 std_bound = [1e-2, 1.0],
-                batch_size=48,
+                batch_size=64,
                 epochs=1
                 ):
         super(A2CAgent, self).__init__(environment,args=locals())
