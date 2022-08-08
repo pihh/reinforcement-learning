@@ -3,6 +3,8 @@ import hashlib
 import numpy as np
 import matplotlib.pyplot as plt
 
+from scipy.ndimage.filters import gaussian_filter1d
+
 from src.utils.running_reward import RunningReward
 from src.utils.gym_environment import GymEnvironment
 from src.utils.logger import LearningLogger
@@ -302,10 +304,15 @@ class Agent:
         self.epsilon = self.epsilon - self.epsilon_decay if self.epsilon > self.epsilon_min else self.epsilon_min
 
     def plot_learning_results(self):
+        ysmoothed = gaussian_filter1d(self.running_reward.reward_history, sigma=10)
+
         plt.figure(figsize=(16,4))
-        plt.plot(self.running_reward.reward_history)
+        plt.plot(self.running_reward.reward_history, alpha=0.75)
+        plt.plot(np.zeros(len(self.running_reward.reward_history)), color="black", alpha=0.5)
+        plt.plot(ysmoothed, color="red")
+
         plt.show()
-        
+
     def choose_action(self, state):
         raise NotImplementedError
 

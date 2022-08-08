@@ -3,6 +3,7 @@ tqdm
 rich
 nltk
 numpy
+scipy
 dotwiz
 shutup
 sqlite3
