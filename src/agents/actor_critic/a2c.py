@@ -230,16 +230,17 @@ class A2CAgent(Agent):
             self.buffer.reset()
 
     def save(self):
-        self.actor.model.save_weights('storage/a2c-actor_'+self.hash+'.h5')
-        self.critic.model.save_weights('storage/a2c-critic_'+self.hash+'.h5')
+        self._save_weights([
+            {"name": "a2c-actor","model":self.actor.model},
+            {"name": "a2c-critic","model":self.critic.model},
+        ])
     
     def load(self):
-        try:
-            self.actor.model.load_weights('storage/a2c-actor_'+self.hash+'.h5')
-            self.critic.model.load_weights('storage/a2c-critic_'+self.hash+'.h5')
-        except:
-            print('Failed to load weights.')
-   
+        self._load_weights([
+            {"name": "a2c-actor","model":self.actor.model},
+            {"name": "a2c-critic","model":self.critic.model},
+        ])
+
     def learn(self, timesteps=-1, plot_results=True, reset=True, success_threshold=False, log_level=1, log_every=50 , success_threshold_lookback=100 , success_strict=False):
         
         #self.validate_learn(timesteps,success_threshold,reset)

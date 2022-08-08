@@ -69,6 +69,10 @@ class TradingGraph:
     #     # # Add Relative Strength Index
     #     self.ax4.plot(date_render_range, self.RSI,'g-')
 
+    def close(self):
+        plt.close('all')
+        cv2.destroyAllWindows()
+
     def plot_price(self,df,date_render_range):
         self.price_data.append(df["close"])
         self.ax1.plot(date_render_range, self.price_data,'-',color="black",alpha=0.4)

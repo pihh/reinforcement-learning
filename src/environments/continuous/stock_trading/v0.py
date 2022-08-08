@@ -79,6 +79,8 @@ class StockTradingEnvironment(Env):
         self.initial_investment = initial_investment
         self.auto_investment =  initial_investment == False
         self.maximum_stocks_held = maximum_stocks_held
+        self.inertness_punishment_method = inertness_punishment_method
+        self.inertness_punishment_value = inertness_punishment_value
         self.fees = fees
         self.mode = mode
 
@@ -89,6 +91,7 @@ class StockTradingEnvironment(Env):
         self.__init_spaces()
         self.__init_buffers()
         self.__init_punishment(inertness_punishment_method,inertness_punishment_value)
+        self.__init_configuration()
 
     def __init_seed(self, seed=None):
         self._seed = seed
@@ -114,27 +117,31 @@ class StockTradingEnvironment(Env):
         self.punishment = fn
 
     def __init_dataset(self):
+
+        # Sort them for consistency
+        self.technical_indicators.sort()
+
         # Get dataset name by it's caracteristics
-        name_params = {
+        df_params = {
             "ticker":self.ticker,
             "lookback":str(self.lookback) ,
             "window_size":str(self.window_size),
             "start_date":str(self.start_date),
             "end_date": str(self.end_date),
-            "use_technical_indicators" : " ".join(self.technical_indicators),
+            "use_technical_indicators" : self.technical_indicators,#" ".join(self.technical_indicators),
             "use_sentiment_analysis": str(self.use_sentiment_analysis),
             "use_cboe_vix": str(self.use_cboe_vix),
             "use_trends": str(self.use_trends),
             "use_fear_and_greed": str(self.use_fear_and_greed),
             "use_market_volatility": str(self.use_market_volatility),
-            "ticker": self.ticker
         }
-        #raw_name = json.dumps(name_params)
-        df_name = hashlib.md5(json.dumps(name_params,sort_keys=True, indent=2).encode('utf-8')).hexdigest()
+        #raw_name = json.dumps(df_params)
+        df_name = hashlib.md5(json.dumps(df_params,sort_keys=True, indent=2).encode('utf-8')).hexdigest()
         df_path = 'src/environments/continuous/stock_trading/datasets/'+df_name
 
         self.df_name = df_name
         self.df_path = df_path
+        self.df_params = df_params
 
         if not os.path.exists(df_path):
             # Se nao existir uma pasta com este nome
@@ -238,7 +245,7 @@ class StockTradingEnvironment(Env):
             # Define os targets de sucesso para cada dataframe
 
             with open(df_path+'/config.json', 'w') as f:
-                json.dump(name_params, f, indent=2)
+                json.dump(df_params, f, indent=2)
 
             pd.DataFrame([[n_dataframes,n_columns]],columns=['n_dataframes','n_columns']).to_csv(df_path+'/config.csv', index=False)
             pd.DataFrame(episode_targets,columns=['targets','open','low','high','close','volume']).to_csv(df_path+'/targets.csv', index=False)
@@ -274,6 +281,24 @@ class StockTradingEnvironment(Env):
         # self.success_threshold = (success_threshold_targets -success_threshold_investments)/ success_threshold_investments
 
         print()
+
+    def __init_configuration(self):
+        config = {}
+        config["df_name"] = self.df_name
+        config["df_path"] = self.df_path
+        config["df_params"] = self.df_params
+
+        config["continuous"] = str(self.continuous)
+        config["train_percentage"] = str(self.train_percentage)
+        config["ticker"] = self.ticker.lower()
+        config["initial_investment"] = str(self.initial_investment)
+        config["auto_investment"] =  str(self.initial_investment) 
+        config["maximum_stocks_held"] = str(self.maximum_stocks_held)
+        config["fees"] = self.fees.to_dict()
+        config["inertness_punishment_method"] = str(self.inertness_punishment_method)
+        config["inertness_punishment_value"] = str(self.inertness_punishment_value)
+
+        self.config=config
 
     def __init_targets(self):
 
@@ -715,6 +740,10 @@ class StockTradingEnvironment(Env):
         if self.visualize:
             img = self.trading_graph.render(self.df.iloc[self.current_step], self.portfolio_value, self.trading_history)
             return img
+
+    def close(self):
+        if self.visualize:
+            self.trading_graph.close()
 
     def reset(self, visualize = False):
         self.visualize = visualize

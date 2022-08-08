@@ -68,13 +68,43 @@ class Agent:
                 config[key] = config[key].tolist()
 
             config[key] = str(config[key])
-            
 
+        
         config['env_name'] = self.env.spec.name
         config['agent'] = type(self).__name__
 
+        if hasattr(self.env,'config'):
+            config['env_config'] = self.env.config
+
         self.config = config
-        
+
+    def _save_weights(self,model_list):
+        for model in model_list:
+            try:
+                model_name = model['name']
+                model_instance = model['model']
+                model_instance.save_weights(self.tensorboard_writer_log_directory+'/'+model_name+'.h5')
+                print()
+                print('* ',model_name ,' saved')
+                print()
+            except Exception as e:
+                print(e)
+                print()
+
+
+    def _load_weights(self,model_list):
+        for model in model_list:
+            try:
+                model_name = model['name']
+                model_instance = model['model']
+                model_instance.load_weights(self.tensorboard_writer_log_directory+'/'+model_name+'.h5')
+                print()
+                print('* ',model_name ,' loaded')
+                print()
+            except Exception as e:
+                print(e)
+                print()
+
     def _add_models_to_config(self,models):
         self.config['models'] = {}
         for model in models:
@@ -227,7 +257,6 @@ class Agent:
     def before_test_episode(self):
         pass
 
-
     # Tests
     def test(self, episodes=10, render=True):
 
@@ -251,7 +280,6 @@ class Agent:
                 self.env.close()
 
             print("Test episode: {}, score: {:.2f}".format(episode,score))
-
 
     def write_tensorboard_scaler(self, scalar_name,score, steps):
         scalar(self, scalar_name,score, steps)
