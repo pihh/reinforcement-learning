@@ -19,6 +19,18 @@ class ResultsWriter:
         #     schedule.run_pending()
         #     time.sleep(1)
 
+    def load_best_score(self):
+        file_path = 'storage/environments/'+self.env_name+'/results.json'
+        score = False
+        try:
+            with open(file_path, 'r') as fp:
+                results = json.load(fp)
+                score = results[self.agent_hash]
+        except IOError:
+            # print('File not found, will create a new one.')
+            pass
+
+        return score
 
     # def queue(self,score):
     #     self.score = score

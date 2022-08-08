@@ -654,6 +654,18 @@ class StockTradingEnvironment(Env):
     def _set_episode_target(self,idx):
         self.episode_target = self.episode_targets[idx]
 
+    def _calculate_max_profit_with_n_transactions(self,prices,k):
+        #if not len(prices):
+            # return 0
+        profits = [[0 for p in prices] for t in range(k+1)]
+        for t in range(1,k+1):
+            max_so_far = float("-inf")
+            for p in range(1,len(prices)):
+                max_so_far = max(max_so_far,profits[t-1][p-1]-prices[p-1])
+                profits[t][p] = max(profits[t][p-1, max_so_far+prices[p]])
+
+        return profits[-1][-1]
+
     def get_episode_target(self,df):
         # For now the target is the maximum profit in a single trade - fees 
         prices = df.close.values

@@ -102,6 +102,7 @@ class Agent:
                 model_name = model['name']
                 model_instance = model['model']
                 model_instance.load_weights(self.writer_log_directory+'/models/'+model_name+'.h5')
+                self._load_best_score()
        
             except Exception as e:
                 success = False
@@ -110,6 +111,11 @@ class Agent:
         
         if success == True:
             print('* Models successfully loaded *')
+
+    def _load_best_score(self):
+        score = self.results_writer.load_best_score()
+        if score != False:
+            self.learning_max_score = score
 
     def _add_models_to_config(self,models):
         self.config['models'] = {}
