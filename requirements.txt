@@ -1,4 +1,5 @@
 gym
+tqdm
 rich
 nltk
 numpy

@@ -1,6 +1,6 @@
 import numpy as np
 import tensorflow.keras.backend as K
-from tensorflow.keras.layers import Input, Dense,Concatenate, Flatten
+from tensorflow.keras.layers import Input, Dense,Concatenate, Flatten,Conv1D,MaxPooling1D,LSTM
 
 def gaussian_likelihood(n_actions, lib='keras'): # for keras custom loss
     if lib == 'keras':

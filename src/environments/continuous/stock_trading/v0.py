@@ -84,7 +84,6 @@ class StockTradingEnvironment(Env):
         self.fees = fees
         self.mode = mode
 
-
         self.__init_seed(seed)
         self.__init_dataset()
         self.__init_targets()
@@ -307,7 +306,7 @@ class StockTradingEnvironment(Env):
         self.episode_targets = []
         self.initial_investments = []
 
-        for i in range(self.train_dataframe_id_range[1]+1):
+        for i in range(self.n_dataframes):
             if self.auto_investment:
                 initial_investment = episode_targets.high.iloc[i] * self.maximum_stocks_held 
             else: 
@@ -745,8 +744,11 @@ class StockTradingEnvironment(Env):
         if self.visualize:
             self.trading_graph.close()
 
-    def reset(self, visualize = False):
+    def reset(self, visualize = False,mode="train"):
+
+        self.mode=mode
         self.visualize = visualize
+        
         if self.visualize:
             self.__init_visualization()
 
