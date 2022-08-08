@@ -139,7 +139,7 @@ class A2CAgent(Agent):
                 actor_learning_rate=0.001,
                 critic_learning_rate=0.001,
                 std_bound = [1e-2, 1.0],
-                batch_size=64,
+                batch_size=48,
                 epochs=1
                 ):
         super(A2CAgent, self).__init__(environment,args=locals())
@@ -230,20 +230,18 @@ class A2CAgent(Agent):
             self.buffer.reset()
 
     def save(self):
-        self.actor.model.save_weights('a2c-actor_'+self.hash)
-        self.critic.model.save_weights('a2c-critic_'+self.hash)
+        self.actor.model.save_weights('storage/a2c-actor_'+self.hash+'.h5')
+        self.critic.model.save_weights('storage/a2c-critic_'+self.hash+'.h5')
     
     def load(self):
         try:
-            self.actor.model.load_weights('a2c-actor_'+self.hash)
-            self.critic.model.load_weights('a2c-critic_'+self.hash)
+            self.actor.model.load_weights('storage/a2c-actor_'+self.hash+'.h5')
+            self.critic.model.load_weights('storage/a2c-critic_'+self.hash+'.h5')
         except:
             print('Failed to load weights.')
-
-            
+   
     def learn(self, timesteps=-1, plot_results=True, reset=True, success_threshold=False, log_level=1, log_every=50 , success_threshold_lookback=100 , success_strict=False):
         
-
         #self.validate_learn(timesteps,success_threshold,reset)
         #success_threshold = success_threshold if success_threshold else self.env.success_threshold
 
@@ -284,7 +282,7 @@ class A2CAgent(Agent):
                 break
                 
             # Else learn more
-            #self.replay()
+            self.replay()
         
         # End of trainig
         self.env.close()

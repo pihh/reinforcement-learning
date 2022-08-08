@@ -39,8 +39,8 @@ class StockTradingEnvironment(Env):
     spec = SPEC
 
     def __init__(self,
-                lookback=10, # 2 weeks
-                window_size=66, # 3 months
+                lookback=21, # 1 month
+                window_size=126, # 6 months
                 continuous=False,
                 start_date= False,
                 end_date=False,
@@ -349,6 +349,9 @@ class StockTradingEnvironment(Env):
 
         self.reset_history()
 
+    def __init_visualization(self):
+        self.trading_graph = TradingGraph(render_range=42, show_reward=True, show_indicators=True) # init visualization
+
     def _action(self,actions):
         """ Compra ou vende e quanto % do dinheiro inicial deveria investir ? """
         if self.continuous:
@@ -402,6 +405,25 @@ class StockTradingEnvironment(Env):
 
         return action,amount
 
+    def _track_trade(self,amount_traded,action,current_price):
+        date = self.df.index[self.current_step] # for visualization
+        open = self.df.iloc[self.current_step].open
+        close = self.df.iloc[self.current_step].close
+        high = self.df.iloc[self.current_step].high # for visualization
+        low = self.df.iloc[self.current_step].low # for visualization
+        self.trading_history.append({
+            "date":date,
+            "open":open,
+            "close":close,
+            'high':high,
+            'low':low,
+            'amount_traded': amount_traded,
+            'action': action,
+            "current_price":current_price,
+            "step": self.episode_step,
+            "reward": 0
+        })
+
     def _trade(self,action,amount):
         # Track what we have done in this episode
         self.stock_bought = 0
@@ -432,26 +454,6 @@ class StockTradingEnvironment(Env):
                 ## Actualiza cash in hand 
                 self.cash_in_hand -= discounted_price 
 
-                # Segue pedidos 
-                # @TODO
-                #         if self.track_orders :
-                #             date = self.dates.loc[self.current_step, 'date'] # for visualization
-                #             open = self.df.loc[self.current_step, 'open']
-                #             close = self.df.loc[self.current_step, 'close']
-                #             high = self.df.loc[self.current_step, 'high'] # for visualization
-                #             low = self.df.loc[self.current_step, 'low'] # for visualization
-
-                #             self.trades.append({
-                #                 "date":date,
-                #                 "open":open,
-                #                 "close":close,
-                #                 'high':high,
-                #                 'low':low,
-                #                 'total': traded_stocks,
-                #                 'type': "buy",
-                #                 "current_price":discounted_price,
-                #                 "step": self.episode_step
-                #             })
             else:
                 amount = 0
 
@@ -480,22 +482,32 @@ class StockTradingEnvironment(Env):
             else:
                 amount = 0
 
-        self.episode_history.append([self.episode_step, position, action, current_price])
+        # Se fez algo guarda o pedido no historico
+        if amount > 0:
+            self.episode_orders += 1
+            self._track_trade(amount,position,discounted_price)
 
     def _normalize_portfolio(self,i):
 
-        # portfolio_value%  cash_held% stocks_held_% stock_price_avg_comp%
-
-        PARAM = 'close'
-    #     # if self.pessimistic_mode:
-    #     #     PARAM = 'high'
-
+        # Portfolio value is the compared value now with when I started
         portfolio_value = self.portfolio_value/self.initial_investment
-        cash_in_hand = self.cash_in_hand/self.initial_investment
-        stock_held = self.stock_held/ self.maximum_stocks_held
-        stock_price_avg_comp = 1 if len(self.stock_prices) == 0 else self.stock_price_mean/self._get_current_price() -1 # No stocks so the value of a stock compared to what I have is itself
 
-        return [portfolio_value,cash_in_hand,stock_held,stock_price_avg_comp]  # % % %
+        # Cash in hand is the % of money I have now vs when I started
+        cash_in_hand = self.cash_in_hand/self.initial_investment
+
+        # Amount of stocks I have vs the maximum I told I'll invest
+        stock_held = self.stock_held/ self.maximum_stocks_held
+
+        # If I have no stocks, if I buy their value will allways be their current value, so, no evolution on the value -> 0
+        # BUT if I'm looking to sell, their value will be how much their price has evoluted since then
+        stock_price_avg_comp = 1 if len(self.stock_prices) == 0 else self.stock_price_mean/self._get_current_price() -1 
+        
+        return [
+            portfolio_value,
+            cash_in_hand,
+            stock_held,
+            stock_price_avg_comp
+        ]  # % % % %
 
     def _state(self):
         #return np.concatenate((self.orders_history,self.portfolio_history, self.market_history,self.news_history,self.indicators_history), axis=1)
@@ -561,15 +573,32 @@ class StockTradingEnvironment(Env):
 
         return reward
 
+    def _calculate_reward_v2(self):
+        # According to lessons
+        # Although I don't quite understand yet the logic this mechanism
+        if self.episode_orders > 1 and self.episode_orders > self.prev_episode_orders:
+            self.prev_episode_orders = self.episode_orders
+            if self.trading_history[-1]['action'] == "buy" and self.trading_history[-2]['action'] == "sell":
+                reward = self.trading_history[-2]['amount_traded']*self.trading_history[-2]['current_price'] - self.trading_history[-2]['amount_traded']*self.trading_history[-1]['current_price']
+                self.trading_history[-1]["reward"] = reward
+                return reward
+            elif self.trading_history[-1]['action'] == "sell" and self.trading_history[-2]['action'] == "buy":
+                reward = self.trading_history[-1]['amount_traded']*self.trading_history[-1]['current_price'] - self.trading_history[-2]['amount_traded']*self.trading_history[-2]['current_price']
+                self.trading_history[-1]["reward"] = reward
+                return reward
+        else:
+            return 0
+
     def _reached_end_of_episode(self):
         return self.episode_step == self.window_size -1
 
     def _beated_environment(self,action):
-        if action == self.ACTIONS.SELL and self.portfolio_value >= self.episode_target :
-            self.environment_beaten = True
-            return True 
-        else:
-            return False
+        # if action == self.ACTIONS.SELL and self.portfolio_value >= self.episode_target :
+        #     self.environment_beaten = True
+        #     return True 
+        # else:
+        #     return False
+        return False
 
     def _calculate_done(self,action):
         # Reached the end of the episode 
@@ -682,12 +711,15 @@ class StockTradingEnvironment(Env):
         # Return gym env step structure
         return self.state, reward, done , {}
 
-    def render(self):
-        #img = self.visualization.render(self.df.iloc[self.current_step], self.net_worth, self.trades)
-        #return img
-        return False
+    def render(self, mode="human"):
+        if self.visualize:
+            img = self.trading_graph.render(self.df.iloc[self.current_step], self.portfolio_value, self.trading_history)
+            return img
 
-    def reset(self):
+    def reset(self, visualize = False):
+        self.visualize = visualize
+        if self.visualize:
+            self.__init_visualization()
 
         # Get a random dataset 
         if self.mode == "train":
@@ -713,7 +745,9 @@ class StockTradingEnvironment(Env):
         self.market_history = deque(maxlen=self.lookback)    # Dataframe data during episode
 
         # History queues
-        self.trades = deque(maxlen=self.window_size)
+        self.episode_orders = 0         # reward v2 + track episode orders count
+        self.prev_episode_orders = 0    # reward v2 + track previous episode orders count
+        self.trading_history = deque(maxlen=self.window_size)
 
         # Trader state
         self.portfolio_value = self.initial_investment
@@ -737,12 +771,6 @@ class StockTradingEnvironment(Env):
 
         # # Punishment
         # self.punish_value = 0
-
-        # # For reward calculation
-        # self.episode_orders = 0
-        # self.prev_episode_orders = 0
-
-        self.episode_history = [] # step, data, ação, preço 
         # self.episode_penalty = False
 
         # # Stepper
@@ -758,11 +786,10 @@ class StockTradingEnvironment(Env):
             self.orders_history.append([0,0,0]) # Held, Sold, Bought
 
             # Portfolio
-            self.portfolio_history.append([1,1,0,1])  # portfolio_value_%  cash_held_% stocks_held_% stock_price_avg_comp_%
+            self.portfolio_history.append([1,1,0,0])  # portfolio_value_% =>  cash_held_% => stocks_held_% stock_price_avg_comp_%
 
             # Market history 
             self.market_history.append(self.df_norm.iloc[current_step])
-
 
 
         # # Create a new state
@@ -772,7 +799,3 @@ class StockTradingEnvironment(Env):
         # return self.state
         return self.state 
 
-    def init_visualization(self):
-        self.visualization = TradingGraph(render_range=66, show_reward=True, show_indicators=True) # init visualization
-
-        

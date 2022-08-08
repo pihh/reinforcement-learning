@@ -77,14 +77,16 @@ class Downloader:
                 "high",
                 "low",
                 "close",
-                "adjcp",
+                "adj_close",
                 "volume",
                 "ticker",
             ]
             # use adjusted close price instead of close price
-            data_df["close"] = data_df["adjcp"]
+            #data_df["close"] = data_df["adjcp"]
             # drop the adjusted close price column
-            data_df = data_df.drop(labels="adjcp", axis=1)
+            # data_df = data_df.drop(labels="adjcp", axis=1)
+            data_df = data_df.drop(labels="adj_close", axis=1)
+            
         except NotImplementedError:
             print("the features are not supported currently")
 
