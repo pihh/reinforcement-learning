@@ -62,6 +62,9 @@ class StockTradingEnvironment(Env):
                 mode="train"
         ):
 
+        super(StockTradingEnvironment,self).__init__()
+
+        self.env_name = "".join(t[0].upper() + t[1:].lower() for t in ticker.split('-')) + self.spec.id
         self.lookback = lookback
         self.window_size = window_size
         self.continuous = continuous
@@ -756,7 +759,10 @@ class StockTradingEnvironment(Env):
         self.current_step +=1
 
         # Return gym env step structure
-        return self.state, reward, done , {}
+        return self.state, reward, done , {
+            "portfolio_value": self.portfolio_value,
+            "episode_target": self.episode_target
+        }
 
     def render(self, mode="human"):
         if self.visualize:

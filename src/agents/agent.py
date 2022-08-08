@@ -72,7 +72,7 @@ class Agent:
             config[key] = str(config[key])
 
         
-        config['env_name'] = self.env.spec.name
+        config['env_name'] = self.env.env_name if hasattr(self.env,'env_name') else self.env.spec.name
         config['agent'] = type(self).__name__
 
         if hasattr(self.env,'config'):
