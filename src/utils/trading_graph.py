@@ -139,7 +139,7 @@ class TradingGraph:
                     try:
                         self.ax1.annotate('{0:.2f}'.format(
                             #trade['reward']
-                            trade["current_price"]
+                            trade["reward"]
                             ), 
                             (trade_date-0.02, high_low), 
                             xytext=(trade_date-0.02, ycoords),

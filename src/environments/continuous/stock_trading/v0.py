@@ -435,6 +435,16 @@ class StockTradingEnvironment(Env):
         close = self.df.iloc[self.current_step].close
         high = self.df.iloc[self.current_step].high # for visualization
         low = self.df.iloc[self.current_step].low # for visualization
+
+        reward = 0
+        if action == "sell":
+            for i in range(len(self.trading_history)):
+                th = self.trading_history[i]
+                if th['action'] == 'buy' and th['reward'] == 0:
+                    current_reward = (current_price * th['amount_traded']) - (th['current_price'] * th['amount_traded'])
+                    self.trading_history[i]['reward'] = current_reward
+                    reward += current_reward
+
         self.trading_history.append({
             "date":date,
             "open":open,
@@ -445,7 +455,8 @@ class StockTradingEnvironment(Env):
             'action': action,
             "current_price":current_price,
             "step": self.episode_step,
-            "reward": 0
+            "reward": reward,
+            "portfolio_value":self.portfolio_value
         })
 
     def _trade(self,action,amount):
