@@ -50,6 +50,8 @@ class PpoAgent(Agent):
                 ):
         super(PpoAgent, self).__init__(environment,args=locals())
         
+        assert n_workers > 0, "This agent needs to have at least one worker, got: {}".format(n_workers)
+
         # Args
         self.gamma=gamma
         self.policy=policy
@@ -132,14 +134,25 @@ class PpoAgent(Agent):
                 self.local_learning_max_score = self.running_reward.moving_average 
                 self._decrement_learning_rates()
 
-        # reshape memory to appropriate shape for training
-        states = np.vstack(buffer.states)
-        next_states = np.vstack(buffer.next_states)
-        actions = np.vstack(buffer.actions)
-        predictions = np.vstack(buffer.predictions)
+        states = np.array(buffer.states)
+        next_states = np.array(buffer.next_states)
+        actions = np.array(buffer.actions)
+        predictions = np.array(buffer.predictions)
         rewards = buffer.rewards
         dones = buffer.dones
 
+        if self.n_workers == 1:
+            # reshape memory to appropriate shape for training
+            states = np.vstack(buffer.states)
+            next_states = np.vstack(buffer.next_states)
+            actions = np.vstack(buffer.actions)
+            predictions = np.vstack(buffer.predictions)
+            # rewards = buffer.rewards
+            # dones = buffer.dones
+
+
+        print('states',np.array(states).shape)
+        print('next_states',np.array(next_states).shape)
         # Get Critic networker predictions
         values = self.critic.predict(states)
         next_values = self.critic.predict(next_states)
@@ -332,6 +345,10 @@ class PpoAgent(Agent):
             for _ in range(self.batch_size):
                 
                 action_list, action_data_list, prediction_list = self.act_on_batch(state)
+
+                # print('action_list',np.array(action_list).shape)
+                # print('action_data_list',np.array(action_data_list).shape)
+                # print('prediction_list',np.array(prediction_list).shape)
            
                 for worker_id, environment_connection in enumerate(environment_connections):
                     environment_connection.send(action_list[worker_id])
@@ -356,7 +373,6 @@ class PpoAgent(Agent):
                         # Step reward, tensorboard log score, print progress
                         self.on_learn_episode_end(score[worker_id],log_every,log_level,success_threshold)
                         
-                        
                         # Reset score
                         score[worker_id] = 0
                         
@@ -370,6 +386,7 @@ class PpoAgent(Agent):
             print()
             print('* Will replay')
             for worker_id in range(n_workers):
+                print(np.array(buffers[worker_id].states).shape)
                 self._replay(buffers[worker_id])
                 print('* Worker {} finnished learning phase'.format(worker_id))
             print('* Will resume')

@@ -29,23 +29,25 @@ import src.environments.continuous.stock_trading
 
 from src.agents.ppo import PpoAgent
 
-def environment(describe=True):
-    env = gym.make('StockTradingEnvironment-v0',
-        use_technical_indicators= [
-        "macd",
-        "boll_ub",
-        "boll_lb",
-        "rsi_30",
-        "cci_30",
-        "dx_30",
-        "close_30_sma",
-        "close_60_sma",
-    ])
-    
-    env.success_threshold =0.25 # 25%
-    return env
-
 if __name__ == '__main__':
+
+    def environment(describe=True):
+        env = gym.make('StockTradingEnvironment-v0',
+            use_technical_indicators= [
+            "macd",
+            "boll_ub",
+            "boll_lb",
+            "rsi_30",
+            "cci_30",
+            "dx_30",
+            "close_30_sma",
+            "close_60_sma",
+        ])
+    
+        env.success_threshold =0.25 # 25%
+
+        return env
+
     agent=PpoAgent(
         environment,
         actor_learning_rate=0.000025,

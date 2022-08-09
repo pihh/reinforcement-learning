@@ -92,7 +92,7 @@ class StockTradingEnvironment(Env):
         self.__init_targets()
         self.__init_spaces()
         self.__init_buffers()
-        # self.__init_punishment(inertness_punishment_method,inertness_punishment_value)
+        self.__init_punishment(inertness_punishment_method,inertness_punishment_value)
         self.__init_configuration()
 
     def __init_seed(self, seed=False):
@@ -101,23 +101,29 @@ class StockTradingEnvironment(Env):
             self.np_random, seed = seeding.np_random(seed)
             return [seed]
 
-    # def __init_punishment(self,method,value):
-    #     if method == None or value == 0:
-    #         self.intertness_punishment = False
-    #         def fn(action,reward):
-    #             return reward
-    #     elif method == "step":
-    #         def fn(action,reward):
-    #             return reward - value
+    def __init_punishment(self,method,value):
+        # Not in use right now but might be in the future
+        # if method == None or value == 0:
+        #     self.intertness_punishment = False
+        #     def fn(action,reward):
+        #         return reward
+        # if method == "step":
+        #     def fn(action,reward):
+        #         return reward - value
 
-    #     elif method == "hold":
-    #         def fn(action,reward):
-    #             if action > ACTION_DEAD_AREA[0] and action < ACTION_DEAD_AREA[1]:
-    #                 return reward - value
-    #             else:
-    #                 return reward
+        # elif method == "hold":
+        #     def fn(action,reward):
+        #         if action > ACTION_DEAD_AREA[0] and action < ACTION_DEAD_AREA[1]:
+        #             return reward - value
+        #         else:
+        #             return reward
+        # else: 
+        #     self.intertness_punishment = False
+        #     def fn(action,reward):
+        #         return reward
 
-    #     self.punishment = fn
+        # self.punishment = fn
+        pass
 
     def __init_dataset(self):
 
