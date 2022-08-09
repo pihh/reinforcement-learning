@@ -52,7 +52,7 @@ class StockTradingEnvironment(Env):
                 use_fear_and_greed=True,
                 use_market_volatility= "DOW_30",
                 ticker="AAPL",
-                initial_investment=None,
+                initial_investment=False,
                 # Punish it for doing nothing ? 
                 inertness_punishment_method= None, # step , hold
                 inertness_punishment_value = 0,#0.001,
@@ -80,12 +80,13 @@ class StockTradingEnvironment(Env):
         self.use_market_volatility = use_market_volatility
         self.ticker = ticker.lower()
         self.initial_investment = initial_investment
-        self.auto_investment =  initial_investment == False
+        self.auto_investment = True if initial_investment == False else  False
         self.maximum_stocks_held = maximum_stocks_held
         self.inertness_punishment_method = inertness_punishment_method
         self.inertness_punishment_value = inertness_punishment_value
         self.fees = fees
         self.mode = mode
+        self.visualize = False
 
         self.__init_seed(seed)
         self.__init_dataset()
@@ -175,13 +176,14 @@ class StockTradingEnvironment(Env):
             if len(self.technical_indicators)> 0:
                 df = feature_engeneer.technical_indicators(df, self.technical_indicators)
 
+
             if self.use_sentiment_analysis:
                 df = feature_engeneer.sentiment_analysis(df,self.ticker,key="title")
                 df = feature_engeneer.sentiment_analysis(df,self.ticker,key="body")
 
             if self.use_trends:
                 df = feature_engeneer.trends(df,self.ticker)
-
+     
             if self.use_fear_and_greed:
                 df = feature_engeneer.fear_and_greed(df)
 
@@ -474,13 +476,13 @@ class StockTradingEnvironment(Env):
         self.stock_bought = 0
         self.stock_sold = 0
 
-        current_price = self._get_current_price()
+        current_price = self.get_current_price()
         discounted_price = current_price
         position = 'hold'
 
         if action == self.ACTIONS.BUY:
             position = 'buy'
-            discounted_price =self._get_current_buying_price()
+            discounted_price =self.get_current_buying_price()
 
             # Put it on history
             self.stock_bought = 1
@@ -505,7 +507,7 @@ class StockTradingEnvironment(Env):
         elif action == self.ACTIONS.SELL:
             # Sells all in a row
             position = 'sell'
-            discounted_price = self._get_current_selling_price()
+            discounted_price = self.get_current_selling_price()
             
             # Put it on history
             self.stock_sold = 1
@@ -545,7 +547,7 @@ class StockTradingEnvironment(Env):
 
         # If I have no stocks, if I buy their value will allways be their current value, so, no evolution on the value -> 0
         # BUT if I'm looking to sell, their value will be how much their price has evoluted since then
-        stock_price_avg_comp = 1 if len(self.stock_prices) == 0 else self.stock_price_mean/self._get_current_price() -1 
+        stock_price_avg_comp = 1 if len(self.stock_prices) == 0 else self.stock_price_mean/self.get_current_price() -1 
         
         return [
             portfolio_value,
@@ -591,15 +593,15 @@ class StockTradingEnvironment(Env):
         # return self.state
         self._state()
 
-    def _get_current_buying_price(self):
+    def get_current_buying_price(self):
         # Compra a um preço e adiciona comissão
-        return self._get_current_price() * (1+self.fees.BUY) 
+        return self.get_current_price() * (1+self.fees.BUY) 
 
-    def _get_current_selling_price(self):
+    def get_current_selling_price(self):
         # Compra a um preço e paha comissão
-        return self._get_current_price() * (1-self.fees.SELL) 
+        return self.get_current_price() * (1-self.fees.SELL) 
 
-    def _get_current_price(self, optimistic=True):
+    def get_current_price(self, optimistic=True):
         return self.df.iloc[self.current_step -1]['close']
 
     def _calculate_reward(self):
@@ -613,7 +615,7 @@ class StockTradingEnvironment(Env):
 
         # # Calculate net worth difference
         #self.prev_portfolio_value = self.portfolio_value -> set at begining of episode before take action
-        self.portfolio_value = self.cash_in_hand + self.stock_held * self._get_current_selling_price()
+        self.portfolio_value = self.cash_in_hand + self.stock_held * self.get_current_selling_price()
         reward = (self.portfolio_value - self.prev_portfolio_value) / self.initial_investment
 
         return reward

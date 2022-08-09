@@ -1,0 +1,1251 @@
+ticker,date,title,provider,neg,neu,pos,compound
+IBM,2008-10-09,GLOBAL MARKETS Stocks falter  safe havens fall amid market calm,Reuters,0.0,0.606,0.394,0.6369
+IBM,2008-10-17,GLOBAL MARKETS Equities rise  helped by earnings  credit,Reuters,0.0,0.729,0.271,0.3818
+IBM,2009-01-27,UPDATE 2 Thompson top choice for US commerce sec y  sources,Reuters,0.0,0.816,0.184,0.2023
+IBM,2009-01-27,UPDATE 2 Software AG confirms 2009 outlook  shares up,Reuters,0.0,0.761,0.239,0.296
+IBM,2009-02-25,GLOBAL MARKETS Global stocks slump on dour outlook  oil jumps,Reuters,0.0,1.0,0.0,0.0
+IBM,2009-03-26,COLUMN Computer industry hopes lie in the clouds  Eric Auchard,Reuters,0.0,0.763,0.237,0.4215
+IBM,2009-04-06,FOREX Yen  dollar rise as jitters revive  RBA in focus,Reuters,0.0,0.789,0.211,0.34
+IBM,2009-04-07,FOREX Yen  dollar rise in twitchy market  RBA in focus,Reuters,0.0,1.0,0.0,0.0
+IBM,2009-05-11,COLUMN After Sun  expect new Oracle hardware deals  Eric Auchard,Reuters,0.0,1.0,0.0,0.0
+IBM,2009-06-11,US STOCKS SNAPSHOT Wall St extends gains  up 1 pct,Reuters,0.0,0.642,0.358,0.4404
+IBM,2009-06-24,US STOCKS Durables data  Oracle boost market  Fed awaited,Reuters,0.102,0.648,0.25,0.3818
+IBM,2009-07-02,US STOCKS Bleak payrolls report mauls Wall St  volume thin,Reuters,0.0,1.0,0.0,0.0
+IBM,2009-07-10,UPDATE 3 Infosys beats Q1 fcast  flags tough environment,Reuters,0.176,0.824,0.0,-0.128
+IBM,2009-07-10,UPDATE 2 Infosys beats Q1 fcast but says environment tough,Reuters,0.179,0.821,0.0,-0.1901
+IBM,2009-07-15,US STOCKS Wall St surges on Intel results  data,Reuters,0.0,1.0,0.0,0.0
+IBM,2009-07-15,REFILE US STOCKS Intel results  data fuel broad rally on Wall St,Reuters,0.0,1.0,0.0,0.0
+IBM,2009-07-15,US STOCKS Intel results  data fuel broad rally on Wall St,Reuters,0.0,1.0,0.0,0.0
+IBM,2009-07-16,US STOCKS Wall St rises on tech shares  earnings optimism,Reuters,0.0,0.584,0.416,0.6908
+IBM,2009-07-16,US STOCKS Wall St gains on tech shares as IBM results awaited,Reuters,0.075,0.612,0.313,0.5423
+IBM,2009-07-16,US STOCKS SNAPSHOT Market gains as tech advances  IBM shares up,Reuters,0.0,0.662,0.338,0.5574
+IBM,2009-07-16,JP Morgan lifts FTSE into positive territory,Reuters,0.0,0.449,0.551,0.7297
+IBM,2009-07-16,GLOBAL MARKETS Rally stalls as caution builds ahead of results,Reuters,0.0,1.0,0.0,0.0
+IBM,2009-07-17,FTSE up 0 7 pct early  set for best week since Jan,Reuters,0.0,0.682,0.318,0.6369
+IBM,2009-07-17,FOREX Dollar  yen firmer  await U S  bank earnings,Reuters,0.0,0.811,0.189,0.1027
+IBM,2009-07-17,Bullish European Markets Near Crucial Price Points,LFB Forex,0.0,1.0,0.0,0.0
+IBM,2009-07-17,US STOCKS SNAPSHOT Dow  Nasdaq end up  but S P dips,Reuters,0.0,1.0,0.0,0.0
+IBM,2009-07-20,GLOBAL MARKETS World equities rally on earnings  CIT news,Reuters,0.0,1.0,0.0,0.0
+IBM,2009-07-20,GLOBAL MARKETS World stocks rally on earnings  CIT news,Reuters,0.0,1.0,0.0,0.0
+IBM,2009-08-03,ANALYSIS EU affirms tough antitrust stand with Microsoft case,Reuters,0.158,0.842,0.0,-0.128
+IBM,2009-09-01,Reuters Summit Lenovo eyes Shanghai listing  profit by March,Reuters,0.0,0.734,0.266,0.4404
+IBM,2009-09-01,Reuters Summit UPDATE 1 Lenovo eyes Shanghai listing  upturn,Reuters,0.0,1.0,0.0,0.0
+IBM,2009-09-02,US STOCKS Wall St inches up following data  recent declines,Reuters,0.0,1.0,0.0,0.0
+IBM,2009-09-02,IBM executive to replace Euronext s deputy report,Reuters,0.0,1.0,0.0,0.0
+IBM,2009-09-03,EU opens in depth probe into Oracle  Sun deal,Reuters,0.0,1.0,0.0,0.0
+IBM,2009-09-03,UPDATE 1 EU opens in depth probe into Oracle  Sun deal,Reuters,0.0,1.0,0.0,0.0
+IBM,2009-09-09,Global Wrap  S P 500 At An 11 Month High ,LFB Forex,0.0,1.0,0.0,0.0
+IBM,2009-09-23,US STOCKS Wall St advances on Fed s optimistic view,Reuters,0.0,0.777,0.223,0.3182
+IBM,2009-09-23,Finnish mobile software firm Flander buys China s Symbio,Reuters,0.0,1.0,0.0,0.0
+IBM,2009-09-30,RPT US STOCKS Wall St falls on PMI  but higher for quarter,Reuters,0.0,1.0,0.0,0.0
+IBM,2009-10-13,FOREX Dollar back on defensive  Aussie hits 14 mth high,Reuters,0.0,0.891,0.109,0.0258
+IBM,2009-10-13,FOREX Dollar falls broadly  euro  commods FX surge,Reuters,0.0,1.0,0.0,0.0
+IBM,2009-10-13,FOREX Dollar falls  euro above  1 48 as gold at new high,Reuters,0.0,1.0,0.0,0.0
+IBM,2009-10-13,FOREX Dollar hits 14 month low vs currency basket,Reuters,0.208,0.792,0.0,-0.2732
+IBM,2009-10-13,FOREX Dollar falls to 14 month low vs currency basket,Reuters,0.189,0.811,0.0,-0.2732
+IBM,2009-10-15,FOREX Yen extends broad slide  pound bounces,Reuters,0.0,0.8,0.2,0.128
+IBM,2009-10-16,Bookies see European stocks extending gains,Reuters,0.0,0.676,0.324,0.34
+IBM,2009-10-19,ANALYSIS Indian outsourcers shy of blockbuster MA,Reuters,0.183,0.459,0.358,0.4404
+IBM,2009-10-28,US STOCKS Futures fall  durable goods  home sales on tap,Reuters,0.0,1.0,0.0,0.0
+IBM,2009-10-28,FACTBOX IT services companies in crosshairs of MA,Reuters,0.0,1.0,0.0,0.0
+IBM,2009-10-28,US STOCKS Futures fall after weak overseas results  data ahead,Reuters,0.244,0.756,0.0,-0.4404
+IBM,2009-10-30,Taiwan s Acer posts Q3 profit  in line with mkt estimates,Reuters,0.0,0.756,0.244,0.4404
+IBM,2010-07-20,U S  stocks fall on earning reports  Dow Jones down 1 23 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2010-07-20,Europe stocks decline amid negative sentiment  DAX sheds 1 18 ,Investing.com,0.316,0.684,0.0,-0.5719
+IBM,2011-04-15,UPDATE 5 Infosys results spell trouble for sector  shares plunge 10 pct,Reuters,0.194,0.647,0.158,-0.128
+IBM,2011-04-15,CORRECTED UPDATE 1 Infosys sees 18 20 pct rise in FY sales  shares fall 7 pct,Reuters,0.0,0.855,0.145,0.296
+IBM,2011-04-15,UPDATE 1 Infosys sees 18 20 pct rise in FY sales  shares fall 7 pct,Reuters,0.0,0.845,0.155,0.296
+IBM,2011-04-27,UPDATE 2 India s Wipro outsourcing outlook disappoints  shares fall,Reuters,0.241,0.556,0.204,-0.1027
+IBM,2011-05-01,INTERVIEW UPDATE 1 India s Infosys eyes buys in Europe  Japan,Reuters,0.0,1.0,0.0,0.0
+IBM,2011-07-18,U S  stock futures lower as debt fears weigh  Dow sheds 0 7 ,Investing.com,0.556,0.444,0.0,-0.7579
+IBM,2011-07-19,GLOBAL MARKETS Stocks recover  euro up after safety flight,Reuters,0.0,0.741,0.259,0.4215
+IBM,2011-07-19,European share bounce led by beaten down banks,Reuters,0.255,0.545,0.2,-0.1531
+IBM,2011-07-19,GLOBAL MARKETS Stocks  euro rebound  gold off record high,Reuters,0.0,1.0,0.0,0.0
+IBM,2011-07-19,GLOBAL MARKETS Stocks  euro recover  gold below record high,Reuters,0.0,1.0,0.0,0.0
+IBM,2011-07-19,GLOBAL MARKETS Stocks  euro rise ahead of key meeting on Greece,Reuters,0.0,1.0,0.0,0.0
+IBM,2011-08-22,US STOCKS Wall St edges higher  searches for catalyst,Reuters,0.0,1.0,0.0,0.0
+IBM,2011-09-01,US STOCKS Futures dip ahead of jobs  manufacturing data,Reuters,0.0,1.0,0.0,0.0
+IBM,2011-10-17,RPT US STOCKS Futures dip after German finmin comments,Reuters,0.0,1.0,0.0,0.0
+IBM,2011-10-23,Quality of Earnings  Chapter 6,Saj Karsan,0.0,1.0,0.0,0.0
+IBM,2011-11-14,Warren Buffett tells the world he has purchased 64 million shares of IBM since March,FXDD,0.0,0.864,0.136,0.296
+IBM,2011-12-05,Week in Review Part I  Europe  Washington and Wall Street,Brian Trumbore,0.0,1.0,0.0,0.0
+IBM,2011-12-07,Throwing Good Money After Bad,Peter T. Treadway,0.372,0.319,0.309,-0.1531
+IBM,2011-12-27,Tips for 2012,Helix Investment Management,0.0,1.0,0.0,0.0
+IBM,2012-01-07,3 Large Cap Tech Dividend Stocks With Double Dividends,Double Dividend Stocks,0.0,1.0,0.0,0.0
+IBM,2012-01-11,Bad News Is Good News ,Richard Rhodes,0.372,0.319,0.309,-0.1531
+IBM,2012-01-12,Rush Toward Safety ,Richard Rhodes,0.0,0.417,0.583,0.4215
+IBM,2012-01-16,World Markets Mixed Again ,Richard Rhodes,0.0,1.0,0.0,0.0
+IBM,2012-01-16,The Week Ahead   Rising Signs of Worry Amid the Complacency,Saxo Bank,0.244,0.756,0.0,-0.4404
+IBM,2012-02-04,Daily Analysis   Asia Rallies  Western Markets end Mixed,Binary Options Strategy,0.0,1.0,0.0,0.0
+IBM,2012-02-06,The Financial Crisis Of 2008 Was Just A Warm Up Act For The Economic Horror Show That Is Coming,Michael T. Snyder,0.316,0.607,0.077,-0.7845
+IBM,2012-02-07,FX Futures Edge   Tuesday  February 7  2012 ,Richard Rhodes,0.0,1.0,0.0,0.0
+IBM,2012-02-08,FX Futures Edge   Wednesday  February 8  2012 ,Richard Rhodes,0.0,1.0,0.0,0.0
+IBM,2012-02-17,Musings on Diversification  Value Investing and the  400  Man ,David Merkel,0.0,0.769,0.231,0.34
+IBM,2012-02-24,IBM Leads As Investors Hope For Apple Dividend ,Nicholas Santiago,0.0,0.707,0.293,0.4404
+IBM,2012-03-29,Buy This Safe Stock    And Double Your Money In Five Years,StreetAuthority,0.0,0.775,0.225,0.4404
+IBM,2012-03-30,Three Day Losing Streak  Unheard Of    ,Nicholas Santiago,0.342,0.658,0.0,-0.3818
+IBM,2012-04-05,Markets Flush As Prediction Nailed 100 ,Nicholas Santiago,0.0,1.0,0.0,0.0
+IBM,2012-04-11,S P 500 Depository  SPY    Risk Premium for Earnings Season Is    Down ,Ophir Gottlieb,0.189,0.811,0.0,-0.2732
+IBM,2012-04-12,3 High Yield Stocks That Could Easily Boost Dividends,StreetAuthority,0.0,0.541,0.459,0.6249
+IBM,2012-04-17,U S  futures higher  eyes on data  Dow Jones up 0 42 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2012-04-17,Trying To Form A Bottom,ETF Prophet,0.0,1.0,0.0,0.0
+IBM,2012-04-17,Asia stocks slump on global growth concerns  Nikkei dips 0 1 ,Investing.com,0.0,0.755,0.245,0.3818
+IBM,2012-04-18,IBM Stock  2 5  Fall in After hours Trading Session,Jim Makos,0.0,1.0,0.0,0.0
+IBM,2012-04-18,IBM Stock  2 5  Fall In After Hours Trading,Jim Makos,0.0,1.0,0.0,0.0
+IBM,2012-04-18,Morning Report  April 18  2012,Keagan York,0.0,1.0,0.0,0.0
+IBM,2012-04-18,Stock Prices Rebound,John Nyaradi,0.0,1.0,0.0,0.0
+IBM,2012-04-18,Asian Market Update  April 18  2012,Trade The News,0.0,1.0,0.0,0.0
+IBM,2012-04-18,04 17 12   Bounce,ETF Prophet,0.0,1.0,0.0,0.0
+IBM,2012-04-19,U S  Stocks Slide As Tech Earnings Fail To Inspire,Midnight Trader,0.265,0.455,0.28,0.0516
+IBM,2012-04-19,Stocks On Shaky Ground Following Earnings  April 19  2012,Nicholas Santiago,0.192,0.808,0.0,-0.2263
+IBM,2012-04-20,IMF Seeks To Bolster The Firewall Fund  April 20  2012,Jeremy Cook,0.0,1.0,0.0,0.0
+IBM,2012-04-20,Best And Worst ETFs  And Mutual Funds   Technology Sector,David Trainer,0.268,0.458,0.275,0.0258
+IBM,2012-04-20,Spanish Debt Fears Grow  As Yields Cross 6 ,Binary Options Strategy,0.515,0.485,0.0,-0.6486
+IBM,2012-04-23,European And US Stocks Soar  April 23  2012,Binary Options Strategy,0.0,1.0,0.0,0.0
+IBM,2012-04-24,Stocks Drop As Spanish Debt Fears Return  April 24  2012,Binary Options Strategy,0.514,0.486,0.0,-0.7506
+IBM,2012-04-24,IBM Hits Daily Support Level,Nicholas Santiago,0.0,0.597,0.403,0.4019
+IBM,2012-04-27,Spanish Debt Fears Grow  As Yields Cross 6   April 27  2012,Binary Options Strategy,0.398,0.602,0.0,-0.6486
+IBM,2012-04-27,IBM Master Swing Short Level,Nicholas Santiago,0.0,1.0,0.0,0.0
+IBM,2012-04-30,Spanish Debt Fears Grow  As Yields Cross 6   April 30  2012,Binary Options Strategy,0.398,0.602,0.0,-0.6486
+IBM,2012-04-30,Stocks With Fastest Dividend Growth   April 2012,Dividend Yield,0.0,0.698,0.302,0.3818
+IBM,2012-05-01,European And US Stocks Soar,Binary Options Strategy,0.0,1.0,0.0,0.0
+IBM,2012-05-02,Stocks Drop As Spanish Debt Fears Return,Binary Options Strategy,0.649,0.351,0.0,-0.7506
+IBM,2012-05-02,Market Spikes  Gives Great Shorting Opportunity ,Nicholas Santiago,0.0,0.367,0.633,0.7845
+IBM,2012-05-04,Western Markets Tumble As Data Disappoints  May 04  2012,Binary Options Strategy,0.245,0.755,0.0,-0.3818
+IBM,2012-05-07,European Political Uncertainty Sends Stocks Sharply Lower,Binary Options Strategy,0.479,0.521,0.0,-0.5574
+IBM,2012-05-07,Spanish Debt Fears Grow  As Yields Cross 6 ,Binary Options Strategy,0.515,0.485,0.0,-0.6486
+IBM,2012-05-08,European And US Stocks Soar,Binary Options Strategy,0.0,1.0,0.0,0.0
+IBM,2012-05-09,Using Call Options To Bottom Fish In QQQ,Rick Ackerman,0.0,1.0,0.0,0.0
+IBM,2012-05-09,Stocks Drop As Spanish Debt Fears Return,Binary Options Strategy,0.649,0.351,0.0,-0.7506
+IBM,2012-05-10,What Next For Hewlett Packard ,Jim Makos,0.0,1.0,0.0,0.0
+IBM,2012-05-10,US Weekly Jobless Claims Continue To Drop,Binary Options Strategy,0.259,0.741,0.0,-0.2732
+IBM,2012-05-11,Western Markets Tumble As Data Disappoints,Binary Options Strategy,0.342,0.658,0.0,-0.3818
+IBM,2012-05-11,Looks Like Apple VIX  VXAPL  Futures Are Coming Soon,Bill Luby,0.0,0.762,0.238,0.3612
+IBM,2012-05-14,Spanish Debt Fears Grow  As Yields Cross 6 ,Binary Options Strategy,0.515,0.485,0.0,-0.6486
+IBM,2012-05-30,Dell Vs  HP  Which Stock Should You Own ,StreetAuthority,0.0,1.0,0.0,0.0
+IBM,2012-05-31,Revealed  Master Long Level On IBM ,Nicholas Santiago,0.0,1.0,0.0,0.0
+IBM,2012-06-03,Sell In May Would Have Been A Good Idea,Cumberland Advisors,0.0,0.707,0.293,0.4404
+IBM,2012-06-07,NetApp  Earnings Drop Turns Into Takeover Opportunity,Ophir Gottlieb,0.212,0.505,0.283,0.1779
+IBM,2012-06-12,China  3 Of The Top 10 Most Valuable Global Companies Now Based Here,Stocks on Wall Street,0.0,0.658,0.342,0.6361
+IBM,2012-06-12,German Sovereign CDS Widening Is A Troubling Sign ,Sober Look,0.368,0.632,0.0,-0.5423
+IBM,2012-06-14,The US Economy Sitting On The Threshold Of A New Golden Age  Part Two ,Chuck Carnevale,0.0,1.0,0.0,0.0
+IBM,2012-06-19,Join US As We Short Every Stupid Rally,Rick Ackerman,0.293,0.517,0.19,-0.296
+IBM,2012-07-01,ServiceNow  Cloud Based Service IPO ,Francis Gaskins,0.0,1.0,0.0,0.0
+IBM,2012-07-03,100 Dividend Stocks That Big Investment Gurus Bought Over The Past Half ,Dividend Yield,0.0,1.0,0.0,0.0
+IBM,2012-07-12,IBM  Ready To Hit The Skids ,Rick Ackerman,0.0,0.667,0.333,0.3612
+IBM,2012-07-12,Stocks On The Rocks ,Nicholas Santiago,0.0,1.0,0.0,0.0
+IBM,2012-07-12,TLT VIXEN Soars,ETF Prophet,0.0,1.0,0.0,0.0
+IBM,2012-07-16,Q A With Jim Rogers And Greyson Colvin,T. Marc Schober,0.0,1.0,0.0,0.0
+IBM,2012-07-18,Asia stocks rise on U S  housing data  U S  earnings  Nikkei up 0 86 ,Investing.com,0.224,0.776,0.0,-0.3818
+IBM,2012-07-19,U S  stocks higher on strong earnings  eBay soars  Dow up 0 2 ,Investing.com,0.0,0.708,0.292,0.5106
+IBM,2012-07-19,Wall Street closes higher on earnings  despite weak data  Dow up 0 27 ,Investing.com,0.0,0.821,0.179,0.3412
+IBM,2012-07-19,European stocks higher on earnings optimism  DAX up 0 6 ,Investing.com,0.0,0.667,0.333,0.5423
+IBM,2012-07-19,Asia stocks boosted by strong U S  tech earnings  Nikkei climbs 0 8 ,Investing.com,0.0,0.547,0.453,0.7003
+IBM,2012-07-19,Market Neutral Conundrum,ETF Prophet,0.0,1.0,0.0,0.0
+IBM,2012-07-19,U S  futures higher ahead of data  earnings  Dow gains 0 45 ,Investing.com,0.0,0.769,0.231,0.34
+IBM,2012-07-19,AUD Rallies On Central Banks  Plans To Buy,Trade The News,0.0,1.0,0.0,0.0
+IBM,2012-07-20,Forget Libor gate  Oil Market Manipulation Is Far Worse ,EconMatters,0.545,0.455,0.0,-0.7351
+IBM,2012-07-20,Stocks Close Higher As Investors Take Solace In Corporate Earnings,Midnight Trader,0.0,1.0,0.0,0.0
+IBM,2012-07-20,IBM Earnings Review  Performance Rebounds  Guidance Raised,David Dyer,0.0,1.0,0.0,0.0
+IBM,2012-07-21,Economic Fundamentals Mirror America s Frail Recovery,Aviv N. Shapiro,0.0,1.0,0.0,0.0
+IBM,2012-07-25,4 Steps To Identify Institutional Gaps ,Nicholas Santiago,0.0,1.0,0.0,0.0
+IBM,2012-08-09,Using Volatility To Trade IBM Using Options,J.W. Jones,0.0,1.0,0.0,0.0
+IBM,2012-08-10,Wall Street opens sharply lower on bearish data  Dow off 0 51 ,Investing.com,0.18,0.82,0.0,-0.296
+IBM,2012-08-10,U S  futures dip after data  growth worries weigh  Dow Jones down 0 36 ,Investing.com,0.194,0.625,0.181,-0.0516
+IBM,2012-08-13,Top Trades For The Week,Gregory W. Harmon,0.0,0.69,0.31,0.2023
+IBM,2012-08-15,India s OMDC To Hike Iron Ore  Manganese Output,MetalMiner,0.0,1.0,0.0,0.0
+IBM,2012-08-15,Complex Head And Shoulders In IBM Should Knock Shares Down,Abigail Doolittle,0.0,0.804,0.196,0.296
+IBM,2012-09-05,Is IBM Priced To Move ,F.A.S.T. Graphs,0.0,1.0,0.0,0.0
+IBM,2012-10-03,December E Mini S P  Getting Past Monday s Peak ,Rick Ackerman,0.0,1.0,0.0,0.0
+IBM,2012-10-18,U S  Stocks Edge Higher As Traders Digest Housing Data  Corporate Earnin,Midnight Trader,0.0,1.0,0.0,0.0
+IBM,2012-10-23,Tuesday Uncertain  Bias Higher ,The Night Owl Trader,0.643,0.357,0.0,-0.3818
+IBM,2012-10-23,These Stocks And Markets May Bounce Now,Nicholas Santiago,0.0,1.0,0.0,0.0
+IBM,2012-11-27,AUD USD  US Economic Outlook Continues to Ameliorate,Aviv N. Shapiro,0.0,1.0,0.0,0.0
+IBM,2013-01-22,AUD USD  Greenback To Stand Clear Of Aussie Hike,Aviv N. Shapiro,0.0,0.755,0.245,0.3818
+IBM,2013-01-23,IBM  Fifth Time s The Charm For Big Blue ,Rick Ackerman,0.0,0.722,0.278,0.4019
+IBM,2013-01-23,UK PM Cameron Proposes Referendum On UK Remaining In EU By 2017,Trade The News,0.0,1.0,0.0,0.0
+IBM,2013-01-23,Signs That A Correction May Be Near In The SPX  RUT And DJIA,Chris Vermeulen,0.0,1.0,0.0,0.0
+IBM,2013-02-06,Is IBM Pointing To Wider Market Problems  ,Nicholas Santiago,0.31,0.69,0.0,-0.4019
+IBM,2013-02-07,What s IBM Saying To The Tech Play ,Nicholas Santiago,0.0,0.714,0.286,0.34
+IBM,2013-02-14,IBM  Stock Undervalued,F.A.S.T. Graphs,0.0,1.0,0.0,0.0
+IBM,2013-02-14,Why HFTs Are Not A Problem ,Eric Falkenstein,0.0,0.639,0.361,0.3089
+IBM,2013-02-19,VIX Quotes On Google Finance,Vance Harwood,0.0,1.0,0.0,0.0
+IBM,2013-03-15,This Crab Wants To Run,Gregory W. Harmon,0.0,1.0,0.0,0.0
+IBM,2013-03-15,IBM  Blow Off Top  ,Nicholas Santiago,0.0,0.625,0.375,0.2023
+IBM,2013-03-28,U S  stocks gain on GDP data  Dow ends up 0 36 ,Investing.com,0.0,0.702,0.298,0.5267
+IBM,2013-04-02,Shorting The IBM Gap,Tim Knight,0.0,1.0,0.0,0.0
+IBM,2013-04-04,You Don t Have To Own The Index  Sector Allocation,Baskin Financial Blog,0.0,1.0,0.0,0.0
+IBM,2013-04-19,Downbeat Earnings Reports Cause Decline,John Nyaradi,0.0,1.0,0.0,0.0
+IBM,2013-04-19,Will IBM s Earnings Hit The Dow ,Chris Kimble,0.0,1.0,0.0,0.0
+IBM,2013-04-23,Can Apple Save Technology ETFs ,Gary Gordon,0.0,0.556,0.444,0.4939
+IBM,2013-04-25,U S stocks rise on falling jobless claims  Dow gains 0 17 ,Investing.com,0.145,0.636,0.218,0.2023
+IBM,2013-05-02,IBM  Grab A Fast Double Digit Yield From This Dow Dividend Stock,Double Dividend Stocks,0.0,1.0,0.0,0.0
+IBM,2013-05-06,Top Five Reasons You Know Another Bubble Is Forming,Nicholas Santiago,0.0,0.816,0.184,0.2023
+IBM,2013-05-08,Rockwell Trading CEO Heitkoetter  A Simple  Timeless Trading Strategy ,Nick Mastrandrea,0.0,1.0,0.0,0.0
+IBM,2013-05-16,IBM Rides The Bubble,Nicholas Santiago,0.0,1.0,0.0,0.0
+IBM,2013-05-24,IBM Corp   Heading Down ,Rick Ackerman,0.0,1.0,0.0,0.0
+IBM,2013-06-10,International Business Machines  Next Portfolio Stock Purchase ,Dividend Yield,0.0,1.0,0.0,0.0
+IBM,2013-06-14,Investors  Winning In Gamification Initiatives,Jennifer Lynn,0.0,0.541,0.459,0.5267
+IBM,2013-06-17,Buying Emerging Markets From Home,Simon Lack,0.0,1.0,0.0,0.0
+IBM,2013-07-12,Best   Worst ETFs   Mutual Funds  Information Technology Sector,David Trainer,0.287,0.42,0.294,0.0258
+IBM,2013-07-15,U S stocks shrug retail data and gain on Citi earnings  Dow up 0 13 ,Investing.com,0.0,0.764,0.236,0.5267
+IBM,2013-07-17,IBM Earnings,Tim Knight,0.0,1.0,0.0,0.0
+IBM,2013-07-18,Oil Slips On Stronger Dollar After Bernanke Speech  Inventories Fall,ICN.com,0.0,0.776,0.224,0.3818
+IBM,2013-07-19,S P 500  Biggest Bubble In 30 Years,Phoenix Capital Research,0.0,1.0,0.0,0.0
+IBM,2013-07-19,Oil Near Highest In 16 Months On Demand Growth Hopes,ICN.com,0.108,0.504,0.388,0.5994
+IBM,2013-07-21,Detroit And The Discipline Of Municipal Bonds,David Kotok,0.0,1.0,0.0,0.0
+IBM,2013-07-22,Stocks Are Setting Up For An Epic Collapse,Phoenix Capital Research,0.314,0.686,0.0,-0.4939
+IBM,2013-07-23,Keep Your Eye On This Lesser Known Index,Mitchell Clark,0.0,1.0,0.0,0.0
+IBM,2013-08-06,U S  stocks fall on Federal Reserve comments  Dow falls 0 60 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2013-08-07,Dow Closes Lower After Fed Indicates Tapering Of Asset Purchases ,James Chen,0.173,0.63,0.197,0.0772
+IBM,2013-08-07,Wall Street Dips,LiteForex Europe,0.0,1.0,0.0,0.0
+IBM,2013-08-07,Big Blue Breaks Badly,Tim Knight,0.508,0.492,0.0,-0.4767
+IBM,2013-08-12,I Doubled The IBM Stock Position In My Portfolio ,Dividend Yield,0.0,1.0,0.0,0.0
+IBM,2013-08-14,Ben Graham Did Not Give Up On Value Investing  In Theory,David Merkel,0.0,0.806,0.194,0.34
+IBM,2013-08-15,What s Behind The Surge In The Cloud Computing ETF,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2013-08-16,Berkshire Hathaway s 2Q Portfolio Changes  Right Strategy Going Forward,David Kass,0.0,1.0,0.0,0.0
+IBM,2013-08-25,Buy This Blue Chip Dividend Stock 9  Below Its 52 Week Low,Double Dividend Stocks,0.174,0.826,0.0,-0.2732
+IBM,2013-09-04,U S  stocks gain on upbeat Federal Reserve Beige Book  Dow up 0 65 ,Investing.com,0.0,0.746,0.254,0.5267
+IBM,2013-09-06,U S  stocks end flat on Syria concerns  soft jobs report  Dow down 0 10 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2013-09-11,Dow Posts Another Win,Midnight Trader,0.0,0.441,0.559,0.5859
+IBM,2013-09-11,U S  stocks rise as market sees Fed staying loose  Dow up 0 89 ,Investing.com,0.187,0.813,0.0,-0.3182
+IBM,2013-09-12,Monitise Capitalising On The Mobile Money Opportunity ,Edison,0.0,0.682,0.318,0.4215
+IBM,2013-09-12,Looking Ahead  The Q3 Earnings Season,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2013-09-13,Can The Stock Market Maintain Its High ,Michael Lombardi,0.0,1.0,0.0,0.0
+IBM,2013-09-17,U S  stocks gain as market bets on light stimulus taper  Dow up 0 23 ,Investing.com,0.0,0.764,0.236,0.5267
+IBM,2013-09-20,Converting Reported Assets Into Invested Capital ,David Trainer,0.0,0.746,0.254,0.1779
+IBM,2013-09-20,Dividend Contenders With Over 20  Return on Equity ,Dividend Yield,0.0,1.0,0.0,0.0
+IBM,2013-09-25,IBM  Road Map To Reasonable Valuation ,F.A.S.T. Graphs,0.0,1.0,0.0,0.0
+IBM,2013-09-26,Obamacare   An Unintended Consequence    ,Bruce Krasting,0.0,1.0,0.0,0.0
+IBM,2013-10-08,U S  stocks open lower as budget impasse weighs  Dow Jones down 0 29 ,Investing.com,0.18,0.82,0.0,-0.296
+IBM,2013-10-08,U S  futures steady amid budget jitters  Dow Jones up 0 05  ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2013-10-09,U S  stocks gain on Yellen nomination  shutdown weighs  Dow rises 0 18 ,Investing.com,0.0,0.726,0.274,0.5267
+IBM,2013-10-09,Wave Of The Future Investment From The Ground Up,The Gold Report,0.0,1.0,0.0,0.0
+IBM,2013-10-10,U S  futures climb on budget hopes  Dow Jones up 0 88  ,Investing.com,0.0,0.741,0.259,0.4215
+IBM,2013-10-10,U S  stocks open sharply higher on budget hopes  Dow Jones up 1 02 ,Investing.com,0.0,0.781,0.219,0.4215
+IBM,2013-10-14,The Twitter Split Between Weak And Strong Continues,Blair Jensen,0.238,0.492,0.27,0.1027
+IBM,2013-10-17,IBM  At A Bearish Turning Point,Ryan Mallory,0.0,1.0,0.0,0.0
+IBM,2013-10-17,From Panic To Exuberance In Under A Week,Kevin Davitt,0.355,0.645,0.0,-0.5106
+IBM,2013-10-17,Stock Market Outlook  October 17  2013,Tech Talk,0.0,1.0,0.0,0.0
+IBM,2013-10-17,U S  stocks up on D C  deal  talk of Fed staying loose  Dow slips 0 01 ,Investing.com,0.173,0.827,0.0,-0.3182
+IBM,2013-10-17,S P 500 Soars As Dow Fizzles,Midnight Trader,0.0,1.0,0.0,0.0
+IBM,2013-10-20,Why I Remain Pessimistic On This Stock Market,Michael Lombardi,0.294,0.706,0.0,-0.3612
+IBM,2013-10-21,IBM Position Increase For The Dividend Yield Passive Income Portfolio,Dividend Yield,0.0,0.661,0.339,0.4767
+IBM,2013-10-21,Tangoe  In The Danger Zone,David Trainer,0.459,0.541,0.0,-0.5267
+IBM,2013-10-23,U S  stocks end lower on profit taking  mixed earnings  Dow dips 0 35 ,Investing.com,0.156,0.638,0.206,0.1779
+IBM,2013-10-29,STTG Market Recap  October 29  2013,StockTradingToGo,0.0,1.0,0.0,0.0
+IBM,2013-10-30,US House Prices Have Recorded The Largest Year On Year Rise Since  06,Keagan York,0.0,1.0,0.0,0.0
+IBM,2013-11-03,How To Find The Best Sector ETFs,David Trainer,0.0,0.588,0.412,0.6369
+IBM,2013-11-03,Why Washington Is Cutting Safety Nets ,Robert B. Reich,0.181,0.482,0.337,0.3182
+IBM,2013-11-05,U S  stocks rise then erase gains from service data  Dow dips 0 13 ,Investing.com,0.0,0.806,0.194,0.34
+IBM,2013-11-05,Twitter ups IPO valuation by 25 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2013-11-07,Investors Cautious Before ECB Meeting And US Data,LiteForex Europe,0.167,0.833,0.0,-0.1027
+IBM,2013-11-07,U S  stocks fall as U S  GDP report fuels Fed concerns  Dow down 0 97 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2013-11-08,U S  stocks gain on advancing jobs report  Dow up 0 98 ,Investing.com,0.0,0.702,0.298,0.5267
+IBM,2013-11-11,U S  stocks gain on jobs data  cautious of key earnings  Dow up 0 10 ,Investing.com,0.095,0.676,0.23,0.4588
+IBM,2013-11-12,Technology Stock Roundup  Cisco  Microsoft Steal the Show,Zacks Investment Research,0.314,0.686,0.0,-0.4939
+IBM,2013-11-13,What Analysts Expect Cisco To Report,Estimize,0.0,1.0,0.0,0.0
+IBM,2013-11-13,Accenture  Continuing To Deliver A Growth Story ,F.A.S.T. Graphs,0.0,0.658,0.342,0.3818
+IBM,2013-11-14,U S  stocks gain as Yellen signals stimulus to stay  Dow up 0 34 ,Investing.com,0.0,0.746,0.254,0.5267
+IBM,2013-11-14,Cisco Beats Earnings  Skids On Sales,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2013-11-19,What s Warren Buffett Been Up To ,Charles Sizemore,0.0,1.0,0.0,0.0
+IBM,2013-11-20,Reasons To Like IBM  Despite The Headwinds,Dr. Duru,0.0,0.706,0.294,0.3612
+IBM,2013-11-22,U S  stocks extend gains on jobless data  Dow up 0 34 ,Investing.com,0.0,0.631,0.369,0.4767
+IBM,2013-11-24,Trade Setups  Keycorp   McDonald s  IBM And More,Joe Donohue,0.0,1.0,0.0,0.0
+IBM,2013-11-27,Hewlett Packard Beats On Q4 Earnings,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2013-11-27,Fresh Buying Entry For IBM As Nasdaq Flips On Overdrive,Dr. Duru,0.0,0.796,0.204,0.3182
+IBM,2013-11-27,H P Posts Beat On Earnings And Sales,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2013-11-27,U S  stocks gain on data  HP earnings  Dow up 0 15 ,Investing.com,0.0,0.702,0.298,0.5267
+IBM,2013-12-02,U S  stocks dip on holiday sales  U S  jobs murkiness  Dow down 0 48 ,Investing.com,0.0,0.769,0.231,0.4019
+IBM,2013-12-11,Morning Fundamentals  US Equity Prices Fall From Record Highs,Keagan York,0.0,1.0,0.0,0.0
+IBM,2013-12-13,Santa s Watch List,Joe Donohue,0.0,1.0,0.0,0.0
+IBM,2013-12-16,U S  stocks gain on Fed expectations  broader optimism  Dow up 0 82 ,Investing.com,0.0,0.537,0.463,0.7845
+IBM,2013-12-22,Academics Rule The World,Thomas J. Feeney,0.0,1.0,0.0,0.0
+IBM,2013-12-23,U S  stocks rise on firm consumer sentiment report  Dow rises 0 45 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2014-01-06,Dividend Payers Return Trailed Non Payers In 2013 ,Blog of HORAN Capital Advisors,0.0,1.0,0.0,0.0
+IBM,2014-01-07,U S  stocks rise on hopes for solid jobs report  Down gains 0 64 ,Investing.com,0.0,0.541,0.459,0.7003
+IBM,2014-01-07,Asian stocks mixed  Nikkei up 1 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2014-01-09,2014  Leverage The Power Of Now In Investing,Chris Ciovacco,0.0,1.0,0.0,0.0
+IBM,2014-01-11,Current Shorts  Amazon  Fossil And More,Tim Knight,0.0,0.746,0.254,0.1779
+IBM,2014-01-12,The Week Ahead  Can Earnings Growth Propel Stocks Higher ,Jeff Miller,0.0,0.755,0.245,0.3818
+IBM,2014-01-21,U S  stocks open higher with earnings in focus  Dow Jones up 0 16 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2014-01-21,U S  futures rise ahead of fresh earnings  Dow Jones up 0 38 ,Investing.com,0.0,0.796,0.204,0.3182
+IBM,2014-01-21,IBM Misses Revenue Targets Again After Losing Footing In China,International Business Times,0.36,0.64,0.0,-0.5423
+IBM,2014-01-22,U S  stocks open mixed as focus turns to Fed  Dow Jones down 0 14 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2014-01-22,U S  futures slip lower  earnings ahead  Dow Jones down 0 22 ,Investing.com,0.216,0.784,0.0,-0.296
+IBM,2014-01-22,What To Take Away From IBM s Earnings ,Estimize,0.0,1.0,0.0,0.0
+IBM,2014-01-22,IBM  COH  And AMD Drop  Know The Levels,Nicholas Santiago,0.231,0.769,0.0,-0.2732
+IBM,2014-01-22,BoJ  No Hint Of Easing,Spreadex,0.306,0.417,0.278,-0.0516
+IBM,2014-01-22,Dow Off As Nasdaq Notches 13 Year High,Midnight Trader,0.0,1.0,0.0,0.0
+IBM,2014-01-22,T2108  Finally Overbought ,Dr. Duru,0.0,1.0,0.0,0.0
+IBM,2014-01-22,Stocks For 2014  Growth And Income For Total Return  Part 3,Chuck Carnevale,0.0,0.776,0.224,0.3818
+IBM,2014-01-23,U S  stocks open lower after downbeat data  Dow Jones down 0 89 ,Investing.com,0.196,0.804,0.0,-0.296
+IBM,2014-01-23,U S  Markets Tumble On Global Fear,Midnight Trader,0.444,0.556,0.0,-0.4939
+IBM,2014-01-23,Asian stocks mixed  Nikkei down 1 7 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2014-01-23,Dow Jones Alone In The Red  Again,John Nyaradi,0.25,0.75,0.0,-0.25
+IBM,2014-01-23,U S  futures edge lower ahead of data  earnings  Dow Jones down 0 39 ,Investing.com,0.18,0.82,0.0,-0.296
+IBM,2014-01-29,What The Buy Side Expects From EMC,Estimize,0.0,1.0,0.0,0.0
+IBM,2014-01-30,Cyber Security Stocks With Potential ,Louis Basenese,0.0,0.625,0.375,0.34
+IBM,2014-02-03,Weekend Links  Heading For A Strong Year End Market Rally ,Brian Gilmartin,0.0,0.708,0.292,0.5106
+IBM,2014-02-03,Monitise Reflects Long Term Growth Potential,Edison,0.0,0.658,0.342,0.3818
+IBM,2014-02-05,U S  stocks move lower on hit or miss data  Dow slips 0 03 ,Investing.com,0.297,0.703,0.0,-0.4215
+IBM,2014-02-10,Analysts Expect Rackspace To Come Up Short,Estimize,0.0,1.0,0.0,0.0
+IBM,2014-02-11,Callidus Software  In The Danger Zone  ,David Trainer,0.405,0.595,0.0,-0.5267
+IBM,2014-02-14,Weekend Update  NDX Makes A New 13 Year High,Anthony M. Cherniawski,0.0,1.0,0.0,0.0
+IBM,2014-02-20,Adam Low  Supply And Demand Key To Base Metals Success,The Gold Report,0.252,0.49,0.259,0.2732
+IBM,2014-02-23,Short Setups  The List Continues,Tim Knight,0.0,1.0,0.0,0.0
+IBM,2014-02-26,Monitise  Focus On Expanding The Network ,Edison,0.0,1.0,0.0,0.0
+IBM,2014-02-28,U S  stocks open steady  data ahead  Dow Jones down 0 08 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2014-02-28,U S  futures edge lower as markets eye GDP data  Dow Jones down 0 14 ,Investing.com,0.167,0.833,0.0,-0.296
+IBM,2014-03-06,U S  futures edge higher as markets eye data  Dow Jones up 0 12 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2014-03-06,U S  stocks open higher after upbeat jobless data  Dow Jones up 0 31 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2014-03-07,U S  futures steady ahead of nonfarm payrolls  Dow Jones up 0 05 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2014-03-10,U S  stocks dip on Chinese trade figures  Dow slides 0 21 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2014-03-17,U S  stocks gain on ebbing Ukraine fears  Dow rises 1 13     ,Investing.com,0.212,0.53,0.258,0.1531
+IBM,2014-03-18,Asian shares gain as markets brush off Ukraine tension  Nikkei up 1 ,Investing.com,0.145,0.503,0.352,0.5106
+IBM,2014-03-25,U S  stocks edge higher on consumer confidence report  Dow up 0 56     ,Investing.com,0.0,0.732,0.268,0.5106
+IBM,2014-03-25,Time To Reconsider IBM ,Gregory W. Harmon,0.0,1.0,0.0,0.0
+IBM,2014-04-01,Buy This  Corny  ETF Now,Deron Wagner,0.0,1.0,0.0,0.0
+IBM,2014-04-16,U S  stocks rise on Yahoo earnings  data  Dow gains 1 00  ,Investing.com,0.0,0.769,0.231,0.34
+IBM,2014-04-16,IBM Revenue Misses Estimate As Hardware Sales Fall,International Business Times,0.213,0.787,0.0,-0.2263
+IBM,2014-04-22,Is This What A Credit Bubble Looks Like ,F.F. Wiley,0.0,0.495,0.505,0.6249
+IBM,2014-05-02,How To Find The Best Style ETFs,David Trainer,0.0,0.588,0.412,0.6369
+IBM,2014-05-22,Here s What The Buy Side Expects From Hewlett Packard On Thursday,Estimize,0.0,1.0,0.0,0.0
+IBM,2014-05-27,China Tells Its Banks To Replace IBM s Servers With Local Ones,International Business Times,0.0,1.0,0.0,0.0
+IBM,2014-06-25,Two More Charged By US In IBM Insider Trading Case,International Business Times,0.189,0.811,0.0,-0.2716
+IBM,2014-07-01,Equity Watchlist  Bullish Setup,Alexandros Yfantis,0.0,1.0,0.0,0.0
+IBM,2014-07-04,China approves Lenovo  IBM  2 3 billion server deal,Reuters,0.0,0.69,0.31,0.4019
+IBM,2014-07-17,IBM software sales weaker than expected in second quarter,Reuters,0.266,0.734,0.0,-0.4404
+IBM,2014-07-28,IBM  The Stock That Gets No Respect ,Simon Lack,0.214,0.485,0.301,0.2263
+IBM,2014-08-11,Gloom And Doom Or A Technological Boom  ,Chris Ciovacco,0.612,0.388,0.0,-0.743
+IBM,2014-08-13,3 Eclectic Bullish Trade Ideas ,Cam Hui,0.0,1.0,0.0,0.0
+IBM,2014-08-14,Cisco Earnings Report Beats Consensus Estimates,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2014-08-28,Ford  IBM win dismissal of 12 year lawsuit over apartheid abuses,Reuters,0.318,0.462,0.22,-0.1779
+IBM,2014-09-15,Mobile banking firm Monitise posts bigger loss,Reuters,0.277,0.723,0.0,-0.3182
+IBM,2014-09-23,Oracle s Ellison took smaller pay package in fiscal 2014,Reuters,0.149,0.851,0.0,-0.1027
+IBM,2014-09-29,Lenovo says  2 1 billion IBM x86 server deal to close on Wednesday,Reuters,0.0,1.0,0.0,0.0
+IBM,2014-10-02,Thursday Higher ,The Night Owl Trader,0.0,1.0,0.0,0.0
+IBM,2014-10-20,IBM ditches 2015 operating EPS target  shares slump 7 percent,Reuters,0.0,0.784,0.216,0.296
+IBM,2014-10-20,IBM to pay Globalfoundries  1 5 billion to take chip unit,Reuters,0.149,0.851,0.0,-0.1027
+IBM,2014-10-20,IBM shares tumble 6 5  in pre market after Q3 earnings miss,Investing.com,0.136,0.678,0.186,0.1531
+IBM,2014-10-20,How Bad Was IBM s Print ,Estimize,0.467,0.533,0.0,-0.5423
+IBM,2014-10-21,Tuesday Uncertain,The Night Owl Trader,0.688,0.312,0.0,-0.296
+IBM,2014-10-22,Lufthansa close to deal with IBM for IT infrastructure unit,Reuters,0.0,1.0,0.0,0.0
+IBM,2014-10-27,As Bad As IBM s Been  Amazon s Been Worse,Simon Lack,0.496,0.376,0.128,-0.7096
+IBM,2014-10-28,IBM adds  5 billion to share buyback program,Reuters,0.0,0.732,0.268,0.296
+IBM,2014-10-29,IBM  Twitter to partner on business data analytics,Reuters,0.0,1.0,0.0,0.0
+IBM,2014-11-07,The Global Economy s Last Gasp,Commodity Trade Mantra,0.0,1.0,0.0,0.0
+IBM,2014-11-12,IBM And GM  Short Opportunities,Tim Knight,0.0,0.606,0.394,0.3818
+IBM,2014-11-14,U S  stocks mixed on healthcare losses  oil supports  Dow slides 0 10  ,Investing.com,0.205,0.606,0.189,-0.0516
+IBM,2014-11-18,Lufthansa signs  1 25 billion outsourcing deal with IBM ,Reuters,0.0,1.0,0.0,0.0
+IBM,2014-11-18,Shell wins India tax case,Reuters,0.0,0.519,0.481,0.5719
+IBM,2014-11-20,Virgin America s Trading Debut Makes A Mark,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2014-12-03,U S  intelligence agency aims to develop superconducting computer,Reuters,0.0,0.659,0.341,0.4767
+IBM,2014-12-10,IBM Breakout,Trader Moe,0.0,1.0,0.0,0.0
+IBM,2014-12-12,U S  corporations winning fight over human rights lawsuits,Reuters,0.362,0.345,0.293,0.0516
+IBM,2014-12-14,Weekend Update  December 12  2014,Anthony M. Cherniawski,0.0,1.0,0.0,0.0
+IBM,2014-12-17,EU clears Lufthansa outsourcing deal with IBM,Reuters,0.0,0.822,0.178,0.0772
+IBM,2014-12-22,S P 500 Smashes Record Closing High ,International Business Times,0.0,1.0,0.0,0.0
+IBM,2014-12-23,2015  Why It Won t Be A Good Year To Own Stocks,Michael Lombardi,0.0,0.548,0.452,0.765
+IBM,2015-01-13,IBM Will Restructure   Focus On Cloud Computing,Uri Gruenbaum,0.0,1.0,0.0,0.0
+IBM,2015-01-20,IBM profit forecast  fourth quarter revenue below estimates,Reuters,0.0,0.707,0.293,0.4404
+IBM,2015-01-22,Analysts Offer Mixed Ratings On IBM After Weak Q4 Results,Uri Gruenbaum,0.244,0.756,0.0,-0.4404
+IBM,2015-01-23,U S  seeks reversal of landmark insider trading ruling,Reuters,0.0,0.822,0.178,0.0772
+IBM,2015-01-27,IBM dismisses Forbes report of massive layoffs,Reuters,0.0,1.0,0.0,0.0
+IBM,2015-01-28,KKR makes Israel tech investment in web analytics firm ClickTale,Reuters,0.0,1.0,0.0,0.0
+IBM,2015-01-30,IBM brings back bonuses for top execs even as profits slide,Reuters,0.0,0.491,0.509,0.8074
+IBM,2015-02-09,China Just Crossed A Landmark Threshold,Frank Holmes,0.0,0.755,0.245,0.0772
+IBM,2015-02-09,IBM sues Priceline for patent infringement in U S  court,Reuters,0.307,0.693,0.0,-0.4767
+IBM,2015-02-11,Dating apps pose U S  corporate security risk  says IBM,Reuters,0.2,0.571,0.229,0.0772
+IBM,2015-02-11,Nvidia s fiscal fourth quarter results beat estimates  stock rises,Reuters,0.0,1.0,0.0,0.0
+IBM,2015-02-12,Cybersecurity prep seen as mounting task for small U S  advisers,Reuters,0.0,1.0,0.0,0.0
+IBM,2015-02-26,IBM targets  40 billion in cloud  related revs in 2018 ,Reuters,0.0,1.0,0.0,0.0
+IBM,2015-03-02,Berkshire insurance  superstar  could fill Buffett s shoes ,Reuters,0.0,1.0,0.0,0.0
+IBM,2015-03-04,IBM buys AlchemyAPI to boost Watson computing unit,Reuters,0.0,0.722,0.278,0.4019
+IBM,2015-03-10,Dropbox says Android security flaw fixed,Reuters,0.0,0.676,0.324,0.34
+IBM,2015-03-12,Exclusive  IBM looking at adopting bitcoin technology for major currencies,Reuters,0.0,0.857,0.143,0.128
+IBM,2015-03-18,In boon for bitcoin  UK to regulate digital currency exchanges,Reuters,0.0,1.0,0.0,0.0
+IBM,2015-03-18,WANdisco  Alignments Could Make It An Obvious Strategic Target ,Edison,0.0,1.0,0.0,0.0
+IBM,2015-03-19,Obama to sign order cutting U S  government greenhouse gas emissions,Reuters,0.158,0.842,0.0,-0.128
+IBM,2015-03-23,Equity Pair Trade  Long Conoco Phillips  Short Chevron ,Philip Baker,0.0,1.0,0.0,0.0
+IBM,2015-03-23,IBM to share technology with China in strategy shift  CEO,Reuters,0.0,0.804,0.196,0.296
+IBM,2015-03-26,Accenture raises revenue growth forecast for second time,Reuters,0.0,0.729,0.271,0.3818
+IBM,2015-03-31,IBM says to invest  3 billion in  Internet of Things  unit,Reuters,0.0,1.0,0.0,0.0
+IBM,2015-03-31,SAP co founder Klaus Tschira dies,Reuters,0.0,1.0,0.0,0.0
+IBM,2015-04-02,IBM uncovers new  sophisticated bank transfer cyber scam,Reuters,0.278,0.451,0.271,-0.0258
+IBM,2015-04-02,India s IT plans suffer from power cuts  congestion   and monkeys,Reuters,0.416,0.584,0.0,-0.6908
+IBM,2015-04-17,China suspends bank technology rules that sparked backlash,Reuters,0.0,1.0,0.0,0.0
+IBM,2015-04-20,IBM shares inch up in after hours  in spite of 12  dip in 1Q revenue ,Investing.com,0.183,0.699,0.118,-0.296
+IBM,2015-04-21,European Futures Higher Ahead Of Zew,AvaTrade,0.0,1.0,0.0,0.0
+IBM,2015-04-21,Unlocked  IBM And Under Armour Earnings trades,Gregory W. Harmon,0.0,1.0,0.0,0.0
+IBM,2015-04-22,IBM Feels The Heat from FX Headwinds  Analysts Offer Mixed Ratings,Sarah Roden,0.0,1.0,0.0,0.0
+IBM,2015-04-22,IBM Testing Long Term Resistance,Petros Steriotis,0.0,1.0,0.0,0.0
+IBM,2015-04-22,Peugeot  IBM agree to expanded  connected car  partnership deal,Reuters,0.0,0.762,0.238,0.3612
+IBM,2015-04-23,Exclusive  Bitcoin exchange itBit seeks New York banking license,Reuters,0.0,0.842,0.158,0.128
+IBM,2015-04-29,Dow Jones  US Equity Market Up Ahead Of GDP,ICM Brokers,0.0,1.0,0.0,0.0
+IBM,2015-04-29,IForex Daily   April 29  2014,iFOREX,0.0,1.0,0.0,0.0
+IBM,2015-05-04,IBM Shares Rally To  175,Petros Steriotis,0.0,0.645,0.355,0.296
+IBM,2015-05-05,IBM s Watson to guide cancer therapies at 14 centers,Reuters,0.355,0.645,0.0,-0.6597
+IBM,2015-05-05,Cisco looks to salesman Robbins for tech leadership,Reuters,0.0,1.0,0.0,0.0
+IBM,2015-05-07,IBM s Watson to guide cancer therapies at 14 centers,Reuters,0.355,0.645,0.0,-0.6597
+IBM,2015-05-08,The Shocking Truth About Share Buybacks ,Chuck Carnevale,0.265,0.294,0.441,0.2023
+IBM,2015-05-08,Facebook IBM In Commerce Collaboration,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2015-05-10,IBM Shares Looking Bearish,Petros Steriotis,0.0,0.577,0.423,0.296
+IBM,2015-05-20,U S  Navy secretary says paying attention to cyber threats,Reuters,0.286,0.714,0.0,-0.4215
+IBM,2015-05-20,U S  Navy paying  whole lot of attention  to cyber threats  Mabus,Reuters,0.237,0.763,0.0,-0.4215
+IBM,2015-05-27, 3 High Dividend Growth Stocks For 2015,Double Dividend Stocks,0.0,0.658,0.342,0.3818
+IBM,2015-06-26,Back to the future as moribund tactic is revived,Reuters,0.0,1.0,0.0,0.0
+IBM,2015-07-09,Canadian software startup Influitive raises  30 5 million,Reuters,0.0,1.0,0.0,0.0
+IBM,2015-07-20,IBM revenue falls for 13th straight quarter  shares dip,Reuters,0.0,0.631,0.369,0.4767
+IBM,2015-07-27,Chi X founder in blockchain trading technology venture,Reuters,0.0,1.0,0.0,0.0
+IBM,2015-08-06,IBM to buy Merge Healthcare in  1 billion deal,Reuters,0.0,1.0,0.0,0.0
+IBM,2015-08-16,Does Berkshire Hathway Make The Cut As A  Retirement Stock  ,Charles Sizemore,0.208,0.792,0.0,-0.2732
+IBM,2015-08-17,IBM launches Linux only mainframe system LinuxONE,Reuters,0.0,1.0,0.0,0.0
+IBM,2015-09-11,SEC can pursue insider trading case against brokers  judge,Reuters,0.0,1.0,0.0,0.0
+IBM,2015-09-27,Book Review  Superforecasting,Brenda Jubin,0.0,1.0,0.0,0.0
+IBM,2015-10-03,After VW  Germany needs EU friends to join its party,Reuters,0.0,0.467,0.533,0.7906
+IBM,2015-10-12,Warren Buffett s Favorite Macro Indicator,Charles Sizemore,0.0,0.571,0.429,0.4588
+IBM,2015-10-13,UAE s Etihad Airways signs  700 million IT deal with IBM,Reuters,0.0,1.0,0.0,0.0
+IBM,2015-10-20,European Futures Plagued By US Earnings ECB Meeting Under Focus,AvaTrade,0.0,1.0,0.0,0.0
+IBM,2015-10-20,Momentum Waning In Recent Bull Move,IG,0.0,1.0,0.0,0.0
+IBM,2015-10-21,Stocks Snap Winning Streak With Mild Declines ,OptionsClick,0.0,0.638,0.362,0.5267
+IBM,2015-10-22,3 Dividend Stocks Worth  A Look,InvestCorrectly,0.0,0.612,0.388,0.2263
+IBM,2015-10-27,IBM Under SEC Investigation,International Business Times,0.0,1.0,0.0,0.0
+IBM,2015-10-27,IBM nears deal to buy Weather Company s digital assets  source,Reuters,0.0,0.841,0.159,0.1779
+IBM,2015-10-27,IBM says SEC investigating company s books  shares fall ,Reuters,0.0,0.761,0.239,0.296
+IBM,2015-10-28,IBM  looking to cloud  to buy Weather Company s digital assets,Reuters,0.0,0.841,0.159,0.1779
+IBM,2015-10-30,WANdisco  Fusion The Cornerstone For Growth ,Edison,0.0,0.658,0.342,0.3818
+IBM,2015-11-08,3rd Quarter Net Earnings Double  But Operating Earnings Decline 3 7 ,David Kass,0.0,1.0,0.0,0.0
+IBM,2015-11-12,In latest retail tech  Carrefour lights have eyes,Reuters,0.0,1.0,0.0,0.0
+IBM,2015-11-19,Union says IBM Germany considering up to 3 000 layoffs   report,Reuters,0.0,1.0,0.0,0.0
+IBM,2015-12-14,Seritage Growth Properties  Warren Buffett Bought WHAT ,Charles Sizemore,0.0,0.698,0.302,0.3818
+IBM,2015-12-15,IBM makes Munich its global center for industrial Internet push,Reuters,0.0,1.0,0.0,0.0
+IBM,2016-01-11,Israel brings tech expertise to protecting connected cars,Reuters,0.0,1.0,0.0,0.0
+IBM,2016-01-14,The Chinese Silver Fox,Bill Holter,0.0,1.0,0.0,0.0
+IBM,2016-01-19,Will IBM s Earnings Reverse The Stock s Recent Misfortunes ,Estimize,0.0,1.0,0.0,0.0
+IBM,2016-01-19,China s GDP Data Meet Expectations,IFC Markets,0.0,1.0,0.0,0.0
+IBM,2016-01-19,IBM forecasts weak earnings for 2016  shares slide,Reuters,0.261,0.541,0.198,-0.1779
+IBM,2016-01-20,U S  stocks close lower in spite of last minute bounce  amid oil crash,Investing.com,0.48,0.52,0.0,-0.8074
+IBM,2016-01-26,Ford CEO Mark Fields elected to IBM s Board of Directors,Investing.com,0.0,1.0,0.0,0.0
+IBM,2016-02-04,Here s What Tableau  DATA  Is Doing To Boost Q4 Earnings,Estimize,0.0,0.769,0.231,0.4019
+IBM,2016-02-11,Earnings bolster Cisco  but raise concerns for broader IT spending,Reuters,0.0,1.0,0.0,0.0
+IBM,2016-02-16,Cisco inks cloud sales deal with Pivotal ,Reuters,0.0,1.0,0.0,0.0
+IBM,2016-02-16,IBM to Open Blockchain Garages in London  New York  Singapore and Tokyo,FinanceMagnates,0.0,1.0,0.0,0.0
+IBM,2016-02-17,Ex White House aide and ex IBM CEO to head cyber security panel,Reuters,0.0,0.833,0.167,0.34
+IBM,2016-02-17,Digital Asset in blockchain tie ups with Accenture  PwC  Broadridge,Reuters,0.0,0.783,0.217,0.3612
+IBM,2016-02-17,Israel s Insert raises  5 million for mobile app platform,Reuters,0.0,1.0,0.0,0.0
+IBM,2016-02-18,U S  stocks end 3 day winning streak as Wal Mart  energy weigh,Investing.com,0.0,0.593,0.407,0.6705
+IBM,2016-02-18,Wall Street takes profits amid global economic doldrums,Investing.com,0.0,0.707,0.293,0.4404
+IBM,2016-02-18,Exclusive  EU set to clear Dell s  67 billion deal to buy EMC   sources,Reuters,0.0,0.728,0.272,0.4767
+IBM,2016-02-18,IBM to acquire Truven Health Analytics for  2 6 billion,Reuters,0.0,1.0,0.0,0.0
+IBM,2016-02-22,Buyers Hang On To Bounce From Oversold Conditions,Dr. Duru,0.0,1.0,0.0,0.0
+IBM,2016-02-27,Warren Buffett defends 3G  touts economy in record year for Berkshire,Reuters,0.099,0.901,0.0,-0.0258
+IBM,2016-02-27,Warren Buffett defends 3G  touts economy amid record Berkshire profit,Reuters,0.092,0.667,0.242,0.4215
+IBM,2016-02-29,EU clears Dell s purchase of EMC Corp,Reuters,0.0,0.822,0.178,0.0772
+IBM,2016-03-02,IBM plans to sell up to  150 million worth of Lenovo Group shares  IFR,Reuters,0.0,0.745,0.255,0.4767
+IBM,2016-03-02,IBM sues Groupon over alleged patent infringement,Reuters,0.341,0.659,0.0,-0.4767
+IBM,2016-03-15,Why You Should Be Buying IBM,Michael Dylan,0.0,1.0,0.0,0.0
+IBM,2016-03-20,The Coming Debacle Will Be Magnified By Derivatives Causing Banks,Mark Lundeen,0.0,1.0,0.0,0.0
+IBM,2016-03-24,Accenture raises revenue forecast after strong second quarter,Reuters,0.0,0.68,0.32,0.5106
+IBM,2016-04-06,Augusta National masters art of minimal sponsorship,Reuters,0.0,1.0,0.0,0.0
+IBM,2016-04-06,Karadzic protests  19th century  jail conditions  demands release,Reuters,0.213,0.787,0.0,-0.2263
+IBM,2016-04-18,IBM reports worst revenue in 14 years  shares slide,Reuters,0.308,0.526,0.165,-0.4404
+IBM,2016-04-19,IBM Sales Decline  Don t Worry  They Still  Beat The Street ,Mike (Mish) Shedlock,0.244,0.756,0.0,-0.4404
+IBM,2016-04-28,Fed Doesn t Budge On Rates,Jack Steiman,0.0,1.0,0.0,0.0
+IBM,2016-04-29,IBM launches new cloud services for blockchain,Reuters,0.0,1.0,0.0,0.0
+IBM,2016-05-01,Ingram Micro  IM  Misses Q1 Earnings   Revenue Estimates,Zacks Investment Research,0.213,0.787,0.0,-0.2263
+IBM,2016-05-03,Bears Take A Leap Of Faith,Ryan Mallory,0.0,0.588,0.412,0.4215
+IBM,2016-05-06,Berkshire operating profit falls short  book value rises,Reuters,0.0,0.531,0.469,0.6486
+IBM,2016-05-09,Groupon sues  once great  IBM over patent,Reuters,0.0,0.594,0.406,0.6249
+IBM,2016-05-10,Quantum  QTM  Earnings   Revenues Match Estimates In Q4,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2016-05-14,Exclusive  Warren Buffett  Quicken Loans founder in Yahoo bid   sources,Reuters,0.0,0.857,0.143,0.128
+IBM,2016-05-19,Bitcoin exchange Coinbase to add ether currency to trading platform,Reuters,0.0,1.0,0.0,0.0
+IBM,2016-05-31,Thoma Bravo to submit binding offer for U S  based Qlik  sources,Reuters,0.0,1.0,0.0,0.0
+IBM,2016-05-31,CA  Inc   CA  Hits 52 Week High On Impressive Q4 Earnings ,Zacks Investment Research,0.0,0.752,0.248,0.5106
+IBM,2016-06-01,IBM to buy EZSource for 14th acquisition of Israeli company,Reuters,0.0,1.0,0.0,0.0
+IBM,2016-06-02,IBM And Cisco Partner Up On Internet Of Things,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2016-06-07,IBM signs  300 million IT deal with Emirates Airline,Reuters,0.0,1.0,0.0,0.0
+IBM,2016-06-07,India s colonial era monsoon forecasting to get high tech makeover,Reuters,0.0,1.0,0.0,0.0
+IBM,2016-06-09,Ingram Micro  IM  Inks Distribution Agreement With Awingu,Zacks Investment Research,0.0,0.686,0.314,0.4939
+IBM,2016-06-14,ICON And Pfizer Extend Ties  Sign New Agreement,Zacks Investment Research,0.0,0.55,0.45,0.5994
+IBM,2016-06-14,Ex IBM employee from China charged with economic espionage,Reuters,0.184,0.816,0.0,-0.2023
+IBM,2016-06-19,Buffett Wishes He Could But These Stocks,Modest Money,0.0,0.822,0.178,0.0772
+IBM,2016-06-20,U S  top court declines to revive apartheid claims against IBM  Ford,Reuters,0.0,0.656,0.344,0.4939
+IBM,2016-06-23,Accenture revenue beats on strong demand for digital services,Reuters,0.127,0.593,0.28,0.4215
+IBM,2016-07-05,Cisco  CSCO    IBM Come Together For Workplace Solutions,Zacks Investment Research,0.0,0.805,0.195,0.1779
+IBM,2016-07-11,IBM May Be Knocking On The Rally s Door,Gregory W. Harmon,0.0,1.0,0.0,0.0
+IBM,2016-07-11,IBM To Focus On  Fintech  With Blockchain Center In Singapore,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2016-07-12,Can IBM Continue Its Rebound  Upcoming Earnings Are Crucial,Finbox io,0.0,1.0,0.0,0.0
+IBM,2016-07-18,IBM revenue beats estimates as shift to cloud pays off,Reuters,0.0,1.0,0.0,0.0
+IBM,2016-07-18,IBM Corp   IBM  Q2 Earnings Beat  Imperatives Gain Steam,Zacks Investment Research,0.0,0.702,0.298,0.5267
+IBM,2016-07-19,IBM s full year earnings forecast greeted with skepticism,Reuters,0.198,0.594,0.208,0.0258
+IBM,2016-07-19,3 ETFs In Focus As IBM Posts Better Than Expected Q2 Results,Zacks Investment Research,0.0,0.775,0.225,0.4404
+IBM,2016-07-19,IBM s Ugly Technicals,Gareth Soloway,0.623,0.377,0.0,-0.5106
+IBM,2016-07-24,Healthcare Earnings Scheduled On Jul 26  CNC  ICLR  UHS,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2016-07-27,CA Inc   CA  Beats On Q1 Earnings   Revenues  View Strong,Zacks Investment Research,0.0,0.732,0.268,0.5106
+IBM,2016-07-28,Ingram Micro  IM  Beats Q2 Earnings   Revenue Estimates,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2016-07-29,Blind athlete runs desert marathon unassisted using smartphone app,Reuters,0.252,0.748,0.0,-0.4019
+IBM,2016-08-01,Is Cisco s Dividend Payment Safe ,Brian Bollinger,0.0,0.58,0.42,0.4404
+IBM,2016-08-03,Remote control   LoRa offers a cheaper link to the Internet of Things,Reuters,0.0,1.0,0.0,0.0
+IBM,2016-08-05,Berkshire profit up 25 percent as insurance helps  BNSF weighs,Reuters,0.0,0.593,0.407,0.6705
+IBM,2016-08-12,More airline outages seen as carriers grapple with aging technology,Reuters,0.0,1.0,0.0,0.0
+IBM,2016-08-16,U S  senators quiz airlines on IT systems after Delta disruption,Reuters,0.238,0.762,0.0,-0.3612
+IBM,2016-08-23,Tableau Software Appoints Former Amazon Exec As CEO ,Zacks Investment Research,0.0,0.805,0.195,0.1779
+IBM,2016-08-23,Why Is Tableau Software  DATA  Stock Gaining 12  Today ,Zacks Investment Research,0.0,0.741,0.259,0.4215
+IBM,2016-08-24,Short Stock Setups For The Last Existing Bear Holdouts,Ryan Mallory,0.0,1.0,0.0,0.0
+IBM,2016-09-01,IBM  A Trading Opportunity,Michael Dylan,0.0,0.417,0.583,0.4215
+IBM,2016-09-07,Investor lawsuits dismissed over IBM s 2014 write down,Reuters,0.186,0.814,0.0,-0.1531
+IBM,2016-09-14,Volkswagen sets up cyber security firm with ex Israeli spy chief,Reuters,0.0,0.806,0.194,0.34
+IBM,2016-09-15,Obama to meet business  government leaders on TPP trade deal,Reuters,0.0,1.0,0.0,0.0
+IBM,2016-09-15,Exclusive  Infor working with Morgan Stanley after investment interest   sources,Reuters,0.0,0.64,0.36,0.5423
+IBM,2016-09-16,Obama enlists Republican Kasich to push for TPP trade deal,Reuters,0.0,1.0,0.0,0.0
+IBM,2016-09-20,IBM Research Unit  MIT Team Up To Develop Machine Vision ,Zacks Investment Research,0.0,0.818,0.182,0.25
+IBM,2016-09-23,IBM  China UnionPay complete block chain pilot project on bank loyalty points,Reuters,0.177,0.61,0.213,0.1531
+IBM,2016-09-27,FBI probes hacks targeting phones of Democratic Party officials  sources,Reuters,0.0,0.769,0.231,0.4019
+IBM,2016-09-28,Top Research Reports For September 30  2016,Zacks Investment Research,0.0,0.769,0.231,0.2023
+IBM,2016-09-30,Top Research Report For JPMorgan  Marriott   Infosys ,Zacks Investment Research,0.0,0.769,0.231,0.2023
+IBM,2016-10-02,The Zacks Analyst Blog Highlights  JPMorgan  Marriott  Infosys And IBM,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2016-10-04,IBM sees tipping point at hand for industrial Internet,Reuters,0.0,0.714,0.286,0.4939
+IBM,2016-10-07,AT T  T  Ties Up With IBM   Amazon  Boosts Cloud Suite ,Zacks Investment Research,0.0,0.636,0.364,0.4588
+IBM,2016-10-10,Talend s Big Data Integration Solution Impresses Lenovo ,Zacks Investment Research,0.0,0.481,0.519,0.6597
+IBM,2016-10-13,Your Two Minute Earnings Preview To IBM Stock ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2016-10-13,European stocks tumble on U S  rate hike talk  DAX down 1 22 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2016-10-17,IBM Down 3 5  Despite Earnings Beat  Double Digit Cloud Revenue Growth,Zacks Investment Research,0.0,0.776,0.224,0.3818
+IBM,2016-10-17,IBM third quarter revenue falls  but tops forecasts on cloud  analytics growth,Reuters,0.0,0.56,0.44,0.8338
+IBM,2016-10-17,5 ETFs To Watch Post IBM Solid Q3 Results,Zacks Investment Research,0.0,0.814,0.186,0.1531
+IBM,2016-10-18,Company News For October 19  2016,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2016-10-25,IBM apologizes for Australian e census bungle  setting off blame game,Reuters,0.186,0.62,0.194,0.0258
+IBM,2016-10-27,Fujitsu confirms Lenovo PC tie up talks  says to retain brand,Reuters,0.0,1.0,0.0,0.0
+IBM,2016-11-03,What s In The Cards For Chegg  CHGG  This Earnings Season ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2016-11-03,Thai Kasikornbank  IBM join forces on blockchain network,Reuters,0.0,0.761,0.239,0.296
+IBM,2016-11-09,IBM s Watson   Cloud Now Available To Topcoder Community ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2016-11-10,IBM  2 75   upgraded to Buy at Bank of America Merrill Lynch,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2016-11-12,Exclusive  Koch investment arm nears deal for stake in Infor  in tech push   sources,Reuters,0.0,0.897,0.103,0.128
+IBM,2016-11-14,Warren Buffett s Berkshire makes surprise U S  airline bet,Reuters,0.0,0.741,0.259,0.2732
+IBM,2016-11-16,IBM enhances incident response capabilities as part of  200M cybersecurity investment,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2016-11-17,One Month After Beating Earnings  Is IBM Stock Due For A Breakout  ,Zacks Investment Research,0.231,0.769,0.0,-0.4588
+IBM,2016-11-24,Can Dow ETFs Stay On The Record Breaking Path ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2016-11-24,IBM  failed  on Australia s census  Australian PM,Reuters,0.355,0.645,0.0,-0.5106
+IBM,2016-11-26,Sleeping And Napping Through Investment Bubbles,Wade Slome,0.0,1.0,0.0,0.0
+IBM,2016-11-29,IBM s Cloud Platform Selected By American Airlines Group,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2016-11-30,Airline Stock Roundup  American Airlines  JetBlue Commence Flights To Havana  Lufthansa In Focus,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2016-11-30,The Zacks Analyst Blog Highlights  American Airlines Group  JetBlue Airways  Delta Air Lines  United Continental Holdings And Lufthansa,Zacks Investment Research,0.0,0.859,0.141,0.4215
+IBM,2016-12-07,The Zacks Analyst Blog Highlights  MasterCard  Merck  Cisco And Visa,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2016-12-08,The Zacks Analyst Blog Highlights  Goldman Sachs Group  JPMorgan  3M And IBM,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2016-12-13,IBM promises to hire Americans as tech executives set to meet Trump,Reuters,0.0,0.809,0.191,0.3818
+IBM,2016-12-13,Slack data management exposed BP to high safety risk  leaked report,Reuters,0.368,0.452,0.181,-0.2263
+IBM,2016-12-15,U S  futures point to steady to higher open after Fed move,Investing.com,0.0,1.0,0.0,0.0
+IBM,2016-12-20,IBM On The Verge Of A Sharp Fall,Jenny Rebekka,0.0,1.0,0.0,0.0
+IBM,2016-12-21,Wandisco  Partners Getting Into Gear ,Edison,0.0,1.0,0.0,0.0
+IBM,2017-01-09,DTCC to rebuild credit default swaps processing platform with blockchain,Reuters,0.0,0.776,0.224,0.3818
+IBM,2017-01-16,Danske Daily   16 January 2017 ,Danske Markets,0.0,1.0,0.0,0.0
+IBM,2017-01-17,Wealth Creation Is Another Name For Poverty Reduction,James Picerno,0.243,0.368,0.39,0.25
+IBM,2017-01-19,IBM revenue fall dims upbeat profit forecast,Reuters,0.0,0.674,0.326,0.4404
+IBM,2017-01-19,IBM Prepares For Another Quarter Of Negative Growth,Estimize,0.301,0.488,0.211,-0.2732
+IBM,2017-01-20,U S  stocks close higher with Trump administration underway,Investing.com,0.0,1.0,0.0,0.0
+IBM,2017-01-22,Looking Past The S P 500 s Post Inauguration Yawn,Dr. Duru,0.0,1.0,0.0,0.0
+IBM,2017-01-23,WANdisco  Turning Point ,Edison,0.0,1.0,0.0,0.0
+IBM,2017-01-24,Employment Boom  10 Companies That Have Promised To Add Jobs In The U S ,Michael T. Snyder,0.0,0.815,0.185,0.3612
+IBM,2017-01-24,Even The Adoption Of Innovation Is Different,"Alhambra Investment Partners, LLC",0.0,0.698,0.302,0.3818
+IBM,2017-01-25,Reaons To Short IBM,David I. Kranzler,0.0,1.0,0.0,0.0
+IBM,2017-01-27,Bosch  Cisco  BNY Mellon  others launch new blockchain consortium,Reuters,0.0,1.0,0.0,0.0
+IBM,2017-02-07,Dubai government  companies team up with IBM on blockchain project,Reuters,0.0,1.0,0.0,0.0
+IBM,2017-02-13,IBM Looking Bullish  Trans Continues To Outperform,The Night Owl Trader,0.0,1.0,0.0,0.0
+IBM,2017-02-16,VIX Jumps As Stock Market Overbought In The Short Term,The Night Owl Trader,0.0,1.0,0.0,0.0
+IBM,2017-02-20,Accenture has acquired one of the biggest digital agencies in Germany,Business Insider,0.0,1.0,0.0,0.0
+IBM,2017-03-16,IBM to integrate MedyMatch technology to help spot brain bleeding,Reuters,0.0,0.769,0.231,0.4019
+IBM,2017-03-21,Wandisco  In A Good Place ,Edison,0.0,0.508,0.492,0.4404
+IBM,2017-03-23,Accenture s full year profit forecast disappoints  shares fall,Reuters,0.205,0.394,0.402,0.3612
+IBM,2017-03-28,The Astonishing Truth About IBM Earnings And Options,MrTopStep,0.0,0.753,0.247,0.3182
+IBM,2017-03-29,Book Review  Aldridge   Krawciw  Real Time Risk,Brenda Jubin,0.259,0.741,0.0,-0.2732
+IBM,2017-04-05,Augusta hangs up on idea of smart phones at Masters,Reuters,0.0,0.769,0.231,0.4019
+IBM,2017-04-06,Green Jacket pours greenbacks into Augusta economy,Reuters,0.0,1.0,0.0,0.0
+IBM,2017-04-06,Delphi takes stake in companies to profit from data in connected cars,Reuters,0.0,0.791,0.209,0.4404
+IBM,2017-04-10,IBM bear says free cash flow is overstated,Seeking Alpha,0.0,0.68,0.32,0.5106
+IBM,2017-04-10,Banks scramble to fix old systems as IT  cowboys  ride into sunset,Reuters,0.0,1.0,0.0,0.0
+IBM,2017-04-12,International Business Machines  Is IBM A Good Value Stock ,Zacks Investment Research,0.0,0.531,0.469,0.6486
+IBM,2017-04-13,Q1 Earnings Season Ramps Up,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2017-04-18,5 Stocks With Great Earnings Charts ,Zacks Investment Research,0.0,0.494,0.506,0.6249
+IBM,2017-04-18,IBM Falls On Q1 Earnings Beat  Revenue Miss,Zacks Investment Research,0.186,0.814,0.0,-0.1531
+IBM,2017-04-18,IBM posts first revenue miss in five quarters  shares tumble,Reuters,0.136,0.678,0.186,0.1531
+IBM,2017-04-18,Should You Buy IBM ETFs Post Q1 Result ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2017-04-18,IBM  3 6  as quarterly revenue drops yet again,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-04-18, U S  stocks drop on geopolitics  disappointing earnings and data,Investing.com,0.469,0.531,0.0,-0.6486
+IBM,2017-04-19,IBM  5  after disappointing earnings  trimmed price targets,Seeking Alpha,0.348,0.652,0.0,-0.4939
+IBM,2017-04-19,Premarket Losers as of 9 05 am,Seeking Alpha,0.405,0.595,0.0,-0.5267
+IBM,2017-04-19,IBM Profits Down By 13   Shares Sink,Trade12,0.0,0.495,0.505,0.6249
+IBM,2017-04-19,Forget IBM  Buy These Thematic Tech ETFs Instead,Zacks Investment Research,0.213,0.787,0.0,-0.2263
+IBM,2017-04-19,IBM Oil Scrambles Market ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2017-04-19,Stock Market News For April 20  2017,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2017-04-19,Wall St mixed after earnings reports  IBM sinks ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2017-04-20,iFOREX Daily Analysis   April 20 2017,iFOREX,0.0,1.0,0.0,0.0
+IBM,2017-04-20,The Zacks Analyst Blog Highlights  IBM  Abbott  Dow Chemical  Delta Air Lines And Exelon,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2017-04-21,Steer Clear Of The Ugliest Earnings Streak In Tech,Louis Basenese,0.284,0.522,0.194,-0.296
+IBM,2017-04-24,Wells Fargo sees smaller dividend hike coming from IBM,Seeking Alpha,0.0,0.8,0.2,0.25
+IBM,2017-04-24,WANdisco  Good Progress Continues ,Edison,0.0,0.26,0.74,0.6908
+IBM,2017-04-25,ABB  IBM partner on industrial AI,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-04-25,IBM holds shareholder meeting,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-05-01,Here s How To Trade IBM,Nicholas Santiago,0.0,1.0,0.0,0.0
+IBM,2017-05-02,German project looks to home photovoltaic systems to help grid,Reuters,0.0,0.769,0.231,0.4019
+IBM,2017-05-03,Moody s downgrades IBM on cash flow  profit concerns,Seeking Alpha,0.219,0.526,0.254,0.1027
+IBM,2017-05-04,Buffett  I ve sold a third of IBM stake this year,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-05-05,S P cuts IBM s credit rating,Seeking Alpha,0.324,0.294,0.382,0.1027
+IBM,2017-05-05,IBM falls after Buffett discloses move,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-05-05,Top 5 things to watch today ,Investing.com,0.0,0.69,0.31,0.2023
+IBM,2017-05-05,U S  stock index futures flat before U S  jobs report  IBM eyed ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2017-05-07,Chaos Theory And The Financial Markets,Frank Kollar,0.425,0.575,0.0,-0.5719
+IBM,2017-05-07,CA Inc  CA  To Report Q4 Earnings  What s In The Cards  ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2017-05-08,IBM dips on S P downgrade,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-05-09,Here s How To Play IBM Post Buffett,Nicholas Santiago,0.0,0.714,0.286,0.34
+IBM,2017-05-12,CA Inc  CA  Earnings And Revenues Beat Estimates In Q4,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2017-05-15,Here s Why You Should Hold Onto Verizon  VZ  Amid Risks,Zacks Investment Research,0.189,0.811,0.0,-0.2732
+IBM,2017-05-15,Cisco  CSCO  To Report Q3 Earnings  What s In The Cards ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2017-05-16,Buy the dip in IBM   Morgan Stanley,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-05-17,Bombardier  IBM sign  700M IT deal,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-05-17,SAP Collaborates With IBM To Revolutionize Procurement,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2017-05-19,Ex IBM employee from China pleads guilty to code theft charges,Reuters,0.353,0.647,0.0,-0.5994
+IBM,2017-05-19,Exclusive  Italy tax police seize documents from IBM in BT Italy probe,Reuters,0.0,0.88,0.12,0.128
+IBM,2017-05-21,The Week Ahead  Will The Fed Change Course ,Jeff Miller,0.0,1.0,0.0,0.0
+IBM,2017-05-25,Why You Should Avoid Barrick Gold ,David I. Kranzler,0.306,0.694,0.0,-0.296
+IBM,2017-06-01,Hewlett Packard  HPE  Q2 Earnings Miss  Q3 Guidance Weak,Zacks Investment Research,0.391,0.609,0.0,-0.5423
+IBM,2017-06-05,Why Hewlett Packard Enterprise  HPE  Fell 7 5  Last Week ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2017-06-06,Fujitsu to reach agreement  soon  on integrating PC business with Lenovo,Reuters,0.0,0.677,0.323,0.5106
+IBM,2017-06-13,IBM  Hortonworks extend data science partnership,Seeking Alpha,0.0,0.746,0.254,0.1779
+IBM,2017-06-13,A Shot Across The Bow For  Passive Indexers ,Lance Roberts,0.0,0.769,0.231,0.2023
+IBM,2017-06-14,IBM  BMW partner on connected cars,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-06-20,IBM s The Weather Channel expands partnership with Elite Airways,Seeking Alpha,0.0,0.851,0.149,0.1027
+IBM,2017-06-21,Blue Chips To Soar Ahead  Buy These 5 ETFs ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2017-06-21,IBM strategy centering around data,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-06-26,Banks  blockchain consortium picks IBM for trade finance platform,Reuters,0.0,1.0,0.0,0.0
+IBM,2017-06-27,Blockchain moves into mainstream finance,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-06-27,JPMorgan  Alibaba has big data future,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-06-27,Technically Speaking  A Simple Method Of Risk Management,Lance Roberts,0.259,0.741,0.0,-0.2732
+IBM,2017-06-28,NetScout To Work With Bouygues Telecom For VoLTE Enhancement,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2017-06-30,Certent acquires IBM finance and management products,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-07-03,Cryptoeconomics   The Opportunities And Challenges Of Blockchain,BRUEGEL,0.0,0.562,0.438,0.4404
+IBM,2017-07-05,Goldman  GS  Plans To Turn Simon Into A Neutral Platform ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2017-07-12,Jefferies lowers IBM price target,Seeking Alpha,0.273,0.727,0.0,-0.128
+IBM,2017-07-13,Sun Valley conference gets underway,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-07-14,Upgrade with a dab of TPP may be U S  recipe for NAFTA revamp,Reuters,0.0,1.0,0.0,0.0
+IBM,2017-07-16,Should You Avoid IBM ETFs In Q2 Earnings ,Zacks Investment Research,0.239,0.761,0.0,-0.296
+IBM,2017-07-17,Barclays lowers IBM price target  EPS guidance,Seeking Alpha,0.2,0.8,0.0,-0.128
+IBM,2017-07-17,New era of encryption  IBM Z,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-07-18,IBM Beats On Q2 Earnings  Q3 Revenue Outlook Unimpressive,Zacks Investment Research,0.231,0.769,0.0,-0.34
+IBM,2017-07-18,IBM Q2 Revenues Disappoint Again  ETFs To Watch,Zacks Investment Research,0.278,0.722,0.0,-0.4019
+IBM,2017-07-18,Q2 After The Bell  IBM Misses  CSX   United Beat,Zacks Investment Research,0.162,0.598,0.239,0.2263
+IBM,2017-07-18,International Business Machines beats by  0 23  misses on revenue,Seeking Alpha,0.192,0.808,0.0,-0.2263
+IBM,2017-07-18,IBM posts 21st straight revenue decline  shares down 1 5  aftermarket,Seeking Alpha,0.0,0.631,0.369,0.4767
+IBM,2017-07-18,IBM misses revenue estimates  weighed down by legacy businesses,Reuters,0.192,0.808,0.0,-0.2263
+IBM,2017-07-18,IBM Down On Q2 Revenue Miss ,Zacks Investment Research,0.242,0.758,0.0,-0.1531
+IBM,2017-07-19,U S  stock index futures mixed  Morgan Stanley beats ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2017-07-19,IBM announces opening of four new data centers,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-07-19,Analysts cut IBM price targets after Q2 revenue miss,Seeking Alpha,0.346,0.654,0.0,-0.4019
+IBM,2017-07-19,London Stock Exchange Group tests blockchain for private company shares,Reuters,0.0,0.804,0.196,0.296
+IBM,2017-07-19,IBM Shares Slide On Missed Earnings,Trade12,0.262,0.476,0.262,0.0
+IBM,2017-07-19,Stock Market News For July 20  2017,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2017-07-20,U S  Tech Stocks Reach All Time High,AvaTrade,0.0,0.82,0.18,0.0258
+IBM,2017-07-20,IBM s Watson Could Be Destroying Shareholder Value,Rupert Hargreaves,0.327,0.455,0.218,-0.296
+IBM,2017-07-23,Prepare For A 30 Year Bull Market,Clif Droke,0.0,1.0,0.0,0.0
+IBM,2017-07-24,Swedish PM calls potential IT leak  disaster  and risk to country,Reuters,0.518,0.482,0.0,-0.8225
+IBM,2017-07-25,WANdisco  Strong H1  Expect Momentum To Continue ,Edison,0.0,0.645,0.355,0.5106
+IBM,2017-07-25,International Business Machines declares  1 50 dividend,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-07-25,Juniper Networks beats by  0 03  beats on revenue,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-08-07,IBM to appeal judge s order to pay  78 million to Indiana,Reuters,0.123,0.877,0.0,-0.1027
+IBM,2017-08-07,Berkshire Hathaway lower premarket after income drops,Seeking Alpha,0.268,0.732,0.0,-0.296
+IBM,2017-08-10,IBM and HSBC collaborate for intelligent trading solution,Seeking Alpha,0.0,0.531,0.469,0.6486
+IBM,2017-08-11,Internet Of Things  Stocks To Watch,Samuel Rae,0.0,1.0,0.0,0.0
+IBM,2017-08-16,IBM s Weather Channel adds live tracking flight data,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-08-17,Here s how Trump s council of business titans fell apart,Business Insider,0.0,1.0,0.0,0.0
+IBM,2017-08-22,IBM  food suppliers announce new blockchain tech partnership,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-08-23,IBM announces autoimmune research project  data protection software,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-08-24,SAP   IBM Jointly Offer Solution For Retail  Packaged Goods,Zacks Investment Research,0.0,0.777,0.223,0.3182
+IBM,2017-08-28,European stocks open lower ahead of fresh Brexit talks  Dax down 0 64 ,Investing.com,0.152,0.69,0.159,0.0258
+IBM,2017-09-03,Focus On Gold  Silver And Precious Metals Mining ,Mark Lundeen,0.0,0.654,0.346,0.5719
+IBM,2017-09-06,Australia researchers say find new way to build quantum computers,Reuters,0.0,1.0,0.0,0.0
+IBM,2017-09-07,IBM funding an MIT AI lab,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-09-10,IBM Stock Has Dropped 20   Is It A Play For Value Investors ,Modest Money,0.0,0.652,0.348,0.5859
+IBM,2017-09-15,Swedish PM survives vote of no confidence,Reuters,0.21,0.476,0.314,0.2732
+IBM,2017-10-01,More IBM employees in India than U S ,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-10-04,IBM acquires Australian innovation agency,Seeking Alpha,0.0,0.606,0.394,0.3818
+IBM,2017-10-04,Commerzbank  other banks join UBS and IBM trade finance blockchain,Reuters,0.0,0.804,0.196,0.296
+IBM,2017-10-04,IBM  banks team up for blockchain trade finance system,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-10-04,UBS chairman joins in bitcoin bashing by bankers,Reuters,0.0,1.0,0.0,0.0
+IBM,2017-10-12,What s In Store For IBM ETFs In Q3 Earnings ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2017-10-16,Should You Buy International Business Machines  IBM  Ahead Of Earnings ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2017-10-17,Gold s Kilonova  Ripple s Rise,Mati Greenspan,0.0,1.0,0.0,0.0
+IBM,2017-10-17,Global Rally Continues With Modest Gains ,AvaTrade,0.0,0.676,0.324,0.34
+IBM,2017-10-17,IBM  IBM  Stock Pops On Q3 Cloud Revenue Growth ,Zacks Investment Research,0.0,0.755,0.245,0.3818
+IBM,2017-10-17,IBM reports Q3  FY guidance beats  shares  4 ,Seeking Alpha,0.0,0.732,0.268,0.296
+IBM,2017-10-17,International Business Machines beats by  0 02  beats on revenue,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-10-17,Play IBM s Turnaround Story With These ETFs,Zacks Investment Research,0.0,0.714,0.286,0.34
+IBM,2017-10-17,Should Tax Reforms Be Implied At The Earliest ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2017-10-17,Could Tax Reform Delays Tank The Market ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2017-10-17,IBM beats revenue estimates  hints at sales growth,Reuters,0.0,0.729,0.271,0.3818
+IBM,2017-10-18,Asian Shares Mixed With Nikkei 225 Up  Shanghai Down After China GDP,Investing.com,0.0,0.833,0.167,0.296
+IBM,2017-10-18,Asia shares camp near peaks  China s Xi talks reform and stability,Reuters,0.0,0.82,0.18,0.296
+IBM,2017-10-18,Big Blue Brings Big Milestone,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2017-10-18,IBM Shares Surge More Than 7  in Early Trade,Investing.com,0.0,0.761,0.239,0.296
+IBM,2017-10-18,New ETF has robots pick investments,Reuters,0.0,1.0,0.0,0.0
+IBM,2017-10-18,Why IBM Stock Is Soaring Despite Slumping Revenue,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2017-10-18,Premarket Gainers as of 9 05 am,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-10-19,iFOREX Daily Analysis   October 19  2017,iFOREX,0.0,1.0,0.0,0.0
+IBM,2017-10-19,IBM Inc Shares Soar On Earnings Beat,Ticker.tv News,0.0,0.732,0.268,0.296
+IBM,2017-10-19,Is The Most Hated Bull Market About To End ,Jamie Dutta,0.36,0.64,0.0,-0.6697
+IBM,2017-10-19,IBM Fuels Dow Jones Industrial Average To New Record Highs,ETF Daily News,0.0,1.0,0.0,0.0
+IBM,2017-10-19,All 3 Main U S  Stock Indices Log Fresh Records,Ara Zohrabian,0.0,0.723,0.277,0.3182
+IBM,2017-10-22,MongoDB s Successful IPO Conceals Challenges,Alex Newman,0.0,0.37,0.63,0.6249
+IBM,2017-10-22,Buyout   Sale Strategies To Drive CA Inc s  CA  Q2 Earnings,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2017-10-22,Weighing The Week Ahead  Where Is The Fear  ,Jeff Miller,0.314,0.686,0.0,-0.4939
+IBM,2017-10-25,Are These 5 Dow Stocks As Cheap As They Look  Part 5 of 5 ,Chuck Carnevale,0.0,1.0,0.0,0.0
+IBM,2017-10-31,International Business Machines declares  1 50 dividend,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-11-01,World s First AI Run Global ETF Makes Its Own Managers Nervous,Bloomberg,0.174,0.826,0.0,-0.2732
+IBM,2017-11-06,Is International Business Machines  IBM  A Great Value Pick ,Zacks Investment Research,0.0,0.48,0.52,0.7579
+IBM,2017-11-08,Rise of the machines  Philippine outsourcing industry braces for AI,Reuters,0.0,1.0,0.0,0.0
+IBM,2017-11-09,Australia museum  IBM launch frog count app for a deep dive into pond population,Reuters,0.0,1.0,0.0,0.0
+IBM,2017-11-14,IBM urges lawmakers to  narrow  bill targeting Chinese investment,Reuters,0.0,1.0,0.0,0.0
+IBM,2017-11-14,Reuters  IBM writes to US lawmakers on foreign investment crackdown efforts,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2017-11-15,Oracle backs tougher foreign investment bills aimed at China,Reuters,0.121,0.707,0.172,0.128
+IBM,2017-11-16,IBM urged to avoid working on  extreme vetting  of U S  immigrants,Reuters,0.196,0.804,0.0,-0.296
+IBM,2017-11-16,3 Factors That Defend IBM ETFs From Berkshire s Bashing ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2017-11-19,IBM could be set for gains after long slump  Barron s,Reuters,0.0,0.789,0.211,0.34
+IBM,2017-11-22,Hewlett Packard  HPE  CEO Whitman To Step Down  Shares Drop,Zacks Investment Research,0.171,0.65,0.179,0.0258
+IBM,2017-11-26,Why Should You Hold On To Hewlett Packard  HPE  Stock For Now,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2017-11-27,New Crypto Accounts Proliferate as Bitcoin Flirts With  10 000,Bloomberg,0.0,0.841,0.159,0.1779
+IBM,2017-12-05,IBM  Bouncing Back Upwards,Inna Rosputnia,0.0,1.0,0.0,0.0
+IBM,2017-12-19,Xinyuan Real Estate up 8 4  as SA contributor makes strong call,Seeking Alpha,0.0,0.732,0.268,0.5106
+IBM,2017-12-22,As energy markets evolve  blockchain powers up,Reuters,0.0,0.741,0.259,0.2732
+IBM,2018-01-03,IBM called  attractive large cap value  by top analyst  shares  1 4 ,Seeking Alpha,0.0,0.392,0.608,0.8074
+IBM,2018-01-03,WANdisco  Record Contract Win ,Edison,0.0,0.441,0.559,0.5859
+IBM,2018-01-05,Stellar Joins Top Ten Cryptocurrencies Thanks to Huge New Year Rally ,Investing.com,0.0,0.533,0.467,0.7184
+IBM,2018-01-10,Buffett Says Stock Ownership Became More Attractive With Tax Cut,Bloomberg,0.158,0.602,0.24,0.2716
+IBM,2018-01-11,IBM names James Kavanaugh as CFO  replacing Schroeter,Reuters,0.0,1.0,0.0,0.0
+IBM,2018-01-11,IBM taps Kavanaugh as new CFO  Schroeter to become global markets SVP,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2018-01-11,The Register  IBM moving 30  of GTS jobs with Bain s help,Seeking Alpha,0.0,0.787,0.213,0.4019
+IBM,2018-01-12,Upcoming Earnings Reports To Watch  CSX  GS  IBM,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2018-01-15,Weekly Market Report   15 01 2018,AvaTrade,0.0,1.0,0.0,0.0
+IBM,2018-01-16,ETFs To Watch On IBM s Likely Revenue Rebound In Q4,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2018-01-16,IBM Earnings Preview  Declining Revenue Streak Could Be Over,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2018-01-16,Maersk  IBM to launch blockchain based platform for global trade,Reuters,0.0,1.0,0.0,0.0
+IBM,2018-01-16,IBM  Maersk launch blockchain platform for tracking cargo,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2018-01-18,IBM returns to growth after six years  but dour forecast hits shares,Reuters,0.0,0.685,0.315,0.5574
+IBM,2018-01-18,Businesses warn of risks of tighter rules on U S  foreign investment,Reuters,0.304,0.696,0.0,-0.3612
+IBM,2018-01-18,IBM  4 4  despite beating Q4 estimates  posting first revenue growth in nearly 6 years,Seeking Alpha,0.0,0.663,0.337,0.6224
+IBM,2018-01-18,Trading IBM s Earnings,Gareth Soloway,0.0,1.0,0.0,0.0
+IBM,2018-01-19,IBM shares fall on soft profit outlook,Reuters,0.0,0.495,0.505,0.6249
+IBM,2018-01-19,IBM Q4 earnings call  FY18 guidance  tax forecast  and margin erosion,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2018-01-19,Yoga on ice  India to offer classes during Davos summit,Reuters,0.0,1.0,0.0,0.0
+IBM,2018-01-19,Stocks  U S  Futures Rise as Countdown on Government Shutdown Begins  ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2018-01-19,Ex IBM employee from China gets five years prison for stealing code,Reuters,0.412,0.588,0.0,-0.7906
+IBM,2018-01-19,Analysts comment on IBM s earnings,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2018-01-19,Post Earnings  Here s Where I m Buying IBM,Gareth Soloway,0.0,1.0,0.0,0.0
+IBM,2018-01-19,iFOREX Daily Analysis   January 19 2018,iFOREX,0.0,1.0,0.0,0.0
+IBM,2018-01-21,Government Shutdown Edition  VIX Implodes  SPX Reaches Fresh ATH,Dr. Duru,0.0,0.667,0.333,0.3612
+IBM,2018-01-21,Europe readies riposte to Trump s  America First  push in Davos,Reuters,0.0,1.0,0.0,0.0
+IBM,2018-01-25,U S  Treasury official says CFIUS overworked  supports overhaul,Reuters,0.0,0.538,0.462,0.5106
+IBM,2018-01-30,International Business Machines declares  1 50 dividend,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2018-01-31,Alibaba backed online lender MYbank owes cost savings to home made tech,Reuters,0.0,0.909,0.091,0.0258
+IBM,2018-02-01,Key Factors To Drive Arrow Electronics   ARW  Q4 Earnings,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2018-02-13,UK initiative seeks Israeli digital health tech to assist NHS,Reuters,0.0,1.0,0.0,0.0
+IBM,2018-02-13,Stellar Lumens XLM The Only Top 10 Crypto To See Gains On Tuesday,Kiana Danial,0.0,0.724,0.276,0.4939
+IBM,2018-02-14,Bitcoin s Integration,Mati Greenspan,0.0,1.0,0.0,0.0
+IBM,2018-02-14,Can Tech ETFs Regain Investors  Love After Selloff Snub ,Zacks Investment Research,0.2,0.5,0.3,0.34
+IBM,2018-03-08,IBM releases longer term outlook,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2018-03-11,Dow Jones And The Barron s Gold Mining Index A 98 Year Examination ,Mark Lundeen,0.0,1.0,0.0,0.0
+IBM,2018-03-14,IBM launches Cloudflare backed security  bare metal Kubernetes containers,Seeking Alpha,0.0,0.667,0.333,0.3612
+IBM,2018-03-16,IBM Turns To Blockchain For A Boost,J. Frank Sigerson,0.0,0.649,0.351,0.4019
+IBM,2018-03-20,IBM reaffirms FY18 guidance,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2018-03-21,iBM launches blockchain starter plan for startups,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2018-03-22, IBM Rolls Out New Blockchain Product  Unveils World s Smallest Computer ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-03-22,IBM accused of firing older employees at higher rate,Seeking Alpha,0.397,0.603,0.0,-0.5574
+IBM,2018-03-26, Russia Drafting Blockchain Legislation to Speed Up Adoption ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-03-27,InterXion offers European direct access to IBM Cloud,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2018-03-28, IBM  India s JM Baxi Join Forces to Explore Blockchain Applications ,Cryptovest,0.0,0.804,0.196,0.296
+IBM,2018-03-28,Initial Coin Offerings To Watch  PChain  Seed,Viktor Shpakovsky,0.0,1.0,0.0,0.0
+IBM,2018-04-03,Stellar Lumens XLM USD Forms Double Bottom On IBM Partnership Updates,Kiana Danial,0.0,1.0,0.0,0.0
+IBM,2018-04-03, Stellar  XLM  Spikes on General Market Upturn ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-04-04, IBM s Marie Wieck Calls for Blockchain Adoption  Praises Dubai ,Cryptovest,0.0,0.702,0.298,0.5267
+IBM,2018-04-05,IBM joins group building a blockchain based global identity network,Reuters,0.0,1.0,0.0,0.0
+IBM,2018-04-12,IBM ETFs To Watch Ahead Of Q1 Earnings,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2018-04-12,The Zacks Analyst Blog Highlights  IBM  Enbridge  ADP  Marathon And United Continental,Zacks Investment Research,0.0,0.797,0.203,0.4215
+IBM,2018-04-16,New Construction Data  Q1 Earnings In Focus,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2018-04-16,Tax Day Not So Taxing  for Corporations  Housing ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2018-04-17, Samsung to Leverage Blockchain for Shipping Processes ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-04-17,IBM first quarter margins miss estimates  shares fall,Reuters,0.163,0.612,0.224,0.1531
+IBM,2018-04-17,IBM reports Q1 beats  FY profit guidance miss  shares  5 1 ,Seeking Alpha,0.126,0.472,0.402,0.5423
+IBM,2018-04-17,Day Ahead  Top 3 Things to Watch ,Investing.com,0.0,0.735,0.265,0.2023
+IBM,2018-04-17, Big Blue Helps Bring Blockchain Solutions to Insurance Industry ,Cryptovest,0.0,0.619,0.381,0.5106
+IBM,2018-04-17,IBM Posts Q1 Earnings Beat  Revenue Growth ,Zacks Investment Research,0.0,0.698,0.302,0.3818
+IBM,2018-04-18,IBM Shares Fall On Weak Profit Forecast,trade 12,0.242,0.333,0.425,0.296
+IBM,2018-04-18,IBM Down 7   Can It Go Lower  Yes ,Steve Miller,0.222,0.505,0.273,0.128
+IBM,2018-04-18,What Would Watson Say About IBM s Sell Off ,Nicholas Santiago,0.0,1.0,0.0,0.0
+IBM,2018-04-18,Premarket Losers as of 9 05 am  04 18 2018 ,Seeking Alpha,0.298,0.702,0.0,-0.5267
+IBM,2018-04-18,IBM Turnaround Questioned on Slow Growth of New Businesses,Bloomberg,0.127,0.636,0.236,0.296
+IBM,2018-04-18,Should You Buy The Dip In IBM With ETFs ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2018-04-18,IBM And Salon Media Pilot Blockchain Solution For Digital Ad Transparency,Cointelegraph,0.0,0.813,0.187,0.3182
+IBM,2018-04-19, Huawei Brings Out Blockchain as a Service Offering ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-04-19,Loonie Softens On Cautious BoC  UK Retail Sales Next,XM Group,0.149,0.851,0.0,-0.1027
+IBM,2018-04-19,Commodities Steal The Show ,Stephen Innes,0.516,0.484,0.0,-0.4939
+IBM,2018-04-19,US Market Higher As Energy Stocks Rise,IFC Markets,0.0,0.741,0.259,0.2732
+IBM,2018-04-20,China trade body urges tighter corporate compliance after ZTE woes  document,Reuters,0.225,0.775,0.0,-0.4404
+IBM,2018-04-20,Forget Bitcoin  Consider Blockchain ETFs,Zacks Investment Research,0.322,0.678,0.0,-0.2263
+IBM,2018-04-22,Initial Coin Offerings To Watch  Pchain  Seed ,Viktor Shpakovsky,0.0,1.0,0.0,0.0
+IBM,2018-04-24,International Business Machines declares  1 57 dividend,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2018-04-26,Jewelry companies team up with IBM on blockchain platform,Reuters,0.0,1.0,0.0,0.0
+IBM,2018-04-27,IBM Files Patent For Proof Of Work Protocol Tailored To IoT Networks,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2018-04-30, IBM s Batavia Successfully Tested for Live Transactions  Audi Involved ,Cryptovest,0.0,0.714,0.286,0.4939
+IBM,2018-04-30, Private Blockchains   the Good  the Bad and All the Misconceptions ,Cryptovest,0.243,0.556,0.201,-0.1531
+IBM,2018-05-02,Dubai Launches Blockchain Business Registry To Ease Market Entry,Cointelegraph,0.0,0.762,0.238,0.3612
+IBM,2018-05-02, Bitfinex Launches Stellar and Verge Trading ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-05-02,Car Giants BMW  GM Among 30 Members Of New MOBI Blockchain Group,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2018-05-02, Major Investment Bank Predicts Cryptocurrency Market  Wipe Out  ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-05-03, BMW  GM  Ford  Renault  IBM Launch Mobility Open Blockchain Initiative ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-05-03, Dubai Launches New Blockchain Initiative to Ease Doing Business  Encourage FDI ,Cryptovest,0.0,0.608,0.392,0.7003
+IBM,2018-05-06,No Surprises With Gold s May Demise ,Mark Mead Baillie,0.272,0.494,0.235,-0.0772
+IBM,2018-05-08, Russia s Megafon to Create Fintech Oriented Joint Venture with Gazprombank  Rostec ,Cryptovest,0.0,0.826,0.174,0.2732
+IBM,2018-05-08, Oracle to Get Into Blockchain ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-05-08, IOTA Announces Partnership with Porsche  Token Price Surges ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-05-09,Hot U S  jobs market spurs push to reach those left behind,Reuters,0.0,0.891,0.109,0.0258
+IBM,2018-05-15,Veridium to use IBM blockchain to turn carbon credits into digital asset,Seeking Alpha,0.0,0.667,0.333,0.6124
+IBM,2018-05-15,IBM Partners With Veridium Labs To Let Companies Track Carbon Footprint Via Blockchain,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2018-05-16, IBM Partners with Veridium to Issue Carbon Credit Backed Tokens ,Cryptovest,0.0,0.684,0.316,0.4019
+IBM,2018-05-23,IBM Announces 1 800 New Jobs in France In Blockchain  AI  and IoT Within Next Two Years,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2018-05-25, Commerzbank Succeeds in Processing Corporate Forex Deal on Blockchain ,Cryptovest,0.0,0.714,0.286,0.4939
+IBM,2018-05-28, Block Show Berlin  How Enterprises Use the Blockchain ,Cryptovest,0.293,0.707,0.0,-0.4404
+IBM,2018-05-29, Maersk to Launch 2 Blockchain Apps with IBM  Starts Using EY s Insurwave ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-05-31,Mass layoffs at IBM Watson Health,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2018-06-03, Cryptovest Exclusive  Q A With Reuben Yap  COO  Zcoin ,Cryptovest,0.0,0.8,0.2,0.128
+IBM,2018-06-04, Abu Dhabi Ports Among First Blockchain Adopters in UAE s Capital City ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-06-06, Porsche Partner Xain Raises 6M Euro in Seed Funding ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-06-07,IBM  H2O ai Tie Up To Help Users Tap AI For Competitive Edge,Zacks Investment Research,0.0,0.714,0.286,0.5267
+IBM,2018-06-07,IT failures at British bank TSB cost  94 million so far  owner Sabadell says,Reuters,0.188,0.812,0.0,-0.4588
+IBM,2018-06-11,Paris beats London as Europe s favorite investment destination  EY,Reuters,0.0,0.727,0.273,0.4588
+IBM,2018-06-11,Fibonacci  Based Investment Strategy For Stellar Lumens  XLM ,Kiana Danial,0.0,1.0,0.0,0.0
+IBM,2018-06-13, IBEG  IDA Ireland Launch Blockchain Info Portal ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-06-14, Banks   Blockchain Based  Payment Systems Are Not Really Blockchain  Ripple s Schwartz Says ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-06-15,IBM acquires MRO inventory software company,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2018-06-18, Walmart Awarded 3 Blockchain Related Patents ,Cryptovest,0.0,0.597,0.403,0.4019
+IBM,2018-06-19,IBM Launches Blockchain Powered Media Transactions Tracker to Prevent Advertising Fraud,Cointelegraph,0.273,0.647,0.079,-0.5719
+IBM,2018-06-19,Cryptos Rise  UBS Praises Blockchain,Investing.com,0.0,0.541,0.459,0.5267
+IBM,2018-06-19,IBM unveils Project Debater,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2018-06-20,Box  3 1  on IBM agreement  high volume,Seeking Alpha,0.0,0.61,0.39,0.4939
+IBM,2018-06-20, Philippine  Japanese Banks to Roll Out Blockchain Remittance Service ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-06-26,IBM s Watson gets emotional for Wimbledon,Seeking Alpha,0.0,0.758,0.242,0.1531
+IBM,2018-06-26, You cannot be serious   IBM taps emotions for Wimbledon highlights,Reuters,0.0,0.88,0.12,0.0572
+IBM,2018-06-28,Accenture s digital investments drive quarterly beat,Reuters,0.0,1.0,0.0,0.0
+IBM,2018-06-28,Nomura initiates IBM at 16  upside on cloud potential,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2018-06-28,Pre IPO Coverage  Domo  Inc   DOMO ,David Trainer,0.0,1.0,0.0,0.0
+IBM,2018-06-28, Stellar Acquires Chain Blockchain Platform for  500 Million ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-06-29,HAL like robot to help astronaut in space odyssey,Reuters,0.0,0.574,0.426,0.6369
+IBM,2018-07-03, Plastic Bank Harnesses Blockchain to Rid Oceans of Plastic Garbage ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-07-05, IBM Wins  740M Contract for Blockchain Tech Services to Australian Govt ,Cryptovest,0.0,0.73,0.27,0.5719
+IBM,2018-07-05,IBM Signs  740 Million Deal With Australian Gov t to Use Blockchain for Data Security,Cointelegraph,0.0,0.844,0.156,0.34
+IBM,2018-07-06,Magic Blockchain Dust,Mati Greenspan,0.0,1.0,0.0,0.0
+IBM,2018-07-06, Crypto News Weekly 06 07 18  Malta Crypto Island  Bitcoin Chinese Floods and IBM blockchain win ,Cryptovest,0.0,0.798,0.202,0.5859
+IBM,2018-07-10,Customers hit out at Britain s TSB bank after second IT outage,Reuters,0.0,1.0,0.0,0.0
+IBM,2018-07-11,Riyadh Municipality Partners with IBM to Develop Blockchain for Government Services,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2018-07-12, IBM Awarded 6 Blockchain Related Patents in One Week ,Cryptovest,0.0,0.722,0.278,0.4019
+IBM,2018-07-12, Riyadh to Deploy Blockchain Solutions with IBM as Partner ,Cryptovest,0.0,0.825,0.175,0.1779
+IBM,2018-07-13,South Africa s MeerKAT to help unlock mysteries of universe,Reuters,0.0,0.748,0.252,0.4019
+IBM,2018-07-17,IBM partners Stronghold for new digital stable coin,Reuters,0.0,0.619,0.381,0.4019
+IBM,2018-07-17,Cryptocurrency firm Stellar gets Islamic finance certification,Reuters,0.0,1.0,0.0,0.0
+IBM,2018-07-17, IBM Backs New Stable Cryptocurrency Stronghold USD ,Cryptovest,0.135,0.449,0.416,0.3612
+IBM,2018-07-17, IBM  Columbia University to Establish Blockchain   Data Transparency Center ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-07-17,IBM Backs New US Dollar Pegged Stablecoin That Runs on Stellar Network,Cointelegraph,0.098,0.902,0.0,-0.0516
+IBM,2018-07-17,3 Reasons Behind Bitcoin And Other Cryptocurrency Surges Today,Kiana Danial,0.0,1.0,0.0,0.0
+IBM,2018-07-18,IBM gets boost from new businesses  tops estimates,Reuters,0.0,0.5,0.5,0.7184
+IBM,2018-07-18,Stocks hit one month high  dollar puts squeeze on gold,Reuters,0.0,1.0,0.0,0.0
+IBM,2018-07-18, Stellar  XLM  Makes Dramatic Move  Talks of  Flippening  with XRP Resume ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-07-18, Singaporean CrimsonLogic Launches Blockchain Service for Shipping  Logistics ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-07-19, Blockchain Technology Helped IBM Boost Revenue   Q2 Report ,Cryptovest,0.0,0.722,0.278,0.4019
+IBM,2018-07-19,What To Know Before This Tech Giant Reports After The Close Today,Estimize,0.0,1.0,0.0,0.0
+IBM,2018-07-19,After Earnings Beat  Can IBM Build A Base ,Steve Miller,0.0,1.0,0.0,0.0
+IBM,2018-07-20,Island of Stability  Stable Coins Keep Attracting Big League Investors,Cointelegraph,0.0,0.602,0.398,0.6486
+IBM,2018-07-20, New Zealand s SBS Bank Looks at Blockchain  Cryptos ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-07-20,Dow Jones Industrial Average Winning Streak Ends At Five,ETF Daily News,0.0,0.702,0.298,0.5267
+IBM,2018-07-29,IBM Continues Its Growth Streak,Danny Vena,0.0,0.606,0.394,0.3818
+IBM,2018-07-30, CLS  IBM to Trial DLT  App Store  Platform with Barclays  Citi ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-07-30,CLS  IBM and banks test blockchain app store,Reuters,0.0,1.0,0.0,0.0
+IBM,2018-07-30,Bitcoin Inches Down but Still Holds Momentum Above  8 000,Investing.com,0.0,1.0,0.0,0.0
+IBM,2018-07-31,SNP Schneider Neureither   Partner  Revenue Guidance Cut 9 8  At Mid Point ,Edison,0.189,0.811,0.0,-0.2732
+IBM,2018-07-31,Bitcoin Edges Down  South Korea to End Tax Breaks for Crypto Exchanges ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2018-08-02,You Should Move On From Groupon,Estimize,0.0,1.0,0.0,0.0
+IBM,2018-08-03,IBM Rises 3 02 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2018-08-05, ICO Projects Analysis From Tokenbox,Viktor Shpakovsky,0.0,1.0,0.0,0.0
+IBM,2018-08-09, IBM  Maersk Create Blockchain Shipping System ,Cryptovest,0.0,0.704,0.296,0.2732
+IBM,2018-08-09,Maersk  IBM say 94 organizations have joined blockchain trade platform,Reuters,0.0,1.0,0.0,0.0
+IBM,2018-08-09,Maersk  IBM Launch Blockchain Shipping Supply Chain Platform,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2018-08-10,CEVA Logistics  IBM Maersk Blockchain Platform Is  Big Step Forward ,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2018-08-11,Report  WPP considers IBM cloud exec for CEO post,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2018-08-14, MedChain  IBM s Cognition Foundry Team up for Blockchain Medical Records ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-08-15, IBM Blockchain to Enhance US Insurance Reporting ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-08-16,Nvidia  Thursday s Q2 Earnings Report Could Spark Another Rally ,Haris Anwar/Investing.com,0.0,0.808,0.192,0.2263
+IBM,2018-08-16,Blockchain benefits still murky for most commodities trading,Reuters,0.0,0.729,0.271,0.3818
+IBM,2018-08-29,Technology Keys to U S  Open win,Reuters,0.0,0.513,0.487,0.5859
+IBM,2018-08-30, Australia to Trial National Blockchain Based on IBM Tech ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-09-04, IBM Announces Blockchain World Wire Payment System Based on Stellar  XLM  ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-09-04,IBM Reveals Stellar Based  Near Real Time  Blockchain Payment Network,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2018-09-09,Fast   Seamless  The Race for the Cross Border Payments Market,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2018-09-10,Lightyear buys U S  blockchain start up Chain  to move business to Stellar,Reuters,0.0,1.0,0.0,0.0
+IBM,2018-09-12, IBM Blockchain CTO Joins Boston based Private Equity Firm ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-09-13, New Czech Blockchain Association Backed by IBM  PwC  Adel  Hopes to Transform Local Economy ,Cryptovest,0.0,0.755,0.245,0.4404
+IBM,2018-09-13,IBM Joins Decentralized  Yellow Pages  for Blockchain Projects,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2018-09-14, HACERA  IBM Launch the  Yellow Pages  of Blockchains ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-09-21,SolarWinds files for new initial public offering,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2018-09-21,Point72 Exec Leaves the Firm to Launch Crypto Hedge Fund in October,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2018-09-24,IBM CTO Tells US Congressmen  Let s Get Government Ready for Blockchain ,Cointelegraph,0.0,0.8,0.2,0.3612
+IBM,2018-09-24,Walmart will require some suppliers to use IBM s food safety solution,Seeking Alpha,0.0,0.638,0.362,0.6249
+IBM,2018-09-24,IBM Awarded Patent for Autonomous Self Servicing Devices Within Blockchain Based IoT System,Cointelegraph,0.0,0.816,0.184,0.4019
+IBM,2018-09-24,Walmart  Sam s Club to put food products on blockchain,Reuters,0.0,1.0,0.0,0.0
+IBM,2018-09-25, US Blockchain Adoption Needs Gov t Vision  Collaboration with Industry  IBM Report Says ,Cryptovest,0.0,0.846,0.154,0.25
+IBM,2018-09-26,U S  business asks British PM May  how bad can Brexit get ,Reuters,0.28,0.72,0.0,-0.5423
+IBM,2018-09-26,Walmart  Sam s Club to put food products on blockchain,Reuters,0.0,1.0,0.0,0.0
+IBM,2018-09-27,Marsh Confirms IBM Blockchain Insurance Partnership to Include Salesforce,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2018-10-08, IBM  Singapore s Pacific International Lines Trial Blockchain for Bill of Lading Project ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-10-08,Chickens and eggs  Retailer Carrefour adopts blockchain to track fresh produce,Reuters,0.0,0.692,0.308,0.4588
+IBM,2018-10-09, IBM Food Trust Becomes Generally Available  Carrefour Joins Alliance ,Cryptovest,0.0,0.708,0.292,0.5106
+IBM,2018-10-10,IBM Falls 3 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2018-10-15,IBM s Blockchain Patents  From Food Tracking and Shipping to IoT and Security Solutions,Cointelegraph,0.0,0.728,0.272,0.4767
+IBM,2018-10-16,IBM Earnings beat  Revenue misses In Q3,Investing.com,0.241,0.759,0.0,-0.2263
+IBM,2018-10-16,IBM revenue misses as server  software sales slow,Reuters,0.213,0.787,0.0,-0.2263
+IBM,2018-10-17,U S  data drags oil lower  dollar up after Fed minutes,Reuters,0.358,0.642,0.0,-0.4404
+IBM,2018-10-17,IBM Falls 6 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2018-10-18, Stellar Lumens  XLM  Technical Analysis  IBM to Demo Blockchain World Wire at Sibo Conference Soon  Golden Crossover Likely ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-10-19,STAT  IBM Watson Health head steps down,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2018-10-19,IBM Fundamental Analysis By The Numbers ,Chuck Carnevale,0.0,1.0,0.0,0.0
+IBM,2018-10-23,IBM makes its Mac provisioning code open source,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2018-10-24,IBM Falls 3 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2018-10-25,Canadian Border Services Begins Testing IBM Blockchain for Shipping,CoinDesk,0.0,1.0,0.0,0.0
+IBM,2018-10-25,IBM Study  Most Global Financial Firms Think Central Banks Should Issue Digital Currencies,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2018-10-25,Exclusive  Information technology company ConvergeOne explores sale   sources,Reuters,0.0,0.824,0.176,0.128
+IBM,2018-10-25, Travelport Follows Blockchain Trial Success with Expansion of IBM Collaboration ,Cryptovest,0.0,0.709,0.291,0.5719
+IBM,2018-10-26,Most Central Banks Back Digital Currency If DLT Improved  IBM Survey,CoinDesk,0.0,0.763,0.237,0.4767
+IBM,2018-10-26,IBM s New Blockchain Problem  Maersk Backed Shipping Effort Is Struggling,CoinDesk,0.404,0.515,0.081,-0.6597
+IBM,2018-10-29, Canada Border Services Agency  Port of Montreal Mull Blockchain Shipping Solutions ,Cryptovest,0.0,0.855,0.145,0.1779
+IBM,2018-10-29,IBM Falls 5 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2018-10-29,Banks could reap as much as  115 million for orchestrating the IBM Red Hat deal   the largest software acquisition in history,Business Insider,0.0,1.0,0.0,0.0
+IBM,2018-10-30, Smart Dubai  IBM Launch Dubai Blockchain Platform to Digitize Process   Services ,Cryptovest,0.0,0.787,0.213,0.4019
+IBM,2018-10-30, Smart Dubai  IBM Launch Dubai Blockchain Platform to Digitize Process   Services ,Cryptovest,0.0,0.787,0.213,0.4019
+IBM,2018-10-30,IBM Falls 3 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2018-10-31,IBM  IBM  Stock Sinks As Market Gains  What You Should Know,Zacks Investment Research,0.0,0.806,0.194,0.34
+IBM,2018-10-31,This Is Why I m Long IBM ,Chuck Carnevale,0.0,1.0,0.0,0.0
+IBM,2018-11-01,Canadian Border Services Begins Testing IBM Blockchain for Shipping,CoinDesk,0.0,1.0,0.0,0.0
+IBM,2018-11-01,Most Central Banks Back Digital Currency If DLT Improved  IBM Survey,CoinDesk,0.0,0.763,0.237,0.4767
+IBM,2018-11-01,IBM and Maersk Struggle to Sign Partners to Shipping Blockchain,CoinDesk,0.204,0.796,0.0,-0.3182
+IBM,2018-11-04, IBM Patents Blockchain System to Create  Trust  Between AR Game Players  Real World Locations,Cointelegraph,0.0,0.69,0.31,0.6597
+IBM,2018-11-05,IBM Rises 3 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2018-11-06,IBM Rises 3 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2018-11-06,Port Authority of Valencia Joins Maersk  IBM Blockchain Project for Shipping,Cointelegraph,0.0,0.885,0.115,0.0772
+IBM,2018-11-06,PwC Is Advising  Not Auditing  Another Stablecoin Project,CoinDesk,0.0,1.0,0.0,0.0
+IBM,2018-11-07,IBM  IBM  Gains But Lags Market  What You Should Know,Zacks Investment Research,0.251,0.618,0.131,-0.3716
+IBM,2018-11-08, Seagate  IBM to Leverage Blockchain to Reduce Hard Drive Counterfeiting ,Cryptovest,0.135,0.865,0.0,-0.1027
+IBM,2018-11-08,IBM  Seagate Team Up to Tackle Hard Drive Fakes With Blockchain,CoinDesk,0.318,0.682,0.0,-0.4939
+IBM,2018-11-12,IBM Says Blockchain Can Power  Open Scientific Research  in New Patent Filing,CoinDesk,0.0,1.0,0.0,0.0
+IBM,2018-11-12, IBM Looks to Bring Scientific Research onto the Blockchain in Latest Patent Filing ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-11-12,Bitcoin Inches Up  CFTC Fines Trader  1 Million for Crypto Fraud,Investing.com,0.297,0.703,0.0,-0.5859
+IBM,2018-11-12,IBM Targets Scientific Research in Latest Blockchain Patent,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2018-11-13,IBM  IBM  Stock Moves  0 04   What You Should Know,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2018-11-13,Australia Is Morphing Into The Next Crypto Haven,Howard Goldstein,0.0,1.0,0.0,0.0
+IBM,2018-11-14,IBM Thailand Promotes AI  Blockchain in Order to Create Regional Sales Hub,Cointelegraph,0.0,0.69,0.31,0.5423
+IBM,2018-11-14, 5 Trln FX Settlement Giant CLS to Launch Blockchain Based Netting Service  Within Days ,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2018-11-14,IBM Exec  CBDCs Can Alleviate Risks That Contributed to 2008 Financial Crash,Cointelegraph,0.324,0.676,0.0,-0.5859
+IBM,2018-11-19,IBM  IBM  Stock Moves  1 04   What You Should Know,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2018-11-19,IBM  Columbia University Launch Blockchain Accelerator Programs,CoinDesk,0.0,1.0,0.0,0.0
+IBM,2018-11-19,Columbia University  IBM Launch Two Accelerator Programs for Blockchain Enterprises,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2018-11-20, IBM  Columbia University to Back 10 Blockchain Projects ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-11-21,Retail Giant Carrefour Launches Blockchain Food Tracking Platform for Poultry in Spain,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2018-11-26,Ohio will soon be the first state to accept Bitcoin for taxes,Business Insider,0.0,0.809,0.191,0.3818
+IBM,2018-11-27, Buterin  Blockchain Is Best For International Payments ,Cryptovest,0.0,0.588,0.412,0.6369
+IBM,2018-11-28,CLSNet Blockchain Payment Netting Service Launch Features Goldman Sachs  Morgan Stanley,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2018-11-28,Goldman  Morgan Stanley Go Live With CLS  IBM Powered Blockchain,CoinDesk,0.0,1.0,0.0,0.0
+IBM,2018-11-29,IBM  IBM  Dips More Than Broader Markets  What You Should Know,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2018-12-04,IBM Falls 3 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2018-12-06,IBM  IBM  Gains As Market Dips  What You Should Know,Zacks Investment Research,0.0,0.789,0.211,0.34
+IBM,2018-12-07,IBM Falls 3 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2018-12-07,In biggest Indian IT deal  HCL Tech to buy  1 8 billion of IBM software,Reuters,0.0,1.0,0.0,0.0
+IBM,2018-12-11, Abu Dhabi National Oil Company and IBM Pilot Blockchain Powered Supply Chain System ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-12-11, The List of Banks Using Blockchain Technology May Be Short  but the Future Is Still Bright ,Cryptovest,0.0,0.796,0.204,0.5927
+IBM,2018-12-11, IBM to Trial Blockchain Agricultural System for sub Saharan Africa ,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2018-12-12, IBM Might Provide its DLT Solutions to Indian Telecoms ,Cryptovest,0.0,0.825,0.175,0.1779
+IBM,2018-12-12,IBM Research Teams up With Agritech Firm to Boost African Agribusiness with Blockchain,Cointelegraph,0.0,0.816,0.184,0.4019
+IBM,2018-12-15,From South Korea to IBM Food Trust   How Blockchain Is Used in the Food Industry,Cointelegraph,0.0,0.809,0.191,0.5106
+IBM,2018-12-17,IBM Falls 3 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2018-12-17,Red Hat  RHT  Q3 Earnings Beat Estimates  Revenues Up Y Y,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2018-12-18,IBM  IBM  Outpaces Stock Market Gains  What You Should Know,Zacks Investment Research,0.0,0.789,0.211,0.34
+IBM,2018-12-20,Reuters  IBM  HPE victims of Chinese hacking,Seeking Alpha,0.277,0.723,0.0,-0.3182
+IBM,2018-12-20,IBM manager Jetter seen in lead to become Deutsche Boerse chairman  source,Reuters,0.0,1.0,0.0,0.0
+IBM,2018-12-20,IBM Falls 3 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2018-12-24,IBM Falls 3 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2018-12-26,IBM Rises 3 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2018-12-26,IBM s Focus On Digital Overhaul Of Sports Holds Promise,Zacks Investment Research,0.0,0.777,0.223,0.3182
+IBM,2019-01-03,IBM  IBM  Stock Moves  1 98   What You Should Know,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-01-04,IBM Rises 3 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2019-01-08,IBM signs  540M services agreement,Seeking Alpha,0.0,0.556,0.444,0.4939
+IBM,2019-01-08,IBM keeps U S  patent crown in 2018,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2019-01-08,U S  initiative warns firms of hacking by China  other countries,Reuters,0.149,0.851,0.0,-0.1027
+IBM,2019-01-09,Earnings Preview  IBM  IBM  Q4 Earnings Expected To Decline,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-01-10,Investing In Precious Commodities  What Does The Future Hold ,Nicholas Maithya,0.0,0.684,0.316,0.5719
+IBM,2019-01-14,Analysts Estimate IBM  IBM  To Report A Decline In Earnings  What To Look Out For,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-01-15,Red Hat  RHT  Down 0 2  Since Last Earnings Report  Can It Rebound ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-01-16,Ford  LG to Pilot IBM Blockchain in Fight Against Child Labor,CoinDesk,0.206,0.794,0.0,-0.3818
+IBM,2019-01-16,IBM  Ford Blockchain Pilot Targets Cobalt Supplies From Democratic Republic of Congo,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-01-16,Red Hat holders vote for IBM merger,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2019-01-16,Ford and IBM among quartet in Congo cobalt blockchain project,Reuters,0.0,1.0,0.0,0.0
+IBM,2019-01-16,IBM  Juniper announce cloud agreement,Seeking Alpha,0.0,0.556,0.444,0.4939
+IBM,2019-01-18,Grayscale s Newest Crypto Investment Trust Will Hold Stellar Lumens,CoinDesk,0.0,0.708,0.292,0.5106
+IBM,2019-01-20,After MLK Day Today  Markets Go For 5 Straight Up Weeks,Zacks Investment Research,0.0,0.826,0.174,0.2263
+IBM,2019-01-21,Digital Securities Platform Joins IBM Blockchain Accelerator Program,Cointelegraph,0.0,0.761,0.239,0.296
+IBM,2019-01-21,Spanish Port Authority Joins Blockchain Platform Developed by IBM and Maersk,Cointelegraph,0.0,0.885,0.115,0.0772
+IBM,2019-01-21,Should You Buy IBM ETFs Ahead Of Q4 Results ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-01-21,Vodafone  IBM Join Forces To Enhance Market Share In Europe,Zacks Investment Research,0.0,0.645,0.355,0.5267
+IBM,2019-01-22,GDP Comes under Pressure Due to Shutdown,Money Show,0.268,0.732,0.0,-0.296
+IBM,2019-01-22,IBM revenue beats estimates on strength in cloud  services businesses,Reuters,0.0,0.738,0.262,0.4939
+IBM,2019-01-22,IBM Climbs After Hours  Results and Guidance Top Forecasts,Investing.com,0.0,0.816,0.184,0.2023
+IBM,2019-01-22,Relief Rally In Global Equity Markets To Be Tested This Week ,ForexTime,0.0,0.763,0.237,0.4767
+IBM,2019-01-22,ETFs To Buy On IBM s Annual Revenue Growth Story ,Zacks Investment Research,0.0,0.755,0.245,0.3818
+IBM,2019-01-22,China s Weak Economic Data And News From EBay  IBM  Halliburton    More ,Zacks Investment Research,0.225,0.775,0.0,-0.4404
+IBM,2019-01-23,IBM Nails Earnings But May Be Overbought In The Near Term,Steve Miller,0.0,1.0,0.0,0.0
+IBM,2019-01-23,IBM Rises 7 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2019-01-23,IBM signs  260M bank services agreement,Seeking Alpha,0.0,0.61,0.39,0.4939
+IBM,2019-01-23,U S  China Trade Optimism Reverses Earnings Losses,Money Show,0.265,0.392,0.343,0.2023
+IBM,2019-01-23,Earnings Rescue Market From Morning Drop ,Zacks Investment Research,0.223,0.426,0.351,0.296
+IBM,2019-01-24,Gloomy data shoves euro lower ahead of ECB meeting,Reuters,0.352,0.648,0.0,-0.4215
+IBM,2019-01-24,Norges Bank And ECB Take Centre Stage ,Danske Markets,0.0,1.0,0.0,0.0
+IBM,2019-01-24,IBM  Aetna  PNC Explore Medical Data Blockchain for 100 Million Health Plans,CoinDesk,0.0,1.0,0.0,0.0
+IBM,2019-01-25,Insurance Giant Aetna Partners With IBM on Blockchain Network for Healthcare Industry,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-01-27,IBM  Is It Time To Buy ,Investment U,0.0,1.0,0.0,0.0
+IBM,2019-01-28,Nestle  IBM Food Trust Blockchain Set to Expand to New Suppliers  Consumers in 2019,Cointelegraph,0.0,0.682,0.318,0.6808
+IBM,2019-02-01,IBM  Pacific International Lines Complete Blockchain Shipping Trial With Oranges,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-02-05,Cryptocurrencies Are Disrupting The Commodities Market,CAGR VALUE,0.0,1.0,0.0,0.0
+IBM,2019-02-06,China hacked Norway s Visma to steal client secrets  investigators,Reuters,0.457,0.543,0.0,-0.7096
+IBM,2019-02-06,Rosenblatt defends Tableau after earnings,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2019-02-06,IBM develops new technology to help prevent power outages,Reuters,0.0,0.648,0.352,0.4215
+IBM,2019-02-07,India unexpectedly cuts key rate  changes stance to neutral,Reuters,0.216,0.784,0.0,-0.296
+IBM,2019-02-07,India inflation seen speeding up in Jan but still below target  Reuters poll,Reuters,0.0,1.0,0.0,0.0
+IBM,2019-02-19,How To Replicate Hedge Fund Strategies With ETFs,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-02-20,IBM  IBM  Up 3 9  Since Last Earnings Report  Can It Continue ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-02-25,India s growth momentum likely slowed in late 2018  Reuters poll,Reuters,0.0,0.776,0.224,0.3818
+IBM,2019-03-04, MKR  Maker Price Prediction 2019 2020 5 Years,BeInCrypto,0.0,1.0,0.0,0.0
+IBM,2019-03-06,Undercover Down Under  Miners study gum leaves  groundwater for new finds,Reuters,0.0,1.0,0.0,0.0
+IBM,2019-03-08,IBM Reveals Two Further Blockchain Patents for Security And Database Management,Cointelegraph,0.0,0.806,0.194,0.34
+IBM,2019-03-11,Stellar  XLM  Rallies on Expectations of  Special Announcement ,Cryptovest,0.0,0.722,0.278,0.4019
+IBM,2019-03-12,Cisco Has the Fundamentals  but Shares Are Looking Frothy,Investing.com,0.0,0.741,0.259,0.4215
+IBM,2019-03-14,Tech Trends Of The Next 5 Years,Andrey Sergeenkov,0.0,1.0,0.0,0.0
+IBM,2019-03-14,IBM Publishes Patent for Resisting Replay Attacks in Permissioned Blockchains,Cointelegraph,0.244,0.756,0.0,-0.4404
+IBM,2019-03-16,Headline  Enterprise Blockchain on the Rise Despite Criticisms,Cointelegraph,0.0,0.808,0.192,0.1695
+IBM,2019-03-16,Enterprise Blockchain on the Rise Despite Criticisms,Cointelegraph,0.0,0.783,0.217,0.1695
+IBM,2019-03-16,French Court Clerks to Use IBM Blockchain Platform for Corporate Registry,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-03-16,IBM Hints at Stablecoin Cross Border Payments Solution for Financial Institutions,Cointelegraph,0.0,0.813,0.187,0.3182
+IBM,2019-03-18,Six Global Banks Sign up to Issue Stablecoins on IBM s Now Live Blockchain Network,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-03-19,IBM World Wire Goes Live  Six International Banks to Issue Stablecoins on New Network,Cryptovest,0.0,1.0,0.0,0.0
+IBM,2019-03-19,Is The Crypto Winter Coming To An End ,Naeem Aslam,0.0,1.0,0.0,0.0
+IBM,2019-03-19,IMB Partners With Stellar And Shares Rise,Mati Greenspan,0.0,0.732,0.268,0.296
+IBM,2019-03-20,Pet Stablecoins  Why Some Banks Issue Their Own Digital Tokens  While Others Don t,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-03-22,Autonomy founder Lynch set for  5 billion Hewlett Packard court showdown,Reuters,0.0,1.0,0.0,0.0
+IBM,2019-03-24,Hodler s Digest  March 18 24  Hodler s Digest  Top Stories  Price Movements  Quotes and FUD of the Week,Cointelegraph,0.144,0.764,0.092,-0.2577
+IBM,2019-03-25,Red Hat  IBM Rise in After Hours Trading,Investing.com,0.0,1.0,0.0,0.0
+IBM,2019-03-25,Autonomy boss Lynch ramped sales ahead of HP deal  court told,Reuters,0.0,1.0,0.0,0.0
+IBM,2019-03-26,China will open further to foreign investment  premier assures global executives,Reuters,0.0,0.813,0.187,0.3182
+IBM,2019-03-28,Stellar  XLM  Support Added to TrustWallet by Binance,Cryptovest,0.0,0.722,0.278,0.4019
+IBM,2019-04-02,IBM Surprises  Chooses Stellar Platform For New Payment Transfer Service,Tanzeel Akhtar/Investing.com,0.0,0.826,0.174,0.2263
+IBM,2019-04-02,Deutsche Telekom s T Systems to boost core profits  strives for cash,Reuters,0.0,0.588,0.412,0.6808
+IBM,2019-04-04,Ripple  SWIFT and IBM join 100 other firms in the newly launched EU Blockchain Group,FX Street,0.0,0.658,0.342,0.6408
+IBM,2019-04-04,Blockchain Battles On DApps Are Underway  Who Will Win ,Nikolai Kuznetsov,0.194,0.522,0.284,0.296
+IBM,2019-04-05,Cryptocurrency Gaining Steam And Disrupting Different Industries,Matei Gavril,0.0,0.682,0.318,0.4215
+IBM,2019-04-08,Earnings Preview  IBM  IBM  Q1 Earnings Expected To Decline,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-04-08,IBM Patents Blockchain Implementation to Manage Data For Autonomous Vehicles,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-04-08,Ripple s CTO does not believe the Stellar IBM partnership solves the issue of centralization ,FX Street,0.0,0.861,0.139,0.2732
+IBM,2019-04-14,Should You Avoid IBM ETFs Ahead Of Q1 Earnings ,Zacks Investment Research,0.216,0.784,0.0,-0.296
+IBM,2019-04-15,Nestl   Carrefour Work With IBM to Track Mashed Potato Brand With Blockchain,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-04-16,IBM  IBM  Q1 Earnings Top Estimates,Zacks Investment Research,0.0,0.735,0.265,0.2023
+IBM,2019-04-16,IBM ETFs To Watch Post Q1 Earnings,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-04-16,IBM Earnings Beat  Revenue Misses In Q1,Investing.com,0.241,0.759,0.0,-0.2263
+IBM,2019-04-16,IBM quarterly revenue misses on weak mainframe computer business,Reuters,0.407,0.593,0.0,-0.5859
+IBM,2019-04-17,Company News For Apr 18  2019,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-04-17,IBM Falls 6 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2019-04-18,Volkswagen Joins IBM Backed Blockchain Platform for Cobalt Supply Chains,Cointelegraph,0.0,0.891,0.109,0.0258
+IBM,2019-04-19, ES Failed Rallies And Broken Hearts,Danny Riley,0.615,0.385,0.0,-0.7506
+IBM,2019-04-21,Hodler s Digest  April 15 21  Top Stories  Price Movements  Quotes and FUD of the Week,Cointelegraph,0.161,0.737,0.102,-0.2577
+IBM,2019-04-23,IBM Issued Patent for DLT Supported Data Sharing and Validation,Cointelegraph,0.0,0.611,0.389,0.6249
+IBM,2019-04-25,IBM to Apply Blockchain Tech to Lenovo s Data Centers,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-04-26,Yara  IBM to offer digital services to farmers,Reuters,0.0,1.0,0.0,0.0
+IBM,2019-05-06,Ecuadorian Shrimp Producers Join IBM s Blockchain Based Food Trust Ecosystem,Cointelegraph,0.0,0.593,0.407,0.6705
+IBM,2019-05-09,One Lousy Treasury Bond Auction Doesn t Say Anything,Bloomberg,0.31,0.531,0.159,-0.4019
+IBM,2019-05-10,G7 countries to simulate cross border cyber attack next month  France,Reuters,0.237,0.763,0.0,-0.4767
+IBM,2019-05-11,China smashes counterfeiting ring that sold hard drives  Xinhua,Reuters,0.149,0.851,0.0,-0.1027
+IBM,2019-05-14,What s Behind The Current Bitcoin Spike  And Will It Last  ,Tanzeel Akhtar/Investing.com,0.0,1.0,0.0,0.0
+IBM,2019-05-15,Why Is IBM  IBM  Down 3 4  Since Last Earnings Report ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-05-16,Computer Integrated Systems Industry Prospects Not Bright,Zacks Investment Research,0.25,0.521,0.229,-0.0531
+IBM,2019-05-23,IBM Falls 4 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2019-05-28,German cartel office extends review of T Systems IBM mainframe deal,Reuters,0.0,0.857,0.143,0.128
+IBM,2019-05-28,Two more shippers join Maersk s cost cutting blockchain based platform,Reuters,0.125,0.668,0.207,0.2449
+IBM,2019-05-28,World s Second and Fourth Biggest Shipping Firms Join Maersk s Blockchain Platform,Cointelegraph,0.0,0.82,0.18,0.296
+IBM,2019-06-03,U S  Supreme Court to hear IBM retirement fund dispute,Reuters,0.22,0.488,0.293,0.2263
+IBM,2019-06-03,Brazilian Banks to Implement New HyperLedger Powered Digital ID Platform,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-06-03,Carrefour says blockchain tracking boosting sales of some products,Reuters,0.0,0.769,0.231,0.34
+IBM,2019-06-05,French police raid rail operator SNCF in probe into IBM contracts,Reuters,0.0,1.0,0.0,0.0
+IBM,2019-06-05,Cloudera  CLDR  Q1 Loss Narrows  Shares Down On Dim  20 View,Zacks Investment Research,0.17,0.667,0.163,-0.0258
+IBM,2019-06-06,IBM and World s Leading Nickel Smelter Form Blockchain Education Center,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-06-07,IBM  T Systems scrap mainframe venture after German criticism,Reuters,0.293,0.707,0.0,-0.4404
+IBM,2019-06-09,IBM Lays Off 1 700 Employees As Part Of Restructuring Plan,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-06-12,Azerbaijan Government Partners With IBM on Blockchain Customs Deal,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-06-12,IBM  Hyperledger Blockchain ID System for Banks Launches in Brazil,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-06-12,Brazil Central Bank Debuts IBM Blockchain Interbank ID System on Hyperledger,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-06-12,CyberArk Joins Forces With CNA On Cybersecurity Program,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-06-12,Russian Authorities Sign MoU With Maersk to Officially Launch TradeLens in Russia,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-06-13,US FDA Partners With IBM and Walmart to Improve Drug Supply Chain Using Blockchain,Cointelegraph,0.0,0.818,0.182,0.4404
+IBM,2019-06-16,Russia Is Getting Serious About Blockchain  but Remains on the Fence About Cryptocurrencies,Cointelegraph,0.087,0.913,0.0,-0.0387
+IBM,2019-06-18,Oil group Total hopes new supercomputer will help it find oil faster and more cheaply,Reuters,0.0,0.703,0.297,0.6705
+IBM,2019-06-20,IBM s Blockchain Division Largely Unscathed After Layoffs of 1 700  Report,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-06-20,Explainer  Initial exchange offerings flourish in crypto market,Reuters,0.0,1.0,0.0,0.0
+IBM,2019-06-22,Tracking Drugs on Blockchain  How Significant Is Walmart and IBM s New Collaboration ,Cointelegraph,0.0,0.859,0.141,0.2023
+IBM,2019-06-27,IBM gains unconditional EU approval for  34 billion Red Hat deal,Reuters,0.0,0.621,0.379,0.6705
+IBM,2019-06-30,IBM Garage Aids Enterprises To Devise   Deploy Business Ideas,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-07-01,IBM   Trifacta To Jointly Develop Data Preparation Tool,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-07-02,Maritime Carrier Hapag Lloyd Joins Blockchain Tracking Platform TradeLens,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-07-02,Hapag Lloyd  ONE join peers in shipping blockchain platform,Reuters,0.0,0.784,0.216,0.296
+IBM,2019-07-03,IBM Launches Blockchain Pilot for Bank Guarantee Processes,Cointelegraph,0.0,0.778,0.222,0.25
+IBM,2019-07-03,Top Australian banks join IBM  Scentre in blockchain project,Reuters,0.0,0.636,0.364,0.4588
+IBM,2019-07-09,Earnings Preview  IBM  IBM  Q2 Earnings Expected To Decline,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-07-09,U S  billionaire Ross Perot  who shook up presidential politics in the 1990s  dead at 89,Reuters,0.322,0.678,0.0,-0.6908
+IBM,2019-07-10,IBM proposes changes to law shielding internet firms from user content liability,Reuters,0.141,0.859,0.0,-0.2023
+IBM,2019-07-11,ECB hires ex Goldman Sachs banker as watchdog,Reuters,0.0,1.0,0.0,0.0
+IBM,2019-07-12,Tropical Storm Barry Aims at Louisiana  Curbing Oil Output,Bloomberg,0.0,1.0,0.0,0.0
+IBM,2019-07-15,A Look At IBM ETFs Ahead Of Q2 Earnings,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-07-17,IBM revenue falls as weak legacy businesses offset cloud growth,Reuters,0.215,0.593,0.193,-0.0772
+IBM,2019-07-17,IBM Earnings Beat  Revenue Misses In Q2,Investing.com,0.241,0.759,0.0,-0.2263
+IBM,2019-07-17,AT T  T  Collaborates With IBM To Optimize Core Operations,Zacks Investment Research,0.0,0.686,0.314,0.4939
+IBM,2019-07-17,IBM  IBM  Q2 Earnings And Revenues Beat Estimates,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-07-17,ETFs In Focus On IBM s 4th Straight Quarter Of Revenue Drop,Zacks Investment Research,0.162,0.692,0.146,-0.0516
+IBM,2019-07-18,IBM Rises 4 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2019-07-20,Stock Market Likely Higher This Week But Not Before More Weakness ,Steve Miller,0.0,0.751,0.249,0.5144
+IBM,2019-07-28,Inside the Blockchain Companies Listed On Public Exchanges,Carl Lang,0.0,1.0,0.0,0.0
+IBM,2019-07-29,Red Hot Dividend ETFs Of 2019,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-07-30,Seagate Moving Forward with Blockchain Pilot to Track Hard Drives,Cointelegraph,0.135,0.865,0.0,-0.1027
+IBM,2019-08-01,IBM Rises Midday After Morgan Stanley Resumes Coverage at Overweight,Investing.com,0.217,0.783,0.0,-0.3612
+IBM,2019-08-02,Volvo Cars  China in first blockchain project for recycled cobalt,Reuters,0.0,1.0,0.0,0.0
+IBM,2019-08-05,IBM Launches New Blockchain Platform for Supplier Data Management,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-08-05,IBM and other companies launch new blockchain network for supply management,Reuters,0.0,1.0,0.0,0.0
+IBM,2019-08-05,IBM Falls 4 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2019-08-07,India s inflation likely edged up to nine month high in July  Reuters poll,Reuters,0.0,1.0,0.0,0.0
+IBM,2019-08-09,Elliptic Data  IBM Find Only 2  of Bitcoin Transactions Are Unlawful,David Cullinan,0.0,1.0,0.0,0.0
+IBM,2019-08-11,Tech Behemoth IBM Files for a Blockchain Enabled Web Browser Patent,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-08-12,IBM  India s Tata join U S  tech platform s governing council,Reuters,0.0,0.761,0.239,0.296
+IBM,2019-08-12,IBM and Tata Become Governing Council  Owners  of Hedera DLT Platform,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-08-15,Why Is IBM  IBM  Down 11 8  Since Last Earnings Report ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-08-20,Blockchain Is Revolutionizing The Way We Do Business,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-08-21,Travelport and IBM Work on Blockchain Platform for Hotel Commissions,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-08-21,The Zacks Analyst Blog Highlights  JP Morgan  Mastercard  Facebook And IBM,Zacks Investment Research,0.0,0.798,0.202,0.368
+IBM,2019-08-23,IBM Falls 4 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2019-09-03,Walmart s Foray Into Blockchain  How Is the Technology Used ,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-09-04,Cloudera s  CLDR  Q2 Loss Narrows  Revenues Increase Y Y,Zacks Investment Research,0.24,0.521,0.24,0.0
+IBM,2019-09-05,Stocks   Lyft  GM Rise Premarket  Slack  Mallinckrodt Tumbles,Investing.com,0.0,1.0,0.0,0.0
+IBM,2019-09-09,Egypt overhauling tax procedures to lure investors  finance minister,Reuters,0.0,1.0,0.0,0.0
+IBM,2019-09-10,IBM  Fraunhofer partner on German backed quantum computing research push,Reuters,0.0,0.891,0.109,0.0258
+IBM,2019-09-11,Rainstorms Over Bahamas Watched as Possible U S  Threat,Bloomberg,0.362,0.638,0.0,-0.5267
+IBM,2019-09-11,Annaly Capital Management  Not Suitable For Retirement Accounts ,Chuck Carnevale,0.0,1.0,0.0,0.0
+IBM,2019-09-18,One Bitcoin Now Or 2 Altcoins Later ,Andrey Sergeenkov,0.0,1.0,0.0,0.0
+IBM,2019-09-18,IBM and Citibank Join Singapore Late Stage Blockchain Accelerator,Cointelegraph,0.0,0.784,0.216,0.296
+IBM,2019-09-18,Coffee Industry Taps IBM Blockchain Solution to Track Supply Chain,Cointelegraph,0.0,0.796,0.204,0.3182
+IBM,2019-09-23,IBM Says It s Open to Working With Facebook on Libra Crypto,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-09-24,Computer Integrated Systems Industry Outlook  Prospects Bleak,Zacks Investment Research,0.0,0.732,0.268,0.296
+IBM,2019-09-24,IBM  IBM  Stock Moves  0 27   What You Should Know,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-10-01,Hurricane Lorenzo Hits Record Size  Aims at Ireland as Wind Ebbs,Bloomberg,0.0,1.0,0.0,0.0
+IBM,2019-10-01,Reserve Bank of India to pick up slack as India stimulus measures to fall short   Reuters poll,Reuters,0.0,1.0,0.0,0.0
+IBM,2019-10-01,IBM  IBM  Stock Moves  1 22   What You Should Know,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-10-03,Expert System  Accelerating Investment In Growth,Edison,0.0,0.658,0.342,0.3818
+IBM,2019-10-04,Walmart Uses Blockchain Tech to Track Shrimp Supply Chains,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-10-06,Aspen Technology Banks On Portfolio Strength   Acquisitions,Zacks Investment Research,0.0,0.652,0.348,0.4939
+IBM,2019-10-08,Should Value Investors Buy IBM  IBM  Stock ,Zacks Investment Research,0.0,0.714,0.286,0.34
+IBM,2019-10-10,McDermott steps down after decade as SAP s chief salesman and dealmaker,Reuters,0.0,1.0,0.0,0.0
+IBM,2019-10-10,FireEye Boosts Incident Response With New Mandiant Services,Zacks Investment Research,0.0,0.753,0.247,0.3182
+IBM,2019-10-11,SAP reverts to co CEOs after showman McDermott s decade of growth,Reuters,0.0,0.794,0.206,0.3818
+IBM,2019-10-11,IBM Launches New Blockchain Supply Chain Product Using Red Hat Tech,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-10-14,ETFs In Focus As IBM Gears Up To Report Q3 Earnings,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-10-16,IBM  IBM  Surpasses Q3 Earnings Estimates,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-10-16,ETFs In Focus After IBM s Q3 Earnings,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-10-16,IBM revenue misses on weakness in its biggest unit  shares fall 5 ,Reuters,0.315,0.537,0.148,-0.3612
+IBM,2019-10-16,IBM Earnings Beat  Revenue Misses in Q3,Investing.com,0.241,0.759,0.0,-0.2263
+IBM,2019-10-17,IBM Falls 5 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2019-10-17,Chart Of The Day  IBM Miss May Be Opening Shot Of A Medium Term Downtrend,Pinchas Cohen/Investing.com,0.11,0.89,0.0,-0.1531
+IBM,2019-10-17,Company News For Oct 18  2019,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-10-17,Broadway s Biggest Ticket Operator to Use IBM Blockchain Against Scams,Cointelegraph,0.297,0.703,0.0,-0.5859
+IBM,2019-10-21,Canadian Terminal Operator Joins Maersk and IBM s TradeLens,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-10-22,TBCASoft  IBM and SoftBank Announced a Mobile Payment Blockchain,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-10-22,TBCASoft  IBM and SoftBank Announce a Mobile Payment Blockchain,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-10-22,Shocktober Volume Hits 10 Year Low,Danny Riley,0.296,0.704,0.0,-0.2732
+IBM,2019-10-23,Lithuania s Central Bank Considering IBM for Its LBChain DLT Platform,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-10-23,Will Communications Segment Buoy AT T s  T  Q3 Earnings ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-10-28,Iota  Dell and Linux Developing Platform to Rate Data Trustworthiness,Cointelegraph,0.0,0.763,0.237,0.4215
+IBM,2019-10-29,Samsung  IBM launch platform to improve first responders  safety,Reuters,0.0,0.551,0.449,0.6908
+IBM,2019-10-30,IBM Expects a Central Bank to Issue Digital Currency Within 5 Years,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-11-14,IBM  IBM  Down 0 2  Since Last Earnings Report  Can It Rebound ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-11-14,Why Do Governments And Corporations Need Blockchain ,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-11-20,Two European Salmon Producers Use IBM s Blockchain Platform to Track Supply Chain,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2019-11-20,SAP founder and chairman sells 100 million euro stake  holding now 6 2 ,Reuters,0.0,1.0,0.0,0.0
+IBM,2019-11-29,IBM Files A Blockchain Patent For Fighting Package Theft By Drone,Cointelegraph,0.217,0.783,0.0,-0.3612
+IBM,2019-12-06,Emotion sensing robot launches to assist space station astronauts,Reuters,0.0,1.0,0.0,0.0
+IBM,2019-12-10,IBM  IBM  Stock Moves  0 01   What You Should Know,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2019-12-18,IBM s new battery design taps seawater as alternative mineral source,Reuters,0.0,1.0,0.0,0.0
+IBM,2019-12-19,Australia s Westpac names two members of money laundering review panel,Reuters,0.0,1.0,0.0,0.0
+IBM,2020-01-06,IBM and Fair Trade Initiative Demo Blockchain Based Coffee Tracking App,Cointelegraph,0.0,0.813,0.187,0.3182
+IBM,2020-01-06,Is IBM  IBM  Stock Undervalued Right Now ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2020-01-09,Oman s Largest Port Joins IBM s Blockchain Shipping Platform TradeLens,Cointelegraph,0.0,1.0,0.0,0.0
+IBM,2020-01-10,IBM Now Has 100 Quantum Computing Customers,The Motley Fool,0.0,1.0,0.0,0.0
+IBM,2020-01-13,Cramer s lightning round  IBM s downgrade makes no sense,CNBC,0.239,0.761,0.0,-0.296
+IBM,2020-01-14,Blockchain Based IBM Sterling Adds Advanced Supply Chain Tracking Features,Cointelegraph,0.0,0.818,0.182,0.25
+IBM,2020-01-14,Supreme Court tosses IBM retirement fund ruling,Seeking Alpha,0.0,0.625,0.375,0.5574
+IBM,2020-01-14,U S  Supreme Court tosses lower court ruling that allowed IBM retirement fund suit,Reuters,0.139,0.633,0.228,0.34
+IBM,2020-01-15,Spain s Banco Sabadell hires IBM for 1 billion euro IT upgrade,Reuters,0.0,1.0,0.0,0.0
+IBM,2020-01-15,Banco Sabadell hires IBM for  1B IT upgrade,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2020-01-16,Better Buy  Cisco Systems vs  IBM,The Motley Fool,0.0,0.633,0.367,0.4404
+IBM,2020-01-20,Another Revenue Decline Expected for IBM,The Motley Fool,0.0,1.0,0.0,0.0
+IBM,2020-01-20,IBM Q4 2019 Earnings Preview,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2020-01-20,Will IBM  IBM  Beat Estimates Again In Its Next Earnings Report ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2020-01-21,IBM Earnings  Revenue Beat in Q4,Investing.com,0.0,1.0,0.0,0.0
+IBM,2020-01-21,IBM EPS beats by  0 02  beats on revenue,Seeking Alpha,0.0,1.0,0.0,0.0
+IBM,2020-01-21,International Business Machines Corp  IBM  Q4 2019 Earnings Call Transcript,The Motley Fool,0.0,1.0,0.0,0.0
+IBM,2020-01-21,IBM forecasts full year profit above estimates on cloud growth,Reuters,0.0,0.593,0.407,0.6705
+IBM,2020-01-21,JP Morgan Chase poaches an IBM  Master Inventor  with 26 patents for quantum computing,CNBC,0.0,0.837,0.163,0.368
+IBM,2020-01-21,What to Expect When IBM Reports After the Close,247wallst,0.0,1.0,0.0,0.0
+IBM,2020-01-21,IBM earnings   4 71 per share  vs  4 69 EPS expected,CNBC,0.0,0.784,0.216,0.296
+IBM,2020-01-21,IBM Posts Surprise Q4 Revenue Growth  ETFs To Tap,Zacks Investment Research,0.0,0.598,0.402,0.5719
+IBM,2020-01-22,IBM Looks Good In That Red Hat,The Motley Fool,0.0,0.674,0.326,0.4404
+IBM,2020-01-22,Why IBM Stock Rose 5  Today,The Motley Fool,0.0,1.0,0.0,0.0
+IBM,2020-01-22,IBM Stock Rises 4 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2020-01-23,Is IBM  IBM  A Great Value Stock Right Now ,Zacks Investment Research,0.0,0.48,0.52,0.7579
+IBM,2020-01-23,IBM Returns to Growth Thanks to Red Hat and Mainframes,The Motley Fool,0.0,0.593,0.407,0.6705
+IBM,2020-01-24,Why IBM s Solid Cloud Business Won t Lead to a Strong Dividend Increase,The Motley Fool,0.0,0.391,0.609,0.872
+IBM,2020-01-28,IBM Secures Patent for  Self Aware Token  to Record Events of Offline Transactions,Cointelegraph,0.101,0.743,0.155,0.2023
+IBM,2020-01-28,3 Reasons to Buy IBM Stock,The Motley Fool,0.0,1.0,0.0,0.0
+IBM,2020-01-28,Better Buy  IBM vs  McDonald s,The Motley Fool,0.0,0.58,0.42,0.4404
+IBM,2020-01-29,Retirees Should Know These 3 Facts About Required Minimum Distributions   January 30  2020,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2020-01-29,Improve Your Retirement Income With These 3 Top Ranked Dividend Stocks   January 30  2020,Zacks Investment Research,0.0,0.701,0.299,0.5719
+IBM,2020-01-29,IBM  Is Big Blue Set for Sustained Growth ,The Motley Fool,0.0,0.729,0.271,0.3818
+IBM,2020-01-30,IBM CEO Rometty to step down  cloud boss to succeed,Reuters,0.0,0.738,0.262,0.4939
+IBM,2020-01-31,IBM Announces New CEO  is This Good For Blockchain ,Bitcoinist,0.0,0.734,0.266,0.4404
+IBM,2020-01-31,Dow Jones News  IBM Appoints New CEO  Visa Comes Up Short,The Motley Fool,0.0,1.0,0.0,0.0
+IBM,2020-01-31,IBM s  surprise  CEO  Arvind Krishna to take over from Ginni Rometty,Reuters,0.0,0.826,0.174,0.2732
+IBM,2020-01-31,IBM Returns To Revenue Growth  But Is It Sustainable ,The Motley Fool,0.0,0.816,0.184,0.2023
+IBM,2020-01-31,IBM Is Replacing Ginni Rometty After 8 Years of Rocky Results,The Motley Fool,0.0,1.0,0.0,0.0
+IBM,2020-01-31,IBM was the worst performing large cap tech stock during Rometty s tenure  dropping 24 ,CNBC,0.24,0.76,0.0,-0.6249
+IBM,2020-01-31,IBM Stock Rises 4 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2020-01-31,Analysts positive on IBM s new leadership,Seeking Alpha,0.0,0.581,0.419,0.5574
+IBM,2020-01-31,IBM CEO Ginni Rometty is stepping down ,Reuters,0.0,1.0,0.0,0.0
+IBM,2020-01-31,Why IBM Stock Popped 5  Today,The Motley Fool,0.0,1.0,0.0,0.0
+IBM,2020-01-31,IBM Backed Hyperledger Fabric Releases Version 2 0,Cointelegraph,0.0,0.82,0.18,0.0258
+IBM,2020-02-02,Has International Business Machines  IBM  Outpaced Other Computer And Technology Stocks This Year ,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2020-02-03,IBM Offers Blockchain Solution for Casual Labor Contracts,Cointelegraph,0.0,0.594,0.406,0.4767
+IBM,2020-02-03,Tech Stocks  Earnings Roster For Feb 5  CTSH  PAYC   More,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2020-02-04,3 Extra Large Caps With Great Zacks Ranks,Zacks Investment Research,0.0,0.594,0.406,0.6249
+IBM,2020-02-04,Splunk  Baozun  Bank Of America  Intel And IBM As Zacks Bull And Bear Of The Day,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2020-02-05,3 Top Ranked Stocks With Upgraded Broker Ratings To Buy Now,Zacks Investment Research,0.0,0.833,0.167,0.2023
+IBM,2020-02-05,US  IBM Leads Top Patent Assignees With Patents in AI and Blockchain,Cointelegraph,0.0,0.859,0.141,0.2023
+IBM,2020-02-05,Why IBM Stock Just Popped 5 ,The Motley Fool,0.0,1.0,0.0,0.0
+IBM,2020-02-05,IBM Stock Rises 4 ,Investing.com,0.0,1.0,0.0,0.0
+IBM,2020-02-05,Buy 5 Blue Chip Stocks That Have Surged YTD Defying Volatility,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2020-02-06,IBM Post Earnings  Mainframe Cycle Could Buy Time For RedHat Integration,Brian Gilmartin,0.0,1.0,0.0,0.0
+IBM,2020-02-06,French Food Company Looks to IBM s Blockchain Network for Better Sourcing,Cointelegraph,0.0,0.775,0.225,0.4404
+IBM,2020-02-07,The Zacks Analyst Blog Highlights  Microsoft  IBM  Intel  Apple And McDonald s,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2020-02-07,The Zacks Analyst Blog Highlights  Exxon Mobil  Chevron  IBM  Gilead And Edwards Lifesciences,Zacks Investment Research,0.0,1.0,0.0,0.0
+IBM,2020-02-07,Dow Jones News  IBM Rally Hits a Wall  Boeing s Starliner Suffered From Software Bug,The Motley Fool,0.211,0.789,0.0,-0.4939
+IBM,2020-02-07,Zacks com Featured Highlights Include  Ralph Lauren  Sharps Compliance And IBM,Zacks Investment Research,0.0,1.0,0.0,0.0

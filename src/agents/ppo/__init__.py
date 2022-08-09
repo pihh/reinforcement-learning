@@ -151,8 +151,6 @@ class PpoAgent(Agent):
             # dones = buffer.dones
 
 
-        print('states',np.array(states).shape)
-        print('next_states',np.array(next_states).shape)
         # Get Critic networker predictions
         values = self.critic.predict(states)
         next_values = self.critic.predict(next_states)
@@ -231,7 +229,7 @@ class PpoAgent(Agent):
             # Fill training buffer 
             for _ in range(self.batch_size):
  
-                action, action_data, prediction = self.act(state)
+                action, action_data, prediction = self.act(state,deterministic=False)
 
                 # print('action',action)
                 # print('state',state)
@@ -290,8 +288,6 @@ class PpoAgent(Agent):
         plot_results=True, 
         reset=True
     ):
-        
-        print('* NOTE: multiprocess refactored not tested yet')
 
         timestep = 0
         episode = 0
@@ -386,7 +382,7 @@ class PpoAgent(Agent):
             print()
             print('* Will replay')
             for worker_id in range(n_workers):
-                print(np.array(buffers[worker_id].states).shape)
+                
                 self._replay(buffers[worker_id])
                 print('* Worker {} finnished learning phase'.format(worker_id))
             print('* Will resume')
@@ -423,7 +419,7 @@ class PpoAgent(Agent):
 
             return actions_list, actions_onehot_list, predictions_list
 
-    def act(self, state):
+    def act(self, state,deterministic=True):
 
         #print('state',state)
         if self.action_space_mode=="continuous":
@@ -439,8 +435,12 @@ class PpoAgent(Agent):
             return action[0], action , logp_t[0]
         else:
             prediction = self.actor.predict(state)[0]
-            #print('prediction',prediction)
-            action = np.random.choice(self.n_actions, p=prediction)
+            if deterministic == False:
+                #print('prediction',prediction)
+                action = np.random.choice(self.n_actions, p=prediction)
+            else: 
+                action = np.argmax(prediction)
+
             action_onehot = np.zeros([self.n_actions])
             action_onehot[action] = 1
             return action, action_onehot, prediction

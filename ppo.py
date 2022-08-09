@@ -53,10 +53,14 @@ if __name__ == '__main__':
         actor_learning_rate=0.000025,
         critic_learning_rate=0.000025,
         policy="CNN",
-        n_workers=2)
+        epochs=10,
+        n_workers=8)
+
+    agent.load()
+    
     agent.learn(
         timesteps=-1, 
-        log_every=50,
+        log_every=10,
         success_threshold_lookback=1000,
         success_strict=True,
     )

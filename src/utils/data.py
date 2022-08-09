@@ -4,11 +4,12 @@ import numpy as np
 import pandas as pd
 import yfinance as yf
 
+
+from pytrends.request import TrendReq
 from datetime import datetime, timedelta
 from stockstats import StockDataFrame as Sdf
 
 from src.constants import ALLOWED_NEWS_TICKERS,DOW_30_2021
-
 
 class Downloader:
     def __init__(self, start_date="2017-01-01", end_date= "2020-01-01", tickers=DOW_30_2021):
@@ -42,7 +43,7 @@ class Downloader:
                 ticker, start=start_date, end=end_date
             )
             df["ticker"] = ticker.lower()
-            pd.DataFrame(df).to_csv(file_path)
+            pd.DataFrame(df).to_csv(file_path,index=False)
         else:
             df = self.read_csv(file_path)
 
@@ -98,7 +99,7 @@ class Downloader:
         # drop missing data
         data_df = data_df.dropna()
         data_df = data_df.reset_index(drop=True)
-        print("Shape of DataFrame: ", data_df.shape)
+        # print("Shape of DataFrame: ", data_df.shape)
         # print("Display DataFrame: ", data_df.head())
 
         data_df = data_df.sort_values(by=["date", "ticker"]).reset_index(drop=True)
@@ -119,10 +120,16 @@ class Downloader:
 class FeatureEngeneer:
     def __init__(self,df):
         self.df = df
+        self.sentiment_analyser = SentimentAnalysis()
 
     def _parse_df_dates(self,df):
         start_date = df.date.min()
         end_date = df.date.max()
+        # print(end_date,type(end_date))
+        if type(end_date) != str:
+            end_date = datetime.strftime(end_date, "%Y-%m-%d")
+        # print(end_date,type(end_date))
+        
         end_date = datetime.strptime(end_date, "%Y-%m-%d")
         end_date = end_date + timedelta(days=1)
         end_date = datetime.strftime(end_date, "%Y-%m-%d")
@@ -146,21 +153,61 @@ class FeatureEngeneer:
 
         return df.merge(fg_df,on="date")
 
-    def trends(self,df,ticker, keys="ticker"):
+    def trends(self,df,ticker, keys="main_keyword", kw_list=[], main_keyword=""):
+        if main_keyword == "":
+            keys = "ticker"
+
         ticker = ticker.lower()
         df = df.copy()
         df = df[df['ticker']== ticker]
         df['date'] = pd.to_datetime(df.date).dt.date
+        try:
+            trends_df = pd.read_csv('storage/datasets/trends__'+ticker.lower()+'.csv')
+        except:
+            pytrend = TrendReq()
+            historicaldf = pytrend.get_historical_interest(
+                kw_list, 
+                year_start=2017, 
+                month_start=1, 
+                day_start=1, 
+                hour_start=0, 
+                year_end=2021, 
+                month_end=1, 
+                day_end=1, 
+                hour_end=0, 
+                cat=0, 
+                geo='', 
+                gprop='', 
+                sleep=0
+            )
+  
+            historical_df_daily = historicaldf.reset_index().resample('D', on="date").mean().drop(columns=['isPartial'])#.date.resample('D')
+            historical_df_daily.reset_index(inplace=True)
+      
+            historical_df_daily['score'] = historical_df_daily.mean(axis=1)
+
+            for column in historical_df_daily.select_dtypes(include=['int64','float64']).columns:
+                historical_df_daily[column] = historical_df_daily[column] / 100
+
+            historical_df_daily.to_csv('storage/datasets/trends__'+ticker.lower()+'.csv',index=False)
+        
+        # print('trends df')
         trends_df = pd.read_csv('storage/datasets/trends__'+ticker.lower()+'.csv')
+        # print(trends_df)
         if keys == "ticker":
             trends_df = trends_df[[ticker,'date']]
+        else:
+            trends_df = trends_df[[main_keyword,'date']]
 
         if 'Unnamed: 0' in trends_df.columns:
             trends_df.drop(columns=['Unnamed: 0'],inplace=True)
 
         trends_df['date'] = pd.to_datetime(trends_df.date).dt.date
 
-        return df.merge(trends_df,on="date")
+        if 'date' in df.columns:
+            return df.merge(trends_df,on="date")
+        else:
+            return df.reset_index().merge(trends_df,on="date")
 
     def sentiment_analysis(self,df,ticker, key="title", tool="vader"):
         #assert ticker.upper() in ALLOWED_NEWS_TICKERS
@@ -170,13 +217,19 @@ class FeatureEngeneer:
         df = df[df['ticker']== ticker]
         df['date'] = pd.to_datetime(df.date).dt.date
 
-        if key == "title":
-            news_df = pd.read_csv('storage/datasets/news_header_sentiment_analysis__'+ticker.lower()+'__'+tool+'.csv')
-        else:
-            news_df = pd.read_csv('storage/datasets/news_body_sentiment_analysis__'+ticker.lower()+'__'+tool+'.csv')
-
+        news_df = pd.read_csv('storage/datasets/news__'+ticker.lower()+'.csv')
         if 'Unnamed: 0' in news_df.columns:
             news_df.drop(columns=['Unnamed: 0'],inplace=True)
+
+
+        if key == "title":
+
+            news_df = self.sentiment_analyser.evaluate_title(news_df ,ticker,tool=tool)
+            news_df = pd.read_csv('storage/datasets/news_header_sentiment_analysis__'+ticker.lower()+'__'+tool+'.csv')
+        else:
+
+            news_df = self.sentiment_analyser.evaluate_content(news_df,ticker,tool=tool)
+            news_df = pd.read_csv('storage/datasets/news_body_sentiment_analysis__'+ticker.lower()+'__'+tool+'.csv')
 
         grouped_news = news_df.groupby(by="date").mean()
         grouped_news.reset_index(inplace=True)
@@ -185,9 +238,6 @@ class FeatureEngeneer:
         grouped_news.rename(columns={"neg":"neg_"+key,"pos":"pos_"+key,"neu":"neu_"+key,"compound":"compound_"+key},inplace=True)
 
         return df.merge(grouped_news,on="date")
-
-        #return df
-
 
     def technical_indicators(self,df=None, technical_indicators=[
         "macd",
@@ -212,35 +262,48 @@ class FeatureEngeneer:
 
         for indicator in technical_indicators:
             indicator_df = pd.DataFrame()
+
+            print(indicator)
             for i in range(len(unique_ticker)):
                 try:
                     indicator_file_path = self._get_indicator_file_name(unique_ticker[i],indicator,start_date,end_date)
                     if not os.path.exists(indicator_file_path):
+              
                         temp_indicator = stock[stock.ticker == unique_ticker[i]][indicator]
                         temp_indicator = pd.DataFrame(temp_indicator)
                         temp_indicator["ticker"] = unique_ticker[i]
                         temp_indicator["date"] = df[df.ticker == unique_ticker[i]][
                             "date"
                         ].to_list()
-
+                        
                         temp_indicator.to_csv(indicator_file_path)
-
+        
+                        temp_indicator.rename(columns={'date.1':'date'},inplace=True)
+               
                     else:
                         temp_indicator = Downloader().read_csv(indicator_file_path)
-                        #temp_indicator.reset_index(inplace=True)
 
-                        temp_indicator.rename(columns={'date.1':'date'},inplace=True)
-
+                        try:
+                            temp_indicator.drop(columns=['date.1'],inplace=True)
+                            temp_indicator.reset_index(inplace=True)
+                            temp_indicator['date'] = pd.to_datetime(temp_indicator.date).dt.date
+                        except:
+                            pass
+   
                     indicator_df = indicator_df.append(
                         temp_indicator, ignore_index=True
                     )
 
                 except Exception as e:
                     print(e)
+                    
+            indicator_df['date'] = pd.to_datetime(indicator_df.date).dt.date
+            df['date'] = pd.to_datetime(df.date).dt.date
             df = df.merge(
                 indicator_df[["ticker", "date", indicator]], on=["ticker", "date"], how="left"
             )
         df = df.sort_values(by=["date", "ticker"])
+
         return df
 
     def dji(self, df):
@@ -253,7 +316,6 @@ class FeatureEngeneer:
         df_dji = Downloader().fetch_data(start_date=start_date, end_date=end_date, tickers=["^DJI"])
 
         return df_dji
-
 
     def vix(self,df=None):
         if df is None:
@@ -362,27 +424,43 @@ class SentimentAnalysis:
 
         self.vader = SentimentIntensityAnalyzer()
 
-    def evaluate(self, news_df, key="title", tool="vader"):
-
+    def evaluate(self, news_df, ticker, key="title",tool="vader"):
         columns = ['ticker', 'date', key, 'provider']
-        parsed_and_scored_news = pd.DataFrame(news_df, columns=columns)
+
+        # Cleanup 
+        if key =="content":
+            news_df = news_df.loc[news_df.content.apply(type) == str]
+        if key == "title":
+            news_df = news_df.loc[news_df.title.apply(type) == str]
+    
+        parsed_and_scored_news = pd.DataFrame(news_df, columns=columns) 
 
         if tool=="vader":
             scores = parsed_and_scored_news[key].apply(self.vader.polarity_scores).tolist()
 
         scores_df = pd.DataFrame(scores)
         parsed_and_scored_news = parsed_and_scored_news.join(scores_df, rsuffix='_right')
+
         parsed_and_scored_news['date'] = pd.to_datetime(parsed_and_scored_news.date).dt.date
+
+        if key =="content":
+            parsed_and_scored_news = parsed_and_scored_news.loc[parsed_and_scored_news.content.apply(type) == str]
+        if key == "title":
+            parsed_and_scored_news = parsed_and_scored_news.loc[parsed_and_scored_news.title.apply(type) == str]
+    
         parsed_and_scored_news.sort_values(by="date",inplace=True)
         parsed_and_scored_news.reset_index(drop=True, inplace=True)
 
+        df_key = 'header' if key == "title" else 'body'
+        parsed_and_scored_news.to_csv('storage/datasets/news_'+df_key+'_sentiment_analysis__'+ticker.lower()+'__'+tool+'.csv',index=False)
+
         return parsed_and_scored_news
 
-    def evaluate_title(self,news_df,tool="vader"):
-        return self.evaluate(news_df,key="title",tool=tool)
+    def evaluate_title(self,news_df,ticker,tool="vader"):
+        return self.evaluate(news_df,ticker,key="title",tool=tool)
 
-    def evaluate_content(self,news_df,tool="vader"):
-        return self.evaluate(news_df,key="content",tool=tool)
+    def evaluate_content(self,news_df,ticker,tool="vader"):
+        return self.evaluate(news_df,ticker,key="content",tool=tool)
 
 
 class FundamentalData:

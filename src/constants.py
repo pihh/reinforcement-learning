@@ -19,11 +19,12 @@ ZERO = np.finfo(np.float32).eps.item()
 
 ALLOWED_NEWS_TICKERS = [
     "AAPL",
-    # "MSFT",
+    "IBM",
+    "MSFT",
     # "BAC",
     # "NWSA",
-    # "GOOGL",
-    # "TSLA"
+    "GOOGL",
+ 
 ]
 
 # Dow 30 constituents in 2021/10
