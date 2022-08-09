@@ -15,17 +15,16 @@ from tensorflow.keras.optimizers import Adam #, RMSprop#, Adagrad, Adadelta
 from tensorflow.keras import backend as K
 
 
-from threading import Thread, Lock
-from multiprocessing import Process, Pipe, cpu_count
+
+from multiprocessing import Pipe, cpu_count
 
 from src.agents.agent import Agent
-from src.utils.policy import gaussian_likelihood
-from src.utils.networks import CommonLayer
 from src.agents.ppo.worker import Worker
 from src.agents.ppo.networks import PpoActorContinuous
 from src.agents.ppo.networks import PpoActorDiscrete
 from src.agents.ppo.networks import PpoCritic
 from src.agents.ppo.buffer import PpoBuffer
+from src.utils.policy import gaussian_likelihood
 
 # Faster performance
 tf.compat.v1.disable_eager_execution() 
@@ -35,12 +34,11 @@ class PpoAgent(Agent):
                 environment,
                 gamma = 0.99,
                 policy="mlp",
-                training_batch=4000, 
+                batch_size=4000, 
                 epochs=80, 
                 episodes=100000,
                 shuffle=False,
                 target_kl = 0.01, 
-                continuous_action_space=False, 
                 n_workers=cpu_count(),
                 critic_loss_function_version=1,
                 loss_clipping=0.2,
@@ -53,10 +51,9 @@ class PpoAgent(Agent):
         super(PpoAgent, self).__init__(environment,args=locals())
         
         # Args
-        self.environment = environment
         self.gamma=gamma
         self.policy=policy
-        self.training_batch=training_batch
+        self.batch_size=batch_size
         self.epochs=epochs 
         self.episodes=episodes
         self.actor_optimizer=actor_optimizer
@@ -65,7 +62,6 @@ class PpoAgent(Agent):
         self.critic_learning_rate=critic_learning_rate
         self.shuffle=shuffle
         self.target_kl=target_kl 
-        self.continuous_action_space=continuous_action_space
         self.n_workers=n_workers
         self.critic_loss_function_version=critic_loss_function_version
         self.loss_clipping=loss_clipping
@@ -86,7 +82,7 @@ class PpoAgent(Agent):
         self.gaussian_likelihood = gaussian_likelihood(self.log_std, lib="numpy")
         
     def __init_networks(self):
-        if self.continuous_action_space:
+        if self.action_space_mode == "continuous":
             self.actor = PpoActorContinuous(
                 observation_shape=self.observation_shape, 
                 action_space=self.n_actions, 
@@ -112,7 +108,7 @@ class PpoAgent(Agent):
             optimizer=self.critic_optimizer,
             loss_function_version=self.critic_loss_function_version, 
             loss_clipping=self.loss_clipping,
-            continuous_action_space=self.continuous_action_space, 
+            action_space_mode=self.action_space_mode, 
             policy=self.policy
         )
 
@@ -120,11 +116,15 @@ class PpoAgent(Agent):
         self.buffer = PpoBuffer()
         
     def act_batch(self,states):
-        if self.continuous_action_space:
+        
+        if self.action_space_mode=="continuous":
             # Use the networker to predict the next action to take, using the model
             prediction = self.actor.predict(states)
 
-            low, high = -1.0, 1.0 # -1 and 1 are boundaries of tanh
+            print(prediction.shape)
+            print(prediction)
+
+            low, high = self.action_lower_bounds, self.action_upper_bounds # -1 and 1 are boundaries of tanh
             action = prediction + np.random.uniform(low, high, size=prediction.shape) * self.std
             action = np.clip(action, low, high)
 
@@ -132,17 +132,19 @@ class PpoAgent(Agent):
 
             return action.astype(np.float32), action.astype(np.float32) , logp_t.astype(np.float32)
         else:
+            states = np.array(states)
             predictions_list = self.actor.predict(states)
-            actions_list = [np.random.choice(self.n_actions, p=i) for i in predictions_list]
-            actions_onehot_list = [np.zeros([self.n_actions]) for i in predictions_list]
 
-            for i,action_list in enumerate(actions_list):
-                actions_onehot_list[i][actions_list[i]]= 1
+            actions_list = [np.random.choice(self.n_actions, p=p) for p in predictions_list]
+            actions_onehot_list = [np.zeros([self.n_actions]) for p in predictions_list]
+
+            for i, action_list in enumerate(actions_list):
+                actions_onehot_list[i][action_list]= 1
 
             return actions_list, actions_onehot_list, predictions_list
 
     def act(self, state):
-        if self.continuous_action_space:
+        if self.action_space_mode=="continuous":
             # Use the networker to predict the next action to take, using the model
             prediction = self.actor.predict(state)
 
@@ -189,7 +191,7 @@ class PpoAgent(Agent):
         a_loss = self.actor.model.fit(states, y_true, epochs=self.epochs, verbose=0, shuffle=self.shuffle)
         c_loss = self.critic.model.fit([states, values], target, epochs=self.epochs, verbose=0, shuffle=self.shuffle)
 
-        if self.continuous_action_space:
+        if self.action_space_mode=="continuous":
             # calculate loss parameters (should be done in loss, but couldn't find workering way how to do that with disabled eager execution)
             pred = self.actor.predict(states)
             #log_std = -0.5 * np.ones(self.n_actions, dtype=np.float32)
@@ -205,7 +207,6 @@ class PpoAgent(Agent):
 
         buffer.reset()
     
-
     def get_gaes(self, rewards, dones, values, next_values, gamma = 0.99, lamda = 0.90, normalize=True):
         deltas = [r + gamma * (1 - d) * nv - v for r, d, nv, v in zip(rewards, dones, next_values, values)]
         deltas = np.stack(deltas)
@@ -225,9 +226,9 @@ class PpoAgent(Agent):
         # saving = False
         # # saving best models
         if len(self.average_) > self.success_threshold_lookback:
-            if self.average_[-1] >= self.max_average:
+            if self.average_[-1] >= self.learning_max_score:
                 
-                self.max_average = self.average_[-1]
+                self.learning_max_score = self.average_[-1]
                 self.save()
 
                 # decrease learning rate every saved model
@@ -237,7 +238,7 @@ class PpoAgent(Agent):
                 K.set_value(self.critic.model.optimizer.learning_rate, self.critic_learning_rate)
     
                 print()
-                print('New record ', self.max_average)
+                print('New record ', self.learning_max_score)
                 print('Learning rate decreased')
                 print()
 
@@ -255,123 +256,207 @@ class PpoAgent(Agent):
             {"name": "ppo-critic","model":self.critic.model},
         ])
 
-    def run_batch(self):
+    def run_batch(self,
+        timesteps=-1, 
+        log_level=1, 
+        log_every=50, 
+        success_strict=False,
+        success_threshold=False, 
+        success_threshold_lookback=100, 
+        plot_results=True, 
+        reset=True):
+
+        success_threshold = self.on_learn_start(timesteps,success_threshold,reset,success_threshold_lookback, success_strict)
+
+        timestep = 0
+        episode = 0
+        score = 0
+        done = False
+
         state = self.env.reset()
         state = self.reshape_state(state)
-
-
-        done, score = False, 0
-        while True:
+            
+        while self.learning_condition(timesteps,timestep):  # Run until solved
+            
             # Instantiate or reset games memory
             buffer = PpoBuffer()
 
-            for t in range(self.training_batch):
-                #self.env.render()
-                # Actor picks an action
+            # Fill training buffer 
+            for _ in range(self.batch_size):
+ 
                 action, action_data, prediction = self.act(state)
 
+                # print('action',action)
+                # print('state',state)
                 # Retrieve new state, reward, and whether the state is terminal
                 next_state, reward, done, _ = self.env.step(action)
                 next_state = self.reshape_state(next_state)
+
                 # Memorize (state, next_states, action, reward, done, logp_ts) for training
                 buffer.states.append(state)
                 buffer.next_states.append(next_state)
-
                 buffer.actions.append(action_data)
                 buffer.rewards.append(reward)
                 buffer.dones.append(done)
-
                 buffer.predictions.append(prediction)
 
                 # Update current state shape
                 state = next_state
                 score += reward
+                
                 if done:
-                    self.episode += 1
-                    average = self.checkpoint(score, self.episode)
-                    if self.episode % self.log_every == 0:
-                        #if str(self.episode)[-2:] == "00":
-                        print("episode: {}/{}, score: {:.5f}, average: {:.5f} {}".format(self.episode, self.episodes, score, average, ''))
-                    state, done, score = self.env.reset(), False, 0
+                    # Episode ended
+                    episode += 1
+                    # Step reward, tensorboard log score, print progress
+                    self.on_learn_episode_end(score,log_every,log_level,success_threshold)
+                    
+                    # Verify if learning success conditions are met
+                    if self.did_finnish_learning(success_threshold,episode):
+                        break
+
+                    score=0
+                    done=False
+                    
+                    state=self.env.reset() 
                     state = self.reshape_state(state) #np.reshape(state, [1, self.observation_shape[0]])
 
+                timestep +=1
 
-            if self.episode >= self.episodes:
-                break
-
+            # Buffer full, time to learn something
             self.replay(buffer)
 
-
+        # End of training
         self.env.close()
+        
+        if plot_results:
+            self.plot_learning_results()
 
-    def run_multiprocesses(self, n_workers = False, epochs=False):
-        if n_workers == False:
-            n_workers = self.n_workers
-        if epochs == False:
-            epochs = self.epochs
+    def run_multiprocesses(self, 
+        timesteps=-1, 
+        log_level=1, 
+        log_every=50, 
+        success_strict=False,
+        success_threshold=False, 
+        success_threshold_lookback=100, 
+        n_workers=cpu_count(),
+        plot_results=True, 
+        reset=True
+    ):
+        
+        print('* NOTE: multiprocess refactored not tested yet')
 
-        workers, environment_connections, agent_connections = [], [], []
+        timestep = 0
+        episode = 0
+
+        success_threshold = self.on_learn_start(
+            timesteps,
+            success_threshold,
+            reset,
+            success_threshold_lookback,
+            success_strict)
+
+        # Setup trackers
+        workers=[] 
+        environment_connections = [] 
+        agent_connections = []
+
+        # Create pipes
         for idx in range(n_workers):
-
+            # Start connection pipe
             environment_connection, agent_connection = Pipe()
-            worker = Worker(idx, agent_connection, self.environment, self.observation_shape[0], self.n_actions)
+
+            # Boot worker
+            worker = Worker(idx, self._environment,agent_connection, self.observation_shape, self.n_actions)
             worker.start()
             workers.append(worker)
+
+            # Boot connection
             environment_connections.append(environment_connection)
             agent_connections.append(agent_connection)
 
-        buffers =       [PpoBuffer() for _ in range(n_workers)]
-        score =         [0 for _ in range(n_workers)]
-        state =         [0 for _ in range(n_workers)]
+        # Create buffers and scores
+        buffers =       [PpoBuffer()    for _ in range(n_workers)]
+        score =         [0              for _ in range(n_workers)]
+        state =         [0              for _ in range(n_workers)]
 
+        def shutdown(workers):
+            for worker in workers:
+                #self.env.close()
+                worker.terminate()
+                print('Worker {} has shut down'.format(worker))
+                worker.join()
+
+        # Start comunication
         for worker_id, environment_connection in enumerate(environment_connections):
             state[worker_id] = environment_connection.recv()
 
-        while self.episode < self.episodes:
-            action_list, action_data_list, prediction_list = self.act_batch(self.reshape_state(state,n_workers=n_workers))
+        # Start learning 
+        while self.learning_condition(timesteps,timestep):  
+            
+            # Run until solved
+            for _ in range(self.batch_size):
+                
+                action_list, action_data_list, prediction_list = self.act_batch(state)
+           
+                for worker_id, environment_connection in enumerate(environment_connections):
+                    environment_connection.send(action_list[worker_id])
+                    buffers[worker_id].actions.append(action_data_list[worker_id])
+                    buffers[worker_id].predictions.append(prediction_list[worker_id])
 
-            for worker_id, environment_connection in enumerate(environment_connections):
-                #print('action_list[worker_id].shape',action_list[worker_id].shape,action_list[worker_id].dtype)
-                environment_connection.send(action_list[worker_id])
-                buffers[worker_id].actions.append(action_data_list[worker_id])
-                buffers[worker_id].predictions.append(prediction_list[worker_id])
+                for worker_id, environment_connection in enumerate(environment_connections):
+                    next_state, reward, done, _ = environment_connection.recv()
 
-            for worker_id, environment_connection in enumerate(environment_connections):
-                next_state, reward, done, _ = environment_connection.recv()
+                    buffers[worker_id].states.append(state[worker_id])
+                    buffers[worker_id].next_states.append(next_state)
+                    buffers[worker_id].rewards.append(reward)
+                    buffers[worker_id].dones.append(done)
+                    
+                    # Update current state
+                    state[worker_id] = next_state
+                    score[worker_id] += reward
 
-                buffers[worker_id].states.append(state[worker_id])
-                buffers[worker_id].next_states.append(next_state)
-                buffers[worker_id].rewards.append(reward)
-                buffers[worker_id].dones.append(done)
-                state[worker_id] = next_state
-                score[worker_id] += reward
+                    if done:
+                        # Episode ended
+                        episode += 1
+                        # Step reward, tensorboard log score, print progress
+                        self.on_learn_episode_end(score[worker_id],log_every,log_level,success_threshold)
+                        
+                        
+                        # Reset score
+                        score[worker_id] = 0
+                        
+                    timestep +=1
 
-                if done:
-                    average = self.checkpoint(score[worker_id], self.episode)
-                    print("episode: {}/{}, worker: {}, score: {:.5f}, average: {:.5f} {}".format(self.episode, self.episodes, worker_id, score[worker_id], average, ''))
-                    # self.writer.add_scalar(f'workers:{n_workers}/score_per_episode', score[worker_id], self.episode)
-                    # self.writer.add_scalar(f'workers:{n_workers}/learning_rate', self.lr, self.episode)
-                    score[worker_id] = 0
-                    if(self.episode < self.episodes):
-                        self.episode += 1
+            # Verify if learning success conditions are met
+            if self.did_finnish_learning(success_threshold,episode):
+                #shutdown(workers)
+                break
 
+            print()
+            print('* Will replay')
             for worker_id in range(n_workers):
-                if len(buffers[worker_id].states) >= self.training_batch:
-                    self.replay(buffers[worker_id])
+                self.replay(buffers[worker_id])
+                print('* Worker {} finnished learning phase'.format(worker_id))
+            print('* Will resume')
+            print()
 
+        # Ended training
+        shutdown(workers)
 
-        # terminating processes after while loop
-        workers.append(worker)
-        for worker in workers:
-            worker.terminate()
-            print('TERMINATED:', worker)
-            worker.join()
+        if plot_results:
+            self.plot_learning_results()
 
+    def learn(self, 
+        timesteps=-1, 
+        log_level=1, 
+        log_every=50, 
+        success_strict=False,
+        success_threshold=False, 
+        success_threshold_lookback=100, 
+        plot_results=True, 
+        reset=True
+    ):
 
-    def learn(self, timesteps=-1, plot_results=True, reset=True, success_threshold=False, log_level=1, log_every=50 , success_threshold_lookback=100 , success_strict=False, n_workers=1):
-
-        success_threshold = self.on_learn_start(timesteps,success_threshold,reset,success_threshold_lookback, success_strict)
-        
         # Instantiate plot memory
         self.scores_ = []
         self.episodes_ = []
@@ -381,51 +466,28 @@ class PpoAgent(Agent):
         self.timestep = 0
         self.episode = 0
 
-        self.max_average = -100
         self.log_every = log_every
 
-        if n_workers == 1:
-            self.run_batch()
-        elif n_workers > 1:
-            self.run_multiprocesses(n_workers=n_workers)
-        
-        # while self.learning_condition(timesteps,timestep):  # Run until solved
-        #     state = self.env.reset()
-        #     score = 0
-        #     done = False
-            
-        #     while not done:
+        if self.n_workers == 1:
+            self.run_batch(
+                timesteps=timesteps, 
+                plot_results=plot_results, 
+                reset=reset, 
+                success_threshold=success_threshold, 
+                log_level=log_level, 
+                log_every=log_every, 
+                success_threshold_lookback=success_threshold_lookback, 
+                success_strict=success_strict)
                 
-        #         #state = np.expand_dims(state, axis=0)
-        #         action, action_onehot, prediction = self.act(state)
-        #         # Retrieve new state, reward, and whether the state is terminal
-        #         next_state, reward, done, _ = self.env.step(action)
-        #         # Memorize (state, action, reward) for training
-        #         self.buffer.remember(np.expand_dims(state, axis=0), action_onehot, reward)
-        #         # Update current state
-        #         state = next_state
-        #         score += reward
-        #         timestep +=1
-                
-        #         if self.buffer.size >= self.batch_size:
-        #             self.replay()
-            
-        #     # Episode ended
-        #     episode += 1
-
-        #     # Step reward, tensorboard log score, print progress
-        #     self.on_learn_episode_end(score,log_every,log_level,success_threshold)
-            
-        #     # If done stop
-        #     if self.did_finnish_learning(success_threshold,episode):
-        #         break
-                
-        #     # Else learn more
-        #     self.replay()
+        elif self.n_workers > 1:
+            self.run_multiprocesses(timesteps=timesteps, 
+                plot_results=plot_results, 
+                reset=reset, 
+                success_threshold=success_threshold, 
+                log_level=log_level, 
+                log_every=log_every, 
+                success_threshold_lookback=success_threshold_lookback, 
+                success_strict=success_strict, 
+                n_workers=self.n_workers)
         
-        # # End of trainig
-        # self.env.close()
-        
-        # if plot_results:
-        #     self.plot_learning_results()
 

@@ -211,6 +211,7 @@ class Agent:
 
         self.running_reward.success_threshold_lookback = success_threshold_lookback
         self.learning_log.success_threshold_lookback = success_threshold_lookback
+        self.success_threshold_lookback = success_threshold_lookback
 
         return success_threshold if success_threshold else self.env.success_threshold
 

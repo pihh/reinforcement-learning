@@ -1,0 +1,131 @@
+{
+  "gamma": "0.99",
+  "policy": "mlp",
+  "batch_size": "2000",
+  "epochs": "10",
+  "episodes": "100000",
+  "shuffle": "False",
+  "target_kl": "0.01",
+  "continuous_action_space": "False",
+  "n_workers": "8",
+  "critic_loss_function_version": "1",
+  "loss_clipping": "0.2",
+  "loss_entropy": "0.001",
+  "actor_optimizer": "Adam",
+  "actor_learning_rate": "0.00025",
+  "critic_optimizer": "Adam",
+  "critic_learning_rate": "0.00025",
+  "epsilon": "1.0",
+  "epsilon_min": "0.01",
+  "epsilon_decay": "1e-05",
+  "learning_log_loss_keys": "[]",
+  "success_threshold_lookback": "100",
+  "epsilon_": "1.0",
+  "epsilon_decay_": "1e-05",
+  "n_actions": "1",
+  "n_inputs": "5",
+  "actions": "[0]",
+  "observation_shape": "(5,)",
+  "action_space_mode": "continuous",
+  "action_upper_bounds": "[1.0]",
+  "action_lower_bounds": "[-1.0]",
+  "action_bound": "1.0",
+  "env_name": "InvertedPendulumBulletEnv",
+  "agent": "PpoAgent",
+  "models": {
+    "model": [
+      {
+        "name": "InputLayer",
+        "activation": null,
+        "units": null,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Flatten",
+        "activation": null,
+        "units": null,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Dense",
+        "activation": "relu",
+        "units": 512,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Dense",
+        "activation": "relu",
+        "units": 512,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Dense",
+        "activation": "relu",
+        "units": 256,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Dense",
+        "activation": "relu",
+        "units": 64,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Dense",
+        "activation": "softmax",
+        "units": 1,
+        "kernel_initializer": null
+      }
+    ],
+    "model_1": [
+      {
+        "name": "InputLayer",
+        "activation": null,
+        "units": null,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Flatten",
+        "activation": null,
+        "units": null,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Dense",
+        "activation": "relu",
+        "units": 512,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Dense",
+        "activation": "relu",
+        "units": 512,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Dense",
+        "activation": "relu",
+        "units": 256,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Dense",
+        "activation": "relu",
+        "units": 64,
+        "kernel_initializer": null
+      },
+      {
+        "name": "InputLayer",
+        "activation": null,
+        "units": null,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Dense",
+        "activation": "linear",
+        "units": 1,
+        "kernel_initializer": null
+      }
+    ]
+  }
+}

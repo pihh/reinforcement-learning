@@ -260,13 +260,17 @@ class A2CAgent(Agent):
                 
                 #state = np.expand_dims(state, axis=0)
                 action, action_onehot, prediction = self.act(state)
+                
                 # Retrieve new state, reward, and whether the state is terminal
                 next_state, reward, done, _ = self.env.step(action)
+                
                 # Memorize (state, action, reward) for training
                 self.buffer.remember(np.expand_dims(state, axis=0), action_onehot, reward)
+                
                 # Update current state
                 state = next_state
                 score += reward
+                
                 timestep +=1
                 
                 if self.buffer.size >= self.batch_size:
@@ -285,7 +289,7 @@ class A2CAgent(Agent):
             # Else learn more
             self.replay()
         
-        # End of trainig
+        # End of training
         self.env.close()
         
         if plot_results:

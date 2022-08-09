@@ -61,7 +61,7 @@ class LearningLogger:
         data.append(['Episodes',self.episodes])
         data.append(['Avg episode duration',str(round(np.mean(self.episode_durations),5))+' s'])
         data.append(['Learning steps',self.learning_steps])
-        if worker != False or worker== 0:
+        if type(worker) != bool:
             data.append(['Worker',worker])
         data.append(['',''])
         data.append(['Last reward',round(reward,3)])
@@ -81,7 +81,8 @@ class LearningLogger:
         episode_str = "Episode * {} * ".format(self.episodes)
         moving_avg_str = "Moving Avg Reward is ==> {:.5f} * ".format(np.mean(self.rewards[-self.success_threshold_lookback:]))
         last_reward_str = "Last Reward was ==> {:.5f}".format(reward)
-        if worker != False or worker== 0:
+
+        if type(worker) != bool:
             worker_str ="Worker * {} * ".format(worker)
 
         log_str = episode_str+worker_str+moving_avg_str+last_reward_str
@@ -93,7 +94,7 @@ class LearningLogger:
         else:
             print('Episode done * Score ==> {:.3f}'.format(score))
 
-    def episode(self,log_every, reward,running_reward, log_level = 1,worker=False):
+    def episode(self,log_every, reward,running_reward, log_level = 1, worker=False):
         # step it
         self.step_episode(reward,running_reward)
 
