@@ -229,7 +229,7 @@ class PpoAgent(Agent):
             # Fill training buffer 
             for _ in range(self.batch_size):
  
-                action, action_data, prediction = self.act(state,deterministic=False)
+                action, action_data, prediction = self.act(state)
 
                 # print('action',action)
                 # print('state',state)

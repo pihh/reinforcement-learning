@@ -80,6 +80,12 @@ class Agent:
 
         self.config = config
 
+    def _validate_discrete_action_space(self):
+        assert self.action_space_mode == "continuous", "This agent only works with discrete action spaces. Please select other agent for this task"
+
+    def _validate_continuous_action_space(self):
+        assert self.action_space_mode == "discrete", "This agent only works with continuous action spaces. Please select other agent for this task"
+
     def _save_weights(self,model_list):
         success = True
         for model in model_list:

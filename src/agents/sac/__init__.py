@@ -29,6 +29,8 @@ class SoftActorCriticAgent(Agent):
     ):
         super(SoftActorCriticAgent, self).__init__(environment,loss_keys=["actor","value","critic_1","critic_2"],args=locals())
 
+        self._validate_continuous_action_space()
+        
         self.alpha = alpha
         self.beta = beta
         self.gamma = gamma

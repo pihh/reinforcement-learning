@@ -19,6 +19,8 @@ class QAgent(Agent):
             epsilon_min=epsilon_min,
             epsilon_decay=epsilon_decay)
         
+        self._validate_discrete_action_space()
+        
         # Args
         self.bucket_size = bucket_size
         self.alpha = alpha
@@ -59,8 +61,6 @@ class QAgent(Agent):
                 Q[state,action] = 0
                 
         self.Q = Q
-
-        
 
     def get_state(self,observation):
         #pos,vel = observation
