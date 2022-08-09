@@ -15,7 +15,7 @@ from src.utils.networks import CommonLayer
 
 disable_eager_execution()
 
-class ReplayBuffer:
+class _replayBuffer:
     def __init__(self):
         self.states = []
         self.actions = []
@@ -184,13 +184,9 @@ class A2CAgent(Agent):
         )
     
     def __init_buffers(self):
-        self.buffer = ReplayBuffer()
-        
-    def act(self,state):
-        action, action_onehot, prediction = self.actor.act(state)
-        return action, action_onehot, prediction
-    
-    def discount_rewards(self, reward):
+        self.buffer = _replayBuffer()
+
+    def _discount_rewards(self, reward):
         # Compute the gamma-discounted rewards over an episode
         running_add = 0
         discounted_r = np.zeros_like(reward)
@@ -202,8 +198,8 @@ class A2CAgent(Agent):
         discounted_r /= (np.std(discounted_r) + 1e-8) # divide by standard deviation
         
         return discounted_r
-    
-    def replay(self):
+
+    def _replay(self):
   
         if self.buffer.size > 1:
             # reshape memory to appropriate shape for training
@@ -211,7 +207,7 @@ class A2CAgent(Agent):
             actions = np.vstack(self.buffer.actions)
 
             # Compute discounted rewards
-            discounted_r = self.discount_rewards(self.buffer.rewards)
+            discounted_r = self._discount_rewards(self.buffer.rewards)
 
             # Get Critic network predictions
             values = self.critic.model.predict(states)[:, 0]
@@ -229,6 +225,10 @@ class A2CAgent(Agent):
             # reset training memory
             self.buffer.reset()
 
+    def act(self,state):
+        action, action_onehot, prediction = self.actor.act(state)
+        return action, action_onehot, prediction
+    
     def save(self):
         self._save_weights([
             {"name": "a2c-actor","model":self.actor.model},
@@ -274,7 +274,7 @@ class A2CAgent(Agent):
                 timestep +=1
                 
                 if self.buffer.size >= self.batch_size:
-                    self.replay()
+                    self._replay()
             
             # Episode ended
             episode += 1
@@ -287,11 +287,8 @@ class A2CAgent(Agent):
                 break
                 
             # Else learn more
-            self.replay()
+            self._replay()
         
         # End of training
-        self.env.close()
-        
-        if plot_results:
-            self.plot_learning_results()
+        self.on_learn_end(plot_results)
 

@@ -35,7 +35,7 @@ def environment(
     inertness_punishment_value=0,
     maximum_stocks_held=10,
     fees=FEES,
-    seed=314,
+    seed=False,
     mode="train",
 ):
 

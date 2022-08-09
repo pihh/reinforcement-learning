@@ -1,0 +1,206 @@
+{
+  "gamma": "0.99",
+  "policy": "CNN",
+  "batch_size": "4000",
+  "epochs": "80",
+  "episodes": "100000",
+  "shuffle": "False",
+  "target_kl": "0.01",
+  "n_workers": "2",
+  "critic_loss_function_version": "1",
+  "loss_clipping": "0.2",
+  "loss_entropy": "0.001",
+  "actor_optimizer": "Adam",
+  "actor_learning_rate": "2.5e-05",
+  "actor_learning_rate_decay_factor": "0.95",
+  "critic_optimizer": "Adam",
+  "critic_learning_rate": "2.5e-05",
+  "critic_learning_rate_decay_factor": "0.95",
+  "epsilon": "1.0",
+  "epsilon_min": "0.01",
+  "epsilon_decay": "1e-05",
+  "learning_log_loss_keys": "[]",
+  "success_threshold_lookback": "100",
+  "epsilon_": "1.0",
+  "epsilon_decay_": "1e-05",
+  "n_actions": "3",
+  "n_inputs": "693",
+  "actions": "[0, 1, 2]",
+  "observation_shape": "(21, 33)",
+  "action_space_mode": "discrete",
+  "action_upper_bounds": "False",
+  "action_lower_bounds": "False",
+  "action_bound": "False",
+  "env_name": "AaplStockTradingEnvironment-v0",
+  "agent": "PpoAgent",
+  "env_config": {
+    "df_name": "417b30a39b8996e1f8874a02acdbc6e4",
+    "df_path": "src/environments/continuous/stock_trading/datasets/417b30a39b8996e1f8874a02acdbc6e4",
+    "df_params": {
+      "ticker": "aapl",
+      "lookback": "21",
+      "window_size": "126",
+      "start_date": "False",
+      "end_date": "False",
+      "use_technical_indicators": [
+        "boll_lb",
+        "boll_ub",
+        "cci_30",
+        "close_30_sma",
+        "close_60_sma",
+        "dx_30",
+        "macd",
+        "rsi_30"
+      ],
+      "use_sentiment_analysis": "True",
+      "use_cboe_vix": "True",
+      "use_trends": "True",
+      "use_fear_and_greed": "True",
+      "use_market_volatility": "DOW_30"
+    },
+    "continuous": "False",
+    "train_percentage": "0.8",
+    "ticker": "aapl",
+    "initial_investment": "False",
+    "auto_investment": "False",
+    "maximum_stocks_held": "10",
+    "fees": {
+      "BUY": 0.001,
+      "SELL": 0.001
+    },
+    "inertness_punishment_method": "None",
+    "inertness_punishment_value": "0"
+  },
+  "models": {
+    "model": [
+      {
+        "name": "InputLayer",
+        "activation": null,
+        "units": null,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Conv1D",
+        "activation": "tanh",
+        "units": null,
+        "kernel_initializer": null
+      },
+      {
+        "name": "MaxPooling1D",
+        "activation": null,
+        "units": null,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Conv1D",
+        "activation": "tanh",
+        "units": null,
+        "kernel_initializer": null
+      },
+      {
+        "name": "MaxPooling1D",
+        "activation": null,
+        "units": null,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Flatten",
+        "activation": null,
+        "units": null,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Dense",
+        "activation": "relu",
+        "units": 512,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Dense",
+        "activation": "relu",
+        "units": 256,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Dense",
+        "activation": "relu",
+        "units": 64,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Dense",
+        "activation": "softmax",
+        "units": 3,
+        "kernel_initializer": null
+      }
+    ],
+    "model_1": [
+      {
+        "name": "InputLayer",
+        "activation": null,
+        "units": null,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Conv1D",
+        "activation": "tanh",
+        "units": null,
+        "kernel_initializer": null
+      },
+      {
+        "name": "MaxPooling1D",
+        "activation": null,
+        "units": null,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Conv1D",
+        "activation": "tanh",
+        "units": null,
+        "kernel_initializer": null
+      },
+      {
+        "name": "MaxPooling1D",
+        "activation": null,
+        "units": null,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Flatten",
+        "activation": null,
+        "units": null,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Dense",
+        "activation": "relu",
+        "units": 512,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Dense",
+        "activation": "relu",
+        "units": 256,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Dense",
+        "activation": "relu",
+        "units": 64,
+        "kernel_initializer": null
+      },
+      {
+        "name": "InputLayer",
+        "activation": null,
+        "units": null,
+        "kernel_initializer": null
+      },
+      {
+        "name": "Dense",
+        "activation": "linear",
+        "units": 1,
+        "kernel_initializer": null
+      }
+    ]
+  }
+}

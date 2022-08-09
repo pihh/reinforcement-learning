@@ -215,13 +215,6 @@ class Agent:
 
         return success_threshold if success_threshold else self.env.success_threshold
 
-    def on_learn_end(self,plot_results):
-        if plot_results:
-            self.plot_learning_results()
-
-    def after_learn_cycle(self):
-        pass 
-
     def on_learn_episode_end(self,score,log_every,log_level,success_threshold):
         self.running_reward.step(score)
     
@@ -231,6 +224,12 @@ class Agent:
             self.running_reward.moving_average, 
             log_level=log_level
         )
+        try:
+            if not np.isinf(self.running_reward.moving_average):
+                self.write_tensorboard_scaler('episode_score',score, self.running_reward.episodes)
+                self.write_tensorboard_scaler('episode_score_moving_average_'+str(self.running_reward.success_threshold_lookback),self.running_reward.moving_average, self.running_reward.episodes)
+        except:
+            pass
 
         if self.running_reward.episodes > self.success_threshold_lookback:
             if self.running_reward.moving_average > self.learning_max_score:
@@ -248,10 +247,15 @@ class Agent:
                 except:
                     print('Failed to write results log')
 
-        self.write_tensorboard_scaler('score',score,self.learning_log.episodes)
             
         return self.did_finnish_learning(success_threshold,self.running_reward.episodes)
             
+    def on_learn_end(self,plot_results):
+        self.env.close()
+
+        if plot_results:
+            self.plot_learning_results()
+
     def on_test_episode_start(self):
         try:
             state = self.env.reset()
@@ -267,15 +271,6 @@ class Agent:
             self.env.close()
         self.learning_log.episode_test_log(score,episode)
         
-    def before_learn_cycle(self):
-        pass 
-
-    def before_learn_episode(self):
-        pass
-
-    def before_test_episode(self):
-        pass
-
     # Tests
     def test(self, episodes=10, render=True):
 

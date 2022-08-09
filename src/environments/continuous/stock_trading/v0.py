@@ -58,7 +58,7 @@ class StockTradingEnvironment(Env):
                 inertness_punishment_value = 0,#0.001,
                 maximum_stocks_held=10, # For normalization purposes
                 fees=FEES,
-                seed=314,
+                seed=False,
                 mode="train"
         ):
 
@@ -92,31 +92,32 @@ class StockTradingEnvironment(Env):
         self.__init_targets()
         self.__init_spaces()
         self.__init_buffers()
-        self.__init_punishment(inertness_punishment_method,inertness_punishment_value)
+        # self.__init_punishment(inertness_punishment_method,inertness_punishment_value)
         self.__init_configuration()
 
-    def __init_seed(self, seed=None):
-        self._seed = seed
-        self.np_random, seed = seeding.np_random(seed)
-        return [seed]
+    def __init_seed(self, seed=False):
+        if type(seed) != bool:
+            self._seed = seed
+            self.np_random, seed = seeding.np_random(seed)
+            return [seed]
 
-    def __init_punishment(self,method,value):
-        if method == None or value == 0:
-            self.intertness_punishment = False
-            def fn(action,reward):
-                return reward
-        elif method == "step":
-            def fn(action,reward):
-                return reward - value
+    # def __init_punishment(self,method,value):
+    #     if method == None or value == 0:
+    #         self.intertness_punishment = False
+    #         def fn(action,reward):
+    #             return reward
+    #     elif method == "step":
+    #         def fn(action,reward):
+    #             return reward - value
 
-        elif method == "hold":
-            def fn(action,reward):
-                if action > ACTION_DEAD_AREA[0] and action < ACTION_DEAD_AREA[1]:
-                    return reward - value
-                else:
-                    return reward
+    #     elif method == "hold":
+    #         def fn(action,reward):
+    #             if action > ACTION_DEAD_AREA[0] and action < ACTION_DEAD_AREA[1]:
+    #                 return reward - value
+    #             else:
+    #                 return reward
 
-        self.punishment = fn
+    #     self.punishment = fn
 
     def __init_dataset(self):
 

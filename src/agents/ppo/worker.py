@@ -24,13 +24,13 @@ class Worker(Process):
         super(Worker, self).run()
         state = self.env.reset()
         #state = self.reshape_state(state)
-        print('worker sending ',state)
+        #print('worker sending ',state)
         self.agent_connection.send(state)
         while True:
-            print('recv')
+            #print('recv')
             action = self.agent_connection.recv()
 
-            print('action',action)
+            #print('action',action)
             state, reward, done, info = self.env.step(action)
             #state = self.reshape_state(state)
 
