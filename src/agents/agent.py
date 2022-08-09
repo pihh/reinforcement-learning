@@ -103,6 +103,7 @@ class Agent:
                 model_instance = model['model']
                 model_instance.load_weights(self.writer_log_directory+'/models/'+model_name+'.h5')
                 self._load_best_score()
+                self._load_agent_configuration()
        
             except Exception as e:
                 success = False
@@ -116,6 +117,9 @@ class Agent:
         score = self.results_writer.load_best_score()
         if score != False:
             self.learning_max_score = score
+
+    def _load_agent_configuration(self):
+        print('@TODO')
 
     def _add_models_to_config(self,models):
         self.config['models'] = {}
