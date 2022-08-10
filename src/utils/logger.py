@@ -105,7 +105,7 @@ class LearningLogger:
         last_reward_str = "Last Reward was ==> {:.5f} ".format(reward)
 
         if success_strict != False:
-            if len(self.rewards) > self.success_threshold_lookback:
+            if len(self.rewards) >= self.success_threshold_lookback:
                 episodes_with_loss = len(rewards[rewards <=0])
                 success_strict_str = "* Total episodes ending on loss: {}/{} ".format(episodes_with_loss,self.success_threshold_lookback)
 
