@@ -1,5 +1,7 @@
 import os
+import json
 import time 
+import hashlib
 import pandas as pd 
 
 def parse_time(seconds):
@@ -13,3 +15,6 @@ def parse_date(df):
     return parsed_date
 def get_number_of_files_in_folder(directory):
     return len(os.listdir(directory))
+
+def md5(json_obj):
+    return hashlib.md5(json.dumps(json_obj,sort_keys=True, indent=2).encode('utf-8')).hexdigest()

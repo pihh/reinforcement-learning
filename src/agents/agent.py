@@ -20,6 +20,7 @@ from src.utils.writer import scalar
 
 from src.utils.helpers import get_number_of_files_in_folder
 from src.utils.helpers import parse_time
+from src.utils.helpers import md5
 
 class Agent:
     def __init__(self,
@@ -210,7 +211,7 @@ class Agent:
         """
         # Generate Agent UUID based on it's JSON configuration 
         config = self.config.copy()
-        self.hash = hashlib.md5(json.dumps(config,sort_keys=True, indent=2).encode('utf-8')).hexdigest()
+        self.hash = md5(config) #hashlib.md5(json.dumps(config,sort_keys=True, indent=2).encode('utf-8')).hexdigest()
 
         # Create tensorboard writer and the directories
         self.writer, self.writer_log_directory = create_writer(self.config['env_name'],self.hash)   

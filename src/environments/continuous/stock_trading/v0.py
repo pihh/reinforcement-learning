@@ -14,10 +14,12 @@ from dotwiz import DotWiz
 from collections import deque
 
 from src.constants import FEES
-from src.constants import ACTIONS
+from src.constants import ACTIONS_DISCRETE
+from src.constants import ACTIONS_CONTINUOUS
 from src.utils.data import Downloader
 from src.utils.data import FeatureEngeneer
 from src.utils.trading_graph import TradingGraph
+from src.utils.helpers import md5
 
 ### ACTIONS
 # -1.5 -> -0.5 -> sell
@@ -64,13 +66,24 @@ class StockTradingEnvironment(Env):
 
         super(StockTradingEnvironment,self).__init__()
 
+        # Env name is TickerStockTradingEnvironment-v0
         self.env_name = "".join(t[0].upper() + t[1:].lower() for t in ticker.split('-')) + self.spec.id
+
+        # Timeseries lookback
         self.lookback = lookback
+
+        # Number of working days of the stock market dataset
         self.window_size = window_size
+
+        # Deprecated - to remove but will affect all the current models
         self.continuous = continuous
+
+        # Dataframe generation 
         self.start_date = start_date
         self.end_date = end_date
         self.train_percentage = train_percentage
+        
+        # Custom dataframe parameters
         self.technical_indicators = use_technical_indicators
         self.sentiment_analysis = use_sentiment_analysis
         self.use_cboe_vix = use_cboe_vix
@@ -78,14 +91,24 @@ class StockTradingEnvironment(Env):
         self.use_fear_and_greed = use_fear_and_greed
         self.use_sentiment_analysis = use_sentiment_analysis
         self.use_market_volatility = use_market_volatility
+        
+        # Self explanatory
         self.ticker = ticker.lower()
+        
+        # User wallet and portfolio state
         self.initial_investment = initial_investment
         self.auto_investment = True if initial_investment == False else  False
         self.maximum_stocks_held = maximum_stocks_held
+        
+        # Betting mode configuration
         self.inertness_punishment_method = inertness_punishment_method
         self.inertness_punishment_value = inertness_punishment_value
         self.fees = fees
+        
+        # How to sample from the dataset ( if @ reset it will get random train or test datasets )
         self.mode = mode
+
+        # Plot running graph ?
         self.visualize = False
 
         self.__init_seed(seed)
@@ -97,12 +120,14 @@ class StockTradingEnvironment(Env):
         self.__init_configuration()
 
     def __init_seed(self, seed=False):
+        # For reproducibility ( witch I dont want in trading environment, unless is to show to anyone )
         if type(seed) != bool:
             self._seed = seed
             self.np_random, seed = seeding.np_random(seed)
             return [seed]
 
     def __init_punishment(self,method,value):
+        # @NOTE : Not in use but might be usefull later
         # Not in use right now but might be in the future
         # if method == None or value == 0:
         #     self.intertness_punishment = False
@@ -127,7 +152,30 @@ class StockTradingEnvironment(Env):
         pass
 
     def __init_dataset(self):
-
+        """
+        Fetches data 
+            * ticker data and tickers for use_market_volatility comparison
+            * fetches from storage if exists, else from yf then stores @ storage 
+            * if doesnt exist @ storage, creates a local folder to store this environment datasets
+        Adds features:
+            * technical indicators 
+            * news sentiment analysis
+            * google trend analysis
+            * market volatility
+            * vix 
+            * fear and greed 
+        Normalizes features:
+            * creates raw dataset 
+            * creates normalized dataset 
+        Set environment targets and configuration:
+            * creates targets.csv to track every episode minimum success threshold
+            * creates config.csv to track how many dataframes and columns the datasets have
+        
+        Creates environment config.json and UUID (hash)
+        Defines datasets id range ( random sample a dataset from ids in a given range):
+            * train dataset id range 
+            * test dataset id range
+        """
         # Sort them for consistency
         self.technical_indicators.sort()
 
@@ -146,7 +194,7 @@ class StockTradingEnvironment(Env):
             "use_market_volatility": str(self.use_market_volatility),
         }
         #raw_name = json.dumps(df_params)
-        df_name = hashlib.md5(json.dumps(df_params,sort_keys=True, indent=2).encode('utf-8')).hexdigest()
+        df_name = md5(df_params) #hashlib.md5(json.dumps(df_params,sort_keys=True, indent=2).encode('utf-8')).hexdigest()
         df_path = 'src/environments/continuous/stock_trading/datasets/'+df_name
 
         self.df_name = df_name
@@ -318,6 +366,9 @@ class StockTradingEnvironment(Env):
         print()
 
     def __init_configuration(self):
+        """
+        Generates configuration file so when I go live I can reproduce everything with absolute confidence
+        """
         config = {}
         config["df_name"] = self.df_name
         config["df_path"] = self.df_path
@@ -336,7 +387,16 @@ class StockTradingEnvironment(Env):
         self.config=config
 
     def __init_targets(self):
-
+        """
+        Each episode has a minimum target that I need to beat.
+        
+        Define how much money the agent has to invest in the begining of each episode ( has impact on normalization )
+            * auto_investment (default) : defines that amount =  maximum_stocks_held * first high price
+            * initial_investment: Sets the initial investment as defined at init
+        Define episode targets:
+            * Acording to episode targets, set the target as initial cash in hand + current episode target 
+            * Sets the success threshold ( mean of episode targets + X std )
+        """
         episode_targets = pd.read_csv(self.df_path+'/targets.csv')
 
         self.episode_targets = []
@@ -359,6 +419,16 @@ class StockTradingEnvironment(Env):
         self.success_threshold = (success_threshold_targets - success_threshold_investments)/ success_threshold_investments
 
     def __init_spaces(self):
+        """
+        Unsure why I wrote stuff in Portuguese
+        Unsure the history parames are needed but its here for readability
+        Define input size 
+        Define order and portfolio historical parameters ( used in states )
+        Define observation_space shape (input_shape)
+        Define allowed actions based on action_space type 
+        """
+        
+        # Written in Portuguese dunno why I did it 
         # Quanto já investiu, quanto retorno tem de momento, retorno total
         self.portfolio_history_params = [
             'portfolio_value', # How is the agent performing -> iniciou com 100, está com 110 -> 10% increase
@@ -387,20 +457,19 @@ class StockTradingEnvironment(Env):
         
         if self.continuous:
             self.action_space = Box(low = -1.5, high = 1.5,shape = (1,))
-            self.ACTIONS = ACTIONS
+            self.actions = ACTIONS_CONTINUOUS
         else:
-            self.action_space = Discrete(len(ACTIONS))
-
-            ACTIONS.SELL = 0
-            ACTIONS.HOLD = 1
-            ACTIONS.BUY = 2
-            self.ACTIONS = ACTIONS
+            self.action_space = Discrete(len(ACTIONS_DISCRETE))
+            self.actions = ACTIONS_DISCRETE
         
         self.observation_space = Box(low=-np.inf, high=np.inf, shape=shape, dtype=np.float64)
         self.input_shape = shape
 
     def __init_buffers(self):
-        # @TODO
+        """
+        Creates memory for sampled parameters
+        @deprecated 
+        """
         self.history_params_orders = []
         self.history_params_portfolio = []
         self.history_params_market = []
@@ -410,10 +479,26 @@ class StockTradingEnvironment(Env):
         self.reset_history()
 
     def __init_visualization(self):
+        """
+        If the user wants to see a graph in real time, display it here
+        """
         self.trading_graph = TradingGraph(render_range=42, show_reward=True, show_indicators=True) # init visualization
 
     def _action(self,actions):
-        """ Compra ou vende e quanto % do dinheiro inicial deveria investir ? """
+        """ 
+        Check what action was defined by the agent and the amount it will trade
+        At the moment actions are defined like this:
+            * sell -> sells all stocks that the agent holds 
+            * buy  -> buys one stock 
+            * hold -> do nothing
+        I defined it this way because the agent tracks the mean value of the purchased stocks
+            and tracks the difference of that mean vs current price. This way the agent
+            can get away taking a few bad buying decisions. Also, the agent won't 
+            buy if has more than max stock held.Defined it like that so the 
+            user can manage how much risk he is willing to take.
+
+        @TODO Continuous mode
+        """
         if self.continuous:
             raise Exception('TODO CRL')
             # bounds = ACTION_DEAD_AREA
@@ -449,23 +534,22 @@ class StockTradingEnvironment(Env):
             # return action,amount
             #return ACTIONS.HOLD, 0
         else:
-            #print(actions, self.ACTIONS)
+            #print(actions, self.actions)
             action = actions
 
-            if actions == self.ACTIONS.SELL:
-                # print('sell')
-                # Sell all 
+            if actions == self.actions.SELL:
                 amount = self.stock_held
-            elif actions == self.ACTIONS.BUY: 
-                # print('buy')
+            elif actions == self.actions.BUY: 
                 amount = 1 
             else:
-                # print('hold')
                 amount = 0
 
         return action,amount
 
     def _track_trade(self,amount_traded,action,current_price):
+        """
+        Gets a trading history for testing and visualizing the environment.
+        """
         date = self.df.index[self.current_step] # for visualization
         open = self.df.iloc[self.current_step].open
         close = self.df.iloc[self.current_step].close
@@ -496,6 +580,11 @@ class StockTradingEnvironment(Env):
         })
 
     def _trade(self,action,amount):
+        """
+        Trade action
+        --------------------
+        """
+
         # Track what we have done in this episode
         self.stock_bought = 0
         self.stock_sold = 0
@@ -504,7 +593,7 @@ class StockTradingEnvironment(Env):
         discounted_price = current_price
         position = 'hold'
 
-        if action == self.ACTIONS.BUY:
+        if action == self.actions.BUY:
             position = 'buy'
             discounted_price =self.get_current_buying_price()
 
@@ -528,7 +617,7 @@ class StockTradingEnvironment(Env):
             else:
                 amount = 0
 
-        elif action == self.ACTIONS.SELL:
+        elif action == self.actions.SELL:
             # Sells all in a row
             position = 'sell'
             discounted_price = self.get_current_selling_price()
@@ -559,7 +648,9 @@ class StockTradingEnvironment(Env):
             self._track_trade(amount,position,discounted_price)
 
     def _normalize_portfolio(self,i):
-
+        """
+        Normalizes porftolio data
+        """
         # Portfolio value is the compared value now with when I started
         portfolio_value = self.portfolio_value/self.initial_investment
 
@@ -581,6 +672,12 @@ class StockTradingEnvironment(Env):
         ]  # % % % %
 
     def _state(self):
+        """
+        Generates a state consisting of:
+            * orders history    - what the agent has been doing
+            * portfolio history - how is he performing
+            * market history    - how is the market
+        """
         #return np.concatenate((self.orders_history,self.portfolio_history, self.market_history,self.news_history,self.indicators_history), axis=1)
         state = np.concatenate((
             self.orders_history,
@@ -591,6 +688,12 @@ class StockTradingEnvironment(Env):
         self.state = state 
 
     def _next_state(self):
+        """
+        Generates the next state:
+            * orders history    - what the agent has been doing
+            * portfolio history - how is he performing
+            * market history    - how is the market
+        """
         i = self.current_step
 
         held = 1
@@ -629,6 +732,13 @@ class StockTradingEnvironment(Env):
         return self.df.iloc[self.current_step -1]['close']
 
     def _calculate_reward(self):
+        """
+        Tricky one becuse I don't know if I should track only the 
+        buy and sell rewards or the evolution of the portfolio.
+
+        Defined for now the evolution of the portfolio
+        with the stock fees applyed
+        """
         # Using portfolio evolution
         # Could use portfolio max possible evolution
         # Could also use portfolio distance from target
@@ -645,6 +755,7 @@ class StockTradingEnvironment(Env):
         return reward
 
     def _calculate_reward_v2(self):
+        # NOTE: Not in use
         # According to lessons
         # Although I don't quite understand yet the logic this mechanism
         if self.episode_orders > 1 and self.episode_orders > self.prev_episode_orders:
@@ -661,10 +772,13 @@ class StockTradingEnvironment(Env):
             return 0
 
     def _reached_end_of_episode(self):
+        # Checks if episode ended
         return self.episode_step == self.window_size -1
 
     def _beated_environment(self,action):
-        # if action == self.ACTIONS.SELL and self.portfolio_value >= self.episode_target :
+        # NOTE: not implemented
+        # Checks if environment is beated
+        # if action == self.actions.SELL and self.portfolio_value >= self.episode_target :
         #     self.environment_beaten = True
         #     return True 
         # else:
@@ -691,8 +805,7 @@ class StockTradingEnvironment(Env):
         self.episode_target = self.episode_targets[idx]
 
     def _calculate_max_profit_with_n_transactions(self,prices,k):
-        #if not len(prices):
-            # return 0
+        # For target calculation
         profits = [[0 for p in prices] for t in range(k+1)]
         for t in range(1,k+1):
             max_so_far = float("-inf")
@@ -728,6 +841,9 @@ class StockTradingEnvironment(Env):
         return global_max_single_trade_profit
 
     def reset_history(self):
+        """
+        @deprecated
+        """
         self.history_orders = deque(maxlen=self.lookback)
         self.history_portfolio = deque(maxlen=self.lookback)
         self.history_market = deque(maxlen=self.lookback)
@@ -736,7 +852,9 @@ class StockTradingEnvironment(Env):
         self.history_trades = deque(maxlen=self.lookback)
         
     def load_dataset_by_index(self,idx):
-        
+        """
+        Loads a raw and normalized datasets with a given id
+        """
         self.df = pd.read_csv(self.df_path+'/raw_slice_'+str(idx)+'.csv')
         self.df_norm = pd.read_csv(self.df_path+'/norm_slice_'+str(idx)+'.csv')
         
@@ -755,7 +873,15 @@ class StockTradingEnvironment(Env):
             df.drop(columns=['ticker'],inplace=True)
 
     def step(self,action):
-
+        """
+        Gym step method:
+            * extracts action and amount to trade 
+            * makes a trade 
+            * calculates the imediate reward
+            * checks if episode ended
+            * generates next state
+            * updates episode and current steps 
+        """
         self.prev_portfolio_value = self.portfolio_value
         self.stock_sold = 0
         self.stock_bought = 0
@@ -771,9 +897,9 @@ class StockTradingEnvironment(Env):
         # Check if we done - when ended episode or cannot invest anymore
         done = self._calculate_done(action)
 
-        if done and self.environment_beaten:
+        #if done and self.environment_beaten:
             # Should add some incentive for beating before time no?
-            pass 
+        #    pass 
 
         #if done and self.current_step < self.window_size -1:
 
@@ -798,16 +924,36 @@ class StockTradingEnvironment(Env):
         }
 
     def render(self, mode="human"):
+        """
+        Gym render method
+        """
         if self.visualize:
             img = self.trading_graph.render(self.df.iloc[self.current_step], self.portfolio_value, self.trading_history)
             return img
 
     def close(self):
+        """
+        Close trading graphs if active
+        """
         if self.visualize:
             self.trading_graph.close()
 
-    def reset(self, visualize = False,mode="train"):
-
+    def reset(self,
+        visualize = False, 
+        mode="train"
+    ):
+        
+        """
+        Gym reset method 
+            * sets the mode ( to get a dataset in train or test range )
+            * sets rendering mode 
+            * gets datasets by random id 
+            * defines investment and targets for the episode
+            * resets history buffers
+            * resets agent wallet state 
+            * resets purchases history
+            * generates initial state 
+        """
         self.mode=mode
         self.visualize = visualize
         
@@ -848,11 +994,7 @@ class StockTradingEnvironment(Env):
         self.cash_in_hand = self.initial_investment
         self.stock_price_avg_comp = 1 # No stocks so the value of a stock compared to what I have is itself
 
-        #self.balance = self.initial_investment
-        #self.invested_percentage = 0
-        self.net_worth = self.initial_investment
-        self.prev_net_worth = self.initial_investment
-
+        # Wallet state
         self.stock_held = 0
         self.stock_sold = 0
         self.stock_bought = 0
