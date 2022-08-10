@@ -99,7 +99,7 @@ class DdpgAgent(Agent):
         self.target_actor.set_weights(self.actor.get_weights())
         self.target_critic.set_weights(self.critic.get_weights())
     
-    def act(self,state):
+    def choose_action(self,state):
         state = tf.expand_dims(tf.convert_to_tensor(state), 0)
         sampled_actions = tf.squeeze(self.actor(state))
         noise = self.noise()
@@ -186,7 +186,7 @@ class DdpgAgent(Agent):
                 if render:
                     self.env.render()
                     
-                action = self.act(state)
+                action = self.choose_action(state)
 
                 # Step
                 state,reward,done, info = self.env.step(action)
@@ -211,7 +211,7 @@ class DdpgAgent(Agent):
             done = False
             while not done:
                 
-                action = self.act(prev_state)
+                action = self.choose_action(prev_state)
                 state, reward, done, info = self.env.step(action)
                 self.buffer.record((prev_state, action, reward, state))
                 self.replay()

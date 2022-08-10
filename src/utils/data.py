@@ -198,6 +198,9 @@ class FeatureEngeneer:
             trends_df = trends_df[[ticker,'date']]
         else:
             trends_df = trends_df[[main_keyword,'date']]
+            columns = {}
+            columns[main_keyword] = ticker
+            trends_df.rename(columns=columns,inplace=True)
 
         if 'Unnamed: 0' in trends_df.columns:
             trends_df.drop(columns=['Unnamed: 0'],inplace=True)
@@ -296,7 +299,7 @@ class FeatureEngeneer:
 
                 except Exception as e:
                     print(e)
-                    
+
             indicator_df['date'] = pd.to_datetime(indicator_df.date).dt.date
             df['date'] = pd.to_datetime(df.date).dt.date
             df = df.merge(

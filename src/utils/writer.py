@@ -20,10 +20,10 @@ class ResultsWriter:
         #     time.sleep(1)
 
     def load_best_score(self):
-        file_path = 'storage/environments/'+self.env_name+'/results.json'
+        #file_path = 'storage/environments/'+self.env_name+'/results.json'
         score = False
         try:
-            with open(file_path, 'r') as fp:
+            with open(self.file_path, 'r') as fp:
                 results = json.load(fp)
                 score = results[self.agent_hash]
         except IOError:
@@ -33,30 +33,18 @@ class ResultsWriter:
         return score
 
     # def queue(self,score):
-    #     self.score = score
-    #     self.log()
-        # if self.score == False:
-        #     self.score = score
-        # else:
-        #     if self.score < score:
-        #         self.score = score 
+    # might be needed for multiprocess or multithread so it wont mess the file
 
-    def log(self,score):
-        #if self.score != False:
-            #print('log',self.check_file())
-            #if not self.check_file():
-            #    log_environment_results_file(self.env_name,self.agent_hash,self.score)
-            #    self.score = False
-            #score = self.score            
+    def log(self,score):        
         log_environment_results_file(self.env_name,self.agent_hash,score)
-        #self.score = False
-
+        
     # def check_file(self):
     #     file = Path(self.file_path)
     #     if file.exists() and file.stat().st_size >= 75:
     #         return True
     #     else:
     #         return False
+
     def store_test_results(self,agent,results_dataframe):
         results_dataframe.to_csv(agent.writer_log_directory+'/results__'+datetime.now().strftime("%Y%m%d-%H%M%S")+'.csv')
 
@@ -92,10 +80,14 @@ def create_writer(env_name,hash):
 
     configdir = 'storage/environments/'+env_name+'/'+hash
     modelsdir = configdir + '/models'
+    plotsdir = configdir + '/plots'
+    resultsdir = configdir + '/results'
     logdir = configdir+'/logs/'+datetime.now().strftime("%Y%m%d-%H%M%S")
     
     mkdir(configdir)
     mkdir(modelsdir)
+    mkdir(plotsdir)
+    mkdir(resultsdir)
     mkdir(logdir)
 
     writer = SummaryWriter(logdir=logdir) #SummaryWriter(comment="_"+self.env_name+"_"+self.optimizer.__name__+"_"+str(self.lr))

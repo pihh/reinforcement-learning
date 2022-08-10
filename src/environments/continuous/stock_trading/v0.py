@@ -196,27 +196,51 @@ class StockTradingEnvironment(Env):
             df_norm = df.copy()
             for col in df_norm.columns:
                 if col.startswith('macd'):
-                    df_norm[col] = df_norm[col]/ df_norm['close']
+                    df_norm[col] = df[col]/ df['close']
 
                 if col.startswith('macd'):
-                    df_norm[col] = df_norm[col]/ df_norm['close']
+                    df_norm[col] = df[col]/ df['close']
                 if col.startswith('boll_'):
-                    df_norm[col] = df_norm[col]/ df_norm['close']
+                    df_norm[col] = df[col]/ df['close']
                 if col.startswith('dx_'):
-                    df_norm[col] = df_norm[col]/ 100
+                    df_norm[col] = df[col]/ 100
                 if col.startswith('rsi_'):
-                    df_norm[col] = df_norm[col]/ 100
+                    df_norm[col] = df[col]/ 100
                 if col.startswith('cci_'):
-                    df_norm[col] = df_norm[col]/ 250
+                    df_norm[col] = df[col]/ 250
                 if col.endswith('_sma'):
-                    df_norm[col] = df_norm[col]/ df_norm['close']
+                    df_norm[col] = df[col]/ df['close']
 
                 if col== 'day':
-                    df_norm[col] = df_norm[col]/ 4
+                    df_norm[col] = df[col]/ 4
 
                 if col in ['open','close','high','low','volume']:
-                    df_norm[col] = df_norm[col].pct_change()
+                    df_norm[col] = df[col].pct_change()
 
+                # df_norm = df.copy()
+                # for col in df_norm.columns:
+                #     if col.startswith('macd'):
+                #         df_norm[col] = df_norm[col]/ df_norm['close']
+
+                #     if col.startswith('macd'):
+                #         df_norm[col] = df_norm[col]/ df_norm['close']
+                #     if col.startswith('boll_'):
+                #         df_norm[col] = df_norm[col]/ df_norm['close']
+                #     if col.startswith('dx_'):
+                #         df_norm[col] = df_norm[col]/ 100
+                #     if col.startswith('rsi_'):
+                #         df_norm[col] = df_norm[col]/ 100
+                #     if col.startswith('cci_'):
+                #         df_norm[col] = df_norm[col]/ 250
+                #     if col.endswith('_sma'):
+                #         df_norm[col] = df_norm[col]/ df_norm['close']
+
+                #     if col== 'day':
+                #         df_norm[col] = df_norm[col]/ 4
+
+                #     if col in ['open','close','high','low','volume']:
+                #         df_norm[col] = df_norm[col].pct_change()
+    
             df_norm.fillna(0,inplace=True)
             df_norm.reset_index(drop=True,inplace=True)
             df_norm.to_csv(df_path+'/norm_dataframe.csv',index=False)

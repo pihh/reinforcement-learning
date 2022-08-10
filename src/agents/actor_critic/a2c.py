@@ -86,14 +86,22 @@ class ActorNetwork():
         
         return tf.reduce_sum(-loss_policy)
     
-    def act(self,state, deterministic=True):
+    def choose_action(self,state, deterministic=True):
         state = np.expand_dims(state, axis=0)
         if self.action_space_mode == "discrete":
             prediction = self.model.predict(state)[0]
             if deterministic:
                 action = np.argmax(prediction)
             else:
-                action = np.random.choice(self.n_actions, p=prediction)
+                try:
+                    action = np.random.choice(self.n_actions, p=prediction)
+                except Exception as e:
+                    print('prediction')
+                    print(self.n_actions,prediction)
+                    print('state')
+                    print(state)
+                    raise Exception(e)
+
             action_onehot = np.zeros([self.n_actions])
             action_onehot[action] = 1
         else:
@@ -228,8 +236,8 @@ class A2CAgent(Agent):
             # reset training memory
             self.buffer.reset()
 
-    def act(self,state,deterministic=True):
-        action, action_onehot, prediction = self.actor.act(state,deterministic=deterministic)
+    def choose_action(self,state,deterministic=True):
+        action, action_onehot, prediction = self.actor.choose_action(state,deterministic=deterministic)
         return action, action_onehot, prediction
     
     def save(self):
@@ -262,7 +270,7 @@ class A2CAgent(Agent):
             while not done:
                 
                 #state = np.expand_dims(state, axis=0)
-                action, action_onehot, prediction = self.act(state,deterministic=False)
+                action, action_onehot, prediction = self.choose_action(state,deterministic=False)
                 
                 # Retrieve new state, reward, and whether the state is terminal
                 next_state, reward, done, _ = self.env.step(action)

@@ -1,0 +1,873 @@
+ticker,date,title,provider,neg,neu,pos,compound
+CAT,2008-10-21,GLOBAL MARKETS Stocks  commodities slip on global recession fear,Reuters,0.462,0.538,0.0,-0.7184
+CAT,2008-10-21,GLOBAL MARKETS Stocks  commodities fall on global recession fear,Reuters,0.462,0.538,0.0,-0.7184
+CAT,2008-12-23,GLOBAL MARKETS Econ worries weigh on oil  yields  stocks up,Reuters,0.237,0.763,0.0,-0.4215
+CAT,2009-02-06,FACTBOX Obama names economic advisory panel,Reuters,0.0,1.0,0.0,0.0
+CAT,2009-02-11,WRAPUP 6 Stimulus bill cleared for House  Senate votes,Reuters,0.0,0.833,0.167,0.1027
+CAT,2009-03-02,GLOBAL MARKETS Global stocks in rout after AIG loss  dollar up,Reuters,0.187,0.813,0.0,-0.3182
+CAT,2009-05-20,UPDATE 2 Obama warns U S  may face long term joblessness,Reuters,0.167,0.833,0.0,-0.1027
+CAT,2009-06-15,US STOCKS Wall St sees worst day in a month on resources  data,Reuters,0.272,0.728,0.0,-0.6249
+CAT,2009-06-17,COLUMN Bet on small firms to lead China global foray   Wei Gu,Reuters,0.0,1.0,0.0,0.0
+CAT,2009-06-18,US STOCKS Upbeat data  financials buoy Wall St,Reuters,0.0,1.0,0.0,0.0
+CAT,2009-06-18,US STOCKS Dow  S P end 3 day drop on data  financials,Reuters,0.208,0.792,0.0,-0.2732
+CAT,2009-06-18,US STOCKS Dow  S P break 3 day slump on data  financials,Reuters,0.0,1.0,0.0,0.0
+CAT,2009-06-30,US STOCKS Market drops on confidence data  but quarter shines,Reuters,0.0,0.807,0.193,0.2846
+CAT,2009-06-30,US STOCKS Wall St brakes on confidence data  but has upbeat Q2,Reuters,0.0,0.837,0.163,0.2846
+CAT,2009-06-30,RPT US STOCKS Market sags on confidence data  but quarter shines,Reuters,0.0,0.823,0.177,0.2846
+CAT,2009-06-30,US STOCKS Market drops as sentiment data spurs caution,Reuters,0.0,1.0,0.0,0.0
+CAT,2009-07-21,FOREX U S  dollar index falls to fresh six week low,Reuters,0.184,0.614,0.202,0.0516
+CAT,2009-07-21,US STOCKS Wall St set to rise on strong quarterly earnings,Reuters,0.0,0.752,0.248,0.5106
+CAT,2009-07-21,FOREX Dollar rebounds from six week low vs euro,Reuters,0.208,0.792,0.0,-0.2732
+CAT,2009-07-21,FOREX U S  dollar rallies from six week lows vs euro,Reuters,0.184,0.816,0.0,-0.2023
+CAT,2009-07-21,FOREX Dollar rises from six week low vs euro on Bernanke,Reuters,0.174,0.826,0.0,-0.2732
+CAT,2009-07-21,US STOCKS SNAPSHOT Wall St rises on strong quarterly earnings,Reuters,0.0,0.732,0.268,0.5106
+CAT,2009-07-21,US STOCKS SNAPSHOT Wall St rises on Caterpillar  gains limited,Reuters,0.154,0.65,0.195,0.128
+CAT,2009-07-21,US STOCKS SNAPSHOT Nasdaq  S P 500 flat  Caterpillar lifts Dow,Reuters,0.0,1.0,0.0,0.0
+CAT,2009-07-21,European shares rise for 7th day  led by miners,Reuters,0.0,0.784,0.216,0.296
+CAT,2009-07-21,FOREX U S  dollar extends losses vs yen after Bernanke,Reuters,0.265,0.588,0.147,-0.296
+CAT,2009-07-21,European shares up for 7th day  led by oil  miners,Reuters,0.0,0.804,0.196,0.296
+CAT,2009-07-21,US STOCKS Wall St loses ground on Caterpillar s comments,Reuters,0.223,0.777,0.0,-0.3182
+CAT,2009-07-21,US STOCKS Futures flat ahead of busy earnings day,Reuters,0.0,1.0,0.0,0.0
+CAT,2009-07-21,US STOCKS Earnings drive markets higher  Caterpillar soars,Reuters,0.0,1.0,0.0,0.0
+CAT,2009-07-22,GLOBAL MARKETS World stocks slip back from 9 month highs,Reuters,0.0,1.0,0.0,0.0
+CAT,2009-07-22,Europe stocks halt winning run  miners  banks drop,Reuters,0.183,0.522,0.296,0.3182
+CAT,2009-07-28,Komatsu Q1 profit plummets  FY09 forecast unchanged,Reuters,0.0,0.674,0.326,0.4404
+CAT,2009-07-28,UPDATE 1 Komatsu Q1 profit down   09 10 outlook unchanged,Reuters,0.0,0.734,0.266,0.4404
+CAT,2009-08-11,WRAPUP 2 U S  productivity surges  inventories are lean,Reuters,0.0,1.0,0.0,0.0
+CAT,2009-08-31,GLOBAL MARKETS Global stocks  oil tumble on China s big slide,Reuters,0.0,1.0,0.0,0.0
+CAT,2009-09-24,US STOCKS Housing data  stimulus worry knock Wall Street,Reuters,0.266,0.734,0.0,-0.4404
+CAT,2009-09-24,US STOCKS Wall St drops on housing  stimulus worries,Reuters,0.259,0.741,0.0,-0.4215
+CAT,2009-09-24,US STOCKS Wall St falls on housing data  stimulus jitters,Reuters,0.0,1.0,0.0,0.0
+CAT,2009-10-01,US STOCKS Market falls sharply after factory  jobs data,Reuters,0.0,1.0,0.0,0.0
+CAT,2009-10-19,US STOCKS SNAPSHOT Dow rises 1 pct  led by Caterpillar,Reuters,0.0,1.0,0.0,0.0
+CAT,2009-10-20,US STOCKS Wall St retreats on weak data  profit taking,Reuters,0.21,0.58,0.21,0.0
+CAT,2009-10-20,European shares fall  Barc Tlays leads banks lower,Reuters,0.212,0.577,0.212,0.0
+CAT,2009-10-20,GLOBAL MARKETS World stocks hit 12 mth high  dlr beaten lower,Reuters,0.357,0.643,0.0,-0.6124
+CAT,2009-10-20,GLOBAL MARKETS Global shares  oil fall on U S  housing data,Reuters,0.0,0.784,0.216,0.296
+CAT,2009-10-20,Fall in banks drags FTSE 0 7 percent lower at close,Reuters,0.358,0.642,0.0,-0.4404
+CAT,2009-10-20,US STOCKS Wall St to open slightly up as data offsets earnings,Reuters,0.0,1.0,0.0,0.0
+CAT,2009-10-20,European shares gain after Caterpillar results,Reuters,0.0,0.417,0.583,0.6808
+CAT,2009-10-21,FOREX Dollar steadies as profits booked on high yielders,Reuters,0.0,0.734,0.266,0.4404
+CAT,2010-04-26,U S  stocks mixed after Caterpillar results  Dow Jones up 0 26 ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2010-07-22,Europe stocks rally on strong euro zone data  DAX up 1 42 ,Investing.com,0.0,0.752,0.248,0.5106
+CAT,2010-08-25,U S  stocks decline on downbeat U S  data  Dow Jones down 0 55 ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2010-09-01,U S  stocks soar as growth fears ease  Dow Jones up 2 33 ,Investing.com,0.188,0.47,0.342,0.3182
+CAT,2010-10-21,European stocks advance after the open  DAX up 0 59 ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2011-01-27,Euro stocks broadly lower after S P cuts Japan rating  DAX up 0 09 ,Investing.com,0.328,0.672,0.0,-0.5267
+CAT,2011-04-27,UPDATE 2 Komatsu profits jump  sees more gains on China demand,Reuters,0.106,0.497,0.397,0.624
+CAT,2011-04-27,Komatsu posts profit jump  sees more gains on China demand,Reuters,0.106,0.497,0.397,0.624
+CAT,2011-04-29,Caterpillar profit may triple  but forecast is key,Reuters,0.0,0.782,0.218,0.2382
+CAT,2011-04-29,US STOCKS Dow eyes best month since Dec  Caterpillar rallies,Reuters,0.0,0.682,0.318,0.6369
+CAT,2011-04-29,RPT GLOBAL MARKETS Dow eyes best month since Dec  dollar falls,Reuters,0.0,0.704,0.296,0.6369
+CAT,2011-04-29,US STOCKS Dow on track for 2011 s best month  Caterpillar up,Reuters,0.0,0.704,0.296,0.6369
+CAT,2011-04-29,US STOCKS SNAPSHOT Wall St ends up  Dow s best month since Dec,Reuters,0.0,0.724,0.276,0.6369
+CAT,2011-04-29,METALS Copper ends lower as techncials  econ woes bite,Reuters,0.421,0.579,0.0,-0.6249
+CAT,2011-05-17,GLOBAL MARKETS Stocks at 1 month low  euro edges up,Reuters,0.208,0.792,0.0,-0.2732
+CAT,2011-05-25,GLOBAL MARKETS Stocks  oil rise  euro slips on Greek worries,Reuters,0.237,0.763,0.0,-0.4215
+CAT,2011-05-25,CORRECTED   GLOBAL MARKETS U S  stocks up  euro falls on debt jitters,Reuters,0.217,0.783,0.0,-0.3612
+CAT,2011-05-25,GLOBAL MARKETS U S  stocks flat  euro falls on debt jitters,Reuters,0.238,0.762,0.0,-0.3612
+CAT,2011-10-24,Wall Street Pins Hopes on E U  Summit  Sends Equities Higher,eToro,0.0,0.741,0.259,0.4215
+CAT,2011-10-25,Daily Analysis   Western Markets Rally on European Hopes,Binary Options Strategy,0.0,0.714,0.286,0.4215
+CAT,2011-10-25,Compass Directions  Morning Report,Keagan York,0.0,1.0,0.0,0.0
+CAT,2011-10-25,Bullish Sentiment Keeps the Equity Trend Intact,eToro,0.0,0.769,0.231,0.2023
+CAT,2011-10-25,RBA s Battellino upbeat on economy  Tomorrow s CPI data important,Saxo Bank,0.0,0.816,0.184,0.2023
+CAT,2011-10-26,Investor Sentiment Declined on Weak Consumer Confidence,eToro,0.259,0.446,0.295,0.1027
+CAT,2011-10-31,Daily Analysis   Western Markets Rally on European Hopes,Binary Options Strategy,0.0,0.714,0.286,0.4215
+CAT,2011-10-31,Week in Review Part I  Europe  Washington and Wall Street,Brian Trumbore,0.0,1.0,0.0,0.0
+CAT,2011-11-04,Daily Analysis   Western Markets Rally on European Hopes,Binary Options Strategy,0.0,0.714,0.286,0.4215
+CAT,2011-11-07,Daily Analysis   Chinese Growth Lifts Equities,Binary Options Strategy,0.0,0.658,0.342,0.3818
+CAT,2011-11-07,Daily Analysis   Western Markets Rally on European Hopes,Binary Options Strategy,0.0,0.714,0.286,0.4215
+CAT,2011-11-08,Daily Analysis   Chinese Growth Lifts Commodities and Equities,Binary Options Strategy,0.0,0.729,0.271,0.3818
+CAT,2011-11-08,Daily Analysis   Western Markets Rally on European Hopes,Binary Options Strategy,0.0,0.714,0.286,0.4215
+CAT,2011-11-10,Daily Analysis   Chinese Growth Lifts Commodities and Equities,Binary Options Strategy,0.0,0.729,0.271,0.3818
+CAT,2011-11-11,Daily Analysis   Western Markets Rally on European Hopes,Binary Options Strategy,0.0,0.714,0.286,0.4215
+CAT,2011-11-14,Daily Analysis   Western Markets Rally on European Hopes,Binary Options Strategy,0.0,0.714,0.286,0.4215
+CAT,2011-11-16,Daily Analysis    Equities,Binary Options Strategy,0.0,1.0,0.0,0.0
+CAT,2011-11-17,Daily Analysis    Equities,Binary Options Strategy,0.0,1.0,0.0,0.0
+CAT,2011-11-17,Daily Analysis   Western Markets Rally on European Hopes,Binary Options Strategy,0.0,0.714,0.286,0.4215
+CAT,2011-12-01,Daily Analysis   Central Banks Unite to Boost Liquidity  Western Markets Soar,Binary Options Strategy,0.0,0.787,0.213,0.4019
+CAT,2011-12-05,2 Easy Ways To Earn 20  On Industrial Dividend Stocks,Double Dividend Stocks,0.0,0.734,0.266,0.4404
+CAT,2011-12-06,Daily Analysis   Central Banks Unite to Boost Liquidity  Western Markets Soar,Binary Options Strategy,0.0,0.787,0.213,0.4019
+CAT,2011-12-08,Daily Analysis   Central Banks Unite to Boost Liquidity  Western Markets Soar,Binary Options Strategy,0.0,0.787,0.213,0.4019
+CAT,2011-12-14,Central Banks Unite to Boost Liquidity  Western Markets Soar,Binary Options Strategy,0.0,0.748,0.252,0.4019
+CAT,2011-12-16,European Equities Rally Despite Soaring Yields,Binary Options Strategy,0.0,1.0,0.0,0.0
+CAT,2011-12-20,Equities Continue to Rise on European Bailout Hopes,Binary Options Strategy,0.137,0.588,0.275,0.34
+CAT,2011-12-21,Central Banks Unite to Boost Liquidity  Western Markets Soar,Binary Options Strategy,0.0,0.748,0.252,0.4019
+CAT,2011-12-22,Nikkei Drops to 2 1 2 Year Low,Binary Options Strategy,0.344,0.656,0.0,-0.2732
+CAT,2011-12-23,European Equities Rally Despite Soaring Yields,Binary Options Strategy,0.0,1.0,0.0,0.0
+CAT,2011-12-26,Global markets rallied on renewed hopes that Europe will succeed,Binary Options Strategy,0.0,0.571,0.429,0.7184
+CAT,2012-01-09,My Bespoke Roundtable Answers,Jeff Miller,0.0,1.0,0.0,0.0
+CAT,2012-01-17,Positioning for 2012  Don t Underweight Stocks,Jeff Miller,0.0,1.0,0.0,0.0
+CAT,2012-01-20,Make Over 20   By Hedging This Top Dow Dividend Stock,Double Dividend Stocks,0.0,0.833,0.167,0.2023
+CAT,2012-01-26,Fed s Role in the Economy  Now Bigger  But Is It Better for Investors ,Jeff Miller,0.0,0.757,0.243,0.5927
+CAT,2012-01-26,Markets Boosted By FOMC Announcement  Key Data From US  Sweden on Tap,Danske Markets,0.0,0.815,0.185,0.3612
+CAT,2012-01-26,European Market Update  Risk Appetite Buoyed By Potential Greek PSI Deal,Trade The News,0.174,0.826,0.0,-0.2732
+CAT,2012-01-26,U S  futures higher  boosted by Fed statement  Dow Jones up 0 28 ,Investing.com,0.0,0.783,0.217,0.3612
+CAT,2012-01-26,Durable Goods Orders Last Piece of Puzzle Before GDP Tomorrow,Saxo Bank,0.0,1.0,0.0,0.0
+CAT,2012-01-30,Europe  Washington and Wall Street,Brian Trumbore,0.0,1.0,0.0,0.0
+CAT,2012-01-30,Time to Ride the Commodity Bull,Cam Hui,0.0,1.0,0.0,0.0
+CAT,2012-02-08,Navigating Silly Season  An Investor s Guide to the Political Landscape,Jeff Miller,0.0,0.891,0.109,0.0258
+CAT,2012-02-12,Why Germany Is Already on the Hook for 450BN Euros,Simon Lack,0.0,1.0,0.0,0.0
+CAT,2012-02-21,Major Currency Pairs Analysis  February 21  2012  ,ICM Brokers,0.0,1.0,0.0,0.0
+CAT,2012-02-23,Cracks In The Market Emerge  Downside Imminent,Nicholas Santiago,0.25,0.75,0.0,-0.25
+CAT,2012-02-25,Caterpillar and Boeing  Analysts Are Clueless About These Dow Dividend Stocks,Double Dividend Stocks,0.2,0.8,0.0,-0.3612
+CAT,2012-03-02,Negative Divergences on Caterpillar,Candy Matheson,0.552,0.448,0.0,-0.5719
+CAT,2012-03-04,The Plunge That Ends This Historic Overbought Period ,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2012-03-06,Markets Dragged Lower With Key Stock Setups,Nicholas Santiago,0.405,0.595,0.0,-0.34
+CAT,2012-03-07,Potentially Ominous Breakdown for Caterpillar,Dr. Duru,0.375,0.625,0.0,-0.34
+CAT,2012-03-07,Markets Collapse As River Theory Shows Everywhere ,Nicholas Santiago,0.348,0.652,0.0,-0.4939
+CAT,2012-03-08,February Employment Report Preview,Jeff Miller,0.0,1.0,0.0,0.0
+CAT,2012-03-09,Bullish Comeback  Low Volume and All ,Dr. Duru,0.296,0.704,0.0,-0.2732
+CAT,2012-03-13,Are Gold  Silver  Rare Earths and Uranium Safe Havens  ,Jeb Handwerger,0.0,0.734,0.266,0.4404
+CAT,2012-03-14,The Quest for Yield  Enhancing Your Dividend Stocks,Jeff Miller,0.0,1.0,0.0,0.0
+CAT,2012-03-14,The S P 500 May Have Had a Convincing Breakout But I Am Still a Queasy Bull,Dr. Duru,0.0,0.856,0.144,0.2144
+CAT,2012-03-15,Surprise  1  Very Large Drop in T2108  Crying Over Apple ,Dr. Duru,0.403,0.442,0.155,-0.5233
+CAT,2012-03-21,S P 500  Near term Upside Potential Is Increasing ,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2012-03-22,Mining Equipment Stocks Are Painting A Different Picture ,Nicholas Santiago,0.0,1.0,0.0,0.0
+CAT,2012-03-22,Will Buyers Step Up As The China ETF Breaks Down Again ,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2012-03-23,T2108 Update   March 22  2012  Maintaining Bullish Bias Even As Bearish Case Grows ,Dr. Duru,0.104,0.896,0.0,-0.1027
+CAT,2012-03-28,Do You Adjust Your Price Targets ,Jeff Miller,0.0,1.0,0.0,0.0
+CAT,2012-04-02,Data Remains On The Side of The Bulls,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2012-04-03,Global Stocks Slide On Mounting Economic Concerns  April 3  2012,Binary Options Strategy,0.0,1.0,0.0,0.0
+CAT,2012-04-05,T2108 Update   April 4  2012  Consolidation Time  ,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2012-04-11,ALMOST Oversold As Bulls Lose Control Of Momentum,Dr. Duru,0.278,0.722,0.0,-0.4019
+CAT,2012-04-12,US Stocks Decline  Time To Sell ,Jeff Miller,0.0,1.0,0.0,0.0
+CAT,2012-04-13,T2108 Update   April 12  2012  Bulls Already Take Back The Reins ,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2012-04-17,Beware Of The Dow Jones Industrial Average Lead Rally  April 17  2012,Nicholas Santiago,0.0,1.0,0.0,0.0
+CAT,2012-04-18,Confused About Stocks  You re In Good Company,Jeff Miller,0.205,0.536,0.259,0.1531
+CAT,2012-04-23,Bear Alert For U S  Stock Market,John Nyaradi,0.0,0.645,0.355,0.296
+CAT,2012-04-24,Global Stocks Slide On Mounting Economic Concerns  April 24  2012,Binary Options Strategy,0.0,1.0,0.0,0.0
+CAT,2012-04-26,Don t Like The Real Data  Just pretend ,Jeff Miller,0.157,0.562,0.281,0.2732
+CAT,2012-05-02,Global Stocks Slide On Mounting Economic Concerns,Binary Options Strategy,0.0,1.0,0.0,0.0
+CAT,2012-05-03,Mining Equipment Stocks Dig An Early Hole,Nicholas Santiago,0.0,1.0,0.0,0.0
+CAT,2012-05-06,S P 500  Topping Pattern Developing,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2012-05-13,Market Still Clinging To The Edge,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2012-05-16,Is The Situation In Europe Better Or Worse Than A Year Ago ,Jeff Miller,0.207,0.6,0.193,-0.0516
+CAT,2012-05-16,S P 500  Fallen From The Edge But Not Yet Oversold,Dr. Duru,0.179,0.821,0.0,-0.1901
+CAT,2012-05-17,Reading The Philly Fed Index,Benzinga ,0.0,1.0,0.0,0.0
+CAT,2012-05-18,T2108 Update  May 17  2012    Oversold And Looking UGLY Ahead Of Facebook IPO,Dr. Duru,0.252,0.748,0.0,-0.6166
+CAT,2012-05-18,Facebook goes public  shares up in early trading,Investing.com,0.0,0.761,0.239,0.296
+CAT,2012-05-18,U S  stocks end down amid lackluster Facebook IPO  Dow down 0 59 ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2012-05-25,Caterpillar s Earnings Look Like And Act Like A Caterpillar  Moving Slow,F.A.S.T. Graphs,0.0,0.615,0.385,0.6124
+CAT,2012-05-25,U S  stocks end down on European worries  Dow down 0 60 ,Investing.com,0.259,0.741,0.0,-0.4215
+CAT,2012-05-25,The Compelling Case For Investing In Foreign Stocks  Especially In Asia ,Stocks on Wall Street,0.0,0.84,0.16,0.2263
+CAT,2012-05-31,U S  futures higher despite Spain worries  Dow Jones up 0 45 ,Investing.com,0.0,0.774,0.226,0.3252
+CAT,2012-06-07,The Power Of Oversold Again,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2012-06-10,The Truth About Our Stock Market,Investing.com,0.0,0.685,0.315,0.3182
+CAT,2012-06-22, Risk On  Prevails As Churn Returns,Dr. Duru,0.296,0.704,0.0,-0.2732
+CAT,2012-06-24,Weighing The Week Ahead  Time For Some Surprises ,Jeff Miller,0.0,0.787,0.213,0.2263
+CAT,2012-06-25,Chart Review  A Cautious Eye On Cyclicals,Dr. Duru,0.219,0.781,0.0,-0.1027
+CAT,2012-06-28,Frenzied Buying Of Investment Grade Corporate Bonds Won t End Well,Sober Look,0.0,0.58,0.42,0.7003
+CAT,2012-07-11,Farming And Mining Equipment Stocks Continue To Dig Deeper Holes ,Nicholas Santiago,0.0,1.0,0.0,0.0
+CAT,2012-07-25,Stocks To Watch  July 25  2012,Benzinga ,0.0,1.0,0.0,0.0
+CAT,2012-07-25,U S  futures mixed ahead of earnings  data  Dow Jones up 0 42 ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2012-07-26,Goldman s Bullish Call On China May Be Premature ,Sober Look,0.0,1.0,0.0,0.0
+CAT,2012-07-26,USD CHF  US Data Sees Greenback Deterioration,Aviv N. Shapiro,0.0,1.0,0.0,0.0
+CAT,2012-07-27,T2108 Update  July 26  2012    A Bounce  Again,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2012-07-29,An Overbought Breakout And Signs Of A Sustained Rally,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2012-07-31,Four Actionable Investment Themes,Jeff Miller,0.0,1.0,0.0,0.0
+CAT,2012-08-02,Overbought Period Ends As Breakout Wavers,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2012-08-03,T2108 Update  August 2  2012    Fade Continues,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2012-08-09,Today s FX   Complacency  Is The Word,Saxo Bank,0.0,1.0,0.0,0.0
+CAT,2012-08-17,U S  stocks end up on consumer sentiment data  Dow up 0 19 ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2012-08-22,False Breakout And A Topping Pattern,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2012-08-24,Even Caterpillar Having Trouble Reading The Markets,MetalMiner,0.31,0.69,0.0,-0.4019
+CAT,2012-08-26,Markets Show Pavlovian Response To QE Mention,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2012-08-30,U S  stocks fall ahead of Bernanke speech  Spain jitters  Dow down 0 81 ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2012-08-30,Minor Breakdown Ahead Of Jackson Hole,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2012-09-04,China Slow Down Shows In Key Stocks,Nicholas Santiago,0.0,1.0,0.0,0.0
+CAT,2012-09-25,U S  futures edge higher ahead of data  Dow Jones up 0 16 ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2012-09-26,950 Versus 666 For Small Caps ,Candy Matheson,0.0,1.0,0.0,0.0
+CAT,2012-09-26,Credit Markets Reversing Post QE3 Euphoria ,Sober Look,0.0,0.367,0.633,0.7845
+CAT,2012-09-26,Spanish Protests Spook Markets,Ashraf Laidi,0.388,0.612,0.0,-0.2263
+CAT,2012-09-27,Valuing The S P 500,Ed Yardeni,0.0,0.455,0.545,0.34
+CAT,2012-09-30,Weekend Report  Writing Is On The Wall  But Can We Read It ,BB Finance Blog,0.0,1.0,0.0,0.0
+CAT,2012-10-02,The Natural Gas Migration,RulingTheMarkets,0.0,0.545,0.455,0.3612
+CAT,2012-10-15,The Evolution Of The Value Investor,Ravee Mehta,0.0,0.676,0.324,0.34
+CAT,2012-10-17,Bond Investing  Top 3 Homebuilders,Bondsquawk,0.0,0.625,0.375,0.2023
+CAT,2012-10-23,Oil  Falls To Lowest Level In Two Weeks,ICM Brokers,0.271,0.729,0.0,-0.3818
+CAT,2012-10-28,I m A Commodity Trading Advisor   Get Me Out Of Here ,Macro Man,0.0,1.0,0.0,0.0
+CAT,2012-10-29,US GDP Data  More To It Than Meets The Eye,GoldMoney News Desk,0.0,1.0,0.0,0.0
+CAT,2012-11-02,CAT Issues 5 Year Notes At T 60,Sober Look,0.0,1.0,0.0,0.0
+CAT,2012-12-05,Addex Therapeutics Targeting Deals And Data In 2013 ,Edison,0.0,1.0,0.0,0.0
+CAT,2012-12-06,Caterpillar Inc  Calls Copper Prices Despite Monthly Index Rise,MetalMiner,0.0,1.0,0.0,0.0
+CAT,2013-01-09,Copper Wins MetalMiner s  Most Volatile Metal Of 2012  Award,MetalMiner,0.0,0.493,0.507,0.802
+CAT,2013-01-24,China  Economic Miracle Or Government Sponsored Fraud  ,Phoenix Capital Research,0.302,0.397,0.302,0.0
+CAT,2013-01-28,Caterpillar Q4 EPS USD1 04 vs  expectations of USD1 70,Investing.com,0.0,1.0,0.0,0.0
+CAT,2013-01-29,S P 500 Snapshot  Eight Day Rally Ends  But 1500 Holds  Barely ,Doug Short,0.0,1.0,0.0,0.0
+CAT,2013-01-29,Yen Continues To Trade In Large Ranges  US Treasury Yields Increase,Keagan York,0.0,0.687,0.313,0.4767
+CAT,2013-03-06,Caterpillar  Other OEMs Slashing Jobs,MetalMiner,0.344,0.656,0.0,-0.2732
+CAT,2013-03-21,Caterpillar Retail Sales Of Machines Falls 13  In February ,The Dividend Daily,0.0,1.0,0.0,0.0
+CAT,2013-04-08,China Worries  Caterpillar And Deere Show Truth,Nicholas Santiago,0.277,0.495,0.228,-0.128
+CAT,2013-04-18,Chart Analysis  Two Stocks Ready To Bounce,Nicholas Santiago,0.0,0.706,0.294,0.3612
+CAT,2013-04-22,European Market Update,Trade The News,0.0,1.0,0.0,0.0
+CAT,2013-04-22,Caterpillar Profit Plunges As Japan Copper Price Falls 8 1  For The Week,MetalMiner,0.0,0.775,0.225,0.4404
+CAT,2013-04-22,Caterpillar misses on EPS  revenue  Cuts full year outlook,Investing.com,0.369,0.631,0.0,-0.4767
+CAT,2013-04-23,Earnings Reports Continue To Fuel Stock Market Advance,John Nyaradi,0.0,1.0,0.0,0.0
+CAT,2013-04-24,Caterpillar Inc  Riding Out The Trough,MetalMiner,0.0,1.0,0.0,0.0
+CAT,2013-04-29,Bellweathers Signify Danger Ahead,Phoenix Capital Research,0.531,0.469,0.0,-0.5267
+CAT,2013-04-29,Check Out This Awesome Trend Line,Nicholas Santiago,0.0,0.549,0.451,0.6249
+CAT,2013-05-08,Caterpillar Inc  Slumps  Monthly Copper Price Trends Follow,MetalMiner,0.0,1.0,0.0,0.0
+CAT,2013-05-10,Overbought Conditions Extend Further As Currencies Flash Major Signals,Dr. Duru,0.0,0.825,0.175,0.1779
+CAT,2013-05-24,What s Fueling The Stock Market ,David I. Kranzler,0.0,1.0,0.0,0.0
+CAT,2013-06-04,Gold And Silver Responding More Significantly To USD Rallies,CommodityOnline,0.0,1.0,0.0,0.0
+CAT,2013-06-11,Goldman Sachs Cuts Copper Forecast As Prices Continue Slide,MetalMiner,0.216,0.784,0.0,-0.296
+CAT,2013-06-17,Caterpillar s Cost Management Key To Competitiveness,MetalMiner,0.0,1.0,0.0,0.0
+CAT,2013-06-17,Caterpillar s Copper Link,MetalMiner,0.0,1.0,0.0,0.0
+CAT,2013-06-19,U S stocks dive as Fed suggests stimulus may end in 2014  Dow dips 1 35 ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2013-06-20,Chinese Credit Reaches 200  Of GDP  Why You Should Care,Michael Lombardi,0.0,0.5,0.5,0.7184
+CAT,2013-06-20,Investors Should Be Worried About The Rise In Bond Yields,Michael Lombardi,0.196,0.804,0.0,-0.296
+CAT,2013-07-11,Three Gold Mines Entering Production With Costs Below  900 oz,Adam Collins,0.0,1.0,0.0,0.0
+CAT,2013-07-12,Best   Worst ETFs   Mutual Funds  Industrials Sector,David Trainer,0.308,0.376,0.316,0.0258
+CAT,2013-07-12,All Signs Point To A Sudden Change On Gold Prices,Michael Lombardi,0.0,1.0,0.0,0.0
+CAT,2013-07-12,China GDP To Hit 6 7   Will This Set Off Market Carnage  ,EconMatters,0.0,1.0,0.0,0.0
+CAT,2013-07-14,Could China s Slowing Economy Pull Down U S  Indices ,Michael Lombardi,0.0,1.0,0.0,0.0
+CAT,2013-07-15,Top Trade Ideas For The Week Of July 15  2013  Bonus Idea,Gregory W. Harmon,0.0,0.654,0.346,0.6486
+CAT,2013-07-18,Caterpillar Crawls Lower After Chanos Slams The Stock ,Nicholas Santiago,0.239,0.761,0.0,-0.296
+CAT,2013-07-19,Caterpillar Inc  Shorted By Hedge Fund  So Where Is Copper Going ,MetalMiner,0.0,1.0,0.0,0.0
+CAT,2013-07-24,Asian Stocks Fall On Weak Chinese Data ,James Chen,0.326,0.674,0.0,-0.4404
+CAT,2013-07-24,Base And Industrial Metals Weight On Markets,Nicholas Santiago,0.0,1.0,0.0,0.0
+CAT,2013-07-24,U S  Markets Off On Missed Earnings,Midnight Trader,0.355,0.645,0.0,-0.296
+CAT,2013-07-24,Ron Struthers  Have Flake Graphite Prices Bottomed ,The Gold Report,0.0,1.0,0.0,0.0
+CAT,2013-07-24,US Market Roundup  Reversing Fortunes For Stocks,Mingze Wu,0.0,1.0,0.0,0.0
+CAT,2013-07-24,U S  stocks steady to higher  housing data ahead  Dow Jones down 0 04  ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2013-07-24,U S stocks fall on earnings  data and Fed outlook  Dow down 0 26 ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2013-07-24,Oil Steady Above  107 As Stockpiles Decline  China PMI Weighs,ICN.com,0.0,1.0,0.0,0.0
+CAT,2013-07-24,Danske Daily  Euro Area Slowly Moving Out Of Recession  ,Danske Markets,0.259,0.741,0.0,-0.4215
+CAT,2013-07-25,The Risk In China s Big Slowdown,Michael Lombardi,0.296,0.704,0.0,-0.2732
+CAT,2013-07-26,Amazon  Goldcorp  The Stock Investors Should Buy,Michael Lombardi,0.0,0.779,0.221,0.1779
+CAT,2013-07-26,The Truth Behind 2Q 2013 Corporate Earnings,Michael Lombardi,0.0,0.723,0.277,0.3182
+CAT,2013-07-29,Morning Fundamentals  Steady Price Gains For Gold,Keagan York,0.0,0.714,0.286,0.34
+CAT,2013-08-05,ETF SPY  Expect A Slow Week ,John Mylant,0.0,1.0,0.0,0.0
+CAT,2013-08-06, U S  futures slip lower ahead of earnings  data  Dow Jones down 0 22  ,Investing.com,0.18,0.82,0.0,-0.296
+CAT,2013-08-06,U S  stocks open lower after positive trade data  Dow Jones down 0 56  ,Investing.com,0.149,0.608,0.243,0.34
+CAT,2013-08-07,Why US Small Cap ETFs May Be Running On Fumes,Gary Gordon,0.109,0.891,0.0,-0.0258
+CAT,2013-08-08,U S  stocks gain on jobless claims  China trade data  Dow gains 0 18 ,Investing.com,0.0,0.608,0.392,0.7003
+CAT,2013-08-09,U S  stocks dip as market preps for stimulus tapering  Dow falls 0 46 ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2013-08-12,U S  stocks end flat to lower in directionless trading  Dow falls 0 04 ,Investing.com,0.18,0.82,0.0,-0.296
+CAT,2013-08-12,Top Trade Ideas For The Week Of August 12  2013  The Rest,Gregory W. Harmon,0.0,0.859,0.141,0.2023
+CAT,2013-08-13,Yen Weakens Against US Dollar  Traders Eye UK CPI Data ,James Chen,0.204,0.796,0.0,-0.3182
+CAT,2013-08-21,17 Cheap Dividend Contenders With Buy Ratings And Double Digit Growth  ,Dividend Yield,0.0,0.794,0.206,0.3818
+CAT,2013-08-23,U S  stocks gain as market sees Fed stimulus staying  Dow up 0 31 ,Investing.com,0.0,0.746,0.254,0.5267
+CAT,2013-08-25,Seeing Machines Returns To Profitability With 66  Jump In Revenues ,Edison,0.0,0.811,0.189,0.2732
+CAT,2013-08-26,Bill Gates  Latest Stock Buys And Sells  ,Dividend Yield,0.0,1.0,0.0,0.0
+CAT,2013-08-29,Joy Global Beats Earnings Estimates,Zacks Investment Research,0.0,0.513,0.487,0.5859
+CAT,2013-09-09,U S  stocks rise as Syria attack concerns fade  Dow rises 0 94 ,Investing.com,0.256,0.744,0.0,-0.4767
+CAT,2013-09-13,Booming Auto Sales In US  The Full Story ,Michael Lombardi,0.0,1.0,0.0,0.0
+CAT,2013-09-13,Is China Indicating Trouble For Global Economy ,Michael Lombardi,0.31,0.69,0.0,-0.4019
+CAT,2013-09-18,Seeing Machines,Edison,0.0,1.0,0.0,0.0
+CAT,2013-09-22,Caterpillar  Not Technically Sound,Ryan Mallory,0.0,1.0,0.0,0.0
+CAT,2013-09-22,Machinery Industry Stock Outlook  September 2013,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2013-10-03,Certainty About Uncertainty,Michael Ashton,0.444,0.185,0.37,-0.1027
+CAT,2013-10-07,What To Expect From Deere s Sept Sales,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2013-10-07,Copper Price Outlook for 2014  Less  Caterpillar Inc   More  Comex ,MetalMiner,0.0,1.0,0.0,0.0
+CAT,2013-10-15,Swing Trade Hit List  Caterpillar  Celldex  Live Nation And More,Ryan Mallory,0.0,1.0,0.0,0.0
+CAT,2013-10-18,CAT Breaking Out But Wait For Earnings,Ryan Mallory,0.0,1.0,0.0,0.0
+CAT,2013-10-22,U S  stocks gain on expectations for loose Fed stance  Dow gains 0 49 ,Investing.com,0.143,0.497,0.36,0.5423
+CAT,2013-10-22,Caterpillar Price Outlook,James Chen,0.0,1.0,0.0,0.0
+CAT,2013-10-23,Weak Non Farms Data Weighs On Global Stock Markets ,James Chen,0.266,0.734,0.0,-0.4404
+CAT,2013-10-23,Caterpillar misses on Q3 EPS  revenue  Cuts full year outlook,Investing.com,0.339,0.661,0.0,-0.4767
+CAT,2013-10-23,Mixed Earnings  Oil Lead U S  Markets Down,Midnight Trader,0.0,1.0,0.0,0.0
+CAT,2013-10-23,U S  futures decline after Tuesday rally  Dow Jones down 0 49  ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2013-10-24,US Equity Markets Fell After Five Day Rally ,Keagan York,0.0,1.0,0.0,0.0
+CAT,2013-10-24,2014 Looks Better For Joy Global,Liston Street Pulse,0.0,0.374,0.626,0.7717
+CAT,2013-10-29,U S  stocks rise on Fed expectations  earnings  Dow gains 0 72 ,Investing.com,0.0,0.769,0.231,0.34
+CAT,2013-10-29,Caterpillar Downgraded To Strong Sell,Zacks Investment Research,0.0,0.548,0.452,0.5106
+CAT,2013-10-30,Stock Market Outlook  October 30  2013,Tech Talk,0.0,1.0,0.0,0.0
+CAT,2013-10-30,Is The Global Economy Headed For A Slowdown ,Michael Lombardi,0.0,1.0,0.0,0.0
+CAT,2013-11-03,Swing Trading Watch List  CAT  BKD  EBIX  GCI  AEL,Ryan Mallory,0.0,1.0,0.0,0.0
+CAT,2013-11-14,Caterpillar Rated Down To Underperform,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2013-11-20,U S  stocks drop on Federal Reserve minutes  Dow down 0 41 ,Investing.com,0.208,0.792,0.0,-0.2732
+CAT,2013-11-20,Global Oil Demand ,Ed Yardeni,0.429,0.571,0.0,-0.128
+CAT,2013-11-21,U S  stocks hit record high on Fed expectations  Dow up 0 69 ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2013-11-21,China s Expected Baby Boom A Boon For US Business ,George Leong,0.0,1.0,0.0,0.0
+CAT,2013-11-21,Caterpillar Slips As Sales Drop Again,Zacks Investment Research,0.296,0.704,0.0,-0.2732
+CAT,2013-11-27,Jobless Claims Outweigh Weak Durable Goods,Jameen Walker,0.367,0.633,0.0,-0.4404
+CAT,2013-11-30,S P 500 Update  Growth Rate Remains Steady,Brian Gilmartin,0.0,0.658,0.342,0.3818
+CAT,2013-12-05,U S  stocks dip as market preps for Fed tapering  Dow down 0 43 ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2013-12-06,Asian shares mostly lower ahead of U S  November jobs report,Investing.com,0.193,0.614,0.193,0.0
+CAT,2013-12-19,U S  stocks flounder on sluggish U S  indicators  Dow inches up 0 07 ,Investing.com,0.252,0.748,0.0,-0.4019
+CAT,2013-12-22,Asian stocks up on positive lead from U S ,Investing.com,0.0,0.625,0.375,0.5574
+CAT,2013-12-23,Swing Trading Watch List  Arcadia Pharma   Citigroup  Caterpillar,Ryan Mallory,0.0,1.0,0.0,0.0
+CAT,2013-12-31,Rob Cohen  Miners Must Mind Their Margins,The Gold Report,0.375,0.625,0.0,-0.5574
+CAT,2014-01-05,The Dismal Outlook For 2014,Peter T. Treadway,0.5,0.5,0.0,-0.6124
+CAT,2014-01-06,Asian stocks mixed after auction of bonds by Japanese MOF,Investing.com,0.0,1.0,0.0,0.0
+CAT,2014-01-06,U S  stocks fall on soft service sector data  Dow dips 0 27  ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2014-01-06,Swing Trading Watch List  FOE  NOG  MPW  UA  CAT,Ryan Mallory,0.312,0.688,0.0,-0.5622
+CAT,2014-01-07,Seeing Machines  Underpinned By Road Transport Opportunity ,Edison,0.0,0.682,0.318,0.4215
+CAT,2014-01-08,T2108 Update  Overbought Timelag ,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2014-01-24,Caterpillar Q4 Earnings Preview  High Inventories  Slow Mining Sector To Weigh On Results ,International Business Times,0.0,1.0,0.0,0.0
+CAT,2014-01-24,Is Wall Street Headed For A Major Correction  ,International Business Times,0.0,1.0,0.0,0.0
+CAT,2014-01-24,Looking To Hedge  Some Short Ideas From The HDGE ETF,Charles Sizemore,0.0,1.0,0.0,0.0
+CAT,2014-01-27,Will Caterpillar Beat Wall Street Expectations ,Estimize,0.0,1.0,0.0,0.0
+CAT,2014-01-27,U S  Traders Wonder  Is That A Bottom ,Midnight Trader,0.0,1.0,0.0,0.0
+CAT,2014-01-27,European stocks turn mixed  London s FTSE 100 underperforms,Investing.com,0.0,1.0,0.0,0.0
+CAT,2014-01-27,Caterpillar beats on Q4 EPS  revenue  shares up 5 9  ahead of the open ,Investing.com,0.0,0.833,0.167,0.296
+CAT,2014-01-27,U S  stocks fall on emerging market jitters  Dow falls 0 26 ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2014-01-30,U S  stocks rally on GDP data  earnings  Dow gains 0 70 ,Investing.com,0.0,0.769,0.231,0.34
+CAT,2014-01-30,Construction MMI  Metals Traded Sideways,MetalMiner,0.0,1.0,0.0,0.0
+CAT,2014-01-31,U S  stocks fall on disappointing earnings  Dow dips 0 94 ,Investing.com,0.314,0.686,0.0,-0.4939
+CAT,2014-02-04,Volatility Wins As Post Taper Support Collapses,Dr. Duru,0.175,0.317,0.508,0.6369
+CAT,2014-02-05,The Pricing Dilemma ,Anni V_,0.459,0.541,0.0,-0.1779
+CAT,2014-02-12,Book Review  Dim Sum Bonds,Brenda Jubin,0.0,1.0,0.0,0.0
+CAT,2014-02-14,China Data Lifts Construction Equipment Stocks,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2014-02-20,Caterpillar Machine Sales Down 17  In Asia ,International Business Times,0.0,1.0,0.0,0.0
+CAT,2014-02-26,Are Dividend Paying Cyclicals Acceptable Investments For Retirement ,Chuck Carnevale,0.0,0.753,0.247,0.3182
+CAT,2014-02-27,No  There Isn t An Infinite Sea Of Migrant Workers To Support China s Urbanization ,International Business Times,0.138,0.692,0.17,0.128
+CAT,2014-02-27,U S  stocks gain on Yellen weather comments  Dow up 0 46 ,Investing.com,0.0,0.702,0.298,0.5267
+CAT,2014-03-02,On The Way To Higher Stock Prices  Something Suddenly Happened,Michael Lombardi,0.0,1.0,0.0,0.0
+CAT,2014-03-04,Caterpillar s Russia Problem ,International Business Times,0.574,0.426,0.0,-0.4019
+CAT,2014-03-06,Mining Equipment Stocks Are Sending A Message,Nicholas Santiago,0.0,1.0,0.0,0.0
+CAT,2014-03-06,U S  stocks gain on solid jobless claims report  Dow rises 0 38 ,Investing.com,0.0,0.615,0.385,0.6124
+CAT,2014-03-11,Why China s Slowdown Matters,Michael Lombardi,0.0,0.732,0.268,0.0258
+CAT,2014-03-13,Why The Chinese Economic Slowdown Matters,Michael Lombardi,0.0,0.82,0.18,0.0258
+CAT,2014-03-14,If Canada Opens The Spigot  Watch These Oil Services Companies,The Energy Report,0.0,1.0,0.0,0.0
+CAT,2014-03-21,U S  stocks edge lower on Ukraine concerns  Dow slips 0 17     ,Investing.com,0.216,0.784,0.0,-0.296
+CAT,2014-04-23,Analysts Expect Slight Improvement For Caterpillar This Quarter ,International Business Times,0.0,0.7,0.3,0.4588
+CAT,2014-04-24,Caterpillar beats on Q1 EPS  revenue  shares up 4  ahead of the open,Investing.com,0.0,0.833,0.167,0.296
+CAT,2014-04-29,Is Shorting China The New Widowmaker ,Mercenary Trader,0.0,1.0,0.0,0.0
+CAT,2014-06-01, Swing Trading Watch List  HPQ  KOG  X  BX  CAT	,Ryan Mallory,0.0,1.0,0.0,0.0
+CAT,2014-06-20,Asia Pacific Dealer Sales Down For Caterpillar,International Business Times,0.0,1.0,0.0,0.0
+CAT,2014-07-24,Caterpillar falls 1 6  in pre market trade after missing on Q2 revenue,Investing.com,0.18,0.82,0.0,-0.296
+CAT,2014-07-24,Caterpillar posts higher second quarter profit  sales fall,Reuters,0.0,0.707,0.293,0.4404
+CAT,2014-07-28,Valuations And The Problem With Reality,Michael Lombardi,0.351,0.649,0.0,-0.4019
+CAT,2014-07-30,Caterpillar s Stock In Trouble ,Dr. Duru,0.474,0.526,0.0,-0.4019
+CAT,2014-07-31,T2108 Update  A Quiet Divergence,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2014-09-10,U S  stocks rise on coattails of tech rally  Dow gains 0 32  ,Investing.com,0.0,0.789,0.211,0.34
+CAT,2014-09-16,U S  stocks rally on China stimulus  Fed outlook  Dow rises 0 59  ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2014-09-24,Caterpillar Inc Remains Seasonally Weak,Tech Talk,0.42,0.58,0.0,-0.4404
+CAT,2014-09-24,Brace Yourself  Market Over Stretched And Still Primed To Fall,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2014-10-02,A Long Overdue Close In Oversold Conditions  And How to Trade It ,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2014-10-05,Oversold Conditions End On Schedule  Lead Right Into Major Resistance,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2014-10-08,Sellers Taking Firmer Control Of Markets,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2014-10-23,Caterpillar jumps 6  in pre market trade after Q3 earnings beat,Investing.com,0.0,1.0,0.0,0.0
+CAT,2014-10-23,Forex   EUR USD trims gains on upbeat U S  data  earnings,Investing.com,0.0,0.769,0.231,0.34
+CAT,2014-10-23,Forex   USD JPY shoots up on U S  jobless claims  earnings,Investing.com,0.0,1.0,0.0,0.0
+CAT,2014-10-23,Caterpillar profit beats view  raises outlook  shares surge,Reuters,0.0,0.541,0.459,0.6249
+CAT,2014-10-23,Caterpillar Crushes Earnings Estimates  Shares Jump,Zacks Investment Research,0.319,0.44,0.242,-0.1779
+CAT,2014-10-23,Crude shoots up on Saudi output cut  U S  data,Investing.com,0.492,0.508,0.0,-0.7003
+CAT,2014-10-29,S P 500 Breakout To Upside Target  Now What ,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2014-11-09,U S  rules out major Trans Pacific trade announcement at APEC,Reuters,0.0,1.0,0.0,0.0
+CAT,2014-12-05,U S  stocks rise on robust November jobs report  Dow gains 0 33  ,Investing.com,0.0,0.625,0.375,0.5859
+CAT,2014-12-11,The Baton Firmly Returns To The Sellers,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2014-12-17,U S  stocks rally on Fed assurances  Dow climbs 1 69  ,Investing.com,0.0,0.745,0.255,0.34
+CAT,2015-01-06,European Markets Trading Lower  Traders Focused On Oil Rout,AvaTrade,0.186,0.593,0.22,0.1027
+CAT,2015-01-08,Bottoming Already Underway ,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2015-01-15,Republicans add US highway funding to list of divisive issues,Reuters,0.0,1.0,0.0,0.0
+CAT,2015-01-27,Caterpillar warns of 2015 sales hit from falling oil price ,Reuters,0.273,0.727,0.0,-0.25
+CAT,2015-01-27,Caterpillar tumbles 4 6  in pre market trade after Q4 earnings miss,Investing.com,0.151,0.849,0.0,-0.1531
+CAT,2015-01-28,Lawmakers submit bill to renew U S  export credit agency charter,Reuters,0.0,0.755,0.245,0.3818
+CAT,2015-02-23,S P 500  All Time Highs Increase Technical Tensions,Dr. Duru,0.27,0.5,0.23,-0.1027
+CAT,2015-03-06,Follow Through Selling On T2108 s Warning,Dr. Duru,0.324,0.676,0.0,-0.34
+CAT,2015-03-20,White House stands by pledge to end Ex Im backing for coal plants,Reuters,0.0,0.916,0.084,0.0258
+CAT,2015-03-25,Weak U S  business spending data points to tepid first quarter growth,Reuters,0.215,0.593,0.193,-0.0772
+CAT,2015-04-13,Chart Alert  CAT Breakout Trade,Gareth Soloway,0.0,0.645,0.355,0.296
+CAT,2015-04-23,U S  Open  Data And Earnings Dominate,Craig Erlam,0.273,0.727,0.0,-0.128
+CAT,2015-04-23,Caterpillar profit jumps  outlook for rest of year less rosy,Reuters,0.0,0.756,0.244,0.4404
+CAT,2015-05-04,Caterpillar Rebounds From Strong Support,Petros Steriotis,0.0,0.333,0.667,0.7184
+CAT,2015-05-15,Euromax Resources ,Edison,0.0,1.0,0.0,0.0
+CAT,2015-05-18,Caterpillar  Short This Rally Up To  92  95,Petros Steriotis,0.0,1.0,0.0,0.0
+CAT,2015-05-19,U S  House passes transportation spending extension,Reuters,0.0,1.0,0.0,0.0
+CAT,2015-06-22,Caterpillar will lay off workers due to mining sector slump,Reuters,0.0,1.0,0.0,0.0
+CAT,2015-06-24,Congress victory moves Obama s Pacific trade pact forward,Reuters,0.0,1.0,0.0,0.0
+CAT,2015-06-28,Slowboat to China  No quick fix for luxury yacht firm Ferretti,Reuters,0.18,0.82,0.0,-0.296
+CAT,2015-07-05,VIX Resilience And UVXY Divergence Represent A Persistent Unease,Dr. Duru,0.278,0.722,0.0,-0.4019
+CAT,2015-07-20,Caterpillar  Now Is The Best Time To Buy Since The Great Recession,Ben Reynolds,0.139,0.448,0.413,0.7579
+CAT,2015-07-23,U S  jobless claims lowest since 1973  leading index rises,Reuters,0.271,0.729,0.0,-0.3818
+CAT,2015-07-23,Caterpillar profit falls on weak sales in key markets  shares drop,Reuters,0.292,0.409,0.298,0.0258
+CAT,2015-07-23,Steel  Sentiment And Productivity,Lance Roberts,0.0,1.0,0.0,0.0
+CAT,2015-07-23,Wall Street falls as 3M  Caterpillar weigh,Reuters,0.0,1.0,0.0,0.0
+CAT,2015-07-23,Caterpillar drops 2 3  in pre market trade after Q2 earnings miss,Investing.com,0.151,0.849,0.0,-0.1531
+CAT,2015-08-06,U S  companies may be hiring but lid on wages  investment hits productivity,Reuters,0.0,1.0,0.0,0.0
+CAT,2015-08-09,What Heavy Machinery Sales Say About The Global Economy,Investment U,0.0,1.0,0.0,0.0
+CAT,2015-08-27,Caterpillar Inc plans to cut 475 more jobs amid revenue decline ,Reuters,0.174,0.826,0.0,-0.2732
+CAT,2015-08-28,The Volatility Index Hits A New Milestone On Follow Through Stock Buying,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2015-09-02,Trader accused in  100 million hacking scheme pleads not guilty in U S ,Reuters,0.163,0.665,0.172,0.0341
+CAT,2015-09-04, T2108 Update  September 3  2015    Stock Market Trades To The Edge,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2015-09-08,The Countdown To  Fedaggedon  Begins,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2015-09-13,China unveils details of state firm reforms as growth sputters,Reuters,0.0,0.776,0.224,0.3818
+CAT,2015-09-23,VW Not Alone In Using Pollution Devices,International Business Times,0.0,0.775,0.225,0.1877
+CAT,2015-09-24,U S  business spending slips  new home sales rise in August,Reuters,0.0,1.0,0.0,0.0
+CAT,2015-09-24,CAT Cuts And Spot Gold Pops,Mike Paulenoff,0.306,0.694,0.0,-0.296
+CAT,2015-09-24,Shares in Asia mixed  mostly weaker as Yellen says rates should rise,Investing.com,0.192,0.662,0.146,-0.1779
+CAT,2015-09-24,Wall Street ends lower as Caterpillar  health stocks weigh ,Reuters,0.216,0.784,0.0,-0.296
+CAT,2015-09-24,Durable Goods Signal Recession,Alvexo,0.483,0.517,0.0,-0.4215
+CAT,2015-09-25,Miners Show Constructive Setup,Mike Paulenoff,0.0,1.0,0.0,0.0
+CAT,2015-09-25,European Markets Pays Respect To Yellen s Comments,AvaTrade,0.0,0.659,0.341,0.4767
+CAT,2015-09-26,The Simple Calculus For Timing The Fed s First Rate Hike,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2015-09-29,Stock Valuations Dive Again Due To China  Commodities Worries,Steve Hach,0.259,0.741,0.0,-0.4215
+CAT,2015-09-29,SPX  It s All Downhill From Here,Ed Carlson,0.0,1.0,0.0,0.0
+CAT,2015-09-30,Lower Oil Prices Boosting Oil Demand And Global Growth,Ed Yardeni,0.27,0.365,0.365,0.3182
+CAT,2015-10-07,Pretty photos  small companies  how the White House is selling TPP,Reuters,0.0,0.758,0.242,0.4939
+CAT,2015-10-09,Stocks Climb On Fed Minutes ,OptionsClick,0.0,1.0,0.0,0.0
+CAT,2015-10-22,Caterpillar forecasts lower profit  sales in 2016,Reuters,0.218,0.495,0.287,0.1779
+CAT,2015-10-22,Caterpillar drops 2 6  in pre market trade after Q3 earnings miss,Investing.com,0.151,0.849,0.0,-0.1531
+CAT,2015-10-23,Domestic And World Economies Weakening,Thomas J. Feeney,0.365,0.635,0.0,-0.3182
+CAT,2015-10-25,Dogs Of The Dow Slightly Underperform Year To Date,Blog of HORAN Capital Advisors,0.0,1.0,0.0,0.0
+CAT,2015-10-27,Sales  Earning Estimates Contract First Time Since 2009,Mike (Mish) Shedlock,0.0,1.0,0.0,0.0
+CAT,2015-10-29,Wall Street stock pickers get hints from Fed  strong dollar ,Reuters,0.0,0.732,0.268,0.5106
+CAT,2015-11-04,Stocks Soar As Sales And Earnings Slow  How Long Can That Last ,Harry Dent,0.0,1.0,0.0,0.0
+CAT,2015-11-15,Invest In Global Infrastructure,Wall Street Daily,0.0,1.0,0.0,0.0
+CAT,2015-11-24,Eye Of The Storm  Market Merges Into One Giant Consensus Trade,IG,0.0,1.0,0.0,0.0
+CAT,2015-11-24,The Pressure Is On For Credit ,Blaine Rollins,0.25,0.455,0.295,0.1027
+CAT,2015-12-07,Dead Cat  No Bounce,Tim Knight,0.765,0.235,0.0,-0.7579
+CAT,2015-12-16,Chinese jade miners in overdrive ahead of new Myanmar government,Reuters,0.0,1.0,0.0,0.0
+CAT,2015-12-23,A Dead CAT Bounce  Or What ,Mike Paulenoff,0.518,0.482,0.0,-0.6486
+CAT,2015-12-23,U S  Markets Rally Despite Soft Data,IFC Markets,0.0,1.0,0.0,0.0
+CAT,2015-12-24,The Only Dollar Move That Matters Now,Michael Lewitt,0.0,0.845,0.155,0.0258
+CAT,2015-12-29,Markets Positively React Over Small Fine Imposed On Caterpillar,IFC Markets,0.104,0.48,0.416,0.5994
+CAT,2016-01-21,CPI  Your Way,Michael Ashton,0.0,1.0,0.0,0.0
+CAT,2016-01-26,Global Stocks Fall As Oil Decline Resumes,IFC Markets,0.0,1.0,0.0,0.0
+CAT,2016-01-27,Earnings Watch  Trading CAT,Gregory W. Harmon,0.0,1.0,0.0,0.0
+CAT,2016-01-28,Caterpillar profit beats as cost cutting efforts pay off,Reuters,0.246,0.508,0.246,0.25
+CAT,2016-01-28,Caterpillar surges 4  in pre market trade after Q4 earnings beat,Investing.com,0.0,1.0,0.0,0.0
+CAT,2016-01-28,Will Caterpillar Continue To Underwhelm ,Estimize,0.0,1.0,0.0,0.0
+CAT,2016-02-05,2016 Looks Bad For Global Economy,Michael T. Snyder,0.412,0.588,0.0,-0.5423
+CAT,2016-02-22,Invest In Mexico s Growth,Wall Street Daily,0.0,0.536,0.464,0.3818
+CAT,2016-02-24,Caterpillar combining two divisions  analysts see more job cuts,Reuters,0.237,0.763,0.0,-0.3566
+CAT,2016-02-29,Dow closes slightly higher for month  after withstanding late sell off ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2016-02-29,Dow closes slightly higher for month  after withstanding late sell off ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2016-03-09,Market Setback Confirmed,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2016-03-15,U S  CEOs less gloomy on economy  but only slightly  survey,Reuters,0.126,0.874,0.0,-0.0396
+CAT,2016-03-17,Federal Reserve Projects 2 Rate Hikes Instead Of 4,IFC Markets,0.0,1.0,0.0,0.0
+CAT,2016-03-17,Caterpillar Reflects Global Trend,Dan Flynn,0.0,1.0,0.0,0.0
+CAT,2016-03-22,Market Refusing To Sell At Overbought,Jack Steiman,0.351,0.649,0.0,-0.4019
+CAT,2016-03-24,U S  stocks flat halting 5 week winning streak ahead of Easter holiday,Investing.com,0.0,0.567,0.433,0.7269
+CAT,2016-03-29,Swing Trading Watch List  CAT  EBAY  WLK  YNDX  ASPS,Ryan Mallory,0.0,1.0,0.0,0.0
+CAT,2016-04-12,S P 500 On A Slippery Slope,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2016-04-19,As Earnings Slow  More Dividend Stocks Become Traps,Wall Street Daily,0.0,1.0,0.0,0.0
+CAT,2016-04-22,The CAT Is Out Of The Bag,Tim Knight,0.0,1.0,0.0,0.0
+CAT,2016-04-22,Caterpillar reports 26  fall in revenue  shares slump 2 ,Investing.com,0.0,0.761,0.239,0.296
+CAT,2016-04-22,Caterpillar cuts 2016 profit outlook  sees China improvement,Reuters,0.168,0.382,0.45,0.5719
+CAT,2016-04-25,Not the bottom yet  but Caterpillar raises hope of China rebound,Reuters,0.0,0.722,0.278,0.5927
+CAT,2016-04-26,Caterpillar Is A Bull Trap Right Now,EWM Interactive,0.315,0.685,0.0,-0.3182
+CAT,2016-05-05,Digging for growth in China  Not quite yet  say excavator makers,Reuters,0.0,0.794,0.206,0.3818
+CAT,2016-05-08,Something In The Economy Changed In The Middle Of Last Year,"Alhambra Investment Partners, LLC",0.0,1.0,0.0,0.0
+CAT,2016-05-09,Jumping Over A Lower Bar  Zacks May Strategy Update,Zacks Investment Research,0.239,0.761,0.0,-0.296
+CAT,2016-05-09,Hopes of factory jobs rebound fade in U S  heartland,Reuters,0.0,0.714,0.286,0.4215
+CAT,2016-05-09,Midas touch gone  hedge fund industry s influence may be waning,Reuters,0.0,1.0,0.0,0.0
+CAT,2016-05-09,Analyst Community Feverishly Modifying Major Market Themes For 2016 ,Jay Hawk,0.0,1.0,0.0,0.0
+CAT,2016-05-10,Tuesday Higher As SPX And Nasdaq Climb,The Night Owl Trader,0.0,1.0,0.0,0.0
+CAT,2016-05-10,Equities Advance While Oil Declines,IFC Markets,0.0,1.0,0.0,0.0
+CAT,2016-05-11,Caterpillar ready to move into Cuban market once embargo lifted  CEO ,Reuters,0.0,0.8,0.2,0.3612
+CAT,2016-05-11,Rebounding Oil And Positive Reports Boost Global Equities,IFC Markets,0.0,0.488,0.512,0.743
+CAT,2016-06-02,Diversified Global Assests Beat SPX As World Economy Slows ,Tiho Brkan,0.0,1.0,0.0,0.0
+CAT,2016-06-09,Stocks Rise As Oil Rally Continues,IFC Markets,0.0,1.0,0.0,0.0
+CAT,2016-06-19,5 Stocks To Combat Brexit Fears,Zacks Investment Research,0.634,0.366,0.0,-0.6369
+CAT,2016-06-20,The Zacks Analyst Blog Highlights  Dean Foods  Dave   Buster s Entertainment  Magellan Health  Sanmina And Tallgrass Energy GP,Zacks Investment Research,0.0,0.754,0.246,0.5994
+CAT,2016-07-15,U S  stocks mixed as Dow posts record closing high for 4th straight day,Investing.com,0.0,0.853,0.147,0.2263
+CAT,2016-07-26,Caterpillar just put the global economy on watch   again  CAT ,Business Insider,0.0,1.0,0.0,0.0
+CAT,2016-07-26,Lower Dollar Offers Support To Corn,Dan Flynn,0.247,0.449,0.303,0.128
+CAT,2016-07-27,Stocks Mixed Ahead Of Fed Meeting,Marvin Clark,0.0,1.0,0.0,0.0
+CAT,2016-07-27,Here s Why You Should Reconsider Your Asset Mix Right Now,Gary Gordon,0.0,0.783,0.217,0.3612
+CAT,2016-07-28,Is Caterpillar s Dividend Still Safe ,Brian Bollinger,0.0,0.58,0.42,0.4404
+CAT,2016-07-28,Q2 Earnings Picture  Is The Worst Behind Us  ,Zacks Investment Research,0.369,0.631,0.0,-0.6249
+CAT,2016-08-10,Today s Trading Plan  Searching For A Pulse,Ryan Mallory,0.0,1.0,0.0,0.0
+CAT,2016-08-18,Caterpillar to explore options for some mining products  cut jobs,Reuters,0.189,0.811,0.0,-0.2732
+CAT,2016-08-25,U S  core capital goods orders post biggest gain in six months,Reuters,0.0,0.726,0.274,0.5267
+CAT,2016-08-29,Ritchie Bros to buy U S  e commerce site IronPlanet for  758 million,Reuters,0.0,1.0,0.0,0.0
+CAT,2016-09-02,Caterpillar says it may lay off 2 000 workers at Belgium plant,Reuters,0.0,1.0,0.0,0.0
+CAT,2016-09-29,U S  stocks lower at close of trade  Dow Jones Industrial Average down 1 07 ,Investing.com,0.167,0.833,0.0,-0.296
+CAT,2016-10-06,Caterpillar Hits 52 Week High On Improvement In Asia Pacific,Zacks Investment Research,0.0,0.75,0.25,0.4588
+CAT,2016-10-11,Goldman Sachs Upgrades Caterpillar  The DOW s Best Stock This Year,Zacks Investment Research,0.0,0.682,0.318,0.6369
+CAT,2016-10-17,Caterpillar Inc CEO Doug Oberhelman to retire,Reuters,0.0,1.0,0.0,0.0
+CAT,2016-10-18,Caterpillar Faces Uncertain Future,AvaTrade,0.423,0.577,0.0,-0.296
+CAT,2016-10-22,Canada says up to EU to save free trade deal,Reuters,0.0,0.552,0.448,0.7579
+CAT,2016-10-25,Caterpillar sees lttle change to 2017 sales outlook after weak Q3 ,Investing.com,0.225,0.775,0.0,-0.4404
+CAT,2016-10-25,Caterpillar posts lower earnings  cuts 2016 outlook,Reuters,0.468,0.532,0.0,-0.5267
+CAT,2016-10-25,When Will Strong Earnings Growth Come Back  ,Zacks Investment Research,0.0,0.459,0.541,0.7096
+CAT,2016-10-25,Consumer Confidence Earnings  API Energy Stocks,Dan Flynn,0.0,0.426,0.574,0.6597
+CAT,2016-10-28,Exports boost U S  growth in third quarter  consumer spending slows,Reuters,0.0,0.569,0.431,0.6486
+CAT,2016-11-01,Cuba says wants to speed up foreign investment drive,Reuters,0.0,1.0,0.0,0.0
+CAT,2016-11-07,Trump Or Clinton  Caterpillar Still Wins,Anna Coulling,0.0,0.575,0.425,0.5719
+CAT,2016-11-09,The DJIA sails past record closing high,Seeking Alpha,0.0,1.0,0.0,0.0
+CAT,2016-11-09,Wall St mixed in muted response to Trump election win ,Investing.com,0.0,0.703,0.297,0.5859
+CAT,2016-11-09,Wall Street slips as calm returns to markets,Investing.com,0.0,0.753,0.247,0.3182
+CAT,2016-11-10,Wall St mixed as market warms to Trump s plans ,Investing.com,0.0,0.792,0.208,0.2732
+CAT,2016-11-15,Caterpillar Delivers Post Election,Anna Coulling,0.0,1.0,0.0,0.0
+CAT,2016-11-16,U S  manufacturing sector stabilizing  producer prices tame,Reuters,0.0,1.0,0.0,0.0
+CAT,2016-11-18,Caterpillar s worldwide machine sales fall but at slower rate,Seeking Alpha,0.0,1.0,0.0,0.0
+CAT,2016-11-18,Caterpillar global dealer machinery sales soft as decline pace slows,Reuters,0.0,1.0,0.0,0.0
+CAT,2016-11-20,Caterpillar s 47 Month Low Continues  October Sales Dip 12 ,Zacks Investment Research,0.208,0.792,0.0,-0.2732
+CAT,2016-11-21,Wall St higher as oil jumps on OPEC deal hopes ,Investing.com,0.0,0.763,0.237,0.4215
+CAT,2016-11-23,Data shows U S  economy strengthening on eve of Trump presidency,Reuters,0.0,0.714,0.286,0.4939
+CAT,2016-11-27,Caterpillar Hits 52 Week High  What s Driving The Stock ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2016-12-01,Caterpillar says Wall Street  too optimistic  on 2017 profit estimate,Reuters,0.0,0.606,0.394,0.6369
+CAT,2016-12-19,Trump s infrastructure splurge would collide with U S  skilled labor crunch,Reuters,0.14,0.86,0.0,-0.0772
+CAT,2016-12-20,Votes Of Confidence  The Trump Bump,Ed Yardeni,0.0,0.602,0.398,0.5106
+CAT,2016-12-26,Outlook 2017  What To Expect From Oil  Gold  USD And FX,Investing.com,0.0,1.0,0.0,0.0
+CAT,2017-01-06,Ex Republican Party head Barbour to lobby U S  for Ukraine,Reuters,0.0,0.648,0.352,0.4215
+CAT,2017-01-09,Caterpillar Is The Posterchild For Overvalued Market ,EconMatters,0.0,1.0,0.0,0.0
+CAT,2017-01-26,Caterpillar sees  17 profit below expectations as restructuring continues,Reuters,0.0,0.734,0.266,0.4404
+CAT,2017-01-26,Caterpillar adjusted Q4 profit per share beats estimates at  0 83 ,Investing.com,0.0,0.611,0.389,0.6249
+CAT,2017-01-30,Caterpillar Continues To Make Tracks Higher ,Anna Coulling,0.0,1.0,0.0,0.0
+CAT,2017-01-31,Caterpillar to move headquarters to Chicago area,Reuters,0.0,1.0,0.0,0.0
+CAT,2017-02-13,U S  stocks higher at close of trade  Dow Jones Industrial Average up 0 70 ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2017-02-14,Trump Rally Still Alive As U S  Stocks Hit Record Highs Again,IFC Markets,0.0,0.776,0.224,0.3818
+CAT,2017-02-28,Trump To Address Congress  Asian Stocks Mixed,IFC Markets,0.0,1.0,0.0,0.0
+CAT,2017-03-02,U S  authorities raid Caterpillar s Illinois facilities,Reuters,0.0,1.0,0.0,0.0
+CAT,2017-03-02,Wall Street falls as banks  Caterpillar weigh,Reuters,0.0,1.0,0.0,0.0
+CAT,2017-03-02,3 Stock Watchlist  DOW  CRM  CAT ,Ryan Mallory,0.0,1.0,0.0,0.0
+CAT,2017-03-03,Caterpillar shares rise as import practices scrutinized,Reuters,0.0,0.732,0.268,0.296
+CAT,2017-03-03,Caterpillar is sued by a shareholder after federal raid,Reuters,0.0,1.0,0.0,0.0
+CAT,2017-03-03,Market Update   03 03 2017,AvaTrade,0.0,1.0,0.0,0.0
+CAT,2017-03-03,Chances For U S  Interest Rate Hike Rose Twofold This Week,IFC Markets,0.0,0.593,0.407,0.5859
+CAT,2017-03-06,2 Thirds Of Dow 30 Stocks In A Revenue Recession ,EconMatters,0.286,0.714,0.0,-0.4215
+CAT,2017-03-09,Strong U S  Employment Data Boost Rate Hike Expectations,IFC Markets,0.0,0.455,0.545,0.7184
+CAT,2017-03-10,Get Ready For Positive Caterpillar News,ValueWalk,0.0,0.396,0.604,0.7269
+CAT,2017-03-10,Caterpillar says compliant with tax laws after IRS claim,Reuters,0.0,1.0,0.0,0.0
+CAT,2017-03-16,Caterpillar seeks ex U S  attorney general s help over govt probe,Reuters,0.0,0.748,0.252,0.4019
+CAT,2017-03-16,Federal Reserve Hikes Rates As Expected,IFC Markets,0.0,1.0,0.0,0.0
+CAT,2017-03-20,The Psychology Of Irrational Exuberance ,EconMatters,0.375,0.625,0.0,-0.34
+CAT,2017-03-31,Caterpillar shuts plant in Aurora  Illinois  that employs 800,Reuters,0.0,1.0,0.0,0.0
+CAT,2017-03-31,Caterpillar to close Aurora  Ill   plant  ending 800 jobs,Seeking Alpha,0.259,0.741,0.0,-0.4215
+CAT,2017-04-04,CAT added to Goldman s Conviction Buy list,Seeking Alpha,0.0,1.0,0.0,0.0
+CAT,2017-04-04, U S  stocks stand idle as trade and healthcare overshadow tax reform,Investing.com,0.0,1.0,0.0,0.0
+CAT,2017-04-05,Energy Shares Lead Markets Higher,Ara Zohrabian,0.0,0.411,0.589,0.5106
+CAT,2017-04-10,Pressure Builds In An Incrementally More Dangerous Stock Market,Dr. Duru,0.444,0.556,0.0,-0.6801
+CAT,2017-04-13,Caterpillar  CAT   Strong Industry  Solid Earnings Estimate Revisions,Zacks Investment Research,0.0,0.55,0.45,0.5994
+CAT,2017-04-13,Shorts wave the white flag on Caterpillar,Seeking Alpha,0.0,1.0,0.0,0.0
+CAT,2017-04-16,New Strong Buy Stocks For April 17th,Zacks Investment Research,0.0,0.645,0.355,0.5106
+CAT,2017-04-24,Impressive Q1 Earnings  Pre Market  CAT  DD  MCD  MMM,Zacks Investment Research,0.0,0.708,0.292,0.5106
+CAT,2017-04-24,First Quarter Earnings Reports In Focus,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-04-25,iFOREX Daily Analysis   April 25  2017,iFOREX,0.0,1.0,0.0,0.0
+CAT,2017-04-25,Wall St up on earnings  Nasdaq touches 6 000 for first time ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2017-04-25,Caterpillar first quarter earnings sail past estimates ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2017-04-25,Asian shares higher as investors eye Trump tax details,Investing.com,0.0,0.784,0.216,0.296
+CAT,2017-04-25,Earnings  tax announcement hopes boost equities,Reuters,0.0,0.421,0.579,0.6705
+CAT,2017-04-26,EUR Up  WTI Down  Focus On U S  Tax Plans,Ipek Ozkardeskaya,0.0,1.0,0.0,0.0
+CAT,2017-04-26,Opening Bell  Strong Earnings Fuel Global Equity Rally ,Pinchas Cohen/Investing.com,0.0,0.68,0.32,0.5106
+CAT,2017-04-26,New Zacks Rank  1  Strong Buy  Stocks Surging Higher  ,Zacks Investment Research,0.0,0.68,0.32,0.5106
+CAT,2017-04-26,The Long And The Short Of It,IG,0.0,1.0,0.0,0.0
+CAT,2017-04-26,All Eyes On The White House Ahead Of Trump Tax Announcement,Ipek Ozkardeskaya,0.0,1.0,0.0,0.0
+CAT,2017-04-26, iFOREX Daily Analysis   April 26  2017,iFOREX,0.0,1.0,0.0,0.0
+CAT,2017-05-01,Top Stock Picks For The Week Of May 1st ,Zacks Investment Research,0.0,0.816,0.184,0.2023
+CAT,2017-05-03,Caterpillar says probe related to tax  export activities,Reuters,0.0,1.0,0.0,0.0
+CAT,2017-05-03,Top Ranked Momentum Stocks To Buy For May 4th,Zacks Investment Research,0.0,0.816,0.184,0.2023
+CAT,2017-05-04,Was The Last Jobs Report  Transitory  Too ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-05-08,The S P 500 Again Skirts Past A Bearish Divergence,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2017-05-09,Pentair  PNR  To Spin Off Electrical Business  Retain Water,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-05-09,Calgon Carbon  CCC  Q1 Earnings Beat Estimates  Sales Trail,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-05-10,Top Ranked Momentum Stocks To Buy For May 11th,Zacks Investment Research,0.0,0.816,0.184,0.2023
+CAT,2017-05-11,BofA upgrades CAT on sales momentum,Seeking Alpha,0.0,1.0,0.0,0.0
+CAT,2017-05-14,Top Ranked Momentum Stocks To Buy For May 15th,Zacks Investment Research,0.0,0.816,0.184,0.2023
+CAT,2017-05-17,Here s Why Silgan Holdings  SLGN  Be In Your Portfolio Now,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-05-18,MRC Global  MRC  To Build Largest RDC Center On Gulf Coast ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-05-22,Understanding This  Nut Job  Stock Market,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2017-05-22,Earnings Estimates Moving Higher For Caterpillar  CAT   Time To Buy  ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-05-23,Here s Why Caterpillar  CAT  Is A Strong Buy Stock,Zacks Investment Research,0.0,0.68,0.32,0.5106
+CAT,2017-05-24,Kennametal  KMT  Poised To Benefit From Solid Prospects,Zacks Investment Research,0.0,0.312,0.688,0.7783
+CAT,2017-05-24,Top Ranked Income Stocks To Buy For May 25th,Zacks Investment Research,0.0,0.816,0.184,0.2023
+CAT,2017-05-29,Top Ranked Income Stocks To Buy For May 30th,Zacks Investment Research,0.0,0.816,0.184,0.2023
+CAT,2017-05-31,Top Ranked Income Stocks To Buy For June 1st,Zacks Investment Research,0.0,0.816,0.184,0.2023
+CAT,2017-06-01,Top Ranked Income Stocks To Buy For June 2nd,Zacks Investment Research,0.0,0.816,0.184,0.2023
+CAT,2017-06-01,RBC Bearings  ROLL  Q4 Earnings Top Estimates  Stock Up,Zacks Investment Research,0.0,0.816,0.184,0.2023
+CAT,2017-06-04,RBC Bearings  ROLL  Braves Risks On Strong Growth Drivers ,Zacks Investment Research,0.132,0.314,0.553,0.7717
+CAT,2017-06-07,Navistar  NAV  Q2 Loss Wider Than Expected  Revenues On Par,Zacks Investment Research,0.204,0.796,0.0,-0.3182
+CAT,2017-06-07,Top Ranked Income Stocks To Buy For June 8th,Zacks Investment Research,0.0,0.816,0.184,0.2023
+CAT,2017-06-07,MRC Global  MRC  Extends PVF Deal With Chevron Corporation,Zacks Investment Research,0.0,0.842,0.158,0.128
+CAT,2017-06-08,Top Ranked Momentum Stocks To Buy For June 8th,Zacks Investment Research,0.0,0.816,0.184,0.2023
+CAT,2017-06-13,Exclusive  Renault Nissan considers hidden bonus plan   documents,Reuters,0.0,0.545,0.455,0.6124
+CAT,2017-06-19,3 Reasons Momentum Stock Investors Will Love Caterpillar  CAT ,Zacks Investment Research,0.0,0.625,0.375,0.6369
+CAT,2017-06-20,Caterpillar s global machine sales add 8   gaining momentum,Seeking Alpha,0.0,0.682,0.318,0.4215
+CAT,2017-06-21,U S  stocks mixed at close of trade  Dow Jones Industrial Average down 0 27 ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2017-06-21,Dow and S P 500 fall as energy stocks slide ,Investing.com,0.0,0.769,0.231,0.2732
+CAT,2017-06-22,Martin Marietta s Lloyd to retire as CFO  succeeded by Nickolas,Seeking Alpha,0.0,0.763,0.237,0.4215
+CAT,2017-06-22,Continued Energy Slump Weighs On Market Sentiment,Ara Zohrabian,0.0,0.741,0.259,0.2732
+CAT,2017-06-22,Actuant Corp  ATU  Beats On Q3 Earnings  Trims FY17 View  ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-06-26,Top Ranked Momentum Stocks To Buy For June 26th,Zacks Investment Research,0.0,0.816,0.184,0.2023
+CAT,2017-06-26,Dow Snaps Quiet Skid ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-06-26,Top Ranked Income Stocks To Buy For June 26th,Zacks Investment Research,0.0,0.816,0.184,0.2023
+CAT,2017-06-29,Stock Market Whiplash,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-07-12,AGCO declares  0 14 dividend,Seeking Alpha,0.0,1.0,0.0,0.0
+CAT,2017-07-13,Art s Way Manufacturing reports Q4 results,Seeking Alpha,0.0,1.0,0.0,0.0
+CAT,2017-07-13,Top Ranked Momentum Stocks To Buy For July 14th,Zacks Investment Research,0.0,0.816,0.184,0.2023
+CAT,2017-07-17,Will Colgate  CL  Retain Positive Earnings Streak In Q2 ,Zacks Investment Research,0.0,0.69,0.31,0.5574
+CAT,2017-07-18,Top Ranked Income Stocks To Buy For July 19th,Zacks Investment Research,0.0,0.816,0.184,0.2023
+CAT,2017-07-24,Proto Labs  PRLB  To Report Q2 Earnings  What s In Store ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-07-25,Earnings roundup  McDonald s  Caterpillar  DuPont beat estimates ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2017-07-25,Caterpillar bulldozes expectations  raises 2017 forecast again,Reuters,0.0,1.0,0.0,0.0
+CAT,2017-07-25,Jobs lift U S  consumer confidence to near 16 year high,Reuters,0.0,0.708,0.292,0.5106
+CAT,2017-07-25,Caterpillar beats by  0 23  beats on revenue,Seeking Alpha,0.0,1.0,0.0,0.0
+CAT,2017-07-25,Premarket Gainers as of 9 05 am,Seeking Alpha,0.0,1.0,0.0,0.0
+CAT,2017-07-25,Caterpillar has scope for further 2018 EPS upside  Goldman analyst says,Seeking Alpha,0.0,1.0,0.0,0.0
+CAT,2017-07-25,Wall Street s  fear index   the VIX  sinks to lowest since 1993,Investing.com,0.392,0.608,0.0,-0.7003
+CAT,2017-07-26,iFOREX Daily Analysis   July 26  2017,iFOREX,0.0,1.0,0.0,0.0
+CAT,2017-07-27,China industrial profits jump most in three months  weather higher financing costs,Reuters,0.0,0.791,0.209,0.4404
+CAT,2017-08-01,Caterpillar CFO Brad Halverson to retire in early 2018,Reuters,0.0,1.0,0.0,0.0
+CAT,2017-08-07,5 Stocks To Watch  C  CAT  CELG  GS  HPQ,Gregory W. Harmon,0.0,1.0,0.0,0.0
+CAT,2017-08-08,Top Stock Picks For The Week Of Aug 7  2017 ,Zacks Investment Research,0.0,0.816,0.184,0.2023
+CAT,2017-08-08,Zacks com Featured Highlights  Owens Corning  Dana  Pilgrim s Pride  Caterpillar And Viad,Zacks Investment Research,0.0,0.821,0.179,0.34
+CAT,2017-08-08,5 Exciting Relative Price Strength Stocks For Standout Gains,Zacks Investment Research,0.0,0.362,0.638,0.8316
+CAT,2017-08-10,The Pullback Just Made These 3 Winners More Affordable,Zacks Investment Research,0.0,0.693,0.307,0.4767
+CAT,2017-08-10,New member on Caterpillar s board,Seeking Alpha,0.0,1.0,0.0,0.0
+CAT,2017-08-22,Will Trump Shut Down The Government To Get The Wall Built ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-08-22,Domestic Political Scenario Continues To Be Unsettling,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-08-22,U S  trade panel begins patent probe against Caterpillar,Reuters,0.0,1.0,0.0,0.0
+CAT,2017-08-23,Surging Earnings Estimates Signal Good News For Caterpillar  CAT  ,Zacks Investment Research,0.0,0.734,0.266,0.4404
+CAT,2017-08-23,AGCO  AGCO  Collaborates With CPF To Form Manufacturing JV,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-08-24,Heritage Crystal  HCCI  Looks Good  Stock Adds 5 5  In Session,Zacks Investment Research,0.0,0.734,0.266,0.4404
+CAT,2017-08-28,Toromont to buy Caterpillar dealer Hewitt,Seeking Alpha,0.0,1.0,0.0,0.0
+CAT,2017-08-29,H E Equipment Services  HEES  Soars  Stock Adds 5 8  In Session,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-08-30,Why Did Caterpillar  CAT  Stock Hit All Time High Today ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-08-31,Caterpillar Up On DoD Deal  Good Times For Industrial Stocks ,Zacks Investment Research,0.0,0.756,0.244,0.4404
+CAT,2017-09-14,Caterpillar PT raised at BMO Capital,Seeking Alpha,0.0,1.0,0.0,0.0
+CAT,2017-09-18,Caterpillar rallies to new record highs after UBS upgrade,Seeking Alpha,0.0,1.0,0.0,0.0
+CAT,2017-09-18,Caterpillar  CAT  Stock Hits All Time High  Should You Buy ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-09-18,Stocks   Caterpillar Touches New Record After Bullish Analyst Expectations,Investing.com,0.0,1.0,0.0,0.0
+CAT,2017-09-21,Caterpillar s three month rolling machine retail sales  11  Y Y,Seeking Alpha,0.0,1.0,0.0,0.0
+CAT,2017-09-25,Top Stock Picks For The Week Of September 25th ,Zacks Investment Research,0.0,0.816,0.184,0.2023
+CAT,2017-10-01,Great Week  Great Month  Great Quarter,Zacks Investment Research,0.0,0.196,0.804,0.9231
+CAT,2017-10-02,Tectonic Market Shift Starting  Are You Ready ,Blue Harbinger,0.0,0.706,0.294,0.3612
+CAT,2017-10-05,US Stocks Rise On Data,Ara Zohrabian,0.0,1.0,0.0,0.0
+CAT,2017-10-18,Coupa s Latest Buyout Enhances Fraud Detection Capabilities,Zacks Investment Research,0.388,0.612,0.0,-0.5859
+CAT,2017-10-22,Low Cabinets Sales To Hurt Fortune Brands  FBHS  Q3 Earnings ,Zacks Investment Research,0.407,0.593,0.0,-0.6705
+CAT,2017-10-22,Halliburton  Schlumberger  McDonald s  Caterpillar And DuPont Are Part Of Zacks Earnings Preview,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-10-23,Caterpillar s three month rolling machine retail sales  13  Y Y,Seeking Alpha,0.0,1.0,0.0,0.0
+CAT,2017-10-23,Caterpillar  CAT  Surges On Q3 Earnings Beat   Guidance Hike,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-10-23,Why Caterpillar  CAT  Might Surprise This Earnings Season,Zacks Investment Research,0.0,0.769,0.231,0.2732
+CAT,2017-10-23,What s In The Cards For Milacron  MCRN  In Q3 Earnings ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-10-24,World Economy Plows Ahead as Caterpillar Sales Show Broad Gains,Bloomberg,0.0,0.789,0.211,0.34
+CAT,2017-10-24,Caterpillar Shares Jump After Strong Earnings,Investing.com,0.0,0.421,0.579,0.6705
+CAT,2017-10-24,Caterpillar s  CAT  Cost Discipline Drives Q3 Earnings Beat,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-10-24,AUD USD Continues To See No Clear Cut Trend,IG,0.333,0.465,0.202,-0.1779
+CAT,2017-10-24,Caterpillar smashes market estimates as North America sales rebound,Reuters,0.0,1.0,0.0,0.0
+CAT,2017-10-24,U S  Index Losses May Prove Short Lived,Craig Erlam,0.351,0.649,0.0,-0.4019
+CAT,2017-10-24,Caterpillar  5  after blowing expectations out of the water,Seeking Alpha,0.0,1.0,0.0,0.0
+CAT,2017-10-25,iFOREX Daily Analysis   October 25 2017,iFOREX,0.0,1.0,0.0,0.0
+CAT,2017-10-25,Asian shares edge up  Nikkei snaps 16 day winning streak,Reuters,0.0,0.588,0.412,0.6808
+CAT,2017-10-25,Shares In Greater China Gain As Xi Cements Leadership  Nikkei Gains Continue,Investing.com,0.0,0.432,0.568,0.8591
+CAT,2017-10-25,Strong Earnings Push Dow Jones Industrial Average To New Highs Once More,ETF Daily News,0.0,0.769,0.231,0.5106
+CAT,2017-10-25,Caterpillar Inc Shares Surge Following Strong Q3 Earnings,Ticker.tv News,0.0,0.522,0.478,0.6705
+CAT,2017-10-25,U S  10 Year Yield Continues Moving Higher,IG,0.0,1.0,0.0,0.0
+CAT,2017-10-25,Financial Stocks Lead Market Higher,Ara Zohrabian,0.0,1.0,0.0,0.0
+CAT,2017-10-25,Silgan  SLGN  Q3 Earnings Miss Estimates  Trims  17 Guidance,Zacks Investment Research,0.167,0.833,0.0,-0.1531
+CAT,2017-10-25,Daily Market Analysis   25 10 2017,AvaTrade,0.0,1.0,0.0,0.0
+CAT,2017-10-26,AGCO declares  0 14 dividend,Seeking Alpha,0.0,1.0,0.0,0.0
+CAT,2017-10-26,Dow Rallies On Earnings ,Marvin Clark,0.0,1.0,0.0,0.0
+CAT,2017-10-27,Recovering global miners face fresh squeeze from rising costs,Reuters,0.0,0.777,0.223,0.3182
+CAT,2017-10-30,TriMas  TRS  Meets Q3 Earnings  Beats Sales  Updates View,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-11-08,Dow Closes at Record Highs  Twenty First Century Fox Earnings Eyed,Investing.com,0.0,1.0,0.0,0.0
+CAT,2017-11-15,Caterpillar  Avon Products  JA Solar Holdings  Mesoblast And 21Vianet Group Highlighted As Zacks Bull And Bear Of The Day ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-11-15,How Caterpillar  CAT  Stock Stands Out In A Strong Industry ,Zacks Investment Research,0.0,0.708,0.292,0.5106
+CAT,2017-11-16,Why Caterpillar  CAT  Might Be A Diamond In The Rough,Zacks Investment Research,0.0,0.769,0.231,0.34
+CAT,2017-11-17,Trump Warned of Political Pain of Nafta Death as Talks Resume,Bloomberg,0.538,0.462,0.0,-0.8519
+CAT,2017-11-21,Nafta Talks Said to Take Tit for Tat Turn as Mexico Counters,Bloomberg,0.0,1.0,0.0,0.0
+CAT,2017-11-22,ITC to probe Caterpillar patent allegations against German firms,Reuters,0.0,1.0,0.0,0.0
+CAT,2017-11-28,Nestle  Cuba lay first stone for  55 million coffee and biscuit factory,Reuters,0.0,1.0,0.0,0.0
+CAT,2017-11-29,CNH Industrial upgraded to Buy at Citigroup,Seeking Alpha,0.0,1.0,0.0,0.0
+CAT,2017-12-04,Sonoco  SON  Maintains 2017 Outlook  Issues 2018 View ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-12-14,Why Caterpillar  CAT  Could Beat Earnings Estimates Again ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2017-12-17,Rio Tinto to retrofit Pilbara trucks for autonomous handling,Reuters,0.0,1.0,0.0,0.0
+CAT,2017-12-29,CAT Still Ripping Higher,Alan Bradley,0.0,1.0,0.0,0.0
+CAT,2018-01-02,Alamo declares  0 11 dividend,Seeking Alpha,0.0,1.0,0.0,0.0
+CAT,2018-01-02,5 Hot Big Brand American Stocks To Buy In 2018,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2018-01-03,The Zacks Analyst Blog Highlights  Caterpillar  Facebook  Morgan Stanley  Wal Mart Stores And McDonald s,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2018-01-05,S P 500 Once Again Outstretches The Field,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2018-01-08,Caterpillar Set to Hit Record High on Analyst Upgrade Thanks to Tax Bill,Investing.com,0.0,0.805,0.195,0.4404
+CAT,2018-01-08,4 ETFs   Stocks From Favorite Sectors For Q4 Earnings,Zacks Investment Research,0.0,0.7,0.3,0.4588
+CAT,2018-01-09,4 Stocks To Watch Today  MARK  NTNX  OLED  OSTK,Harry Boxer,0.0,1.0,0.0,0.0
+CAT,2018-01-09,5 Best Stocks To Buy Ahead Of Q4 Earnings Season ,Zacks Investment Research,0.0,0.656,0.344,0.6369
+CAT,2018-01-11,Caterpillar  CAT  And Chevron  CVX   This Week s Growth And Income Stocks ,Zacks Investment Research,0.0,0.794,0.206,0.3818
+CAT,2018-01-11,Emerson s  EMR  Outlook Robust On Recent Acquisition Spree,Zacks Investment Research,0.0,0.745,0.255,0.34
+CAT,2018-01-14,Will Caterpillar  CAT  Crush Estimates At Its Next Earnings Report ,Zacks Investment Research,0.151,0.849,0.0,-0.1531
+CAT,2018-01-19,Caterpillar price target hiked to  192 at Credit Suisse on upbeat dealer survey,Seeking Alpha,0.0,0.822,0.178,0.3818
+CAT,2018-01-23,Why Earnings Season Could Be Great For Caterpillar  CAT ,Zacks Investment Research,0.0,0.661,0.339,0.6249
+CAT,2018-01-23,Sea Of Blue For Europe After Fresh U S  Highs,London Capital Group,0.0,0.753,0.247,0.3182
+CAT,2018-01-23,Seaport ups Caterpillar to Buy,Seeking Alpha,0.0,1.0,0.0,0.0
+CAT,2018-01-24,Caterpillar  CAT  Beats On Q4 Earnings   Revenues Estimates,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2018-01-24,Market Underestimates Tremendous Energy Consumption By Gold Mining  ,Steve St. Angelo,0.206,0.588,0.206,0.0
+CAT,2018-01-24,Caterpillar s three month rolling machine retail sales  34 ,Seeking Alpha,0.0,1.0,0.0,0.0
+CAT,2018-01-25,Caterpillar beats estimates on buoyant global demand,Reuters,0.179,0.595,0.226,0.1027
+CAT,2018-01-26,Atlas Copco misses fourth quarter profit expectations  forecasts stable demand,Reuters,0.234,0.414,0.352,0.4019
+CAT,2018-01-29,Pentair  PNR  Q4 Earnings Meet Estimates  Provides  18 View,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2018-01-29,Top Stock Picks For The Week Of Jan 29  2018 ,Zacks Investment Research,0.0,0.833,0.167,0.2023
+CAT,2018-01-30,Silgan  SLGN  Q4 Earnings Meet Estimates   18 View Upbeat,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2018-02-01,ISM Manufacturing Report Shows New Orders Remain Strong ,Zacks Investment Research,0.0,0.68,0.32,0.5106
+CAT,2018-02-01,There s A Big Problem With  Synchronized Global Growth ,Zacks Investment Research,0.262,0.485,0.252,-0.0258
+CAT,2018-02-01,The Zacks Industry Rank Highlights  Caterpillar And H E Equipment Services,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2018-02-02,Gencor reports Q1 results,Seeking Alpha,0.0,1.0,0.0,0.0
+CAT,2018-02-06,An Oversold Stock Market Weighed Down By Historic Volatility,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2018-02-14,Investors Cautious Ahead Of U S  Inflation Data,Ara Zohrabian,0.219,0.781,0.0,-0.1027
+CAT,2018-02-14,iFOREX Daily Analysis   February 14 2018,iFOREX,0.0,1.0,0.0,0.0
+CAT,2018-02-15,Caterpillar expects no material impact of tax case on finances,Reuters,0.196,0.804,0.0,-0.296
+CAT,2018-02-18,Caterpillar Corrects But Remains Bullish Longer Term  ,Anna Coulling,0.0,1.0,0.0,0.0
+CAT,2018-02-20,Milacron  MCRN  Q4 Earnings  Revenues Top On Strong Orders,Zacks Investment Research,0.0,0.579,0.421,0.6249
+CAT,2018-02-22,There s One Big Problem With  Synchronized Global Growth ,Zacks Investment Research,0.239,0.531,0.23,-0.0258
+CAT,2018-02-26,Why Is Caterpillar  CAT  Down 4 1  Since Its Last Earnings Report ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2018-02-28,Zacks Earnings Trends Highlights  Citigroup And Caterpillar,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2018-03-01,An S P 500 Breakdown Helps Drag Market To Edge Of Oversold,Dr. Duru,0.152,0.64,0.208,0.1779
+CAT,2018-03-02,S P 500 gains for day but posts weekly losses on trade war fears,Reuters,0.565,0.359,0.076,-0.9169
+CAT,2018-03-04,Trump Pulls The Trade War Tripwire ,Dr. Duru,0.438,0.562,0.0,-0.5994
+CAT,2018-03-07,Trump tariffs could cost as well as create U S  steel jobs,Reuters,0.0,0.656,0.344,0.4939
+CAT,2018-03-13,Caterpillar Infuses Optimism In Machinery Stocks  Top 4 Picks,Zacks Investment Research,0.0,0.531,0.469,0.6486
+CAT,2018-03-13,Chart Of The Day  Why Caterpillar Could Be Sliding Toward  115,Pinchas Cohen/Investing.com,0.0,1.0,0.0,0.0
+CAT,2018-03-22,Asian Equities Tumble  Bonds and Yen Climb as Trade Tensions Rise ,Investing.com,0.213,0.787,0.0,-0.4019
+CAT,2018-03-25,Stock Market News For Mar 26  2018,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2018-04-13,Baird raises CAT to bullish  fresh pick  status,Seeking Alpha,0.0,0.753,0.247,0.3182
+CAT,2018-04-13,An Early Preview Of Caterpillar s  CAT  Q1 Earnings Outlook,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2018-04-23,Will Labor Shortages Mar Fortune Brands   FBHS  Q1 Earnings ,Zacks Investment Research,0.167,0.833,0.0,-0.1531
+CAT,2018-04-24,Treasuries  March Above 3  Faces Challenge From Stock Slump,Bloomberg,0.0,0.652,0.348,0.296
+CAT,2018-04-24,Caterpillar surges after beating on earnings and delivering great news about the global economy,Business Insider,0.157,0.628,0.215,0.2732
+CAT,2018-04-24,Stocks Drop As 10 Year Yield Touches 3 ,Zacks Investment Research,0.259,0.741,0.0,-0.2732
+CAT,2018-04-25,Equity Swoon Looks Different From 3 Percent Yield Skittishness,Bloomberg,0.0,1.0,0.0,0.0
+CAT,2018-04-25,Jefferies lends support to CAT after selloff,Seeking Alpha,0.0,0.69,0.31,0.4019
+CAT,2018-04-25,Dollar Regains Luster  But Consolidation Likely Ahead Of Key Events And Data ,Marc Chandler,0.0,1.0,0.0,0.0
+CAT,2018-04-25,T Bill   10 Year Treasury Spread Forecasts A Continuing Expanding Economy,Todd Sullivan,0.0,0.816,0.184,0.2023
+CAT,2018-04-25,Caterpillar Beats Earnings  Stock Gets Pummeled   Why ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2018-04-25,Peak or pause  Global economy s hesitation unnerves markets,Reuters,0.231,0.769,0.0,-0.2732
+CAT,2018-04-26,The Energy Report   26 04 18,Phil Flynn,0.0,0.704,0.296,0.2732
+CAT,2018-04-26, Xylem  XYL  To Report Q1 Earnings  What s In The Cards  ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2018-04-28,CoT  Peek Into Future Through Futures  How Hedge Funds Are Positioned,Paban Pandey,0.0,1.0,0.0,0.0
+CAT,2018-04-29,Weighing The Week Ahead  Will Strong Economic Data Send Interest Rates Higher   ,Jeff Miller,0.0,0.613,0.387,0.743
+CAT,2018-04-30,Chevron Stock Rises On Higher Oil Prices,Modest Money,0.0,1.0,0.0,0.0
+CAT,2018-05-02,Wary U S  fund investors pull back from domestic stocks  ICI,Reuters,0.0,1.0,0.0,0.0
+CAT,2018-05-04,Caterpillar taps National Grid s Andrew Bonfield as CFO,Reuters,0.0,1.0,0.0,0.0
+CAT,2018-05-10,More Sentiment Changes With Fresh Breakouts For The Stock Market,Dr. Duru,0.0,0.796,0.204,0.3182
+CAT,2018-05-10,Copy of Hot Earnings Season  Cold Investor Response ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2018-05-21,Is Caterpillar  CAT  Stock Outpacing Its Industrial Products Peers This Year ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2018-05-21,4 Trade Ideas For Caterpillar  Bonus Idea,Gregory W. Harmon,0.0,0.588,0.412,0.5423
+CAT,2018-05-23,Why Caterpillar can t keep up with a boom in demand,Reuters,0.158,0.842,0.0,-0.128
+CAT,2018-06-04,5 Manufacturing Stocks To Grab On Blockbuster Jobs Report,Zacks Investment Research,0.0,0.642,0.358,0.5994
+CAT,2018-06-21,Stock Market Is Screaming That The Fed Has Crushed Economic Growth ,Phoenix Capital Research,0.338,0.5,0.163,-0.4215
+CAT,2018-07-12,Opening Bell  Oil Bounces After Sharp Selloff  USD Weighs On EM FX ,Pinchas Cohen/Investing.com,0.0,1.0,0.0,0.0
+CAT,2018-07-13,Asian shares extend bounce but trade war caps gains,Reuters,0.326,0.305,0.369,-0.3182
+CAT,2018-07-24,Move to help U S  farmers shows Trump s commitment to tariffs,Reuters,0.0,0.569,0.431,0.6486
+CAT,2018-07-25,Loblaw Warns Trade War Is Coming to a Canadian Grocer Near You,Bloomberg,0.371,0.629,0.0,-0.6486
+CAT,2018-07-27,Earnings Watch  CAT Reports Monday,Schaeffer's Investment Research,0.0,1.0,0.0,0.0
+CAT,2018-07-27,Caterpillar s three month rolling machine retail sales  25 ,Seeking Alpha,0.0,1.0,0.0,0.0
+CAT,2018-07-27,Trade War Threatens to Take Legs From Caterpillar Resurgence,Bloomberg,0.481,0.519,0.0,-0.7579
+CAT,2018-07-30,Caterpillar Price Hike Lobs Tariff Costs to its Customers,Bloomberg,0.0,1.0,0.0,0.0
+CAT,2018-07-30,Caterpillar Beats on Q2 EPS  Raises 2018 Profit Forecast,Investing.com,0.0,0.734,0.266,0.4404
+CAT,2018-07-30,The Corn And Ethanol Report 07 30 18,Dan Flynn,0.0,1.0,0.0,0.0
+CAT,2018-08-05,Are Industrials Like Caterpillar Still Market Movers ,Investment U,0.0,0.706,0.294,0.3612
+CAT,2018-09-24,China says U S  trying to force it to submit on trade as new tariffs kick in,Reuters,0.0,1.0,0.0,0.0
+CAT,2018-10-19,A Second Oversold Period Gives 200DMAs A Fresh Challenge,Dr. Duru,0.0,0.581,0.419,0.3818
+CAT,2018-10-23,Asian Markets Slip After U S  Stocks Fall on Disappointing Earnings,Investing.com,0.286,0.714,0.0,-0.4939
+CAT,2018-10-23,Tariffs begin to take bite out of U S  corporate earnings growth,Reuters,0.0,0.776,0.224,0.3818
+CAT,2018-10-23,MarketPulse  United Technologies Shines on Dark Day for Industrials,Investing.com,0.0,0.741,0.259,0.4215
+CAT,2018-10-23,Stocks   Dow Tumbles Triple Digits  Caterpillar  3M Lead Decline,Investing.com,0.0,1.0,0.0,0.0
+CAT,2018-10-23,For Fed  sell off could point to fading Trump stimulus,Reuters,0.0,1.0,0.0,0.0
+CAT,2018-10-23,Caterpillar Plunges Despite Reporting Best Ever Third Quarter,Bloomberg,0.325,0.675,0.0,-0.5216
+CAT,2018-10-23,Caterpillar tries to allay earnings concerns after shares tank,Reuters,0.0,0.784,0.216,0.296
+CAT,2018-10-23,Industrial Earnings Ahead  Caterpillar To Report Tomorrow Morning,JJ Kinahan,0.0,1.0,0.0,0.0
+CAT,2018-10-23,3 Things To Watch  North American Trading,Gianluca Privitera,0.0,1.0,0.0,0.0
+CAT,2018-10-23,CAT Tanks On Earnings,Steve Miller,0.0,1.0,0.0,0.0
+CAT,2018-10-24,The Pressure On The Stocks Persists  But Markets Avoid The Big Sale off,Alexander Kuptsikevich,0.286,0.714,0.0,-0.5267
+CAT,2018-10-24,Forex   Dollar Edges Down Amid Fall in U S  Stocks  Yen Also Slips ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2018-10-24,See Saw Action Defines Dow Jones Industrial Average,ETF Daily News,0.0,1.0,0.0,0.0
+CAT,2018-10-25,Few see Trump friendly U S  stock recovery before elections,Reuters,0.0,0.686,0.314,0.4939
+CAT,2018-10-25,U S  core capital goods orders decline for second straight month,Reuters,0.0,0.808,0.192,0.2263
+CAT,2018-10-25,Europe attempts comeback after world stocks routed again,Reuters,0.0,1.0,0.0,0.0
+CAT,2018-10-25,U S  business spending on equipment cooling  goods trade deficit rises,Reuters,0.252,0.748,0.0,-0.4019
+CAT,2018-10-26,3M  Caterpillar Earnings Signal A Tough Road Ahead For Industrial Stocks,Haris Anwar/Investing.com,0.143,0.857,0.0,-0.128
+CAT,2018-10-30,U S  presence at Cuba trade fair dwindles given Trump hostility,Reuters,0.273,0.547,0.18,-0.296
+CAT,2018-11-05,Caterpillar  CAT  Gains But Lags Market  What You Should Know,Zacks Investment Research,0.251,0.618,0.131,-0.3716
+CAT,2018-11-08,Europe Surged On Mixed US Election Result  Which May Curtail Trump  Trade War Rhet,iFOREX,0.231,0.769,0.0,-0.5994
+CAT,2018-11-12,Caterpillar  CAT  Stock Moves  1 51   What You Should Know,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2018-11-21,Caterpillar  CAT  Outpaces Stock Market Gains  What You Should Know,Zacks Investment Research,0.0,0.789,0.211,0.34
+CAT,2018-11-21,Caterpillar  CAT  Up 10 3  Since Last Earnings Report  Can It Continue ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2018-11-22,Inter Market Analysis And Macro Insights For November 22,IG,0.0,1.0,0.0,0.0
+CAT,2018-11-27,Caterpillar  CAT  Stock Sinks As Market Gains  What You Should Know,Zacks Investment Research,0.0,0.806,0.194,0.34
+CAT,2018-11-28,Construction machine makers brace for weaker China sales as economy slows,Reuters,0.225,0.775,0.0,-0.4404
+CAT,2018-12-03,4 Trade Ideas For Caterpillar  Bonus Idea,Gregory W. Harmon,0.0,0.588,0.412,0.5423
+CAT,2018-12-07,Arresting Developments At Another Oversold Edge,Dr. Duru,0.0,1.0,0.0,0.0
+CAT,2018-12-13,Caterpillar CEO Jim Umpleby to take on chairman role,Reuters,0.0,1.0,0.0,0.0
+CAT,2018-12-17,Caterpillar  CAT  Stock Moves  1 81   What You Should Know,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2018-12-28,Caterpillar  CAT  Dips More Than Broader Markets  What You Should Know,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2019-01-10,Trump s attorney general nominee to recuse from AT T Time Warner appeal,Reuters,0.0,1.0,0.0,0.0
+CAT,2019-01-16,Can Caterpillar  CAT  Keep The Earnings Surprise Streak Alive ,Zacks Investment Research,0.0,0.598,0.402,0.5719
+CAT,2019-01-20,Caterpillar  CAT  Earnings Expected To Grow  Should You Buy ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2019-01-22,Signs Of S P 500 Near Term Top,Chris Weston,0.0,0.735,0.265,0.2023
+CAT,2019-01-24,Is A Surprise Coming For Caterpillar  CAT  This Earnings Season ,Zacks Investment Research,0.0,0.792,0.208,0.2732
+CAT,2019-01-27,Caterpillar  CAT  Misses Q4 Earnings And Revenue Estimates,Zacks Investment Research,0.213,0.787,0.0,-0.2263
+CAT,2019-01-28,Disappointing Earnings Drive Wall Street Down  U K  Stocks Under Pressure,Andrew Robinson,0.435,0.565,0.0,-0.6597
+CAT,2019-01-28,Caterpillar Shares Drop Sharply after Earnings Miss,Investing.com,0.374,0.404,0.222,-0.128
+CAT,2019-01-28,Oil Ends Down 3   Ignoring Saudi Cuts News  Venezuela Tensions on Hold,Investing.com,0.487,0.513,0.0,-0.765
+CAT,2019-01-29,Put Options Popular Ahead Of Alibaba Earnings,Schaeffer's Investment Research,0.0,0.682,0.318,0.4215
+CAT,2019-01-29,Europe Slumped Monday On China Slowdown And Subdued Earnings Cues From Wall Street,iFOREX,0.0,1.0,0.0,0.0
+CAT,2019-01-29,After U S  Sanctions  Venezuelan Premium Remains Elusive For Oil,Barani Krishnan/Investing.com,0.0,1.0,0.0,0.0
+CAT,2019-01-29,Futures point to slight losses at the open,Seeking Alpha,0.278,0.722,0.0,-0.4019
+CAT,2019-01-30,4 Alternative Mutual Funds To Counter Market Downturn ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2019-02-21,Opening Bell  Trade Uncertainty Pressures Global Stocks  Gold Moves Higher,Pinchas Cohen/Investing.com,0.37,0.63,0.0,-0.5719
+CAT,2019-02-21,FOMC Minutes Conflicted  AUD Dumped,Ashraf Laidi,0.403,0.597,0.0,-0.4019
+CAT,2019-02-26,Caterpillar Downgraded as UBS Sees End Market  Peak  in 2019,Bloomberg,0.0,1.0,0.0,0.0
+CAT,2019-03-18,U S  heavy equipment makers feeling pain from tariffs  disputes  report,Reuters,0.419,0.465,0.116,-0.5994
+CAT,2019-03-25,Caterpillar  CAT  Gains As Market Dips  What You Should Know,Zacks Investment Research,0.0,0.789,0.211,0.34
+CAT,2019-03-29,Daimler buys Torc Robotics stake for self driving trucks,Reuters,0.0,1.0,0.0,0.0
+CAT,2019-04-01,Are You Looking For A High Growth Dividend Stock  Caterpillar  CAT  Could Be A Great Choice,Zacks Investment Research,0.0,0.642,0.358,0.7717
+CAT,2019-04-02,Caterpillar  CAT  Stock Moves  0 04   What You Should Know,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2019-04-07,Should Value Investors Choose Caterpillar  CAT  Stock Now ,Zacks Investment Research,0.0,0.745,0.255,0.34
+CAT,2019-04-16,Caterpillar  CAT  Earnings Expected To Grow  What To Know Ahead Of Next Week s Release,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2019-04-22,Goldman Clips Fed  China Eyes Horizon  Weak Asian Trade  Eco Day,Bloomberg,0.225,0.775,0.0,-0.4404
+CAT,2019-04-24,Caterpillar Earnings  Revenue Beat in Q1,Investing.com,0.0,1.0,0.0,0.0
+CAT,2019-04-24,Caterpillar slips as higher costs dent margins at construction business,Reuters,0.0,1.0,0.0,0.0
+CAT,2019-04-24,Caterpillar  CAT  Q1 Earnings   Revenues Beat Estimates,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2019-05-02,Caterpillar to Share More Cash  Boosting Dividend 20  to Record,Bloomberg,0.0,0.621,0.379,0.5965
+CAT,2019-05-02,Caterpillar gives details on services push  hikes dividend,Reuters,0.0,1.0,0.0,0.0
+CAT,2019-05-08,China April exports unexpectedly fall but imports rebound as fresh U S  tariffs loom,Reuters,0.154,0.654,0.193,0.1531
+CAT,2019-05-08,Outlook For Manufacturing   Construction   Mining Stocks Dim,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2019-05-10,Trade Talks Set To Pave The Way For A Lively Session  DJI  CAT  ,Matt Simpson,0.0,0.791,0.209,0.4404
+CAT,2019-05-13,Caterpillar Falls 5 ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2019-05-23,Why Is Caterpillar  CAT  Down 10 2  Since Last Earnings Report ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2019-06-09,This Is Why Caterpillar  CAT  Is A Great Dividend Stock,Zacks Investment Research,0.0,0.661,0.339,0.6249
+CAT,2019-06-13,Caterpillar s May Sales Growth Of 6  Hits Year s Lowest Point,Zacks Investment Research,0.213,0.574,0.213,0.0
+CAT,2019-06-13,Caterpillar s machine sales in Asia Pacific down 4  for three months,Reuters,0.0,1.0,0.0,0.0
+CAT,2019-06-13,Kudlow Warns Beijing   Chinese Pig  Furor  Two Fed Cuts  Eco Day,Bloomberg,0.286,0.714,0.0,-0.3818
+CAT,2019-06-17,Chart Of The Day  Caterpillar Heading Lower On Trade War Tariff Losses,Pinchas Cohen/Investing.com,0.494,0.506,0.0,-0.8316
+CAT,2019-06-20,U S  stocks higher at close of trade  Dow Jones Industrial Average up 0 94 ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2019-06-24,3M  Caterpillar Outlooks Signal Market Euphoria On Shaky Ground,Haris Anwar/Investing.com,0.144,0.53,0.326,0.5267
+CAT,2019-06-25,The Zacks Analyst Blog Highlights  Caterpillar  Royal Dutch  Goldman  Barrick And Centene,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2019-06-25,Caterpillar  CAT  Stock Moves  0 49   What You Should Know,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2019-06-25,Top Research Reports For Caterpillar  Royal Dutch Shell   Goldman Sachs,Zacks Investment Research,0.0,0.833,0.167,0.2023
+CAT,2019-07-02,New Strong Buy Stocks For July 3rd,Zacks Investment Research,0.0,0.645,0.355,0.5106
+CAT,2019-07-05,Here s Why You Should Add Caterpillar To Your Portfolio Now,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2019-07-11,Caterpillar  CAT  Is A Top Dividend Stock Right Now  Should You Buy ,Zacks Investment Research,0.0,0.847,0.153,0.2023
+CAT,2019-07-19,Caterpillar  CAT  Set To Report Q2 Earnings  What To Expect ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2019-07-22,Caterpillar Stuck In The Mud  But Will Earnings Provide Some Traction ,Anna Coulling,0.13,0.87,0.0,-0.128
+CAT,2019-07-24,Caterpillar  CAT  Lags Q2 Earnings And Revenue Estimates,Zacks Investment Research,0.263,0.737,0.0,-0.3612
+CAT,2019-07-24,Q2 Earnings Season   The Trade Issue,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2019-07-24,Should You Buy Caterpillar Or CAT Proof Industrial ETFs ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2019-07-24,Caterpillar Falls 5 ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2019-07-24,Caterpillar Earnings Miss  Revenue Beats In Q2,Investing.com,0.211,0.789,0.0,-0.1531
+CAT,2019-07-24,Zacks Earnings Trends Highlights  Caterpillar  JPMorgan And CSX,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2019-07-24,Caterpillar reports lower second quarter earnings,Reuters,0.306,0.694,0.0,-0.296
+CAT,2019-07-28,Why Caterpillar  CAT  Is A Top Dividend Stock For Your Portfolio,Zacks Investment Research,0.0,0.833,0.167,0.2023
+CAT,2019-07-31,Making Sense Of Q2 Earnings Results,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2019-08-01,Explainer   Trump s China tariffs  Paid by U S  importers  not by China,Reuters,0.0,1.0,0.0,0.0
+CAT,2019-08-07,A Stable Earnings Picture ,Zacks Investment Research,0.0,0.476,0.524,0.296
+CAT,2019-08-08,Zacks Earnings Trends Highlights  Caterpillar  CSX And Borg Warner,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2019-08-09,Making Sense Of This Market,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2019-08-13,Why Caterpillar  CAT  Is A Great Dividend Stock Right Now,Zacks Investment Research,0.0,0.661,0.339,0.6249
+CAT,2019-08-22,Why Is Caterpillar  CAT  Down 12 5  Since Last Earnings Report ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2019-09-05,5 High Beta ETFs To Buy On Trade Talk Hopes,Zacks Investment Research,0.0,0.741,0.259,0.4215
+CAT,2019-09-10,Should Value Investors Consider Caterpillar  CAT  Stock Now ,Zacks Investment Research,0.0,0.745,0.255,0.34
+CAT,2019-09-15,Manufacturing   Construction   Mining Outlook  Prospects Dim,Zacks Investment Research,0.0,0.694,0.306,0.296
+CAT,2019-10-11,Caterpillar Rises 5 ,Investing.com,0.0,1.0,0.0,0.0
+CAT,2019-10-14,Caterpillar  CAT  Stock Moves  0 02   What You Should Know,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2019-10-15,Analysts Estimate Caterpillar  CAT  To Report A Decline In Earnings  What To Look Out For,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2019-10-15,Waiting For A Trade Deal,Blaine Rollins,0.0,1.0,0.0,0.0
+CAT,2019-10-22,Caterpillar s  Earnings Recession  Points to More Bad News for World Economy,Bloomberg,0.423,0.577,0.0,-0.7645
+CAT,2019-10-23,From Harleys to Hasbro  the Trade War Headaches Intensify,Bloomberg,0.328,0.672,0.0,-0.5994
+CAT,2019-10-23,Caterpillar Cuts 2019 Profit Outlook as Global Growth Hampers Demand,Bloomberg,0.243,0.395,0.362,0.4215
+CAT,2019-10-23,Caterpillar cuts profit outlook as China construction sales slump,Reuters,0.182,0.579,0.24,0.1779
+CAT,2019-10-23,Caterpillar  CAT  Q3 Earnings And Revenues Lag Estimates,Zacks Investment Research,0.255,0.745,0.0,-0.34
+CAT,2019-11-11,5 Monster Stock Market Predictions For The Week Of Nov  11,Michael Kramer,0.0,1.0,0.0,0.0
+CAT,2019-11-11,Bear Of The Day  C H  Robinson Worldwide  Inc   CHRW ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2019-11-15,Deere workers grapple with fallout from Trump s trade war,Reuters,0.328,0.672,0.0,-0.5994
+CAT,2019-11-19,Global economy dodges recession by narrowest of margins  Kemp,Reuters,0.259,0.741,0.0,-0.4215
+CAT,2019-11-20,Stock Market News For Nov 21  2019,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2019-11-21,Caterpillar  CAT  Up 7 1  Since Last Earnings Report  Can It Continue ,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2019-11-21,Is Now The Time To Get Bullish On Cyclical Stocks ,Haris Anwar/Investing.com,0.0,1.0,0.0,0.0
+CAT,2019-11-28,Weak Manufacturing Sector  High Costs To Hurt Caterpillar,Zacks Investment Research,0.512,0.488,0.0,-0.743
+CAT,2019-12-12,Caterpillar s Flat November Sales Mark The Worst In 2019,Zacks Investment Research,0.339,0.661,0.0,-0.6249
+CAT,2020-01-24,Manufacturing   Construction   Mining Outlook  Prospects Bright,Zacks Investment Research,0.0,0.44,0.56,0.6249
+CAT,2020-01-30,Caterpillar earnings  Brexit  economic data  3 things to watch for in the markets on Friday,CNBC,0.0,1.0,0.0,0.0
+CAT,2020-01-30,Income  Spending   Employment Cost Numbers  Plus More Q4,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2020-01-30,What to Watch When Caterpillar Reports Friday,247wallst,0.0,1.0,0.0,0.0
+CAT,2020-01-31,Why Caterpillar Stock Is Sinking After a Solid Beat on Earnings,247wallst,0.0,0.849,0.151,0.1531
+CAT,2020-01-31,Caterpillar EPS beats by  0 25  misses on revenue,Seeking Alpha,0.213,0.787,0.0,-0.2263
+CAT,2020-01-31,Caterpillar Earnings Beat on Cost Cutting  Revenues Slip,Investing.com,0.176,0.824,0.0,-0.128
+CAT,2020-01-31,Caterpillar  CAT  Q4 Earnings Surpass Estimates,Zacks Investment Research,0.0,1.0,0.0,0.0
+CAT,2020-01-31,Caterpillar sees more weak demand ahead as firms defer capital decisions,Seeking Alpha,0.473,0.527,0.0,-0.7328
+CAT,2020-02-07,Stocks   S P Falls  but Posts Best Week in 8 Months,Investing.com,0.0,0.547,0.453,0.7783

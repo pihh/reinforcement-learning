@@ -21,8 +21,8 @@ ALLOWED_NEWS_TICKERS = [
     "AAPL",
     "IBM",
     "MSFT",
-    # "BAC",
-    # "NWSA",
+    "NKE",
+    'CAT',
     "GOOGL",
  
 ]

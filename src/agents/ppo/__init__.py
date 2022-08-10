@@ -229,7 +229,7 @@ class PpoAgent(Agent):
             # Fill training buffer 
             for _ in range(self.batch_size):
  
-                action, action_data, prediction = self.act(state)
+                action, action_data, prediction = self.choose_action(state)
 
                 # print('action',action)
                 # print('state',state)
@@ -419,7 +419,7 @@ class PpoAgent(Agent):
 
             return actions_list, actions_onehot_list, predictions_list
 
-    def act(self, state,deterministic=True):
+    def choose_action(self, state,deterministic=True):
 
         #print('state',state)
         if self.action_space_mode=="continuous":

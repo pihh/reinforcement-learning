@@ -33,7 +33,7 @@ if __name__ == '__main__':
 
     def environment(describe=True):
         env = gym.make('StockTradingEnvironment-v0',
-            ticker="IBM",
+            ticker="MSFT",
             use_technical_indicators= [
             "macd",
             "boll_ub",
