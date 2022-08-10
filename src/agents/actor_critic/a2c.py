@@ -291,7 +291,13 @@ class A2CAgent(Agent):
             episode += 1
 
             # Step reward, tensorboard log score, print progress
-            self.on_learn_episode_end(score,log_every,log_level,success_threshold)
+            self.on_learn_episode_end(
+                score,
+                log_every,
+                log_level,
+                success_threshold,
+                success_strict=success_strict
+            )
             
             # If done stop
             if self.did_finnish_learning(success_threshold,episode):

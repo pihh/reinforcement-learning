@@ -344,7 +344,14 @@ class Agent:
         if plot_results:
             self.plot_learning_results()
 
-    def on_learn_episode_end(self,score,log_every,log_level,success_threshold):
+    def on_learn_episode_end(self,
+        score,
+        log_every,
+        log_level,
+        success_threshold,
+        worker=False, 
+        success_strict=False
+    ):
         """
         Runs at the end of every episode
             * Updates running rewards
@@ -360,7 +367,9 @@ class Agent:
             log_every,
             score,
             self.running_reward.moving_average, 
-            log_level=log_level
+            log_level=log_level,
+            worker=worker,
+            success_strict=success_strict
         )
         try:
             if not np.isinf(self.running_reward.moving_average):

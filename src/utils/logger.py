@@ -55,14 +55,28 @@ class LearningLogger:
         self.running_rewards.append(running_reward)
         self.time_diff_seconds()
 
-    def episode_log_full(self,reward,running_reward,worker=False):
+    def episode_log_full(
+        self,
+        reward,
+        running_reward,
+        worker=False,
+        success_strict=False
+    ):
         data = []
 
         data.append(['Episodes',self.episodes])
         data.append(['Avg episode duration',str(round(np.mean(self.episode_durations),5))+' s'])
         data.append(['Learning steps',self.learning_steps])
+
         if type(worker) != bool:
             data.append(['Worker',worker])
+        
+        if success_strict != False:
+            last_episodes = np.array(self.rewards[-self.success_threshold_lookback:])
+            episodes_with_loss = len(last_episodes[last_episodes <=0])
+            data.append(['Episodes on loss', '{}/{}'.format(episodes_with_loss,self.success_threshold_lookback)])
+            #success_strict_str = "Total episodes ending on loss: {}/{} *".format(episodes_with_loss,self.success_threshold_lookback)
+        
         data.append(['',''])
         data.append(['Last reward',round(reward,3)])
         data.append(['Avg reward',round(np.mean(self.rewards[-self.success_threshold_lookback:]),3)])
@@ -75,17 +89,31 @@ class LearningLogger:
         print (tabulate(data, headers=["", ""]))
         print('')
 
-    def episode_log_simple(self, reward,worker=False):
+    def episode_log_simple(self,
+        reward,
+        worker=False,
+        success_strict=False
+        ):
         
         worker_str=""
+        success_strict_str=""
+
+        rewards = np.array(self.rewards[-self.success_threshold_lookback:])
+    
         episode_str = "Episode * {} * ".format(self.episodes)
-        moving_avg_str = "Moving Avg Reward is ==> {:.5f} * ".format(np.mean(self.rewards[-self.success_threshold_lookback:]))
-        last_reward_str = "Last Reward was ==> {:.5f}".format(reward)
+        moving_avg_str = "Moving Avg Reward is ==> {:.5f} * ".format(np.mean(rewards))
+        last_reward_str = "Last Reward was ==> {:.5f} ".format(reward)
+
+        if success_strict != False:
+            if len(rewards) > self.success_threshold_lookback:
+                episodes_with_loss = len(rewards[rewards <=0])
+                success_strict_str = "* Total episodes ending on loss: {}/{} ".format(episodes_with_loss,self.success_threshold_lookback)
 
         if type(worker) != bool:
-            worker_str ="Worker * {} * ".format(worker)
+            worker_str ="Worker #{} * ".format(worker)
 
-        log_str = episode_str+worker_str+moving_avg_str+last_reward_str
+        log_str = episode_str+worker_str+moving_avg_str+last_reward_str+success_strict_str
+
         print(log_str)
 
     def episode_test_log(self,score, episode=False):
@@ -94,16 +122,33 @@ class LearningLogger:
         else:
             print('Episode done * Score ==> {:.3f}'.format(score))
 
-    def episode(self,log_every, reward,running_reward, log_level = 1, worker=False):
+    def episode(
+        self,
+        log_every, 
+        reward, 
+        running_reward, 
+        log_level = 1, 
+        worker=False, 
+        success_strict=False
+    ):
         # step it
         self.step_episode(reward,running_reward)
 
         # Log it 
         if self.episodes % log_every == 0 and self.episodes > 1:
             if log_level == 2:
-                self.episode_log_full(reward, running_reward,worker)
+                self.episode_log_full(
+                    reward, 
+                    running_reward,
+                    worker=worker,
+                    success_strict=success_strict)
+
             elif log_level == 1:
-                self.episode_log_simple(reward,worker)
+                self.episode_log_simple(
+                    reward,
+                    worker=worker,
+                    success_strict=success_strict
+                )
 
     def start_worker(self, worker_id):
         print("Worker * {} * has started.".format(worker_id))

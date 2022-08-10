@@ -253,7 +253,12 @@ class PpoAgent(Agent):
                     # Episode ended
                     episode += 1
                     # Step reward, tensorboard log score, print progress
-                    self.on_learn_episode_end(score,log_every,log_level,success_threshold)
+                    self.on_learn_episode_end(
+                        score,
+                        log_every,
+                        log_level,
+                        success_threshold,
+                        success_strict=success_strict)
                     
                     # Verify if learning success conditions are met
                     if self.did_finnish_learning(success_threshold,episode):
@@ -367,7 +372,13 @@ class PpoAgent(Agent):
                         # Episode ended
                         episode += 1
                         # Step reward, tensorboard log score, print progress
-                        self.on_learn_episode_end(score[worker_id],log_every,log_level,success_threshold)
+                        self.on_learn_episode_end(
+                            score[worker_id],
+                            log_every,
+                            log_level,
+                            success_threshold,
+                            worker=worker_id,
+                            success_strict=success_strict)
                         
                         # Reset score
                         score[worker_id] = 0
