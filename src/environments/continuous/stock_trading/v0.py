@@ -351,7 +351,7 @@ class StockTradingEnvironment(Env):
         #     if self.auto_investment:
         #         initial_investment = episode_targets.high.iloc[i] * self.maximum_stocks_held 
         #     else: 
-        #         initial_investment = self.initial_investment #self._initial_investment_calculation(i)
+        #         initial_investment = self.initial_investment #self.calculate_initial_investment(i)
 
         #     target = episode_targets.targets.iloc[i]
         #     self.episode_targets.append(initial_investment+target)
@@ -406,7 +406,7 @@ class StockTradingEnvironment(Env):
             if self.auto_investment:
                 initial_investment = episode_targets.high.iloc[i] * self.maximum_stocks_held 
             else: 
-                initial_investment = self.initial_investment #self._initial_investment_calculation(i)
+                initial_investment = self.initial_investment #self.calculate_initial_investment(i)
 
             target = episode_targets.targets.iloc[i]
             self.episode_targets.append(initial_investment+target)
@@ -484,7 +484,7 @@ class StockTradingEnvironment(Env):
         """
         self.trading_graph = TradingGraph(render_range=42, show_reward=True, show_indicators=True) # init visualization
 
-    def _action(self,actions):
+    def extract_action(self,actions):
         """ 
         Check what action was defined by the agent and the amount it will trade
         At the moment actions are defined like this:
@@ -505,22 +505,22 @@ class StockTradingEnvironment(Env):
             # bound_normalization = (1 - bounds[1])
 
 
-            # if _action < bounds[0]:
+            # if extract_action < bounds[0]:
             #     # Vende
             #     action = ACTIONS.SELL
 
             #     # percentage que o algoritmo decidiu vender
-            #     amount = -1 * ((_action - bounds[0]) / bound_normalization) #(_action/bounds[0])
+            #     amount = -1 * ((extract_action - bounds[0]) / bound_normalization) #(extract_action/bounds[0])
 
             #     # reinicia o castigo
             #     self.punish_value = 0
 
-            # elif _action > bounds[1]:
+            # elif extract_action > bounds[1]:
             #     # Compra
             #     action = ACTIONS.BUY
 
             #     # percentage que o algoritmo decidiu
-            #     amount_ordered = ((_action - bounds[1]) / bound_normalization)
+            #     amount_ordered = ((extract_action - bounds[1]) / bound_normalization)
 
             #     # máximo possível
             #     amount = min(amount_ordered,1-self.invested_percentage)
@@ -546,7 +546,7 @@ class StockTradingEnvironment(Env):
 
         return action,amount
 
-    def _track_trade(self,amount_traded,action,current_price):
+    def track_trades(self,amount_traded,action,current_price):
         """
         Gets a trading history for testing and visualizing the environment.
         """
@@ -561,7 +561,7 @@ class StockTradingEnvironment(Env):
             for i in range(len(self.trading_history)):
                 th = self.trading_history[i]
                 if th['action'] == 'buy' and th['reward'] == 0:
-                    current_reward = (current_price * th['amount_traded']) - (th['current_price'] * th['amount_traded'])
+                    current_reward = ((current_price * th['amount_traded']) - (th['current_price'] * th['amount_traded']))/(th['current_price'] * th['amount_traded'])
                     self.trading_history[i]['reward'] = current_reward
                     reward += current_reward
 
@@ -579,7 +579,7 @@ class StockTradingEnvironment(Env):
             "portfolio_value":self.portfolio_value
         })
 
-    def _trade(self,action,amount):
+    def execute_trade(self,action,amount):
         """
         Trade action
         --------------------
@@ -607,7 +607,7 @@ class StockTradingEnvironment(Env):
                 self.stock_held += amount
 
                 # Actualiza contador de preços de açoes
-                self.stock_prices.append(current_price)
+                self.stock_prices.append(discounted_price)
                 self.stock_volumes.append(amount)
                 self.stock_price_mean = np.mean(np.array(self.stock_prices) * np.array(self.stock_volumes))
 
@@ -645,9 +645,9 @@ class StockTradingEnvironment(Env):
         # Se fez algo guarda o pedido no historico
         if amount > 0:
             self.episode_orders += 1
-            self._track_trade(amount,position,discounted_price)
+            self.track_trades(amount,position,discounted_price)
 
-    def _normalize_portfolio(self,i):
+    def normalize_portfolio(self,i):
         """
         Normalizes porftolio data
         """
@@ -671,7 +671,7 @@ class StockTradingEnvironment(Env):
             stock_price_avg_comp
         ]  # % % % %
 
-    def _state(self):
+    def get_state(self):
         """
         Generates a state consisting of:
             * orders history    - what the agent has been doing
@@ -687,7 +687,7 @@ class StockTradingEnvironment(Env):
 
         self.state = state 
 
-    def _next_state(self):
+    def get_next_state(self):
         """
         Generates the next state:
             * orders history    - what the agent has been doing
@@ -704,21 +704,12 @@ class StockTradingEnvironment(Env):
         self.orders_history.append([held,self.stock_sold,self.stock_bought])
 
         # # Add portfoluio state tracking
-        self.portfolio_history.append(self._normalize_portfolio(i))  # % % %
+        self.portfolio_history.append(self.normalize_portfolio(i))  # % % %
 
         # # Market history tracks OHLC
         self.market_history.append(self.df_norm.iloc[i])
 
-        # # News history tracks news
-        # self.news_history.append(self.df_normalized.loc[i][self.news_history_params])
-
-        # # Indicators history tracks indicators
-        # self.indicators_history.append(self.df_normalized.loc[i][self.indicators_history_params])
-
-        # # Return state
-        # self.state = self._state()
-        # return self.state
-        self._state()
+        self.get_state()
 
     def get_current_buying_price(self):
         # Compra a um preço e adiciona comissão
@@ -731,7 +722,7 @@ class StockTradingEnvironment(Env):
     def get_current_price(self, optimistic=True):
         return self.df.iloc[self.current_step -1]['close']
 
-    def _calculate_reward(self):
+    def calculate_reward(self):
         """
         Tricky one becuse I don't know if I should track only the 
         buy and sell rewards or the evolution of the portfolio.
@@ -754,7 +745,7 @@ class StockTradingEnvironment(Env):
 
         return reward
 
-    def _calculate_reward_v2(self):
+    def calculate_reward_v2(self):
         # NOTE: Not in use
         # According to lessons
         # Although I don't quite understand yet the logic this mechanism
@@ -771,11 +762,11 @@ class StockTradingEnvironment(Env):
         else:
             return 0
 
-    def _reached_end_of_episode(self):
+    def has_reached_end_of_episode(self):
         # Checks if episode ended
         return self.episode_step == self.window_size -1
 
-    def _beated_environment(self,action):
+    def has_beated_environment(self,action):
         # NOTE: not implemented
         # Checks if environment is beated
         # if action == self.actions.SELL and self.portfolio_value >= self.episode_target :
@@ -785,26 +776,26 @@ class StockTradingEnvironment(Env):
         #     return False
         return False
 
-    def _calculate_done(self,action):
+    def calculate_done(self,action):
         # Reached the end of the episode 
-        if self._reached_end_of_episode() or self._beated_environment(action):
+        if self.has_reached_end_of_episode() or self.has_beated_environment(action):
             return True 
         else:
             return False 
 
-    def _initial_investment_calculation(self,idx):
+    def calculate_initial_investment(self,idx):
         if self.auto_investment:
             return self.initial_investments[idx]
         else:
             return self.initial_investment
             
-    def _set_initial_investment(self, idx):
-        self.initial_investment = self._initial_investment_calculation(idx)
+    def set_initial_investment(self, idx):
+        self.initial_investment = self.calculate_initial_investment(idx)
 
-    def _set_episode_target(self,idx):
+    def set_episode_target(self,idx):
         self.episode_target = self.episode_targets[idx]
 
-    def _calculate_max_profit_with_n_transactions(self,prices,k):
+    def calculate_max_profit_with_n_transactions(self,prices,k):
         # For target calculation
         profits = [[0 for p in prices] for t in range(k+1)]
         for t in range(1,k+1):
@@ -886,16 +877,16 @@ class StockTradingEnvironment(Env):
         self.stock_sold = 0
         self.stock_bought = 0
 
-        action, amount = self._action(action)
+        action, amount = self.extract_action(action)
 
         # Executa ação
-        self._trade(action,amount)
+        self.execute_trade(action,amount)
 
         # Verifica a recompensa
-        reward = self._calculate_reward()
+        reward = self.calculate_reward()
 
         # Check if we done - when ended episode or cannot invest anymore
-        done = self._calculate_done(action)
+        done = self.calculate_done(action)
 
         #if done and self.environment_beaten:
             # Should add some incentive for beating before time no?
@@ -911,7 +902,7 @@ class StockTradingEnvironment(Env):
         #     done = False
 
         # Get the next state
-        self._next_state()
+        self.get_next_state()
         
         # Update stepper
         self.episode_step += 1
@@ -940,7 +931,9 @@ class StockTradingEnvironment(Env):
 
     def reset(self,
         visualize = False, 
-        mode="train"
+        dataset_id=False,
+        mode="train", 
+        
     ):
         
         """
@@ -961,19 +954,23 @@ class StockTradingEnvironment(Env):
             self.__init_visualization()
 
         # Get a random dataset 
-        if self.mode == "train":
-            dataset_idx_start=self.train_dataframe_id_range[0]
-            dataset_idx_end=self.train_dataframe_id_range[1]
-        else:
-            dataset_idx_start=self.test_dataframe_id_range[0]
-            dataset_idx_end=self.test_dataframe_id_range[1]
+        if dataset_id == False:
+            if self.mode == "train":
+                dataset_idx_start=self.train_dataframe_id_range[0]
+                dataset_idx_end=self.train_dataframe_id_range[1]
+            else:
+                dataset_idx_start=self.test_dataframe_id_range[0]
+                dataset_idx_end=self.test_dataframe_id_range[1]
 
-        self.dataset_idx = np.random.randint(dataset_idx_start, high=dataset_idx_end, size=1, dtype=int)[0]
+            self.dataset_idx = np.random.randint(dataset_idx_start, high=dataset_idx_end, size=1, dtype=int)[0]
+        else:
+            self.dataset_idx = dataset_id
+
         self.load_dataset_by_index(self.dataset_idx)
 
         # Define how much will invest
-        self._set_initial_investment(self.dataset_idx)
-        self._set_episode_target(self.dataset_idx)
+        self.set_initial_investment(self.dataset_idx)
+        self.set_episode_target(self.dataset_idx)
     
         # Environment complete
         self.environment_beaten = False
@@ -1013,23 +1010,22 @@ class StockTradingEnvironment(Env):
         self.current_step = self.lookback
 
         # # Create the initial state
-        #for i in reversed(range(self.lookback)):
-        for i in range(self.lookback):
-            current_step = self.current_step -i
+        for i in reversed(range(self.lookback)):
+    
+            current_step = self.lookback -i -1
 
             # Orders history tracks recent trader activity - held bought sold
             self.orders_history.append([0,0,0]) # Held, Sold, Bought
 
             # Portfolio
-            self.portfolio_history.append([1,1,0,0])  # portfolio_value_% =>  cash_held_% => stocks_held_% stock_price_avg_comp_%
+            self.portfolio_history.append([1,1,0,1])  # portfolio_value_% =>  cash_held_% => stocks_held_% stock_price_avg_comp_%
 
             # Market history 
             self.market_history.append(self.df_norm.iloc[current_step])
 
 
-        # # Create a new state
-        # # Should I make a state object that tracks this shit?
-        self._state()
+        # Create new state
+        self.get_state()
 
         # return self.state
         return self.state 
