@@ -11,7 +11,7 @@ class ResultsWriter:
     def __init__(self,env_name,agent_hash):
         self.env_name = env_name
         self.agent_hash = agent_hash
-        self.file_path = 'storage/environments/'+env_name+'results.json'
+        self.file_path = 'storage/environments/'+env_name+'/results.json'
         self.score = False
 
         # schedule.every(10).seconds.do(self.log)
@@ -26,10 +26,11 @@ class ResultsWriter:
             with open(self.file_path, 'r') as fp:
                 results = json.load(fp)
                 score = results[self.agent_hash]
-        except IOError:
-            # print('File not found, will create a new one.')
+        except IOError as e:
+            # print('Io error')
+            # print(e)
             pass
-
+        
         return score
 
     # def queue(self,score):

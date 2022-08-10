@@ -164,6 +164,7 @@ class Agent:
             self.learning_max_score = float(-np.inf)
             self.is_first_train = True
 
+
     def _load_agent_configuration(self):
         print('@TODO Agent._load_agent_configuration()')
 
