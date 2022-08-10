@@ -1,34 +1,34 @@
 # Repo-specific GitIgnore ----------------------------------------------------------------------------------------------
-*.jpg
-*.jpeg
-*.png
-*.bmp
-*.tif
-*.tiff
-*.heic
-*.JPG
-*.JPEG
-*.PNG
-*.BMP
-*.TIF
-*.TIFF
-*.HEIC
-*.mp4
-*.mov
-*.MOV
-*.avi
-*.data
-*.json
-*.cfg
+# *.jpg
+# *.jpeg
+# *.png
+# *.bmp
+# *.tif
+# *.tiff
+# *.heic
+# *.JPG
+# *.JPEG
+# *.PNG
+# *.BMP
+# *.TIF
+# *.TIFF
+# *.HEIC
+# *.mp4
+# *.mov
+# *.MOV
+# *.avi
+# *.data
+# *.json
+# *.cfg
 
 
 # Datasets -------------------------------------------------------------------------------------------------------------
 
 
 # MATLAB GitIgnore -----------------------------------------------------------------------------------------------------
-*.m~
-*.mat
-!targets*.mat
+# *.m~
+# *.mat
+# !targets*.mat
 
 # Neural Network weights -----------------------------------------------------------------------------------------------
 *.h5
@@ -42,127 +42,127 @@ __pycache__/
 *$py.class
 
 # C extensions
-*.so
+# *.so
 
 # Distribution / packaging
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-/wandb/
-.installed.cfg
-*.egg
+# .Python
+# env/
+# build/
+# develop-eggs/
+# dist/
+# downloads/
+# eggs/
+# .eggs/
+# lib/
+# lib64/
+# parts/
+# sdist/
+# var/
+# wheels/
+# *.egg-info/
+# /wandb/
+# .installed.cfg
+# *.egg
 
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+# *.manifest
+# *.spec
 
 # Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+# pip-log.txt
+# pip-delete-this-directory.txt
 
 # Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
+# htmlcov/
+# .tox/
+# .coverage
+# .coverage.*
+# .cache
+# nosetests.xml
+# coverage.xml
+# *.cover
+# .hypothesis/
 
 # Translations
-*.mo
-*.pot
+# *.mo
+# *.pot
 
 # Django stuff:
-*.log
-local_settings.py
+# *.log
+# local_settings.py
 
 # Flask stuff:
-instance/
-.webassets-cache
+# instance/
+# .webassets-cache
 
 # Scrapy stuff:
-.scrapy
+# .scrapy
 
 # Sphinx documentation
-docs/_build/
+# docs/_build/
 
 # PyBuilder
-target/
+# target/
 
 # Jupyter Notebook
-.ipynb_checkpoints
+# .ipynb_checkpoints
 
 # pyenv
-.python-version
+# .python-version
 
 # celery beat schedule file
-celerybeat-schedule
+# celerybeat-schedule
 
 # SageMath parsed files
-*.sage.py
+# *.sage.py
 
 # dotenv
-.env
+# .env
 
 # virtualenv
-.venv*
-venv*/
-ENV*/
+# .venv*
+# venv*/
+# ENV*/
 
 # Spyder project settings
-.spyderproject
-.spyproject
+# .spyderproject
+# .spyproject
 
 # Rope project settings
-.ropeproject
+# .ropeproject
 
 # mkdocs documentation
-/site
+# /site
 
 # mypy
-.mypy_cache/
+# .mypy_cache/
 
 
 # https://github.com/github/gitignore/blob/master/Global/macOS.gitignore -----------------------------------------------
 
 # General
-.DS_Store
-.AppleDouble
-.LSOverride
+# .DS_Store
+# .AppleDouble
+# .LSOverride
 
 # Icon must end with two \r
-Icon
-Icon?
+# Icon
+# Icon?
 
 # Thumbnails
-._*
+# ._*
 
 # Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
+# .DocumentRevisions-V100
+# .fseventsd
 
 # Directories potentially created on remote AFP share
-Network Trash Folder
-Temporary Items
-.apdisk
+# Network Trash Folder
+# Temporary Items
+# .apdisk
 
 
 # https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore
@@ -191,14 +191,14 @@ Temporary Items
 .idea/**/libraries
 
 # CMake
-cmake-build-debug/
-cmake-build-release/
+# cmake-build-debug/
+# cmake-build-release/
 
 # Mongo Explorer plugin:
 .idea/**/mongoSettings.xml
 
 ## File-based project format:
-*.iws
+# *.iws
 
 ## Plugin-specific files:
 
@@ -215,7 +215,7 @@ atlassian-ide-plugin.xml
 .idea/replstate.xml
 
 # Crashlytics plugin (for Android Studio and IntelliJ)
-com_crashlytics_export_strings.xml
-crashlytics.properties
-crashlytics-build.properties
-fabric.properties
+# com_crashlytics_export_strings.xml
+# crashlytics.properties
+# crashlytics-build.properties
+# fabric.properties

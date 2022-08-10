@@ -413,7 +413,7 @@ class StockTradingEnvironment(Env):
             self.initial_investments.append(initial_investment)
 
         # Calculate the success threshold
-        success_threshold_targets = np.mean(self.episode_targets) + 0.1 * np.std(self.episode_targets)
+        success_threshold_targets = np.mean(self.episode_targets) + 0.5 * np.std(self.episode_targets)
         success_threshold_investments = np.mean(self.initial_investments) #+ np.std(self.initial_investments)
         
         self.success_threshold = (success_threshold_targets - success_threshold_investments)/ success_threshold_investments
