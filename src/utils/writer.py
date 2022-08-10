@@ -25,12 +25,16 @@ class ResultsWriter:
         try:
             with open(self.file_path, 'r') as fp:
                 results = json.load(fp)
-                score = results[self.agent_hash]
-        except IOError as e:
+                try:
+                    score = results[self.agent_hash]
+                except:
+                    pass
+        except IOError:
             # print('Io error')
             # print(e)
+            print('Unable to load previous best score')
             pass
-        
+
         return score
 
     # def queue(self,score):
