@@ -1,5 +1,6 @@
 import multiprocessing
 
+from tqdm import tqdm
 
 class RandomAgent:
   """Random Agent that will play the specified game
@@ -8,32 +9,30 @@ class RandomAgent:
       env_name: Name of the environment to be played
       max_eps: Maximum number of episodes to run agent for.
   """
-  def __init__(self, environment, max_eps):
-    self.env = environment()
-    self.max_episodes = max_eps
-    self.global_moving_average_reward = 0
-    self.res_queue = multiprocessing.Queue()
+  def __init__(self, environment, n_episodes):
+      self.env = environment
+      self.n_episodes = n_episodes
+      # self.global_moving_average_reward = 0
+      # self.res_queue = multiprocessing.Queue()
 
   def run(self):
-    reward_avg = 0
-    for episode in range(self.max_episodes):
+
+    rewards = []
+    for episode in tqdm(range(self.n_episodes)):
       done = False
-      self.env.reset()
-      reward_sum = 0.0
+      self.env.reset(visualize=False,mode="test")
+      score = 0
       steps = 0
       while not done:
         # Sample randomly from the action space and step
         _, reward, done, _ = self.env.step(self.env.action_space.sample())
         steps += 1
-        reward_sum += reward
-      # Record statistics
-      self.global_moving_average_reward = record(episode, 
-                                                 reward_sum, 
-                                                 0,
-                                                 self.global_moving_average_reward,
-                                                 self.res_queue, 0, steps)
+        score += reward
 
-      reward_avg += reward_sum
-    final_avg = reward_avg / float(self.max_episodes)
-    print("Average score across {} episodes: {}".format(self.max_episodes, final_avg))
-    return final_avg
+
+      rewards.append(score)
+    
+    return rewards
+   
+
+    
