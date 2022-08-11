@@ -466,12 +466,15 @@ class Agent:
         plt.plot(ysmoothed, color="red" , label="smoothed moving average history")
         plt.legend() 
         plt.title('Learning cycle score moving average evolution')
+        # Or save before show
+        fig = plt.gcf()
         plt.show()
+        
 
         # Store
         file_id = get_number_of_files_in_folder(self.writer_log_directory+'/plots')
         file_name = 'training_results_'+str(file_id)+'.png'
-        plt.savefig(self.writer_log_directory+'/plots/'+file_name)
+        fig.savefig(self.writer_log_directory+'/plots/'+file_name)
 
     def choose_action(self, state):
         raise NotImplementedError
