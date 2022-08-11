@@ -339,31 +339,40 @@ class StockTradingEnvironment(Env):
         n_dataframes = config.iloc[0].n_dataframes
         n_columns = config.iloc[0].n_columns
         
-        self.n_dataframes = n_dataframes
+        self.n_dataframes = n_dataframes - self.lookback + 1
         self.n_columns = n_columns
+
+        self.__init_dataset_split()
+
+    def __init_dataset_split(self):
+        """
+        Get train and test dataframe indices.
+        ------------------
+
+        Logic:
+            * agent will train on several different datasets
+            * this datasets start at given day and end (window_size) days after
+            * in order so the agent doesn't get contaminated results during the training phase we need to ensure
+                that the training phase doesnt have access to data that has been seen. To do so:
+                    * dataset size = n_dataframes - window_size ( the amount of datasets and the days he will train forward)
+                    * dataset split will be:
+                        * Train: [0:dataset_size * train_percentage-1]
+                        * Test:  [dataset_size * train_percentage + window_size:]
+        """
+
+        dataset_size_discounted = self.n_dataframes - self.window_size 
+        dataset_size_train = int(dataset_size_discounted * self.train_percentage)
+        dataset_train_indices = [
+            0,                                                  # Start
+            dataset_size_train  # End
+        ]
+        dataset_test_indices = [
+            dataset_size_train + self.window_size, # Start
+            self.n_dataframes -1                   # End
+        ]
         
-        self.train_dataframe_id_range = [0,int(self.train_percentage * n_dataframes)-1]
-        self.test_dataframe_id_range = [int(self.train_percentage * n_dataframes),n_dataframes]
-
-        # self.episode_targets = []
-        # self.initial_investments = []
-        # for i in range(self.train_dataframe_id_range[1]+1):
-        #     if self.auto_investment:
-        #         initial_investment = episode_targets.high.iloc[i] * self.maximum_stocks_held 
-        #     else: 
-        #         initial_investment = self.initial_investment #self.calculate_initial_investment(i)
-
-        #     target = episode_targets.targets.iloc[i]
-        #     self.episode_targets.append(initial_investment+target)
-        #     self.initial_investments.append(initial_investment)
-
-        # # Calculate the success threshold
-        # success_threshold_targets = np.mean(self.episode_targets) #+ np.std(self.episode_targets)
-        # success_threshold_investments = np.mean(self.initial_investments) #+ np.std(self.initial_investments)
-        
-        # self.success_threshold = (success_threshold_targets -success_threshold_investments)/ success_threshold_investments
-
-        print()
+        self.train_dataframe_id_range = dataset_train_indices
+        self.test_dataframe_id_range = dataset_test_indices
 
     def __init_configuration(self):
         """
@@ -397,12 +406,14 @@ class StockTradingEnvironment(Env):
             * Acording to episode targets, set the target as initial cash in hand + current episode target 
             * Sets the success threshold ( mean of episode targets + X std )
         """
+
+        
         episode_targets = pd.read_csv(self.df_path+'/targets.csv')
 
         self.episode_targets = []
         self.initial_investments = []
-
-        for i in range(self.n_dataframes):
+        
+        for i in range(self.n_dataframes -1):
             if self.auto_investment:
                 initial_investment = episode_targets.high.iloc[i] * self.maximum_stocks_held 
             else: 
@@ -413,10 +424,11 @@ class StockTradingEnvironment(Env):
             self.initial_investments.append(initial_investment)
 
         # Calculate the success threshold
-        success_threshold_targets = np.mean(self.episode_targets) + 1 * np.std(self.episode_targets)
-        success_threshold_investments = np.mean(self.initial_investments) #+ np.std(self.initial_investments)
+        success_threshold_targets = np.mean(self.episode_targets[:self.train_dataframe_id_range[1]]) + 1 * np.std(self.episode_targets[:self.train_dataframe_id_range[1]])
+        success_threshold_investments = np.mean(self.initial_investments[:self.train_dataframe_id_range[1]]) #+ np.std(self.initial_investments)
         
         self.success_threshold = (success_threshold_targets - success_threshold_investments)/ success_threshold_investments
+        self.success_threshold_lookback = 1000
 
     def __init_spaces(self):
         """
@@ -966,6 +978,7 @@ class StockTradingEnvironment(Env):
         else:
             self.dataset_idx = dataset_id
 
+        
         self.load_dataset_by_index(self.dataset_idx)
 
         # Define how much will invest

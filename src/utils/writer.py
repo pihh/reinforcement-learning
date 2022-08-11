@@ -50,8 +50,11 @@ class ResultsWriter:
     #     else:
     #         return False
 
-    def store_test_results(self,agent,results_dataframe):
-        results_dataframe.to_csv(agent.writer_log_directory+'/results__'+datetime.now().strftime("%Y%m%d-%H%M%S")+'.csv')
+    def store_test_results(self,agent,results_dataframe, name=""):
+        if name != "":
+            name = name+'_'
+
+        results_dataframe.to_csv(agent.writer_log_directory+'/results_'+name+'_'+name+datetime.now().strftime("%Y%m%d-%H%M%S")+'.csv')
 
 
 def log_environment_results_file(env_name,agent_hash,score):

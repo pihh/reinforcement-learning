@@ -164,9 +164,9 @@ class Agent:
             self.learning_max_score = float(-np.inf)
             self.is_first_train = True
 
-
     def _load_agent_configuration(self):
-        print('@TODO Agent._load_agent_configuration()')
+        # print('@TODO Agent._load_agent_configuration()')
+        pass
 
     def _add_models_to_config(self,models):
         # To generate config.json and to restore in the future
@@ -226,6 +226,7 @@ class Agent:
 
     def __init_loggers(self):
         self.learning_log = LearningLogger(self.learning_log_loss_keys)
+        self.training_duration = 0
    
     def __init_environment(self):
         """
@@ -304,6 +305,7 @@ class Agent:
         # Start metrics 
 
         # Track how long it took to train
+        self.training_duration = False
         self.timestamp_learning_start = time.time()
 
         # Check if it's training for the first time or not
@@ -458,6 +460,11 @@ class Agent:
         Saves the plot image in the plot results folder 
         """
 
+        # Store
+        file_id = get_number_of_files_in_folder(self.writer_log_directory+'/plots')
+        file_name = 'training_results_'+str(file_id)+'.png'
+
+        # Smoothed
         ysmoothed = gaussian_filter1d(self.running_reward.reward_history, sigma=10)
 
         plt.figure(figsize=(16,4))
@@ -465,15 +472,28 @@ class Agent:
         plt.plot(np.zeros(len(self.running_reward.reward_history)), color="black", alpha=0.5, label="baseline")
         plt.plot(ysmoothed, color="red" , label="smoothed moving average history")
         plt.legend() 
-        plt.title('Learning cycle score moving average evolution')
+
+
+        try:
+            plt.title('{}, {}th learning score evolution (moving avg of #{} episodes ) , train duration {} '.format(
+                self.env.ticker.upper(),
+                file_id +1,
+                self.success_threshold_lookback,
+                self.training_duration
+            ))
+        except:
+            plt.title('{}th Learning score evolution (moving avg of #{} episodes ) , train duration {} '.format(
+                file_id +1,
+                self.success_threshold_lookback,
+                self.training_duration
+            ))
+
         # Or save before show
         fig = plt.gcf()
         plt.show()
         
 
-        # Store
-        file_id = get_number_of_files_in_folder(self.writer_log_directory+'/plots')
-        file_name = 'training_results_'+str(file_id)+'.png'
+
         fig.savefig(self.writer_log_directory+'/plots/'+file_name)
 
     def choose_action(self, state):
